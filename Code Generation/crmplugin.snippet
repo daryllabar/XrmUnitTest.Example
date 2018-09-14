@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>CrmPlugin</Title>
+			<Shortcut>crmplugin</Shortcut>
+			<Description>Code snippet for Creating a new CRM Plugin</Description>
+			<Author>Daryl LaBar</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>namespace</ID>
+					<ToolTip>Namespace</ToolTip>
+					<Default></Default>
+				</Literal>
+				<Literal>
+					<ID>pluginName</ID>
+					<ToolTip>Plugin Name</ToolTip>
+					<Default>MyPlugin</Default>
+				</Literal>
+			  <Literal>
+			    <ID>stage</ID>
+			    <ToolTip>Plugin Stage</ToolTip>
+			    <Default>PreOperation</Default>
+			  </Literal>
+			  <Literal>
+			    <ID>message</ID>
+			    <ToolTip>Message to Execute Against</ToolTip>
+			    <Default>Create</Default>
+			  </Literal>
+			</Declarations>
+			<Code Language="csharp">
+  <![CDATA[using System;
+using Source.DLaB.Xrm.Plugin;
+using Microsoft.Xrm.Sdk;
+
+  public class $pluginName$ : PluginBase, IPlugin
+  {
+    #region Constructors
+
+    public $pluginName$() : this(null, null) { }
+    public $pluginName$(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig) { }
+
+    #endregion Constructors
+
+    protected override IEnumerable<RegisteredEvent> CreateEvents()
+    {
+      return new RegisteredEventBuilder(PipelineStage.$stage$, MessageType.$message$).Build();
+    }
+
+    protected override void ExecuteInternal(ExtendedPluginContext context)  
+    {
+      $selected$$end$
+      throw new NotImplementedException("Plugin Logic has yet to be implemented");
+    }
+  }
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

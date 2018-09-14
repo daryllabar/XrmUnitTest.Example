@@ -13,26 +13,20 @@ namespace Xyz.Xrm.Plugin
     public class RemovePhoneNumberFormatting : PluginBase, IPlugin
     {
         #region Constructors
+
         public RemovePhoneNumberFormatting() : this(null, null) { }
-        public RemovePhoneNumberFormatting(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig)
-        {
-        }
+        public RemovePhoneNumberFormatting(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig) { }
 
         #endregion Constructors
 
         protected override IEnumerable<RegisteredEvent> CreateEvents()
         {
-            var events =
-                new RegisteredEventBuilder(PipelineStage.PreOperation, MessageType.Create, MessageType.Update).
-                    ForEntities(Account.EntityLogicalName, Contact.EntityLogicalName, Lead.EntityLogicalName).
-                    WithExecuteAction(ExecuteCrmPhoneNumber).Build();
-
-            events.AddRange(
-                new RegisteredEventBuilder(PipelineStage.PreOperation, MessageType.Create, MessageType.Update).
-                    ForEntities(BusinessUnit.EntityLogicalName, Competitor.EntityLogicalName, Site.EntityLogicalName, SystemUser.EntityLogicalName).
-                    WithExecuteAction(ExecuteCrmAddresses).Build());
-
-            return events;
+            return new RegisteredEventBuilder(PipelineStage.PreOperation, MessageType.Create, MessageType.Update)
+                .ForEntities(Account.EntityLogicalName, Contact.EntityLogicalName, Lead.EntityLogicalName)
+                .WithExecuteAction(ExecuteCrmPhoneNumber)
+                .And(PipelineStage.PreOperation, MessageType.Create, MessageType.Update)
+                .ForEntities(BusinessUnit.EntityLogicalName, Competitor.EntityLogicalName, Site.EntityLogicalName, SystemUser.EntityLogicalName)
+                .WithExecuteAction(ExecuteCrmAddresses).Build();
         }
 
         protected override void ExecuteInternal(ExtendedPluginContext context)
