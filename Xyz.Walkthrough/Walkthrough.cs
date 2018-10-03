@@ -59,6 +59,7 @@ namespace Xyz.Walkthrough
                     typeof(TestMethodClassBase), 
                     "UnitTestSettings.user.config")); 
 
+            // Suggest initializing all of the Test Settings in a single place: 
             TestInitializer.InitializeTestSettings();
         }
 
