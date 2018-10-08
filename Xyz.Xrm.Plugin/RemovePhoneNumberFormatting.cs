@@ -22,10 +22,10 @@ namespace Xyz.Xrm.Plugin
         protected override IEnumerable<RegisteredEvent> CreateEvents()
         {
             return new RegisteredEventBuilder(PipelineStage.PreOperation, MessageType.Create, MessageType.Update)
-                .ForEntities(Account.EntityLogicalName, Contact.EntityLogicalName, Lead.EntityLogicalName)
+                .ForEntities<Account, Contact, Lead>()
                 .WithExecuteAction(ExecuteCrmPhoneNumber)
                 .And(PipelineStage.PreOperation, MessageType.Create, MessageType.Update)
-                .ForEntities(BusinessUnit.EntityLogicalName, Competitor.EntityLogicalName, Site.EntityLogicalName, SystemUser.EntityLogicalName)
+                .ForEntities<BusinessUnit, Competitor, Site, SystemUser>()
                 .WithExecuteAction(ExecuteCrmAddresses).Build();
         }
 

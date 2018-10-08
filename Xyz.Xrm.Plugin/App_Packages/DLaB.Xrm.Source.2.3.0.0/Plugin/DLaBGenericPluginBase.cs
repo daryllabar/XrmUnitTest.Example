@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
 #if DLAB_UNROOT_NAMESPACE || DLAB_XRM
 namespace DLaB.Xrm.Plugin
@@ -14,6 +16,23 @@ namespace Source.DLaB.Xrm.Plugin
     /// </summary>
     public abstract class DLaBGenericPluginBase<T> : IRegisteredEventsPlugin where T: IExtendedPluginContext
     {
+        #region Constants
+
+        /// <summary>
+        /// Key to look for in the Security Settings for Tracing the Pre Context
+        /// </summary>
+        public const string TracePreContext = "PluginBase.TracePreContext";
+        /// <summary>
+        /// Key to look for in the Security Settings for Tracing the Pre and Post Context
+        /// </summary>
+        public const string TracePrePostContext = "PluginBase.TraceContext";
+        /// <summary>
+        /// Key to look for in the Security Settings for Tracing the Post Context
+        /// </summary>
+        public const string TracePostContext = "PluginBase.TracePostContext";
+
+        #endregion Constants
+
         #region Properties
 
         private readonly object _handlerLock = new object();
@@ -132,6 +151,10 @@ namespace Source.DLaB.Xrm.Plugin
             {
                 using (context.TraceTime("{0}.Execute()", context.PluginTypeName))
                 {
+                    if (IsPreContextTraced(context))
+                    {
+                        context.TraceContext();
+                    }
 
                     if (context.Event == null)
                     {
@@ -158,6 +181,11 @@ namespace Source.DLaB.Xrm.Plugin
                     }
 
                     ExecuteRegisteredEvent(context);
+
+                    if (IsPostContextTraced(context))
+                    {
+                        context.TraceContext();
+                    }
                 }
             }
             catch (Exception ex)
@@ -239,15 +267,29 @@ namespace Source.DLaB.Xrm.Plugin
                 return false;
             }
 
-            var sharedVariables = context.SharedVariables;
             var key = $"{context.PluginTypeName}|{context.Event.MessageName}|{context.Event.Stage}|{context.PrimaryEntityId}";
             if (context.GetFirstSharedVariable<int>(key) > 0)
             {
                 return true;
             }
 
-            sharedVariables.Add(key, 1);
+            context.SharedVariables.Add(key, 1);
             return false;
+        }
+
+        /// <summary>
+        /// Determines if the Context should be traced Pre Execution of the plugin logic
+        /// </summary>
+        protected virtual bool IsPreContextTraced(T context) { return ContainsAnyIgnoreCase(SecureConfig, TracePreContext, TracePrePostContext); }
+        /// <summary>
+        /// Determines if the Context should be traced Post Execution of the plugin logic
+        /// </summary>
+        protected virtual bool IsPostContextTraced(T context) { return ContainsAnyIgnoreCase(SecureConfig, TracePostContext, TracePrePostContext); }
+
+        private bool ContainsAnyIgnoreCase(string source, params string[] values)
+        {
+            return source != null 
+                && values.Any(v => CultureInfo.InvariantCulture.CompareInfo.IndexOf(source, v, CompareOptions.IgnoreCase) >= 0);
         }
     }
 }
