@@ -22,12 +22,12 @@ namespace Xyz.Xrm.Plugin.PluginBaseExamples
             var target = context.GetTarget<Contact>();
 
             var preImage = context.GetPreEntity<Contact>();
-            var sdkGetAddress = target.Contains(Contact.Fields.FirstName)
+            var sdkGetFirstName = target.Contains(Contact.Fields.FirstName)
                 ? target.FirstName
                 : preImage.FirstName;
 
             var finalTarget = context.CoalesceTargetWithPreEntity<Contact>();
-            var address = finalTarget.FirstName;
+            var firstName = finalTarget.FirstName;                                                                        
 
             /***************************
 		     *    Plugin Logic Here    *
