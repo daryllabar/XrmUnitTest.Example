@@ -12,6 +12,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Account.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\AccountLeads.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Actions\Actions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Actions\xyz_VoidPaymentRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Actions\xyz_VoidPaymentResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ActivityMimeAttachment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ActivityParty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\ActivityPointer.cs" />
@@ -779,6 +781,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Workflow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\WorkflowDependency.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\WorkflowLog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugin\ActionContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Plugin\ActionPluginBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugin\ExtendedPluginContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugin\Extensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugin\PluginBase.cs" />

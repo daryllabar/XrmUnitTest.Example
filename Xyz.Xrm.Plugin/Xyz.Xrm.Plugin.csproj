@@ -177,6 +177,7 @@
     <Compile Include="App_Packages\DLaB.Xrm.Workflow.Source.1.1.0.7\WorkflowMode.cs" />
     <Compile Include="PluginBaseExamples\EntityAccess.cs" />
     <Compile Include="PluginBaseExamples\ContextExample.cs" />
+    <Compile Include="PluginBaseExamples\VoidPayment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemovePhoneNumberFormatting.cs" />
     <Compile Include="RenameLogic.cs" />
