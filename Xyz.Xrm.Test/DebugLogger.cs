@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using DLaB.Xrm.Test;
 
 namespace Xyz.Xrm.Test
 {
+    /// <summary>
+    /// Example DebugLogger
+    /// </summary>
     public class DebugLogger: ITestLogger
     {
         public void WriteLine(string message)
