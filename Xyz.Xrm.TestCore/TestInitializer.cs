@@ -7,7 +7,7 @@ using Xyz.Xrm.Entities;
 namespace Xyz.Xrm.Test
 {
     /// <summary>
-    /// Class to Initalize all TestSettings used by the Framework
+    /// Class to Initialize all TestSettings used by the Framework
     /// </summary>
     public class TestInitializer
     {
