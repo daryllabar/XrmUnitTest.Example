@@ -182,15 +182,14 @@
     <Compile Include="RemovePhoneNumberFormatting.cs" />
     <Compile Include="RenameLogic.cs" />
     <Compile Include="SyncContactToAccount.cs" />
-    <Compile Include="Workflow\CodeActivityBase.cs" />
     <Compile Include="Workflow\CreateGuidActivity.cs" />
-    <Compile Include="Workflow\ExtendedWorkflowContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Xyz.Xrm.Plugin.Key.snk" />
   </ItemGroup>
   <Import Project="..\Xyz.Xrm\Xyz.Xrm.projitems" Label="Shared" />
+  <Import Project="..\Xyz.Xrm.Workflow\Xyz.Xrm.Workflow.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

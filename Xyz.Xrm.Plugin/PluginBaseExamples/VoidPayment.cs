@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Source.DLaB.Xrm.Plugin;
 using Microsoft.Xrm.Sdk;
 using Xyz.Xrm.Entities;
@@ -10,6 +11,7 @@ namespace Xyz.Xrm.Plugin.PluginBaseExamples
     /// <summary>
     /// Example Plugin Class for a Custom Action.
     /// </summary>
+    [SuppressMessage("ReSharper", "RedundantExtendsListEntry")]
     public class VoidPayment : ActionPluginBase<xyz_VoidPaymentRequest, xyz_VoidPaymentResponse>, IPlugin
     {
         protected override void ExecuteInternal(ActionContext<xyz_VoidPaymentRequest, xyz_VoidPaymentResponse> context)

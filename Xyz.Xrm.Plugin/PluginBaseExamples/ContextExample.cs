@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.Xrm.Sdk;
 using Source.DLaB.Xrm.Plugin;
+// ReSharper disable UnusedVariable
 
 namespace Xyz.Xrm.Plugin.PluginBaseExamples
 {
-
     /// <summary>
-    /// Shows hows the ExtendedPluginContext Hides Instantation
+    /// Shows hows the ExtendedPluginContext Hides Instantiation
     /// </summary>
     public class ContextExample : PluginBase, IPlugin
     {

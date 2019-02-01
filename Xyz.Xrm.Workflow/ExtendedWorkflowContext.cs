@@ -1,7 +1,7 @@
 ﻿using System.Activities;
 using Source.DLaB.Xrm.Workflow;
 
-namespace Xyz.Xrm.Plugin.Workflow
+namespace Xyz.Xrm.Workflow
 {
     public class ExtendedWorkflowContext: DLaBExtendedWorkflowContext
     {

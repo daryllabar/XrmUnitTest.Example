@@ -1,8 +1,7 @@
 ﻿namespace Xyz.Xrm.Entities
 {
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://schemas.microsoft.com/xrm/2011/dfnd/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://schemas.microsoft.com/xrm/2011/xyz")]
     [Microsoft.Xrm.Sdk.Client.ResponseProxyAttribute("xyz_VoidPayment")]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.2.1.8676")]
     public partial class xyz_VoidPaymentResponse : Microsoft.Xrm.Sdk.OrganizationResponse
     {
 		

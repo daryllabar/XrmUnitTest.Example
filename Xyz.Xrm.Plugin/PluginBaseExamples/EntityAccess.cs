@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Xyz.Xrm.Entities;
 using Microsoft.Xrm.Sdk;
-using Source.DLaB.Xrm;
 using Source.DLaB.Xrm.Plugin;
+// ReSharper disable UnusedVariable, RedundantExtendsListEntry
 
 namespace Xyz.Xrm.Plugin.PluginBaseExamples
 {

@@ -1,5 +1,6 @@
 ﻿using System.Activities;
 using Microsoft.Xrm.Sdk.Workflow;
+using Xyz.Xrm.Workflow;
 
 namespace Xyz.Xrm.Plugin.Workflow
 {

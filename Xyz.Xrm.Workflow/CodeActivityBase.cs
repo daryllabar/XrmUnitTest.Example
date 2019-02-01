@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Source.DLaB.Xrm.Workflow;
 
-namespace Xyz.Xrm.Plugin.Workflow
+namespace Xyz.Xrm.Workflow
 {
     public abstract class CodeActivityBase : DLaBCodeActivityBase
     {

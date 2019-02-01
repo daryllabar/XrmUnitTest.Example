@@ -31,7 +31,6 @@ namespace Xyz.Xrm.Test
             if (!TestSettings.EarlyBound.IsConfigured)
             {
                 TestSettings.EarlyBound.ConfigureDerivedAssembly<CrmContext>();
-                CrmServiceUtility.GetEarlyBoundProxyAssembly(TestSettings.EarlyBound.Assembly);
             }
             if (!TestSettings.TestFrameworkProvider.IsConfigured)
             {
