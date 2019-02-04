@@ -24,16 +24,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Gen
 		Code Generation\region.snippet = Code Generation\region.snippet
 	EndProjectSection
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Xyz.Xrm.Workflow", "Xyz.Xrm.Workflow\Xyz.Xrm.Workflow.shproj", "{DD5AA002-C1FF-4C0E-B9A5-3D63C7809B07}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Xyz.Xrm.WorkflowCore", "Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.shproj", "{DD5AA002-C1FF-4C0E-B9A5-3D63C7809B07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Workflow", "Xyz.Xrm.Workflow\Xyz.Xrm.Workflow.csproj", "{5BD39AC9-97F3-47C8-8E1F-6A58A24AFB9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Workflow.Tests", "Xyz.Xrm.Workflow.Tests\Xyz.Xrm.Workflow.Tests.csproj", "{7056423A-373E-463D-B552-D2F305F5C041}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Xyz.Xrm.Workflow\Xyz.Xrm.Workflow.projitems*{2b294dbf-8730-436e-b401-8745fea632fe}*SharedItemsImports = 4
 		Xyz.Xrm\Xyz.Xrm.projitems*{2b294dbf-8730-436e-b401-8745fea632fe}*SharedItemsImports = 4
 		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{3016d729-1a3b-43c0-ac2f-d4ef6a305fa6}*SharedItemsImports = 4
+		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{5bd39ac9-97f3-47c8-8e1f-6a58a24afb9e}*SharedItemsImports = 4
+		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{7056423a-373e-463d-b552-d2f305f5c041}*SharedItemsImports = 4
+		Xyz.Xrm\Xyz.Xrm.projitems*{7056423a-373e-463d-b552-d2f305f5c041}*SharedItemsImports = 4
 		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{8f91efc7-351b-4802-99aa-6c6f16110505}*SharedItemsImports = 13
 		Xyz.Xrm\Xyz.Xrm.projitems*{b22b3bc6-0ac6-4cdd-a118-16e318818ad7}*SharedItemsImports = 13
-		Xyz.Xrm.Workflow\Xyz.Xrm.Workflow.projitems*{dd5aa002-c1ff-4c0e-b9a5-3d63c7809b07}*SharedItemsImports = 13
+		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{dd5aa002-c1ff-4c0e-b9a5-3d63c7809b07}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +71,18 @@ Global
 		{2B294DBF-8730-436E-B401-8745FEA632FE}.LocalNuget|Any CPU.Build.0 = LocalNuget|Any CPU
 		{2B294DBF-8730-436E-B401-8745FEA632FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B294DBF-8730-436E-B401-8745FEA632FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BD39AC9-97F3-47C8-8E1F-6A58A24AFB9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BD39AC9-97F3-47C8-8E1F-6A58A24AFB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BD39AC9-97F3-47C8-8E1F-6A58A24AFB9E}.LocalNuget|Any CPU.ActiveCfg = Release|Any CPU
+		{5BD39AC9-97F3-47C8-8E1F-6A58A24AFB9E}.LocalNuget|Any CPU.Build.0 = Release|Any CPU
+		{5BD39AC9-97F3-47C8-8E1F-6A58A24AFB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BD39AC9-97F3-47C8-8E1F-6A58A24AFB9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7056423A-373E-463D-B552-D2F305F5C041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7056423A-373E-463D-B552-D2F305F5C041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7056423A-373E-463D-B552-D2F305F5C041}.LocalNuget|Any CPU.ActiveCfg = Release|Any CPU
+		{7056423A-373E-463D-B552-D2F305F5C041}.LocalNuget|Any CPU.Build.0 = Release|Any CPU
+		{7056423A-373E-463D-B552-D2F305F5C041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7056423A-373E-463D-B552-D2F305F5C041}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

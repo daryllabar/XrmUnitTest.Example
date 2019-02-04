@@ -1,8 +1,7 @@
 ﻿using System.Activities;
 using Microsoft.Xrm.Sdk.Workflow;
-using Xyz.Xrm.Workflow;
 
-namespace Xyz.Xrm.Plugin.Workflow
+namespace Xyz.Xrm.Workflow
 {
     public class CreateGuidActivity : CodeActivityBase
     {

@@ -2,10 +2,9 @@
 using System.Linq;
 using DLaB.Xrm.Test.Builders;
 using Xyz.Xrm.Test;
-using Xyz.Xrm.Plugin.Workflow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Xyz.Xrm.Plugin.Tests
+namespace Xyz.Xrm.Workflow.Tests
 {
     /// <summary>
     /// Workflow Example.  Utilizes the WorkflowInvokerBuilder to Invoke the workflow
