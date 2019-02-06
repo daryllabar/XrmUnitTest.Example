@@ -30,7 +30,7 @@ namespace Xyz.Xrm.Workflow.Tests
             //
             // Assert
             //
-            Assert.IsTrue(Guid.TryParse(results.First().Value.ToString(), out Guid tmp));
+            Assert.IsTrue(Guid.TryParse(results.First().Value.ToString(), out _));
         }
     }
 }

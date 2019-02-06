@@ -169,5 +169,6 @@
     <None Include="Xyz.Xrm.Workflow.Key.snk" />
   </ItemGroup>
   <Import Project="..\Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems" Label="Shared" />
+  <Import Project="..\Xyz.Xrm\Xyz.Xrm.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
