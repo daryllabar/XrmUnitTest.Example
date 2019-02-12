@@ -1,5 +1,8 @@
 ﻿namespace Xyz.Xrm.Entities
 {
+    /// <summary>
+    /// Example Custom Action Request
+    /// </summary>
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://schemas.microsoft.com/xrm/2011/xyz")]
     [Microsoft.Xrm.Sdk.Client.RequestProxyAttribute("xyz_VoidPayment")]
     public partial class xyz_VoidPaymentRequest : Microsoft.Xrm.Sdk.OrganizationRequest

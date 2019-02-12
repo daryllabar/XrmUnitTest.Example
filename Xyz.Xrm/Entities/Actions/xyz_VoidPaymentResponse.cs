@@ -1,5 +1,8 @@
 ﻿namespace Xyz.Xrm.Entities
 {
+    /// <summary>
+    /// Example Custom Action Response
+    /// </summary>
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://schemas.microsoft.com/xrm/2011/xyz")]
     [Microsoft.Xrm.Sdk.Client.ResponseProxyAttribute("xyz_VoidPayment")]
     public partial class xyz_VoidPaymentResponse : Microsoft.Xrm.Sdk.OrganizationResponse
