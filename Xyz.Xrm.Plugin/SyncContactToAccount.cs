@@ -10,7 +10,7 @@ namespace Xyz.Xrm.Plugin
     /// <summary>
     /// Class to Sync a Contact's Address Information to the Account, if it is the primary account
     /// </summary>
-    public class SyncContactToAccount : PluginBase
+    public class SyncContactToAccount : PluginBase, IPlugin
     {
         public const string AddressNotUpdatedMessage = "Address not updated, no need to update Account.";
 
