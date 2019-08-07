@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2003
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Walkthrough", "Xyz.Walkthrough\Xyz.Walkthrough.csproj", "{3E728B41-02E5-42FD-B8D3-CF2C664E2226}"
 EndProject
@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Gen
 		Code Generation\crmplugin.snippet = Code Generation\crmplugin.snippet
 		Code Generation\crmplugintest.snippet = Code Generation\crmplugintest.snippet
 		Code Generation\crmtestmethodclass.snippet = Code Generation\crmtestmethodclass.snippet
+		Code Generation\entitybuilder.snippet = Code Generation\entitybuilder.snippet
 		Code Generation\LINQPadGuidGenerator.txt = Code Generation\LINQPadGuidGenerator.txt
 		Code Generation\region.snippet = Code Generation\region.snippet
 	EndProjectSection
