@@ -15,7 +15,7 @@ namespace Xyz.Xrm.Plugin.PluginBaseExamples
             var systemService = context.SystemOrganizationService;
             var userService = context.OrganizationService;
             var initiatingService = context.InitiatingUserOrganizationService;
-            ITracingService tracignService = context;
+            ITracingService tracingService = context;
             IPluginExecutionContext pluginContext = context;
 
             /***************************
@@ -25,8 +25,7 @@ namespace Xyz.Xrm.Plugin.PluginBaseExamples
         
         #region Constructors
 
-        public ContextExample() : this(null, null) { }
-        public ContextExample(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig) { }
+        public ContextExample(string unsecureConfig = null, string secureConfig = null) : base(unsecureConfig, secureConfig) { }
 
         #endregion Constructors
 

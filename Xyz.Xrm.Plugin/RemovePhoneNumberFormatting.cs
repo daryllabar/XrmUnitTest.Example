@@ -14,8 +14,7 @@ namespace Xyz.Xrm.Plugin
     {
         #region Constructors
 
-        public RemovePhoneNumberFormatting() : this(null, null) { }
-        public RemovePhoneNumberFormatting(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig) { }
+        public RemovePhoneNumberFormatting(string unsecureConfig = null, string secureConfig = null) : base(unsecureConfig, secureConfig) { }
 
         #endregion Constructors
 

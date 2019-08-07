@@ -16,10 +16,7 @@ namespace Xyz.Xrm.Plugin
 
         #region Constructors
 
-        public SyncContactToAccount() : this(null, null) { }
-        public SyncContactToAccount(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig)
-        {
-        }
+        public SyncContactToAccount(string unsecureConfig = null, string secureConfig = null) : base(unsecureConfig, secureConfig) { }
 
         #endregion Constructors
 

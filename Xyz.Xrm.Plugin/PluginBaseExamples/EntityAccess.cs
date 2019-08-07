@@ -8,7 +8,7 @@ namespace Xyz.Xrm.Plugin.PluginBaseExamples
 {
 
     /// <summary>
-    /// Shows hows the to get Entities from Context including final value from target/pre-image
+    /// Shows hows to get Entities from Context including final value from target/pre-image
     /// </summary>
     public class EntityAccess : PluginBase, IPlugin
     {
@@ -32,8 +32,7 @@ namespace Xyz.Xrm.Plugin.PluginBaseExamples
         
         #region Constructors
 
-        public EntityAccess() : this(null, null) { }
-        public EntityAccess(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig) { }
+        public EntityAccess(string unsecureConfig = null, string secureConfig = null) : base(unsecureConfig, secureConfig) { }
 
         #endregion Constructors
 

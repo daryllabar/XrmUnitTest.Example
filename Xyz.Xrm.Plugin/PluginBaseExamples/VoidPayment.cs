@@ -35,8 +35,7 @@ namespace Xyz.Xrm.Plugin.PluginBaseExamples
 
         #region Constructors
 
-        public VoidPayment() : this(null, null) { }
-        public VoidPayment(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig) { }
+        public VoidPayment(string unsecureConfig = null, string secureConfig = null) : base(unsecureConfig, secureConfig) { }
 
         #endregion Constructors
 
