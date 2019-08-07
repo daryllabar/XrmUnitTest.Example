@@ -1,7 +1,12 @@
-﻿using DLaB.Xrm;
+﻿// ReSharper disable RedundantUsingDirective
+using System;
+using DLaB.Xrm;
 using DLaB.Xrm.LocalCrm;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Messages;
 using Xyz.Xrm.Entities;
+// ReSharper disable InvalidXmlDocComment
 
 namespace Xyz.Xrm.Plugin.Tests
 {
@@ -11,7 +16,7 @@ namespace Xyz.Xrm.Plugin.Tests
     [TestClass]
     public class MsFakesVsXrmUnitTestExampleTests
     {
-        // MsFakes Isn't suppored by Appveyor.  To test:
+        // MsFakes isn't supported by Appveyor.  To test:
         // 1. Right click on the Microsoft.Xrm.Sdk.dll in the references, and select "Add Fakes Assembly"
         // 2. Uncomment this test.
         /// <summary>

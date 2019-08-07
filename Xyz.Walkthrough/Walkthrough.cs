@@ -114,11 +114,11 @@ namespace Xyz.Walkthrough
             // Testing Method that utilizes the EnvironmentBuilder
             tests.EntityBuilderExample_CreateWithEnvironmentBuilder_Should_PopulateAccountInfo();
 
-            // Testing Method that utilizes the EnvironmentBuidler to associate child entity to parent
+            // Testing Method that utilizes the EnvironmentBuilder to associate child entity to parent
             tests.EntityBuilderExample_CreateChildContact_Should_SetParentAccountOnContact();
         }
 
-        private void TestMethodClassBase_IOrganizationservice_Indepth()
+        private void TestMethodClassBase_IOrganizationService_InDepth()
         {
             var tests = new TestMethodClassExampleTests();
 
