@@ -1,3 +1,7 @@
+<Query Kind="Program">
+  <Reference>&lt;RuntimeDirectory&gt;\System.Data.Entity.Design.dll</Reference>
+</Query>
+
 void Main()
 {
 	// Need to create multiple Ids for mulitiple entities?

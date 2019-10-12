@@ -17,10 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Plugin", "Xyz.Xrm.P
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Generation", "{94B41B0F-F3D1-4BE0-82F4-F0A5FB996AE3}"
 	ProjectSection(SolutionItems) = preProject
+		Code Generation\crmassumption.snippet = Code Generation\crmassumption.snippet
+		Code Generation\crmentitybuilder.snippet = Code Generation\crmentitybuilder.snippet
 		Code Generation\crmplugin.snippet = Code Generation\crmplugin.snippet
 		Code Generation\crmplugintest.snippet = Code Generation\crmplugintest.snippet
 		Code Generation\crmtestmethodclass.snippet = Code Generation\crmtestmethodclass.snippet
-		Code Generation\entitybuilder.snippet = Code Generation\entitybuilder.snippet
 		Code Generation\LINQPadGuidGenerator.txt = Code Generation\LINQPadGuidGenerator.txt
 		Code Generation\region.snippet = Code Generation\region.snippet
 	EndProjectSection

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>CrmAssumption</Title>
+			<Shortcut>crmassumption</Shortcut>
+			<Description>Code snippet for Creating a new CRM Assumption</Description>
+			<Author>Daryl LaBar</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>assumptionName</ID>
+					<ToolTip>Assumption Name</ToolTip>
+					<Default>MyAssumption</Default>
+				</Literal>
+				<Literal>
+					<ID>entity</ID>
+					<ToolTip>Entity</ToolTip>
+					<Default>Product</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp">
+  <![CDATA[
+	public class $assumptionName$ : EntityDataAssumptionBaseAttribute, IAssumptionEntityType<$assumptionName$, $entity$>
+	{
+		protected override Entity RetrieveEntity(IOrganizationService service)
+		{
+		    return service.GetFirstOrDefault<$entity$>($selected$$end$);
+	    }
+	}
+]]>
+			</Code>
+			<Imports>
+				<Import>
+					<Namespace>DLaB.Xrm</Namespace>
+				</Import>
+				<Import>
+					<Namespace>DLaB.Xrm.Test.Assumptions</Namespace>
+				</Import>
+				<Import>
+					<Namespace>Microsoft.Xrm.Sdk</Namespace>
+				</Import>
+			</Imports>		
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

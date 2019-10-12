@@ -29,10 +29,7 @@
 			  </Literal>
 			</Declarations>
 			<Code Language="csharp">
-  <![CDATA[using System;
-using Source.DLaB.Xrm.Plugin;
-using Microsoft.Xrm.Sdk;
-
+  <![CDATA[
   public class $pluginName$ : PluginBase, IPlugin
   {
     #region Constructors
@@ -54,6 +51,17 @@ using Microsoft.Xrm.Sdk;
   }
 ]]>
 			</Code>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Source.DLaB.Xrm.Plugin</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Microsoft.Xrm.Sdk</Namespace>
+        </Import>
+      </Imports>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>
