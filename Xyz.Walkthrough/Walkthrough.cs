@@ -64,7 +64,7 @@ namespace Xyz.Walkthrough
         }
 
         /// <summary>
-        /// Demonstrates a plugin that utlizes the Example.MsTestBase.UnitTestSEttings.User.config "UseLocalCrmDatabase" App Settings Key
+        /// Demonstrates a plugin that utilizes the Example.MsTestBase.UnitTestSettings.User.config "UseLocalCrmDatabase" App Settings Key
         /// </summary>
         private void TestingAPluginLocallyOrAgainstCrm()
         {
