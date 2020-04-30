@@ -5,38 +5,47 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum Incident_StatusCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Canceled = 6,
+		[OptionSetMetadataAttribute("Cancelled", 2, "#666666")]
+		Cancelled = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Information Provided", 1, "#358717")]
 		InformationProvided = 1000,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("In Progress", 4, "#3B79B7")]
 		InProgress = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Merged", 3, "#806c00")]
 		Merged = 2000,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("On Hold", 5, "#D43900")]
 		OnHold = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Problem Solved", 0, "#358717")]
 		ProblemSolved = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Researching", 7, "#007A7C")]
 		Researching = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Waiting for Details", 6, "#8C24B5")]
 		WaitingforDetails = 3,
 	}
 }

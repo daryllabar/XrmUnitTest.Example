@@ -1,8 +1,11 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿using DLaB.Xrm.Test.Builders;
+using Microsoft.Xrm.Sdk;
 
 namespace Xyz.Xrm.Test.Builders
 {
-    public abstract class EntityBuilder<TEntity> : DLaB.Xrm.Test.Builders.EntityBuilder<TEntity> where TEntity : Entity
+    public abstract class EntityBuilder<TEntity, TBuilder> : DLaBEntityBuilder<TEntity, TBuilder>
+        where TBuilder : EntityBuilder<TEntity, TBuilder>
+        where TEntity : Entity
     {
 
     }

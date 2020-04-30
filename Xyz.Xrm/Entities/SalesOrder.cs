@@ -5,13 +5,14 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum SalesOrderState
 	{
 		
@@ -36,11 +37,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("salesorder")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class SalesOrder : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string AccountId = "accountid";
 			public const string BillTo_AddressId = "billto_addressid";
@@ -67,6 +68,7 @@ namespace Xyz.Xrm.Entities
 			public const string DiscountAmount = "discountamount";
 			public const string DiscountAmount_Base = "discountamount_base";
 			public const string DiscountPercentage = "discountpercentage";
+			public const string EmailAddress = "emailaddress";
 			public const string EntityImage = "entityimage";
 			public const string EntityImage_Timestamp = "entityimage_timestamp";
 			public const string EntityImage_URL = "entityimage_url";
@@ -78,10 +80,26 @@ namespace Xyz.Xrm.Entities
 			public const string ImportSequenceNumber = "importsequencenumber";
 			public const string IsPriceLocked = "ispricelocked";
 			public const string LastBackofficeSubmit = "lastbackofficesubmit";
+			public const string LastOnHoldTime = "lastonholdtime";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
+			public const string msdyn_Account = "msdyn_account";
+			public const string msdyn_AccountManagerId = "msdyn_accountmanagerid";
+			public const string msdyn_ContractOrganizationalUnitId = "msdyn_contractorganizationalunitid";
+			public const string msdyn_ordertype = "msdyn_ordertype";
+			public const string msdyn_PSAState = "msdyn_psastate";
+			public const string msdyn_PSAStatusReason = "msdyn_psastatusreason";
+			public const string msdyn_TotalChargeableCostRollup = "msdyn_totalchargeablecostrollup";
+			public const string msdyn_totalchargeablecostrollup_Base = "msdyn_totalchargeablecostrollup_base";
+			public const string msdyn_TotalChargeableCostRollup_Date = "msdyn_totalchargeablecostrollup_date";
+			public const string msdyn_TotalChargeableCostRollup_State = "msdyn_totalchargeablecostrollup_state";
+			public const string msdyn_TotalNonchargeableCostRollup = "msdyn_totalnonchargeablecostrollup";
+			public const string msdyn_totalnonchargeablecostrollup_Base = "msdyn_totalnonchargeablecostrollup_base";
+			public const string msdyn_TotalNonchargeableCostRollup_Date = "msdyn_totalnonchargeablecostrollup_date";
+			public const string msdyn_TotalNonchargeableCostRollup_State = "msdyn_totalnonchargeablecostrollup_state";
 			public const string Name = "name";
+			public const string OnHoldTime = "onholdtime";
 			public const string OpportunityId = "opportunityid";
 			public const string OrderNumber = "ordernumber";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
@@ -113,6 +131,9 @@ namespace Xyz.Xrm.Entities
 			public const string ShipTo_PostalCode = "shipto_postalcode";
 			public const string ShipTo_StateOrProvince = "shipto_stateorprovince";
 			public const string ShipTo_Telephone = "shipto_telephone";
+			public const string SkipPriceCalculation = "skippricecalculation";
+			public const string SLAId = "slaid";
+			public const string SLAInvokedId = "slainvokedid";
 			public const string StageId = "stageid";
 			public const string StateCode = "statecode";
 			public const string StatusCode = "statuscode";
@@ -138,22 +159,21 @@ namespace Xyz.Xrm.Entities
 			public const string VersionNumber = "versionnumber";
 			public const string WillCall = "willcall";
 			public const string business_unit_orders = "business_unit_orders";
-			public const string campaign_orders = "campaign_orders";
 			public const string lk_salesorder_createdonbehalfby = "lk_salesorder_createdonbehalfby";
 			public const string lk_salesorder_modifiedonbehalfby = "lk_salesorder_modifiedonbehalfby";
 			public const string lk_salesorderbase_createdby = "lk_salesorderbase_createdby";
 			public const string lk_salesorderbase_modifiedby = "lk_salesorderbase_modifiedby";
+			public const string msdyn_account_salesorder_Account = "msdyn_account_salesorder_Account";
+			public const string msdyn_accountmanager_salesorder = "msdyn_accountmanager_salesorder";
 			public const string opportunity_sales_orders = "opportunity_sales_orders";
 			public const string order_customer_accounts = "order_customer_accounts";
 			public const string order_customer_contacts = "order_customer_contacts";
 			public const string price_level_orders = "price_level_orders";
 			public const string processstage_salesorders = "processstage_salesorders";
-			public const string quote_orders = "quote_orders";
 			public const string system_user_orders = "system_user_orders";
 			public const string team_orders = "team_orders";
 			public const string transactioncurrency_salesorder = "transactioncurrency_salesorder";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -166,7 +186,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "salesorder";
 		
-		public const int EntityTypeCode = 1088;
+		public const string EntitySchemaName = "SalesOrder";
+		
+		public const string PrimaryIdAttribute = "salesorderid";
+		
+		public const string PrimaryNameAttribute = "name";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -457,7 +481,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows the campaign that the order was created from.
+		/// campaign_orders
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("campaignid")]
 		public Microsoft.Xrm.Sdk.EntityReference CampaignId
@@ -490,7 +514,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows who created the record.
+		/// lk_salesorderbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -500,17 +524,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -520,17 +537,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
+		/// lk_salesorder_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -550,7 +560,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Select the customer account or contact to provide a quick link to additional customer details, such as account information, activities, and opportunities.
+		/// order_customer_contacts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customerid")]
 		public Microsoft.Xrm.Sdk.EntityReference CustomerId
@@ -663,6 +673,26 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// The primary email address for the entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress")]
+		public string EmailAddress
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("emailaddress");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("EmailAddress");
+				this.SetAttributeValue("emailaddress", value);
+				this.OnPropertyChanged("EmailAddress");
+			}
+		}
+		
+		/// <summary>
 		/// The default image for the entity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage")]
@@ -771,18 +801,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the freight terms to make sure shipping charges are processed correctly.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("freighttermscode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue FreightTermsCode
+		public virtual SalesOrder_FreightTermsCode? FreightTermsCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("freighttermscode");
+				return ((SalesOrder_FreightTermsCode?)(EntityOptionSetEnum.GetEnum(this, "freighttermscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("FreightTermsCode");
-				this.SetAttributeValue("freighttermscode", value);
+				this.SetAttributeValue("freighttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("FreightTermsCode");
 			}
 		}
@@ -848,7 +878,27 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record.
+		/// Contains the date time stamp of the last on hold time.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastonholdtime")]
+		public System.Nullable<System.DateTime> LastOnHoldTime
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("lastonholdtime");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("LastOnHoldTime");
+				this.SetAttributeValue("lastonholdtime", value);
+				this.OnPropertyChanged("LastOnHoldTime");
+			}
+		}
+		
+		/// <summary>
+		/// lk_salesorderbase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -858,17 +908,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -878,17 +921,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record on behalf of another user.
+		/// lk_salesorder_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -904,6 +940,230 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ModifiedOnBehalfBy");
 				this.SetAttributeValue("modifiedonbehalfby", value);
 				this.OnPropertyChanged("ModifiedOnBehalfBy");
+			}
+		}
+		
+		/// <summary>
+		/// Customer Account associated with this Order
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_account")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_Account
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_account");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_Account");
+				this.SetAttributeValue("msdyn_account", value);
+				this.OnPropertyChanged("msdyn_Account");
+			}
+		}
+		
+		/// <summary>
+		/// User responsible for managing the account referenced by this contract.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_accountmanagerid")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_AccountManagerId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_accountmanagerid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_AccountManagerId");
+				this.SetAttributeValue("msdyn_accountmanagerid", value);
+				this.OnPropertyChanged("msdyn_AccountManagerId");
+			}
+		}
+		
+		/// <summary>
+		/// Organizational unit responsible for this contract.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_contractorganizationalunitid")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_ContractOrganizationalUnitId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_contractorganizationalunitid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_ContractOrganizationalUnitId");
+				this.SetAttributeValue("msdyn_contractorganizationalunitid", value);
+				this.OnPropertyChanged("msdyn_ContractOrganizationalUnitId");
+			}
+		}
+		
+		/// <summary>
+		/// Internal use only
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_ordertype")]
+		public virtual SalesOrder_msdyn_ordertype? msdyn_ordertype
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((SalesOrder_msdyn_ordertype?)(EntityOptionSetEnum.GetEnum(this, "msdyn_ordertype")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_ordertype");
+				this.SetAttributeValue("msdyn_ordertype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_ordertype");
+			}
+		}
+		
+		/// <summary>
+		/// Shows the current state of the project contract.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_psastate")]
+		public virtual msdyn_ProjectContractState? msdyn_PSAState
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((msdyn_ProjectContractState?)(EntityOptionSetEnum.GetEnum(this, "msdyn_psastate")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_PSAState");
+				this.SetAttributeValue("msdyn_psastate", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_PSAState");
+			}
+		}
+		
+		/// <summary>
+		/// Shows the reason for the project contract status.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_psastatusreason")]
+		public virtual msdyn_ProjectContractStatus? msdyn_PSAStatusReason
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((msdyn_ProjectContractStatus?)(EntityOptionSetEnum.GetEnum(this, "msdyn_psastatusreason")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_PSAStatusReason");
+				this.SetAttributeValue("msdyn_psastatusreason", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_PSAStatusReason");
+			}
+		}
+		
+		/// <summary>
+		/// Value of the estimated chargeable cost.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_totalchargeablecostrollup")]
+		public Microsoft.Xrm.Sdk.Money msdyn_TotalChargeableCostRollup
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("msdyn_totalchargeablecostrollup");
+			}
+		}
+		
+		/// <summary>
+		/// Value of the Total Chargeable Cost in base currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_totalchargeablecostrollup_base")]
+		public Microsoft.Xrm.Sdk.Money msdyn_totalchargeablecostrollup_Base
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("msdyn_totalchargeablecostrollup_base");
+			}
+		}
+		
+		/// <summary>
+		/// Last Updated time of rollup field Total Chargeable Cost.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_totalchargeablecostrollup_date")]
+		public System.Nullable<System.DateTime> msdyn_TotalChargeableCostRollup_Date
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("msdyn_totalchargeablecostrollup_date");
+			}
+		}
+		
+		/// <summary>
+		/// State of rollup field Total Chargeable Cost.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_totalchargeablecostrollup_state")]
+		public System.Nullable<int> msdyn_TotalChargeableCostRollup_State
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("msdyn_totalchargeablecostrollup_state");
+			}
+		}
+		
+		/// <summary>
+		/// Total estimated cost that will not be charged to the customer.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_totalnonchargeablecostrollup")]
+		public Microsoft.Xrm.Sdk.Money msdyn_TotalNonchargeableCostRollup
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("msdyn_totalnonchargeablecostrollup");
+			}
+		}
+		
+		/// <summary>
+		/// Value of the Total Non-chargeable Cost in base currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_totalnonchargeablecostrollup_base")]
+		public Microsoft.Xrm.Sdk.Money msdyn_totalnonchargeablecostrollup_Base
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("msdyn_totalnonchargeablecostrollup_base");
+			}
+		}
+		
+		/// <summary>
+		/// Last Updated time of rollup field Total Non-chargeable Cost.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_totalnonchargeablecostrollup_date")]
+		public System.Nullable<System.DateTime> msdyn_TotalNonchargeableCostRollup_Date
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("msdyn_totalnonchargeablecostrollup_date");
+			}
+		}
+		
+		/// <summary>
+		/// State of rollup field Total Non-chargeable Cost.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_totalnonchargeablecostrollup_state")]
+		public System.Nullable<int> msdyn_TotalNonchargeableCostRollup_State
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("msdyn_totalnonchargeablecostrollup_state");
 			}
 		}
 		
@@ -928,7 +1188,20 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the related opportunity so that the data for the order and opportunity are linked for reporting and analytics.
+		/// Shows the duration in minutes for which the order was on hold.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("onholdtime")]
+		public System.Nullable<int> OnHoldTime
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("onholdtime");
+			}
+		}
+		
+		/// <summary>
+		/// opportunity_sales_orders
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opportunityid")]
 		public Microsoft.Xrm.Sdk.EntityReference OpportunityId
@@ -988,7 +1261,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
+		/// owner_salesorders
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
@@ -1008,7 +1281,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows the business unit that the record owner belongs to.
+		/// business_unit_orders
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
@@ -1018,17 +1291,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team who owns the order.
+		/// team_orders
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
@@ -1038,17 +1304,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningTeam");
-				this.SetAttributeValue("owningteam", value);
-				this.OnPropertyChanged("OwningTeam");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who owns the order.
+		/// system_user_orders
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningUser
@@ -1058,31 +1317,24 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
-			}
 		}
 		
 		/// <summary>
 		/// Select the payment terms to indicate when the customer needs to pay the total amount.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("paymenttermscode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue PaymentTermsCode
+		public virtual SalesOrder_PaymentTermsCode? PaymentTermsCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("paymenttermscode");
+				return ((SalesOrder_PaymentTermsCode?)(EntityOptionSetEnum.GetEnum(this, "paymenttermscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("PaymentTermsCode");
-				this.SetAttributeValue("paymenttermscode", value);
+				this.SetAttributeValue("paymenttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("PaymentTermsCode");
 			}
 		}
@@ -1111,18 +1363,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the type of pricing error, such as a missing or invalid product, or missing quantity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pricingerrorcode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue PricingErrorCode
+		public virtual Qooi_PricingErrorCode? PricingErrorCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("pricingerrorcode");
+				return ((Qooi_PricingErrorCode?)(EntityOptionSetEnum.GetEnum(this, "pricingerrorcode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("PricingErrorCode");
-				this.SetAttributeValue("pricingerrorcode", value);
+				this.SetAttributeValue("pricingerrorcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("PricingErrorCode");
 			}
 		}
@@ -1131,18 +1383,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the priority so that preferred customers or critical issues are handled quickly.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue PriorityCode
+		public virtual SalesOrder_PriorityCode? PriorityCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("prioritycode");
+				return ((SalesOrder_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("PriorityCode");
-				this.SetAttributeValue("prioritycode", value);
+				this.SetAttributeValue("prioritycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("PriorityCode");
 			}
 		}
@@ -1168,7 +1420,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the related quote so that order data and quote data are linked for reporting and analytics.
+		/// quote_orders
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("quoteid")]
 		public Microsoft.Xrm.Sdk.EntityReference QuoteId
@@ -1254,18 +1506,18 @@ namespace Xyz.Xrm.Entities
 		/// Select a shipping method for deliveries sent to this address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("shippingmethodcode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ShippingMethodCode
+		public virtual SalesOrder_ShippingMethodCode? ShippingMethodCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("shippingmethodcode");
+				return ((SalesOrder_ShippingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "shippingmethodcode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("ShippingMethodCode");
-				this.SetAttributeValue("shippingmethodcode", value);
+				this.SetAttributeValue("shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("ShippingMethodCode");
 			}
 		}
@@ -1387,18 +1639,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the freight terms to make sure shipping orders are processed correctly.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("shipto_freighttermscode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ShipTo_FreightTermsCode
+		public virtual SalesOrder_ShipTo_FreightTermsCode? ShipTo_FreightTermsCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("shipto_freighttermscode");
+				return ((SalesOrder_ShipTo_FreightTermsCode?)(EntityOptionSetEnum.GetEnum(this, "shipto_freighttermscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("ShipTo_FreightTermsCode");
-				this.SetAttributeValue("shipto_freighttermscode", value);
+				this.SetAttributeValue("shipto_freighttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("ShipTo_FreightTermsCode");
 			}
 		}
@@ -1464,7 +1716,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Type a name for the customer's shipping address, such as "Headquarters" or "Field office", to identify the address.
+		/// Type a name for the customer's shipping address, such as "Headquarters" or "Field office",  to identify the address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("shipto_name")]
 		public string ShipTo_Name
@@ -1544,7 +1796,60 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows the ID of the stage.
+		/// Skip Price Calculation
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("skippricecalculation")]
+		public virtual qooi_skippricecalculation? SkipPriceCalculation
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((qooi_skippricecalculation?)(EntityOptionSetEnum.GetEnum(this, "skippricecalculation")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SkipPriceCalculation");
+				this.SetAttributeValue("skippricecalculation", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("SkipPriceCalculation");
+			}
+		}
+		
+		/// <summary>
+		/// manualsla_salesorder
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		public Microsoft.Xrm.Sdk.EntityReference SLAId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slaid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SLAId");
+				this.SetAttributeValue("slaid", value);
+				this.OnPropertyChanged("SLAId");
+			}
+		}
+		
+		/// <summary>
+		/// sla_salesorder
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slainvokedid");
+			}
+		}
+		
+		/// <summary>
+		/// processstage_salesorders
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
@@ -1602,18 +1907,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the order's status.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue StatusCode
+		public virtual SalesOrder_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statuscode");
+				return ((SalesOrder_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("StatusCode");
-				this.SetAttributeValue("statuscode", value);
+				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("StatusCode");
 			}
 		}
@@ -1897,7 +2202,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the local currency for the record to make sure budgets are reported in the correct currency.
+		/// transactioncurrency_salesorder
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
@@ -1990,6 +2295,46 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// 1:N bpf_salesorder_OpportunitySalesProcess
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("bpf_salesorder_OpportunitySalesProcess")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.OpportunitySalesProcess> bpf_salesorder_OpportunitySalesProcess
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.OpportunitySalesProcess>("bpf_salesorder_OpportunitySalesProcess", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("bpf_salesorder_OpportunitySalesProcess");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.OpportunitySalesProcess>("bpf_salesorder_OpportunitySalesProcess", null, value);
+				this.OnPropertyChanged("bpf_salesorder_OpportunitySalesProcess");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_opportunitysalesprocess_salesorderid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_opportunitysalesprocess_salesorderid")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.OpportunitySalesProcess> lk_opportunitysalesprocess_salesorderid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.OpportunitySalesProcess>("lk_opportunitysalesprocess_salesorderid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_opportunitysalesprocess_salesorderid");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.OpportunitySalesProcess>("lk_opportunitysalesprocess_salesorderid", null, value);
+				this.OnPropertyChanged("lk_opportunitysalesprocess_salesorderid");
+			}
+		}
+		
+		/// <summary>
 		/// 1:N order_details
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("order_details")]
@@ -2006,26 +2351,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("order_details");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.SalesOrderDetail>("order_details", null, value);
 				this.OnPropertyChanged("order_details");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N order_invoices
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("order_invoices")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Invoice> order_invoices
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Invoice>("order_invoices", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("order_invoices");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Invoice>("order_invoices", null, value);
-				this.OnPropertyChanged("order_invoices");
 			}
 		}
 		
@@ -2130,66 +2455,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N SalesOrder_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> SalesOrder_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("SalesOrder_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("SalesOrder_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("SalesOrder_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("SalesOrder_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N salesorder_connections1
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("salesorder_connections1")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> salesorder_connections1
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("salesorder_connections1", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("salesorder_connections1");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("salesorder_connections1", null, value);
-				this.OnPropertyChanged("salesorder_connections1");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N salesorder_connections2
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("salesorder_connections2")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> salesorder_connections2
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("salesorder_connections2", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("salesorder_connections2");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("salesorder_connections2", null, value);
-				this.OnPropertyChanged("salesorder_connections2");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N SalesOrder_Emails
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_Emails")]
@@ -2206,66 +2471,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("SalesOrder_Emails");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Email>("SalesOrder_Emails", null, value);
 				this.OnPropertyChanged("SalesOrder_Emails");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N SalesOrder_Faxes
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_Faxes")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Fax> SalesOrder_Faxes
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Fax>("SalesOrder_Faxes", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("SalesOrder_Faxes");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Fax>("SalesOrder_Faxes", null, value);
-				this.OnPropertyChanged("SalesOrder_Faxes");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N SalesOrder_Letters
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_Letters")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Letter> SalesOrder_Letters
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Letter>("SalesOrder_Letters", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("SalesOrder_Letters");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Letter>("SalesOrder_Letters", null, value);
-				this.OnPropertyChanged("SalesOrder_Letters");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N SalesOrder_MailboxTrackingFolder
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_MailboxTrackingFolder")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.MailboxTrackingFolder> SalesOrder_MailboxTrackingFolder
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.MailboxTrackingFolder>("SalesOrder_MailboxTrackingFolder", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("SalesOrder_MailboxTrackingFolder");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.MailboxTrackingFolder>("SalesOrder_MailboxTrackingFolder", null, value);
-				this.OnPropertyChanged("SalesOrder_MailboxTrackingFolder");
 			}
 		}
 		
@@ -2310,26 +2515,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N salesorder_principalobjectattributeaccess
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("salesorder_principalobjectattributeaccess")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess> salesorder_principalobjectattributeaccess
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("salesorder_principalobjectattributeaccess", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("salesorder_principalobjectattributeaccess");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("salesorder_principalobjectattributeaccess", null, value);
-				this.OnPropertyChanged("salesorder_principalobjectattributeaccess");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N SalesOrder_ProcessSessions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_ProcessSessions")]
@@ -2350,66 +2535,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N SalesOrder_RecurringAppointmentMasters
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_RecurringAppointmentMasters")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RecurringAppointmentMaster> SalesOrder_RecurringAppointmentMasters
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RecurringAppointmentMaster>("SalesOrder_RecurringAppointmentMasters", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("SalesOrder_RecurringAppointmentMasters");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RecurringAppointmentMaster>("SalesOrder_RecurringAppointmentMasters", null, value);
-				this.OnPropertyChanged("SalesOrder_RecurringAppointmentMasters");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N SalesOrder_ServiceAppointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_ServiceAppointments")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ServiceAppointment> SalesOrder_ServiceAppointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ServiceAppointment>("SalesOrder_ServiceAppointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("SalesOrder_ServiceAppointments");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ServiceAppointment>("SalesOrder_ServiceAppointments", null, value);
-				this.OnPropertyChanged("SalesOrder_ServiceAppointments");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N SalesOrder_SocialActivities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_SocialActivities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SocialActivity> SalesOrder_SocialActivities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SocialActivity>("SalesOrder_SocialActivities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("SalesOrder_SocialActivities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SocialActivity>("SalesOrder_SocialActivities", null, value);
-				this.OnPropertyChanged("SalesOrder_SocialActivities");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N SalesOrder_Tasks
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SalesOrder_Tasks")]
@@ -2426,26 +2551,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("SalesOrder_Tasks");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Task>("SalesOrder_Tasks", null, value);
 				this.OnPropertyChanged("SalesOrder_Tasks");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_salesorder
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_salesorder")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_salesorder
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_salesorder", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_salesorder");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_salesorder", null, value);
-				this.OnPropertyChanged("userentityinstancedata_salesorder");
 			}
 		}
 		
@@ -2480,34 +2585,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_orders", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_orders");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_orders", null, value);
-				this.OnPropertyChanged("business_unit_orders");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 campaign_orders
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("campaignid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("campaign_orders")]
-		public Xyz.Xrm.Entities.Campaign campaign_orders
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Campaign>("campaign_orders", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("campaign_orders");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Campaign>("campaign_orders", null, value);
-				this.OnPropertyChanged("campaign_orders");
 			}
 		}
 		
@@ -2565,13 +2642,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_salesorderbase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_salesorderbase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_salesorderbase_createdby", null, value);
-				this.OnPropertyChanged("lk_salesorderbase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -2586,12 +2656,47 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_salesorderbase_modifiedby", null);
 			}
+		}
+		
+		/// <summary>
+		/// N:1 msdyn_account_salesorder_Account
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_account")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_account_salesorder_Account")]
+		public Xyz.Xrm.Entities.Account msdyn_account_salesorder_Account
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Account>("msdyn_account_salesorder_Account", null);
+			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("lk_salesorderbase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_salesorderbase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_salesorderbase_modifiedby");
+				this.OnPropertyChanging("msdyn_account_salesorder_Account");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.Account>("msdyn_account_salesorder_Account", null, value);
+				this.OnPropertyChanged("msdyn_account_salesorder_Account");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 msdyn_accountmanager_salesorder
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_accountmanagerid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_accountmanager_salesorder")]
+		public Xyz.Xrm.Entities.SystemUser msdyn_accountmanager_salesorder
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("msdyn_accountmanager_salesorder", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_accountmanager_salesorder");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("msdyn_accountmanager_salesorder", null, value);
+				this.OnPropertyChanged("msdyn_accountmanager_salesorder");
 			}
 		}
 		
@@ -2701,27 +2806,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 quote_orders
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("quoteid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("quote_orders")]
-		public Xyz.Xrm.Entities.Quote quote_orders
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Quote>("quote_orders", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("quote_orders");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Quote>("quote_orders", null, value);
-				this.OnPropertyChanged("quote_orders");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 system_user_orders
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
@@ -2732,13 +2816,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("system_user_orders", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("system_user_orders");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("system_user_orders", null, value);
-				this.OnPropertyChanged("system_user_orders");
 			}
 		}
 		
@@ -2753,13 +2830,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.Team>("team_orders", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_orders");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Team>("team_orders", null, value);
-				this.OnPropertyChanged("team_orders");
 			}
 		}
 		
@@ -2824,111 +2894,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("freighttermscode")]
-		public virtual SalesOrder_FreightTermsCode? FreightTermsCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((SalesOrder_FreightTermsCode?)(EntityOptionSetEnum.GetEnum(this, "freighttermscode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				FreightTermsCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("paymenttermscode")]
-		public virtual SalesOrder_PaymentTermsCode? PaymentTermsCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((SalesOrder_PaymentTermsCode?)(EntityOptionSetEnum.GetEnum(this, "paymenttermscode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				PaymentTermsCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pricingerrorcode")]
-		public virtual Qooi_PricingErrorCode? PricingErrorCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Qooi_PricingErrorCode?)(EntityOptionSetEnum.GetEnum(this, "pricingerrorcode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				PricingErrorCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public virtual SalesOrder_PriorityCode? PriorityCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((SalesOrder_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				PriorityCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("shippingmethodcode")]
-		public virtual SalesOrder_ShippingMethodCode? ShippingMethodCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((SalesOrder_ShippingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "shippingmethodcode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				ShippingMethodCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("shipto_freighttermscode")]
-		public virtual SalesOrder_ShipTo_FreightTermsCode? ShipTo_FreightTermsCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((SalesOrder_ShipTo_FreightTermsCode?)(EntityOptionSetEnum.GetEnum(this, "shipto_freighttermscode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				ShipTo_FreightTermsCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual SalesOrder_StatusCode? StatusCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((SalesOrder_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				StatusCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

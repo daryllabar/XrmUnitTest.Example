@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,19 +16,21 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("role")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class Role : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string BusinessUnitId = "businessunitid";
+			public const string CanBeDeleted = "canbedeleted";
 			public const string ComponentState = "componentstate";
 			public const string CreatedBy = "createdby";
 			public const string CreatedOn = "createdon";
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
 			public const string ImportSequenceNumber = "importsequencenumber";
 			public const string IsCustomizable = "iscustomizable";
+			public const string IsInherited = "isinherited";
 			public const string IsManaged = "ismanaged";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedOn = "modifiedon";
@@ -53,7 +56,6 @@ namespace Xyz.Xrm.Entities
 			public const string Referencingrole_parent_role = "role_parent_role";
 			public const string Referencingrole_parent_root_role = "role_parent_root_role";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -66,7 +68,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "role";
 		
-		public const int EntityTypeCode = 1036;
+		public const string EntitySchemaName = "Role";
+		
+		public const string PrimaryIdAttribute = "roleid";
+		
+		public const string PrimaryNameAttribute = "name";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -111,15 +117,35 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// For internal use only.
+		/// Tells whether the role can be deleted.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ComponentState
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbedeleted")]
+		public Microsoft.Xrm.Sdk.BooleanManagedProperty CanBeDeleted
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("componentstate");
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.BooleanManagedProperty>("canbedeleted");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CanBeDeleted");
+				this.SetAttributeValue("canbedeleted", value);
+				this.OnPropertyChanged("CanBeDeleted");
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
+		public virtual ComponentState? ComponentState
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
 			}
 		}
 		
@@ -134,13 +160,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
@@ -153,13 +172,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -224,6 +236,26 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Role is inherited by users from team membership, if role associated with team.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isinherited")]
+		public virtual IsInherited? IsInherited
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((IsInherited?)(EntityOptionSetEnum.GetEnum(this, "isinherited")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IsInherited");
+				this.SetAttributeValue("isinherited", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("IsInherited");
+			}
+		}
+		
+		/// <summary>
 		/// Indicates whether the solution component is part of a managed solution.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismanaged")]
@@ -247,13 +279,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
@@ -266,13 +291,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -504,26 +522,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Role_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Role_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> Role_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Role_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Role_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Role_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("Role_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N role_parent_role
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("role_parent_role", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
@@ -560,26 +558,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Referencedrole_parent_root_role");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Role>("role_parent_root_role", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 				this.OnPropertyChanged("Referencedrole_parent_root_role");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_role
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_role")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_role
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_role", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_role");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_role", null, value);
-				this.OnPropertyChanged("userentityinstancedata_role");
 			}
 		}
 		
@@ -718,13 +696,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_rolebase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_rolebase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_rolebase_createdby", null, value);
-				this.OnPropertyChanged("lk_rolebase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -738,13 +709,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_rolebase_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_rolebase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_rolebase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_rolebase_modifiedby");
 			}
 		}
 		
@@ -830,16 +794,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public virtual ComponentState? ComponentStateEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
-			}
 		}
 	}
 }

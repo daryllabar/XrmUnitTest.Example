@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,16 +16,18 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("activitymimeattachment")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class ActivityMimeAttachment : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string ActivityId = "activityid";
 			public const string ActivityMimeAttachmentId = "activitymimeattachmentid";
 			public const string Id = "activitymimeattachmentid";
 			public const string ActivityMimeAttachmentIdUnique = "activitymimeattachmentidunique";
+			public const string ActivitySubject = "activitysubject";
+			public const string AnonymousLink = "anonymouslink";
 			public const string AttachmentContentId = "attachmentcontentid";
 			public const string AttachmentId = "attachmentid";
 			public const string AttachmentNumber = "attachmentnumber";
@@ -32,6 +35,7 @@ namespace Xyz.Xrm.Entities
 			public const string ComponentState = "componentstate";
 			public const string FileName = "filename";
 			public const string FileSize = "filesize";
+			public const string IsFollowed = "isfollowed";
 			public const string IsManaged = "ismanaged";
 			public const string MimeType = "mimetype";
 			public const string ObjectId = "objectid";
@@ -46,9 +50,7 @@ namespace Xyz.Xrm.Entities
 			public const string activity_pointer_activity_mime_attachment = "activity_pointer_activity_mime_attachment";
 			public const string appointment_activity_mime_attachment = "appointment_activity_mime_attachment";
 			public const string email_activity_mime_attachment = "email_activity_mime_attachment";
-			public const string template_activity_mime_attachments = "template_activity_mime_attachments";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -61,7 +63,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "activitymimeattachment";
 		
-		public const int EntityTypeCode = 1001;
+		public const string EntitySchemaName = "ActivityMimeAttachment";
+		
+		public const string PrimaryIdAttribute = "activitymimeattachmentid";
+		
+		public const string PrimaryNameAttribute = "filename";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -170,6 +176,32 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Descriptive subject for the activity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activitysubject")]
+		public string ActivitySubject
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("activitysubject");
+			}
+		}
+		
+		/// <summary>
+		/// anonymous link
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("anonymouslink")]
+		public string AnonymousLink
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("anonymouslink");
+			}
+		}
+		
+		/// <summary>
 		/// For internal use only
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("attachmentcontentid")]
@@ -253,12 +285,12 @@ namespace Xyz.Xrm.Entities
 		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ComponentState
+		public virtual ComponentState? ComponentState
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("componentstate");
+				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
 			}
 		}
 		
@@ -292,6 +324,19 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("filesize");
+			}
+		}
+		
+		/// <summary>
+		/// Indicates if this attachment is followed.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isfollowed")]
+		public System.Nullable<bool> IsFollowed
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("isfollowed");
 			}
 		}
 		
@@ -405,13 +450,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
@@ -424,13 +462,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
 			}
 		}
 		
@@ -501,46 +532,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N ActivityMimeAttachment_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ActivityMimeAttachment_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> ActivityMimeAttachment_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("ActivityMimeAttachment_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ActivityMimeAttachment_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("ActivityMimeAttachment_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("ActivityMimeAttachment_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_activitymimeattachment
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_activitymimeattachment")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_activitymimeattachment
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_activitymimeattachment", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_activitymimeattachment");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_activitymimeattachment", null, value);
-				this.OnPropertyChanged("userentityinstancedata_activitymimeattachment");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 activity_pointer_activity_mime_attachment
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
@@ -604,27 +595,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 template_activity_mime_attachments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("template_activity_mime_attachments")]
-		public Xyz.Xrm.Entities.Template template_activity_mime_attachments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Template>("template_activity_mime_attachments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("template_activity_mime_attachments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Template>("template_activity_mime_attachments", null, value);
-				this.OnPropertyChanged("template_activity_mime_attachments");
-			}
-		}
-		
-		/// <summary>
 		/// Constructor for populating via LINQ queries given a LINQ anonymous type
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
@@ -664,16 +634,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public virtual ComponentState? ComponentStateEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
-			}
 		}
 	}
 }

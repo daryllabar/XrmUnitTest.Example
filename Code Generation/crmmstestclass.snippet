@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>CrmMsTestClass</Title>
+      <Shortcut>crmmstestclass</Shortcut>
+      <Description>Code snippet for an MS Test Class</Description>
+      <Author>Daryl LaBar</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>namespace</ID>
+          <ToolTip>Namespace</ToolTip>
+          <Default>Plugin</Default>
+        </Literal>
+        <Literal>
+          <ID>classname</ID>
+          <ToolTip>Class name</ToolTip>
+          <Function>ClassName()</Function>
+          <Default>TestClass</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[	[TestClass]
+    public class $classname$Tests
+    {
+    	$selected$$end$
+    }]]>
+      </Code>
+      <Imports>
+        <Import><Namespace>System.Linq</Namespace></Import>
+        <Import><Namespace>DLaB.Xrm.Test</Namespace></Import>
+        <Import><Namespace>Xyz.Xrm.Entities</Namespace></Import>
+        <Import><Namespace>Xyz.Xrm.Test</Namespace></Import>
+        <Import><Namespace>Xyz.Xrm.Test.Assumptions</Namespace></Import>
+        <Import><Namespace>Xyz.Xrm.Test.Builders</Namespace></Import>
+        <Import><Namespace>Microsoft.VisualStudio.TestTools.UnitTesting</Namespace></Import>
+        <Import><Namespace>Microsoft.Xrm.Sdk</Namespace></Import>
+      </Imports>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

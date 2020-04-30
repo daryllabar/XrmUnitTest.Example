@@ -5,13 +5,14 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum TaskState
 	{
 		
@@ -30,11 +31,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("task")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class Task : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string ActivityAdditionalParams = "activityadditionalparams";
 			public const string ActivityId = "activityid";
@@ -54,9 +55,11 @@ namespace Xyz.Xrm.Entities
 			public const string IsBilled = "isbilled";
 			public const string IsRegularActivity = "isregularactivity";
 			public const string IsWorkflowCreated = "isworkflowcreated";
+			public const string LastOnHoldTime = "lastonholdtime";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
+			public const string OnHoldTime = "onholdtime";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
 			public const string OwnerId = "ownerid";
 			public const string OwningBusinessUnit = "owningbusinessunit";
@@ -70,6 +73,9 @@ namespace Xyz.Xrm.Entities
 			public const string ScheduledEnd = "scheduledend";
 			public const string ScheduledStart = "scheduledstart";
 			public const string ServiceId = "serviceid";
+			public const string SLAId = "slaid";
+			public const string SLAInvokedId = "slainvokedid";
+			public const string SortDate = "sortdate";
 			public const string StageId = "stageid";
 			public const string StateCode = "statecode";
 			public const string StatusCode = "statuscode";
@@ -84,32 +90,22 @@ namespace Xyz.Xrm.Entities
 			public const string Account_Tasks = "Account_Tasks";
 			public const string activity_pointer_task = "activity_pointer_task";
 			public const string business_unit_task_activities = "business_unit_task_activities";
-			public const string Campaign_Tasks = "Campaign_Tasks";
-			public const string CampaignActivity_Tasks = "CampaignActivity_Tasks";
 			public const string Contact_Tasks = "Contact_Tasks";
-			public const string Contract_Tasks = "Contract_Tasks";
-			public const string entitlement_Tasks = "entitlement_Tasks";
-			public const string entitlementtemplate_Tasks = "entitlementtemplate_Tasks";
 			public const string Incident_Tasks = "Incident_Tasks";
-			public const string Invoice_Tasks = "Invoice_Tasks";
-			public const string KnowledgeArticle_Tasks = "KnowledgeArticle_Tasks";
-			public const string KnowledgeBaseRecord_Tasks = "KnowledgeBaseRecord_Tasks";
 			public const string Lead_Tasks = "Lead_Tasks";
 			public const string lk_task_createdby = "lk_task_createdby";
 			public const string lk_task_createdonbehalfby = "lk_task_createdonbehalfby";
 			public const string lk_task_modifiedby = "lk_task_modifiedby";
 			public const string lk_task_modifiedonbehalfby = "lk_task_modifiedonbehalfby";
-			public const string msdyn_postalbum_Tasks = "msdyn_postalbum_Tasks";
+			public const string msdyn_processnotes_Tasks = "msdyn_processnotes_Tasks";
 			public const string Opportunity_Tasks = "Opportunity_Tasks";
 			public const string processstage_tasks = "processstage_tasks";
-			public const string Quote_Tasks = "Quote_Tasks";
 			public const string SalesOrder_Tasks = "SalesOrder_Tasks";
-			public const string service_tasks = "service_tasks";
+			public const string site_Tasks = "site_Tasks";
 			public const string team_task = "team_task";
 			public const string TransactionCurrency_Task = "TransactionCurrency_Task";
 			public const string user_task = "user_task";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -122,7 +118,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "task";
 		
-		public const int EntityTypeCode = 4212;
+		public const string EntitySchemaName = "Task";
+		
+		public const string PrimaryIdAttribute = "activityid";
+		
+		public const string PrimaryNameAttribute = "subject";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -313,17 +313,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -332,13 +325,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -489,6 +475,26 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Contains the date and time stamp of the last on hold time.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastonholdtime")]
+		public System.Nullable<System.DateTime> LastOnHoldTime
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("lastonholdtime");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("LastOnHoldTime");
+				this.SetAttributeValue("lastonholdtime", value);
+				this.OnPropertyChanged("LastOnHoldTime");
+			}
+		}
+		
+		/// <summary>
 		/// Shows who last updated the record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
@@ -499,17 +505,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -518,13 +517,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -545,6 +537,19 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ModifiedOnBehalfBy");
 				this.SetAttributeValue("modifiedonbehalfby", value);
 				this.OnPropertyChanged("ModifiedOnBehalfBy");
+			}
+		}
+		
+		/// <summary>
+		/// Shows how long, in minutes, that the record was on hold.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("onholdtime")]
+		public System.Nullable<int> OnHoldTime
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("onholdtime");
 			}
 		}
 		
@@ -599,13 +604,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
@@ -619,13 +617,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningTeam");
-				this.SetAttributeValue("owningteam", value);
-				this.OnPropertyChanged("OwningTeam");
-			}
 		}
 		
 		/// <summary>
@@ -638,13 +629,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
 			}
 		}
 		
@@ -672,18 +656,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the priority so that preferred customers or critical issues are handled quickly.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue PriorityCode
+		public virtual Task_PriorityCode? PriorityCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("prioritycode");
+				return ((Task_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("PriorityCode");
-				this.SetAttributeValue("prioritycode", value);
+				this.SetAttributeValue("prioritycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("PriorityCode");
 			}
 		}
@@ -709,7 +693,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the record that the task relates to.
+		/// Unique identifier of the object with which the task is associated.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
 		public Microsoft.Xrm.Sdk.EntityReference RegardingObjectId
@@ -782,7 +766,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the service that is associated with this activity.
+		/// service_tasks
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("serviceid")]
 		public Microsoft.Xrm.Sdk.EntityReference ServiceId
@@ -798,6 +782,59 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ServiceId");
 				this.SetAttributeValue("serviceid", value);
 				this.OnPropertyChanged("ServiceId");
+			}
+		}
+		
+		/// <summary>
+		/// Choose the service level agreement (SLA) that you want to apply to the Task record.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		public Microsoft.Xrm.Sdk.EntityReference SLAId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slaid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SLAId");
+				this.SetAttributeValue("slaid", value);
+				this.OnPropertyChanged("SLAId");
+			}
+		}
+		
+		/// <summary>
+		/// Last SLA that was applied to this Task. This field is for internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slainvokedid");
+			}
+		}
+		
+		/// <summary>
+		/// Shows the date and time by which the activities are sorted.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sortdate")]
+		public System.Nullable<System.DateTime> SortDate
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("sortdate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SortDate");
+				this.SetAttributeValue("sortdate", value);
+				this.OnPropertyChanged("SortDate");
 			}
 		}
 		
@@ -860,18 +897,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the task's status.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue StatusCode
+		public virtual Task_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statuscode");
+				return ((Task_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("StatusCode");
-				this.SetAttributeValue("statuscode", value);
+				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("StatusCode");
 			}
 		}
@@ -1090,146 +1127,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Task_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Task_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> Task_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Task_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Task_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Task_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("Task_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N task_connections1
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("task_connections1")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> task_connections1
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("task_connections1", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("task_connections1");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("task_connections1", null, value);
-				this.OnPropertyChanged("task_connections1");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N task_connections2
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("task_connections2")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> task_connections2
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("task_connections2", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("task_connections2");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("task_connections2", null, value);
-				this.OnPropertyChanged("task_connections2");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Task_DuplicateBaseRecord
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Task_DuplicateBaseRecord")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRecord> Task_DuplicateBaseRecord
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Task_DuplicateBaseRecord", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Task_DuplicateBaseRecord");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Task_DuplicateBaseRecord", null, value);
-				this.OnPropertyChanged("Task_DuplicateBaseRecord");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Task_DuplicateMatchingRecord
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Task_DuplicateMatchingRecord")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRecord> Task_DuplicateMatchingRecord
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Task_DuplicateMatchingRecord", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Task_DuplicateMatchingRecord");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Task_DuplicateMatchingRecord", null, value);
-				this.OnPropertyChanged("Task_DuplicateMatchingRecord");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N task_PostFollows
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("task_PostFollows")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PostFollow> task_PostFollows
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("task_PostFollows", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("task_PostFollows");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("task_PostFollows", null, value);
-				this.OnPropertyChanged("task_PostFollows");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N task_principalobjectattributeaccess
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("task_principalobjectattributeaccess")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess> task_principalobjectattributeaccess
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("task_principalobjectattributeaccess", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("task_principalobjectattributeaccess");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("task_principalobjectattributeaccess", null, value);
-				this.OnPropertyChanged("task_principalobjectattributeaccess");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N Task_ProcessSessions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Task_ProcessSessions")]
@@ -1266,26 +1163,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Task_QueueItem");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.QueueItem>("Task_QueueItem", null, value);
 				this.OnPropertyChanged("Task_QueueItem");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_task
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_task")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_task
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_task", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_task");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_task", null, value);
-				this.OnPropertyChanged("userentityinstancedata_task");
 			}
 		}
 		
@@ -1343,55 +1220,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_task_activities", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_task_activities");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_task_activities", null, value);
-				this.OnPropertyChanged("business_unit_task_activities");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Campaign_Tasks
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Campaign_Tasks")]
-		public Xyz.Xrm.Entities.Campaign Campaign_Tasks
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Campaign>("Campaign_Tasks", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Campaign_Tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Campaign>("Campaign_Tasks", null, value);
-				this.OnPropertyChanged("Campaign_Tasks");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 CampaignActivity_Tasks
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("CampaignActivity_Tasks")]
-		public Xyz.Xrm.Entities.CampaignActivity CampaignActivity_Tasks
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.CampaignActivity>("CampaignActivity_Tasks", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CampaignActivity_Tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.CampaignActivity>("CampaignActivity_Tasks", null, value);
-				this.OnPropertyChanged("CampaignActivity_Tasks");
-			}
 		}
 		
 		/// <summary>
@@ -1416,69 +1244,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 Contract_Tasks
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contract_Tasks")]
-		public Xyz.Xrm.Entities.Contract Contract_Tasks
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Contract>("Contract_Tasks", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Contract_Tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Contract>("Contract_Tasks", null, value);
-				this.OnPropertyChanged("Contract_Tasks");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 entitlement_Tasks
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("entitlement_Tasks")]
-		public Xyz.Xrm.Entities.Entitlement entitlement_Tasks
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Entitlement>("entitlement_Tasks", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("entitlement_Tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Entitlement>("entitlement_Tasks", null, value);
-				this.OnPropertyChanged("entitlement_Tasks");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 entitlementtemplate_Tasks
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("entitlementtemplate_Tasks")]
-		public Xyz.Xrm.Entities.EntitlementTemplate entitlementtemplate_Tasks
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.EntitlementTemplate>("entitlementtemplate_Tasks", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("entitlementtemplate_Tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.EntitlementTemplate>("entitlementtemplate_Tasks", null, value);
-				this.OnPropertyChanged("entitlementtemplate_Tasks");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 Incident_Tasks
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
@@ -1496,69 +1261,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Incident_Tasks");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.Incident>("Incident_Tasks", null, value);
 				this.OnPropertyChanged("Incident_Tasks");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Invoice_Tasks
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Invoice_Tasks")]
-		public Xyz.Xrm.Entities.Invoice Invoice_Tasks
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Invoice>("Invoice_Tasks", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Invoice_Tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Invoice>("Invoice_Tasks", null, value);
-				this.OnPropertyChanged("Invoice_Tasks");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 KnowledgeArticle_Tasks
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeArticle_Tasks")]
-		public Xyz.Xrm.Entities.KnowledgeArticle KnowledgeArticle_Tasks
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.KnowledgeArticle>("KnowledgeArticle_Tasks", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("KnowledgeArticle_Tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.KnowledgeArticle>("KnowledgeArticle_Tasks", null, value);
-				this.OnPropertyChanged("KnowledgeArticle_Tasks");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 KnowledgeBaseRecord_Tasks
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Tasks")]
-		public Xyz.Xrm.Entities.KnowledgeBaseRecord KnowledgeBaseRecord_Tasks
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.KnowledgeBaseRecord>("KnowledgeBaseRecord_Tasks", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("KnowledgeBaseRecord_Tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.KnowledgeBaseRecord>("KnowledgeBaseRecord_Tasks", null, value);
-				this.OnPropertyChanged("KnowledgeBaseRecord_Tasks");
 			}
 		}
 		
@@ -1595,13 +1297,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_task_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_task_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_task_createdby", null, value);
-				this.OnPropertyChanged("lk_task_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -1637,13 +1332,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_task_modifiedby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_task_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_task_modifiedby", null, value);
-				this.OnPropertyChanged("lk_task_modifiedby");
-			}
 		}
 		
 		/// <summary>
@@ -1668,23 +1356,23 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 msdyn_postalbum_Tasks
+		/// N:1 msdyn_processnotes_Tasks
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_postalbum_Tasks")]
-		public Xyz.Xrm.Entities.msdyn_PostAlbum msdyn_postalbum_Tasks
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_processnotes_Tasks")]
+		public Xyz.Xrm.Entities.msdyn_processnotes msdyn_processnotes_Tasks
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.msdyn_PostAlbum>("msdyn_postalbum_Tasks", null);
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.msdyn_processnotes>("msdyn_processnotes_Tasks", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("msdyn_postalbum_Tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.msdyn_PostAlbum>("msdyn_postalbum_Tasks", null, value);
-				this.OnPropertyChanged("msdyn_postalbum_Tasks");
+				this.OnPropertyChanging("msdyn_processnotes_Tasks");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.msdyn_processnotes>("msdyn_processnotes_Tasks", null, value);
+				this.OnPropertyChanged("msdyn_processnotes_Tasks");
 			}
 		}
 		
@@ -1731,27 +1419,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 Quote_Tasks
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Quote_Tasks")]
-		public Xyz.Xrm.Entities.Quote Quote_Tasks
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Quote>("Quote_Tasks", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Quote_Tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Quote>("Quote_Tasks", null, value);
-				this.OnPropertyChanged("Quote_Tasks");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 SalesOrder_Tasks
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
@@ -1773,23 +1440,23 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 service_tasks
+		/// N:1 site_Tasks
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("serviceid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("service_tasks")]
-		public Xyz.Xrm.Entities.Service service_tasks
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_Tasks")]
+		public Xyz.Xrm.Entities.Site site_Tasks
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Service>("service_tasks", null);
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Site>("site_Tasks", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("service_tasks");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Service>("service_tasks", null, value);
-				this.OnPropertyChanged("service_tasks");
+				this.OnPropertyChanging("site_Tasks");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.Site>("site_Tasks", null, value);
+				this.OnPropertyChanged("site_Tasks");
 			}
 		}
 		
@@ -1804,13 +1471,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.Team>("team_task", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_task");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Team>("team_task", null, value);
-				this.OnPropertyChanged("team_task");
 			}
 		}
 		
@@ -1846,13 +1506,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("user_task", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("user_task");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("user_task", null, value);
-				this.OnPropertyChanged("user_task");
 			}
 		}
 		
@@ -1896,36 +1549,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public virtual Task_PriorityCode? PriorityCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Task_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				PriorityCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual Task_StatusCode? StatusCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Task_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				StatusCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

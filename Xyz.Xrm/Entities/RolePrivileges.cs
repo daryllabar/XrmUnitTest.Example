@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,12 +16,13 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("roleprivileges")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class RolePrivileges : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
+			public const string CanBeDeleted = "canbedeleted";
 			public const string ComponentState = "componentstate";
 			public const string IsManaged = "ismanaged";
 			public const string OverwriteTime = "overwritetime";
@@ -33,7 +35,6 @@ namespace Xyz.Xrm.Entities
 			public const string SolutionId = "solutionid";
 			public const string VersionNumber = "versionnumber";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -46,7 +47,9 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "roleprivileges";
 		
-		public const int EntityTypeCode = 12;
+		public const string EntitySchemaName = "RolePrivileges";
+		
+		public const string PrimaryIdAttribute = "roleprivilegeid";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -71,15 +74,35 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// For internal use only.
+		/// Tells whether the role privilege can be deleted.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ComponentState
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("canbedeleted")]
+		public Microsoft.Xrm.Sdk.BooleanManagedProperty CanBeDeleted
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("componentstate");
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.BooleanManagedProperty>("canbedeleted");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CanBeDeleted");
+				this.SetAttributeValue("canbedeleted", value);
+				this.OnPropertyChanged("CanBeDeleted");
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
+		public virtual ComponentState? ComponentState
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
 			}
 		}
 		
@@ -297,16 +320,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public virtual ComponentState? ComponentStateEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
-			}
 		}
 	}
 }

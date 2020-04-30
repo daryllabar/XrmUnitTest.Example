@@ -5,13 +5,14 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum AppointmentState
 	{
 		
@@ -33,11 +34,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("appointment")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class Appointment : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string ActivityAdditionalParams = "activityadditionalparams";
 			public const string ActivityId = "activityid";
@@ -59,14 +60,18 @@ namespace Xyz.Xrm.Entities
 			public const string InstanceTypeCode = "instancetypecode";
 			public const string IsAllDayEvent = "isalldayevent";
 			public const string IsBilled = "isbilled";
+			public const string IsDraft = "isdraft";
 			public const string IsMapiPrivate = "ismapiprivate";
 			public const string IsRegularActivity = "isregularactivity";
+			public const string IsUnsafe = "isunsafe";
 			public const string IsWorkflowCreated = "isworkflowcreated";
+			public const string LastOnHoldTime = "lastonholdtime";
 			public const string Location = "location";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedFieldsMask = "modifiedfieldsmask";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
+			public const string OnHoldTime = "onholdtime";
 			public const string OptionalAttendees = "optionalattendees";
 			public const string Organizer = "organizer";
 			public const string OriginalStartDate = "originalstartdate";
@@ -85,6 +90,9 @@ namespace Xyz.Xrm.Entities
 			public const string ScheduledStart = "scheduledstart";
 			public const string SeriesId = "seriesid";
 			public const string ServiceId = "serviceid";
+			public const string SLAId = "slaid";
+			public const string SLAInvokedId = "slainvokedid";
+			public const string SortDate = "sortdate";
 			public const string StageId = "stageid";
 			public const string StateCode = "statecode";
 			public const string StatusCode = "statuscode";
@@ -98,35 +106,23 @@ namespace Xyz.Xrm.Entities
 			public const string VersionNumber = "versionnumber";
 			public const string Account_Appointments = "Account_Appointments";
 			public const string activity_pointer_appointment = "activity_pointer_appointment";
-			public const string BulkOperation_Appointment = "BulkOperation_Appointment";
 			public const string business_unit_appointment_activities = "business_unit_appointment_activities";
-			public const string Campaign_Appointments = "Campaign_Appointments";
-			public const string CampaignActivity_Appointments = "CampaignActivity_Appointments";
 			public const string Contact_Appointments = "Contact_Appointments";
-			public const string Contract_Appointments = "Contract_Appointments";
-			public const string entitlement_Appointments = "entitlement_Appointments";
-			public const string entitlementtemplate_Appointments = "entitlementtemplate_Appointments";
 			public const string Incident_Appointments = "Incident_Appointments";
-			public const string Invoice_Appointments = "Invoice_Appointments";
-			public const string KnowledgeArticle_Appointments = "KnowledgeArticle_Appointments";
-			public const string KnowledgeBaseRecord_Appointments = "KnowledgeBaseRecord_Appointments";
 			public const string Lead_Appointments = "Lead_Appointments";
 			public const string lk_appointment_createdby = "lk_appointment_createdby";
 			public const string lk_appointment_createdonbehalfby = "lk_appointment_createdonbehalfby";
 			public const string lk_appointment_modifiedby = "lk_appointment_modifiedby";
 			public const string lk_appointment_modifiedonbehalfby = "lk_appointment_modifiedonbehalfby";
-			public const string msdyn_postalbum_Appointments = "msdyn_postalbum_Appointments";
+			public const string msdyn_processnotes_Appointments = "msdyn_processnotes_Appointments";
 			public const string Opportunity_Appointments = "Opportunity_Appointments";
 			public const string processstage_appointments = "processstage_appointments";
-			public const string Quote_Appointments = "Quote_Appointments";
-			public const string recurringappointmentmaster_appointment = "recurringappointmentmaster_appointment";
 			public const string SalesOrder_Appointments = "SalesOrder_Appointments";
-			public const string service_appointments = "service_appointments";
+			public const string site_Appointments = "site_Appointments";
 			public const string team_appointment = "team_appointment";
 			public const string TransactionCurrency_Appointment = "TransactionCurrency_Appointment";
 			public const string user_appointment = "user_appointment";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -139,7 +135,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "appointment";
 		
-		public const int EntityTypeCode = 4201;
+		public const string EntitySchemaName = "Appointment";
+		
+		public const string PrimaryIdAttribute = "activityid";
+		
+		public const string PrimaryNameAttribute = "subject";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -316,18 +316,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the error code to identify issues with the outlook item recipients or attachments, such as blocked attachments.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("attachmenterrors")]
-		public Microsoft.Xrm.Sdk.OptionSetValue AttachmentErrors
+		public virtual Appointment_AttachmentErrors? AttachmentErrors
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("attachmenterrors");
+				return ((Appointment_AttachmentErrors?)(EntityOptionSetEnum.GetEnum(this, "attachmenterrors")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("AttachmentErrors");
-				this.SetAttributeValue("attachmenterrors", value);
+				this.SetAttributeValue("attachmenterrors", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("AttachmentErrors");
 			}
 		}
@@ -363,17 +363,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -382,13 +375,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -446,7 +432,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows the ID of the appointment in Microsoft Office Outlook. The ID is used to synchronize the appointment between Microsoft Dynamics CRM and the correct Exchange account.
+		/// Shows the ID of the appointment in Microsoft Office Outlook. The ID is used to synchronize the appointment between Microsoft Dynamics 365 and the correct Exchange account.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("globalobjectid")]
 		public string GlobalObjectId
@@ -489,12 +475,12 @@ namespace Xyz.Xrm.Entities
 		/// Type of instance of a recurring series.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("instancetypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue InstanceTypeCode
+		public virtual Appointment_InstanceTypeCode? InstanceTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("instancetypecode");
+				return ((Appointment_InstanceTypeCode?)(EntityOptionSetEnum.GetEnum(this, "instancetypecode")));
 			}
 		}
 		
@@ -539,6 +525,26 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Information regarding whether the appointment is a draft.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdraft")]
+		public System.Nullable<bool> IsDraft
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("isdraft");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IsDraft");
+				this.SetAttributeValue("isdraft", value);
+				this.OnPropertyChanged("IsDraft");
+			}
+		}
+		
+		/// <summary>
 		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismapiprivate")]
@@ -572,6 +578,19 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isunsafe")]
+		public System.Nullable<int> IsUnsafe
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("isunsafe");
+			}
+		}
+		
+		/// <summary>
 		/// Information regarding whether the appointment was created from a workflow rule.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isworkflowcreated")]
@@ -588,6 +607,26 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("IsWorkflowCreated");
 				this.SetAttributeValue("isworkflowcreated", value);
 				this.OnPropertyChanged("IsWorkflowCreated");
+			}
+		}
+		
+		/// <summary>
+		/// Contains the date and time stamp of the last on hold time.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastonholdtime")]
+		public System.Nullable<System.DateTime> LastOnHoldTime
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("lastonholdtime");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("LastOnHoldTime");
+				this.SetAttributeValue("lastonholdtime", value);
+				this.OnPropertyChanged("LastOnHoldTime");
 			}
 		}
 		
@@ -622,13 +661,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
@@ -645,7 +677,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -654,13 +686,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -685,6 +710,19 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Shows how long, in minutes, that the record was on hold.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("onholdtime")]
+		public System.Nullable<int> OnHoldTime
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("onholdtime");
+			}
+		}
+		
+		/// <summary>
 		/// Enter the account, contact, lead, user, or other equipment resources that are not needed at the appointment, but can optionally attend.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("optionalattendees")]
@@ -697,7 +735,7 @@ namespace Xyz.Xrm.Entities
 				if (((collection != null) 
 							&& (collection.Entities != null)))
 				{
-					return System.Linq.Enumerable.Cast<Xyz.Xrm.Entities.ActivityParty>(collection.Entities);
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
 				}
 				else
 				{
@@ -733,7 +771,7 @@ namespace Xyz.Xrm.Entities
 				if (((collection != null) 
 							&& (collection.Entities != null)))
 				{
-					return System.Linq.Enumerable.Cast<Xyz.Xrm.Entities.ActivityParty>(collection.Entities);
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
 				}
 				else
 				{
@@ -840,13 +878,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
@@ -859,13 +890,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningTeam");
-				this.SetAttributeValue("owningteam", value);
-				this.OnPropertyChanged("OwningTeam");
 			}
 		}
 		
@@ -880,31 +904,24 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
-			}
 		}
 		
 		/// <summary>
 		/// Select the priority so that preferred customers or critical issues are handled quickly.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue PriorityCode
+		public virtual Appointment_PriorityCode? PriorityCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("prioritycode");
+				return ((Appointment_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("PriorityCode");
-				this.SetAttributeValue("prioritycode", value);
+				this.SetAttributeValue("prioritycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("PriorityCode");
 			}
 		}
@@ -930,7 +947,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the record that the appointment relates to.
+		/// SalesOrder_Appointments
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
 		public Microsoft.Xrm.Sdk.EntityReference RegardingObjectId
@@ -962,7 +979,7 @@ namespace Xyz.Xrm.Entities
 				if (((collection != null) 
 							&& (collection.Entities != null)))
 				{
-					return System.Linq.Enumerable.Cast<Xyz.Xrm.Entities.ActivityParty>(collection.Entities);
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
 				}
 				else
 				{
@@ -1059,7 +1076,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier for an associated service.
+		/// service_appointments
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("serviceid")]
 		public Microsoft.Xrm.Sdk.EntityReference ServiceId
@@ -1075,6 +1092,59 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ServiceId");
 				this.SetAttributeValue("serviceid", value);
 				this.OnPropertyChanged("ServiceId");
+			}
+		}
+		
+		/// <summary>
+		/// Choose the service level agreement (SLA) that you want to apply to the appointment record.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		public Microsoft.Xrm.Sdk.EntityReference SLAId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slaid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SLAId");
+				this.SetAttributeValue("slaid", value);
+				this.OnPropertyChanged("SLAId");
+			}
+		}
+		
+		/// <summary>
+		/// Last SLA that was applied to this appointment. This field is for internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slainvokedid");
+			}
+		}
+		
+		/// <summary>
+		/// Shows the date and time by which the activities are sorted.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sortdate")]
+		public System.Nullable<System.DateTime> SortDate
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("sortdate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SortDate");
+				this.SetAttributeValue("sortdate", value);
+				this.OnPropertyChanged("SortDate");
 			}
 		}
 		
@@ -1137,18 +1207,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the appointment's status.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue StatusCode
+		public virtual Appointment_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statuscode");
+				return ((Appointment_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("StatusCode");
-				this.SetAttributeValue("statuscode", value);
+				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("StatusCode");
 			}
 		}
@@ -1387,166 +1457,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Appointment_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Appointment_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> Appointment_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Appointment_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Appointment_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Appointment_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("Appointment_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N appointment_campaignresponse
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("appointment_campaignresponse")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.CampaignResponse> appointment_campaignresponse
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.CampaignResponse>("appointment_campaignresponse", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("appointment_campaignresponse");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.CampaignResponse>("appointment_campaignresponse", null, value);
-				this.OnPropertyChanged("appointment_campaignresponse");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N appointment_connections1
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("appointment_connections1")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> appointment_connections1
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("appointment_connections1", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("appointment_connections1");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("appointment_connections1", null, value);
-				this.OnPropertyChanged("appointment_connections1");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N appointment_connections2
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("appointment_connections2")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> appointment_connections2
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("appointment_connections2", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("appointment_connections2");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("appointment_connections2", null, value);
-				this.OnPropertyChanged("appointment_connections2");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Appointment_DuplicateBaseRecord
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Appointment_DuplicateBaseRecord")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRecord> Appointment_DuplicateBaseRecord
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Appointment_DuplicateBaseRecord", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Appointment_DuplicateBaseRecord");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Appointment_DuplicateBaseRecord", null, value);
-				this.OnPropertyChanged("Appointment_DuplicateBaseRecord");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Appointment_DuplicateMatchingRecord
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Appointment_DuplicateMatchingRecord")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRecord> Appointment_DuplicateMatchingRecord
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Appointment_DuplicateMatchingRecord", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Appointment_DuplicateMatchingRecord");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Appointment_DuplicateMatchingRecord", null, value);
-				this.OnPropertyChanged("Appointment_DuplicateMatchingRecord");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N appointment_PostFollows
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("appointment_PostFollows")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PostFollow> appointment_PostFollows
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("appointment_PostFollows", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("appointment_PostFollows");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("appointment_PostFollows", null, value);
-				this.OnPropertyChanged("appointment_PostFollows");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N appointment_principalobjectattributeaccess
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("appointment_principalobjectattributeaccess")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess> appointment_principalobjectattributeaccess
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("appointment_principalobjectattributeaccess", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("appointment_principalobjectattributeaccess");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("appointment_principalobjectattributeaccess", null, value);
-				this.OnPropertyChanged("appointment_principalobjectattributeaccess");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N Appointment_ProcessSessions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Appointment_ProcessSessions")]
@@ -1583,26 +1493,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Appointment_QueueItem");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.QueueItem>("Appointment_QueueItem", null, value);
 				this.OnPropertyChanged("Appointment_QueueItem");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_appointment
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_appointment")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_appointment
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_appointment", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_appointment");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_appointment", null, value);
-				this.OnPropertyChanged("userentityinstancedata_appointment");
 			}
 		}
 		
@@ -1649,27 +1539,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 BulkOperation_Appointment
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BulkOperation_Appointment")]
-		public Xyz.Xrm.Entities.BulkOperation BulkOperation_Appointment
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.BulkOperation>("BulkOperation_Appointment", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("BulkOperation_Appointment");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BulkOperation>("BulkOperation_Appointment", null, value);
-				this.OnPropertyChanged("BulkOperation_Appointment");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 business_unit_appointment_activities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
@@ -1680,55 +1549,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_appointment_activities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_appointment_activities");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_appointment_activities", null, value);
-				this.OnPropertyChanged("business_unit_appointment_activities");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Campaign_Appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Campaign_Appointments")]
-		public Xyz.Xrm.Entities.Campaign Campaign_Appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Campaign>("Campaign_Appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Campaign_Appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Campaign>("Campaign_Appointments", null, value);
-				this.OnPropertyChanged("Campaign_Appointments");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 CampaignActivity_Appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("CampaignActivity_Appointments")]
-		public Xyz.Xrm.Entities.CampaignActivity CampaignActivity_Appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.CampaignActivity>("CampaignActivity_Appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CampaignActivity_Appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.CampaignActivity>("CampaignActivity_Appointments", null, value);
-				this.OnPropertyChanged("CampaignActivity_Appointments");
 			}
 		}
 		
@@ -1754,69 +1574,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 Contract_Appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contract_Appointments")]
-		public Xyz.Xrm.Entities.Contract Contract_Appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Contract>("Contract_Appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Contract_Appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Contract>("Contract_Appointments", null, value);
-				this.OnPropertyChanged("Contract_Appointments");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 entitlement_Appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("entitlement_Appointments")]
-		public Xyz.Xrm.Entities.Entitlement entitlement_Appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Entitlement>("entitlement_Appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("entitlement_Appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Entitlement>("entitlement_Appointments", null, value);
-				this.OnPropertyChanged("entitlement_Appointments");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 entitlementtemplate_Appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("entitlementtemplate_Appointments")]
-		public Xyz.Xrm.Entities.EntitlementTemplate entitlementtemplate_Appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.EntitlementTemplate>("entitlementtemplate_Appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("entitlementtemplate_Appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.EntitlementTemplate>("entitlementtemplate_Appointments", null, value);
-				this.OnPropertyChanged("entitlementtemplate_Appointments");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 Incident_Appointments
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
@@ -1834,69 +1591,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Incident_Appointments");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.Incident>("Incident_Appointments", null, value);
 				this.OnPropertyChanged("Incident_Appointments");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Invoice_Appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Invoice_Appointments")]
-		public Xyz.Xrm.Entities.Invoice Invoice_Appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Invoice>("Invoice_Appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Invoice_Appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Invoice>("Invoice_Appointments", null, value);
-				this.OnPropertyChanged("Invoice_Appointments");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 KnowledgeArticle_Appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeArticle_Appointments")]
-		public Xyz.Xrm.Entities.KnowledgeArticle KnowledgeArticle_Appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.KnowledgeArticle>("KnowledgeArticle_Appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("KnowledgeArticle_Appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.KnowledgeArticle>("KnowledgeArticle_Appointments", null, value);
-				this.OnPropertyChanged("KnowledgeArticle_Appointments");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 KnowledgeBaseRecord_Appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Appointments")]
-		public Xyz.Xrm.Entities.KnowledgeBaseRecord KnowledgeBaseRecord_Appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.KnowledgeBaseRecord>("KnowledgeBaseRecord_Appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("KnowledgeBaseRecord_Appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.KnowledgeBaseRecord>("KnowledgeBaseRecord_Appointments", null, value);
-				this.OnPropertyChanged("KnowledgeBaseRecord_Appointments");
 			}
 		}
 		
@@ -1933,13 +1627,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_appointment_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_appointment_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_appointment_createdby", null, value);
-				this.OnPropertyChanged("lk_appointment_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -1975,13 +1662,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_appointment_modifiedby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_appointment_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_appointment_modifiedby", null, value);
-				this.OnPropertyChanged("lk_appointment_modifiedby");
-			}
 		}
 		
 		/// <summary>
@@ -2006,23 +1686,23 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 msdyn_postalbum_Appointments
+		/// N:1 msdyn_processnotes_Appointments
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_postalbum_Appointments")]
-		public Xyz.Xrm.Entities.msdyn_PostAlbum msdyn_postalbum_Appointments
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_processnotes_Appointments")]
+		public Xyz.Xrm.Entities.msdyn_processnotes msdyn_processnotes_Appointments
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.msdyn_PostAlbum>("msdyn_postalbum_Appointments", null);
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.msdyn_processnotes>("msdyn_processnotes_Appointments", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("msdyn_postalbum_Appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.msdyn_PostAlbum>("msdyn_postalbum_Appointments", null, value);
-				this.OnPropertyChanged("msdyn_postalbum_Appointments");
+				this.OnPropertyChanging("msdyn_processnotes_Appointments");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.msdyn_processnotes>("msdyn_processnotes_Appointments", null, value);
+				this.OnPropertyChanged("msdyn_processnotes_Appointments");
 			}
 		}
 		
@@ -2069,41 +1749,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 Quote_Appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Quote_Appointments")]
-		public Xyz.Xrm.Entities.Quote Quote_Appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Quote>("Quote_Appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Quote_Appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Quote>("Quote_Appointments", null, value);
-				this.OnPropertyChanged("Quote_Appointments");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 recurringappointmentmaster_appointment
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("seriesid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("recurringappointmentmaster_appointment")]
-		public Xyz.Xrm.Entities.RecurringAppointmentMaster recurringappointmentmaster_appointment
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.RecurringAppointmentMaster>("recurringappointmentmaster_appointment", null);
-			}
-		}
-		
-		/// <summary>
 		/// N:1 SalesOrder_Appointments
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
@@ -2125,23 +1770,23 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 service_appointments
+		/// N:1 site_Appointments
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("serviceid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("service_appointments")]
-		public Xyz.Xrm.Entities.Service service_appointments
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_Appointments")]
+		public Xyz.Xrm.Entities.Site site_Appointments
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Service>("service_appointments", null);
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Site>("site_Appointments", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("service_appointments");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Service>("service_appointments", null, value);
-				this.OnPropertyChanged("service_appointments");
+				this.OnPropertyChanging("site_Appointments");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.Site>("site_Appointments", null, value);
+				this.OnPropertyChanged("site_Appointments");
 			}
 		}
 		
@@ -2156,13 +1801,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.Team>("team_appointment", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_appointment");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Team>("team_appointment", null, value);
-				this.OnPropertyChanged("team_appointment");
 			}
 		}
 		
@@ -2198,13 +1836,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("user_appointment", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("user_appointment");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("user_appointment", null, value);
-				this.OnPropertyChanged("user_appointment");
 			}
 		}
 		
@@ -2248,61 +1879,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("attachmenterrors")]
-		public virtual Appointment_AttachmentErrors? AttachmentErrorsEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Appointment_AttachmentErrors?)(EntityOptionSetEnum.GetEnum(this, "attachmenterrors")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				AttachmentErrors = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("instancetypecode")]
-		public virtual Appointment_InstanceTypeCode? InstanceTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Appointment_InstanceTypeCode?)(EntityOptionSetEnum.GetEnum(this, "instancetypecode")));
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public virtual Appointment_PriorityCode? PriorityCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Appointment_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				PriorityCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual Appointment_StatusCode? StatusCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Appointment_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				StatusCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

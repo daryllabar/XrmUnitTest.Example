@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("processtrigger")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class ProcessTrigger : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string ComponentState = "componentstate";
 			public const string ControlName = "controlname";
@@ -39,6 +40,7 @@ namespace Xyz.Xrm.Entities
 			public const string OwnerId = "ownerid";
 			public const string OwningBusinessUnit = "owningbusinessunit";
 			public const string OwningUser = "owninguser";
+			public const string PipelineStage = "pipelinestage";
 			public const string PrimaryEntityTypeCode = "primaryentitytypecode";
 			public const string ProcessId = "processid";
 			public const string ProcessTriggerId = "processtriggerid";
@@ -52,9 +54,7 @@ namespace Xyz.Xrm.Entities
 			public const string lk_processtriggerbase_modifiedby = "lk_processtriggerbase_modifiedby";
 			public const string lk_processtriggerbase_modifiedonbehalfby = "lk_processtriggerbase_modifiedonbehalfby";
 			public const string process_processtrigger = "process_processtrigger";
-			public const string processtrigger_systemform = "processtrigger_systemform";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -67,7 +67,9 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "processtrigger";
 		
-		public const int EntityTypeCode = 4712;
+		public const string EntitySchemaName = "ProcessTrigger";
+		
+		public const string PrimaryIdAttribute = "processtriggerid";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -95,12 +97,12 @@ namespace Xyz.Xrm.Entities
 		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ComponentState
+		public virtual ComponentState? ComponentState
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("componentstate");
+				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
 			}
 		}
 		
@@ -128,18 +130,18 @@ namespace Xyz.Xrm.Entities
 		/// Type of the control to which this trigger is bound
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("controltype")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ControlType
+		public virtual ProcessTrigger_ControlType? ControlType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("controltype");
+				return ((ProcessTrigger_ControlType?)(EntityOptionSetEnum.GetEnum(this, "controltype")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("ControlType");
-				this.SetAttributeValue("controltype", value);
+				this.SetAttributeValue("controltype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("ControlType");
 			}
 		}
@@ -155,17 +157,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -174,13 +169,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -308,17 +296,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -327,13 +308,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -394,13 +368,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
@@ -414,12 +381,25 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("owninguser");
 			}
+		}
+		
+		/// <summary>
+		/// Pipeline Stage to Execute Workflow Event Plugin.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pipelinestage")]
+		public virtual ProcessTrigger_PipelineStage? PipelineStage
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((ProcessTrigger_PipelineStage?)(EntityOptionSetEnum.GetEnum(this, "pipelinestage")));
+			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
+				this.OnPropertyChanging("PipelineStage");
+				this.SetAttributeValue("pipelinestage", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("PipelineStage");
 			}
 		}
 		
@@ -523,18 +503,18 @@ namespace Xyz.Xrm.Entities
 		/// Scope level for PBL rules.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scope")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Scope
+		public virtual ProcessTrigger_Scope? Scope
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("scope");
+				return ((ProcessTrigger_Scope?)(EntityOptionSetEnum.GetEnum(this, "scope")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("Scope");
-				this.SetAttributeValue("scope", value);
+				this.SetAttributeValue("scope", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("Scope");
 			}
 		}
@@ -577,13 +557,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_processtriggerbase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_processtriggerbase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_processtriggerbase_createdby", null, value);
-				this.OnPropertyChanged("lk_processtriggerbase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -618,13 +591,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_processtriggerbase_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_processtriggerbase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_processtriggerbase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_processtriggerbase_modifiedby");
 			}
 		}
 		
@@ -671,27 +637,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 processtrigger_systemform
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("formid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processtrigger_systemform")]
-		public Xyz.Xrm.Entities.SystemForm processtrigger_systemform
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemForm>("processtrigger_systemform", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processtrigger_systemform");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemForm>("processtrigger_systemform", null, value);
-				this.OnPropertyChanged("processtrigger_systemform");
-			}
-		}
-		
-		/// <summary>
 		/// Constructor for populating via LINQ queries given a LINQ anonymous type
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
@@ -731,46 +676,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public virtual ComponentState? ComponentStateEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("controltype")]
-		public virtual ProcessTrigger_ControlType? ControlTypeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ProcessTrigger_ControlType?)(EntityOptionSetEnum.GetEnum(this, "controltype")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				ControlType = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("scope")]
-		public virtual ProcessTrigger_Scope? ScopeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ProcessTrigger_Scope?)(EntityOptionSetEnum.GetEnum(this, "scope")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				Scope = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

@@ -1,29 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
-	<CodeSnippet Format="1.0.0">
-		<Header>
-			<Title>EntityBuilder</Title>
-			<Shortcut>entitybuilder</Shortcut>
-			<Description>Code snippet for building an EntityBuilder</Description>
-			<Author>Daryl LaBar</Author>
-			<SnippetTypes>
-				<SnippetType>Expansion</SnippetType>
-			</SnippetTypes>
-		</Header>
-		<Snippet>
-			<Declarations>
-				<Literal>
-					<ID>friendlyName</ID>
-					<ToolTip>Friendly Name</ToolTip>
-					<Default>Entity</Default>
-				</Literal>
-				<Literal>
-					<ID>entity</ID>
-					<ToolTip>Entity Type Name</ToolTip>
-					<Default>Entity</Default>
-				</Literal>
-			</Declarations>
-			<Code Language="csharp"><![CDATA[    public class $friendlyName$Builder : EntityBuilder<$entity$>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>EntityBuilder</Title>
+      <Shortcut>crmentitybuilder</Shortcut>
+      <Description>Code snippet for building an EntityBuilder</Description>
+      <Author>Daryl LaBar</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>friendlyName</ID>
+          <ToolTip>Friendly Name</ToolTip>
+          <Default>Entity</Default>
+        </Literal>
+        <Literal>
+          <ID>entity</ID>
+          <ToolTip>Entity Type Name</ToolTip>
+          <Default>Entity</Default>
+        </Literal>
+      </Declarations>
+      <Imports>
+        <Import>
+          <Namespace>DLaB.Xrm.Test</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Xyz.Xrm.Entities</Namespace>
+        </Import>
+      </Imports>
+      <Code Language="CSharp">
+        <![CDATA[    public class $friendlyName$Builder : EntityBuilder<$entity$, $friendlyName$Builder>
     {
         public $entity$ $friendlyName$ { get; set; }
 
@@ -52,7 +61,7 @@
             return $friendlyName$;
         }
     }]]>
-			</Code>
-		</Snippet>
-	</CodeSnippet>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
 </CodeSnippets>

@@ -5,179 +5,295 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum AsyncOperation_OperationType
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Activity Propagation", 5)]
 		ActivityPropagation = 6,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("ALM Anomaly Detection Operation", 59)]
+		ALMAnomalyDetectionOperation = 73,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("App Module Metadata Operation", 58)]
+		AppModuleMetadataOperation = 72,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Audit Partition Creation", 35)]
 		AuditPartitionCreation = 41,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Bulk Delete", 12)]
 		BulkDelete = 13,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Bulk Delete File Attachment", 67)]
+		BulkDeleteFileAttachment = 94,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Bulk Delete Subprocess", 22)]
 		BulkDeleteSubprocess = 23,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Bulk Duplicate Detection", 7)]
 		BulkDuplicateDetection = 8,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Bulk Email", 1)]
 		BulkEmail = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Calculate Organization Maximum Storage Size", 21)]
 		CalculateOrganizationMaximumStorageSize = 22,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Calculate Organization Storage Size", 17)]
 		CalculateOrganizationStorageSize = 18,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Calculate Rollup Field", 49)]
 		CalculateRollupField = 57,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("CallbackRegistration Expander Operation", 62)]
+		CallbackRegistrationExpanderOperation = 79,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("CascadeAssign", 63)]
+		CascadeAssign = 90,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("CascadeDelete", 64)]
+		CascadeDelete = 91,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Check For Language Pack Updates", 36)]
 		CheckForLanguagePackUpdates = 42,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Cleanup inactive workflow assemblies", 31)]
 		Cleanupinactiveworkflowassemblies = 32,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Cleanup Solution Components", 57)]
+		CleanupSolutionComponents = 71,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Collection Organization Size Statistics", 19)]
 		CollectionOrganizationSizeStatistics = 20,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Collect Organization Database Statistics", 18)]
 		CollectOrganizationDatabaseStatistics = 19,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Collect Organization Statistics", 15)]
 		CollectOrganizationStatistics = 16,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Convert Date And Time Behavior", 52)]
 		ConvertDateAndTimeBehavior = 62,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Database log backup", 25)]
 		Databaselogbackup = 26,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Database Tuning", 20)]
 		DatabaseTuning = 21,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("DBCC SHRINKDATABASE maintenance job", 27)]
 		DBCCSHRINKDATABASEmaintenancejob = 28,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("DBCC SHRINKFILE maintenance job", 28)]
 		DBCCSHRINKFILEmaintenancejob = 29,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Deletion Service", 13)]
 		DeletionService = 14,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Duplicate Detection Rule Publish", 6)]
 		DuplicateDetectionRulePublish = 7,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Encryption Health Check", 45)]
 		EncryptionHealthCheck = 53,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("EntityKey Index Creation", 53)]
 		EntityKeyIndexCreation = 63,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Event Expander Operation", 65)]
+		EventExpanderOperation = 92,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Execute Async Request", 46)]
 		ExecuteAsyncRequest = 54,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Flow Notification", 60)]
+		FlowNotification = 75,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Goal Roll Up", 34)]
 		GoalRollUp = 40,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Import", 4)]
 		Import = 5,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Import File Parse", 2)]
 		ImportFileParse = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Import Sample Data", 33)]
 		ImportSampleData = 38,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Import Solution Metadata", 66)]
+		ImportSolutionMetadata = 93,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Import Subprocess", 16)]
 		ImportSubprocess = 17,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Import Translation", 51)]
 		ImportTranslation = 59,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Incoming Email Processing", 43)]
 		IncomingEmailProcessing = 51,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Index Management", 14)]
 		IndexManagement = 15,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Mailbox Test Access", 44)]
 		MailboxTestAccess = 52,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Mass Calculate Rollup Field", 50)]
 		MassCalculateRollupField = 58,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Matchcode Update", 11)]
 		MatchcodeUpdate = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Organization Full Text Catalog Index", 24)]
 		OrganizationFullTextCatalogIndex = 25,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Outgoing Activity", 42)]
 		OutgoingActivity = 50,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Post to Yammer", 47)]
 		PosttoYammer = 49,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Provision Language Pack", 37)]
 		ProvisionLanguagePack = 43,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Quick Campaign", 10)]
 		QuickCampaign = 11,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Recurring Series Expansion", 32)]
 		RecurringSeriesExpansion = 35,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Refresh Business Unit for Records Owned By Principal", 68)]
+		RefreshBusinessUnitforRecordsOwnedByPrincipal = 95,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Regenerate Entity Row Count Snapshot Data", 40)]
 		RegenerateEntityRowCountSnapshotData = 46,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Regenerate Read Share Snapshot Data", 41)]
 		RegenerateReadShareSnapshotData = 47,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Reindex all indices maintenance job", 29)]
 		Reindexallindicesmaintenancejob = 30,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Relationship Assistant Cards", 56)]
+		RelationshipAssistantCards = 69,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Resource Booking Sync", 55)]
+		ResourceBookingSync = 68,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Revoke Inherited Access", 69)]
+		RevokeInheritedAccess = 96,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Ribbon Client Metadata Operation", 61)]
+		RibbonClientMetadataOperation = 76,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("SQM Data Collection", 8)]
 		SQMDataCollection = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Storage Limit Notification", 30)]
 		StorageLimitNotification = 31,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("System Event", 0)]
 		SystemEvent = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Transform Parse Data", 3)]
 		TransformParseData = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Update Contract States", 26)]
 		UpdateContractStates = 27,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Update Entitlement States", 48)]
 		UpdateEntitlementStates = 56,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Update Knowledge Article States", 54)]
 		UpdateKnowledgeArticleStates = 65,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Update Organization Database", 38)]
 		UpdateOrganizationDatabase = 44,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Update Solution", 39)]
 		UpdateSolution = 45,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Update Statistic Intervals", 23)]
 		UpdateStatisticIntervals = 24,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Workflow", 9)]
 		Workflow = 10,
 	}
 }

@@ -5,26 +5,32 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum Organization_ReportScriptErrors
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Ask me for permission to send an error report to Microsoft", 1)]
 		AskmeforpermissiontosendanerrorreporttoMicrosoft = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Automatically send an error report to Microsoft without asking me for permission", 2)]
 		AutomaticallysendanerrorreporttoMicrosoftwithoutaskingmeforpermission = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		NeversendanerrorreporttoMicrosoftaboutMicrosoftDynamicsCRM = 3,
+		[OptionSetMetadataAttribute("Never send an error report to Microsoft about Microsoft Dynamics 365", 3)]
+		NeversendanerrorreporttoMicrosoftaboutMicrosoftDynamics365 = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		NopreferenceforsendinganerrorreporttoMicrosoftaboutMicrosoftDynamicsCRM = 0,
+		[OptionSetMetadataAttribute("No preference for sending an error report to Microsoft about Microsoft Dynamics 3" +
+			"65", 0)]
+		NopreferenceforsendinganerrorreporttoMicrosoftaboutMicrosoftDynamics365 = 0,
 	}
 }

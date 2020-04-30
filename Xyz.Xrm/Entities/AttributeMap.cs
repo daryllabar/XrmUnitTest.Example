@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("attributemap")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class AttributeMap : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string AttributeMapId = "attributemapid";
 			public const string Id = "attributemapid";
@@ -44,12 +45,10 @@ namespace Xyz.Xrm.Entities
 			public const string Referencingattribute_map_attribute_maps = "attribute_map_attribute_maps";
 			public const string createdby_attributemap = "createdby_attributemap";
 			public const string createdonbehalfby_attributemap = "createdonbehalfby_attributemap";
-			public const string entity_map_attribute_maps = "entity_map_attribute_maps";
 			public const string modifiedby_attributemap = "modifiedby_attributemap";
 			public const string modifiedonbehalfby_attributemap = "modifiedonbehalfby_attributemap";
 			public const string organization_attributemap = "organization_attributemap";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -62,7 +61,9 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "attributemap";
 		
-		public const int EntityTypeCode = 4601;
+		public const string EntitySchemaName = "AttributeMap";
+		
+		public const string PrimaryIdAttribute = "attributemapid";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -146,12 +147,12 @@ namespace Xyz.Xrm.Entities
 		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ComponentState
+		public virtual ComponentState? ComponentState
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("componentstate");
+				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
 			}
 		}
 		
@@ -166,13 +167,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
@@ -185,13 +179,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -279,13 +266,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
@@ -298,13 +278,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -481,46 +454,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N AttributeMap_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("AttributeMap_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> AttributeMap_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("AttributeMap_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("AttributeMap_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("AttributeMap_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("AttributeMap_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_attributemap
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_attributemap")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_attributemap
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_attributemap", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_attributemap");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_attributemap", null, value);
-				this.OnPropertyChanged("userentityinstancedata_attributemap");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 attribute_map_attribute_maps
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentattributemapid")]
@@ -553,13 +486,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("createdby_attributemap", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("createdby_attributemap");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("createdby_attributemap", null, value);
-				this.OnPropertyChanged("createdby_attributemap");
-			}
 		}
 		
 		/// <summary>
@@ -584,27 +510,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 entity_map_attribute_maps
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entitymapid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("entity_map_attribute_maps")]
-		public Xyz.Xrm.Entities.EntityMap entity_map_attribute_maps
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.EntityMap>("entity_map_attribute_maps", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("entity_map_attribute_maps");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.EntityMap>("entity_map_attribute_maps", null, value);
-				this.OnPropertyChanged("entity_map_attribute_maps");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 modifiedby_attributemap
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
@@ -615,13 +520,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("modifiedby_attributemap", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("modifiedby_attributemap");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("modifiedby_attributemap", null, value);
-				this.OnPropertyChanged("modifiedby_attributemap");
 			}
 		}
 		
@@ -700,16 +598,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public virtual ComponentState? ComponentStateEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
-			}
 		}
 	}
 }

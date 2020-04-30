@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("customeropportunityrole")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class CustomerOpportunityRole : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string CreatedBy = "createdby";
 			public const string CreatedOn = "createdon";
@@ -41,6 +42,8 @@ namespace Xyz.Xrm.Entities
 			public const string OwningBusinessUnit = "owningbusinessunit";
 			public const string OwningTeam = "owningteam";
 			public const string OwningUser = "owninguser";
+			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
+			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
 			public const string account_customer_opportunity_roles = "account_customer_opportunity_roles";
 			public const string business_customer_opportunity_roles = "business_customer_opportunity_roles";
@@ -50,11 +53,9 @@ namespace Xyz.Xrm.Entities
 			public const string lk_customeropportunityrole_modifiedby = "lk_customeropportunityrole_modifiedby";
 			public const string lk_customeropportunityrole_modifiedonbehalfby = "lk_customeropportunityrole_modifiedonbehalfby";
 			public const string opportunity_customer_opportunity_roles = "opportunity_customer_opportunity_roles";
-			public const string relationship_role_customer_opportunity_roles = "relationship_role_customer_opportunity_roles";
 			public const string team_customer_opportunity_roles = "team_customer_opportunity_roles";
 			public const string user_customer_opportunity_roles = "user_customer_opportunity_roles";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -67,7 +68,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "customeropportunityrole";
 		
-		public const int EntityTypeCode = 4503;
+		public const string EntitySchemaName = "CustomerOpportunityRole";
+		
+		public const string PrimaryIdAttribute = "customeropportunityroleid";
+		
+		public const string PrimaryNameAttribute = "opportunityroleidname";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -92,7 +97,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows who created the record.
+		/// lk_customeropportunityrole_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -102,17 +107,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -122,17 +120,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
+		/// lk_customeropportunityrole_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -152,7 +143,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Select the account or contact associated to the opportunity, such as a strategic partner, third-party vendor, or key decision maker.
+		/// contact_customer_opportunity_roles
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customerid")]
 		public Microsoft.Xrm.Sdk.EntityReference CustomerId
@@ -255,7 +246,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record.
+		/// lk_customeropportunityrole_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -265,17 +256,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -285,17 +269,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record on behalf of another user.
+		/// lk_customeropportunityrole_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -315,7 +292,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the opportunity that the specified account or contact is related to. The opportunity relationship will be displayed in the Relationships view on the selected opportunity.
+		/// opportunity_customer_opportunity_roles
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opportunityid")]
 		public Microsoft.Xrm.Sdk.EntityReference OpportunityId
@@ -335,7 +312,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the role or nature of the relationship that the customer has with the opportunity. The field is read-only until a customer has been selected. Administrators can configure role values under Business Management in the Settings area.
+		/// relationship_role_customer_opportunity_roles
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opportunityroleid")]
 		public Microsoft.Xrm.Sdk.EntityReference OpportunityRoleId
@@ -401,7 +378,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user or team who owns the customer opportunity role.
+		/// owner_customeropportunityroles
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
@@ -421,7 +398,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier for the business unit that owns the customer opportunity role.
+		/// business_customer_opportunity_roles
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
@@ -431,17 +408,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team who owns the customer opportunity role.
+		/// team_customer_opportunity_roles
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
@@ -451,17 +421,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningTeam");
-				this.SetAttributeValue("owningteam", value);
-				this.OnPropertyChanged("OwningTeam");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who owns the customer opportunity role.
+		/// user_customer_opportunity_roles
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningUser
@@ -471,12 +434,45 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
 			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
+		public System.Nullable<int> TimeZoneRuleVersionNumber
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
+			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
+				this.OnPropertyChanging("TimeZoneRuleVersionNumber");
+				this.SetAttributeValue("timezoneruleversionnumber", value);
+				this.OnPropertyChanged("TimeZoneRuleVersionNumber");
+			}
+		}
+		
+		/// <summary>
+		/// Time zone code that was in use when the record was created.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
+		public System.Nullable<int> UTCConversionTimeZoneCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("utcconversiontimezonecode");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("UTCConversionTimeZoneCode");
+				this.SetAttributeValue("utcconversiontimezonecode", value);
+				this.OnPropertyChanged("UTCConversionTimeZoneCode");
 			}
 		}
 		
@@ -514,26 +510,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N CustomerOpportunityRole_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("CustomerOpportunityRole_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> CustomerOpportunityRole_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("CustomerOpportunityRole_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CustomerOpportunityRole_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("CustomerOpportunityRole_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("CustomerOpportunityRole_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N CustomerOpportunityRole_ProcessSessions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("CustomerOpportunityRole_ProcessSessions")]
@@ -550,26 +526,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("CustomerOpportunityRole_ProcessSessions");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.ProcessSession>("CustomerOpportunityRole_ProcessSessions", null, value);
 				this.OnPropertyChanged("CustomerOpportunityRole_ProcessSessions");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_customeropportunityrole
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_customeropportunityrole")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_customeropportunityrole
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_customeropportunityrole", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_customeropportunityrole");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_customeropportunityrole", null, value);
-				this.OnPropertyChanged("userentityinstancedata_customeropportunityrole");
 			}
 		}
 		
@@ -606,13 +562,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_customer_opportunity_roles", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_customer_opportunity_roles");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_customer_opportunity_roles", null, value);
-				this.OnPropertyChanged("business_customer_opportunity_roles");
-			}
 		}
 		
 		/// <summary>
@@ -648,13 +597,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_customeropportunityrole_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_customeropportunityrole_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_customeropportunityrole_createdby", null, value);
-				this.OnPropertyChanged("lk_customeropportunityrole_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -689,13 +631,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_customeropportunityrole_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_customeropportunityrole_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_customeropportunityrole_modifiedby", null, value);
-				this.OnPropertyChanged("lk_customeropportunityrole_modifiedby");
 			}
 		}
 		
@@ -742,27 +677,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 relationship_role_customer_opportunity_roles
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opportunityroleid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("relationship_role_customer_opportunity_roles")]
-		public Xyz.Xrm.Entities.RelationshipRole relationship_role_customer_opportunity_roles
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.RelationshipRole>("relationship_role_customer_opportunity_roles", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("relationship_role_customer_opportunity_roles");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.RelationshipRole>("relationship_role_customer_opportunity_roles", null, value);
-				this.OnPropertyChanged("relationship_role_customer_opportunity_roles");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 team_customer_opportunity_roles
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
@@ -773,13 +687,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.Team>("team_customer_opportunity_roles", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_customer_opportunity_roles");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Team>("team_customer_opportunity_roles", null, value);
-				this.OnPropertyChanged("team_customer_opportunity_roles");
 			}
 		}
 		
@@ -794,13 +701,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("user_customer_opportunity_roles", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("user_customer_opportunity_roles");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("user_customer_opportunity_roles", null, value);
-				this.OnPropertyChanged("user_customer_opportunity_roles");
 			}
 		}
 		

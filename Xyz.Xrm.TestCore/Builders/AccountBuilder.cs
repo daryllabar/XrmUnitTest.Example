@@ -3,7 +3,7 @@ using DLaB.Xrm.Test;
 
 namespace Xyz.Xrm.Test.Builders
 {
-    public class AccountBuilder : EntityBuilder<Account>
+    public class AccountBuilder : EntityBuilder<Account, AccountBuilder>
     {
         public Account Account { get; set; }
 

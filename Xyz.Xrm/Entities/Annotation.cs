@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("annotation")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class Annotation : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string AnnotationId = "annotationid";
 			public const string Id = "annotationid";
@@ -44,6 +45,7 @@ namespace Xyz.Xrm.Entities
 			public const string OwningBusinessUnit = "owningbusinessunit";
 			public const string OwningTeam = "owningteam";
 			public const string OwningUser = "owninguser";
+			public const string Prefix = "prefix";
 			public const string StepId = "stepid";
 			public const string Subject = "subject";
 			public const string VersionNumber = "versionnumber";
@@ -51,64 +53,26 @@ namespace Xyz.Xrm.Entities
 			public const string annotation_owning_user = "annotation_owning_user";
 			public const string Appointment_Annotation = "Appointment_Annotation";
 			public const string business_unit_annotations = "business_unit_annotations";
-			public const string Calendar_Annotation = "Calendar_Annotation";
-			public const string Campaign_Annotation = "Campaign_Annotation";
-			public const string CampaignActivity_Annotation = "CampaignActivity_Annotation";
-			public const string CampaignResponse_Annotation = "CampaignResponse_Annotation";
-			public const string channelaccessprofile_Annotations = "channelaccessprofile_Annotations";
 			public const string Competitor_Annotation = "Competitor_Annotation";
 			public const string Contact_Annotation = "Contact_Annotation";
-			public const string Contract_Annotation = "Contract_Annotation";
-			public const string ContractDetail_Annotation = "ContractDetail_Annotation";
-			public const string ConvertRule_Annotation = "ConvertRule_Annotation";
-			public const string DuplicateRule_Annotation = "DuplicateRule_Annotation";
 			public const string Email_Annotation = "Email_Annotation";
-			public const string EmailServerProfile_Annotation = "EmailServerProfile_Annotation";
-			public const string entitlement_Annotations = "entitlement_Annotations";
-			public const string entitlementchannel_Annotations = "entitlementchannel_Annotations";
-			public const string entitlementtemplate_Annotations = "entitlementtemplate_Annotations";
-			public const string Equipment_Annotation = "Equipment_Annotation";
-			public const string Fax_Annotation = "Fax_Annotation";
-			public const string Goal_Annotation = "Goal_Annotation";
 			public const string Incident_Annotation = "Incident_Annotation";
-			public const string IncidentResolution_Annotation = "IncidentResolution_Annotation";
-			public const string Invoice_Annotation = "Invoice_Annotation";
-			public const string KbArticle_Annotation = "KbArticle_Annotation";
-			public const string knowledgearticle_Annotations = "knowledgearticle_Annotations";
-			public const string KnowledgeBaseRecord_Annotations = "KnowledgeBaseRecord_Annotations";
 			public const string Lead_Annotation = "Lead_Annotation";
-			public const string Letter_Annotation = "Letter_Annotation";
-			public const string List_Annotation = "List_Annotation";
 			public const string lk_annotationbase_createdby = "lk_annotationbase_createdby";
 			public const string lk_annotationbase_createdonbehalfby = "lk_annotationbase_createdonbehalfby";
 			public const string lk_annotationbase_modifiedby = "lk_annotationbase_modifiedby";
 			public const string lk_annotationbase_modifiedonbehalfby = "lk_annotationbase_modifiedonbehalfby";
-			public const string Mailbox_Annotation = "Mailbox_Annotation";
-			public const string msdyn_postalbum_Annotations = "msdyn_postalbum_Annotations";
+			public const string msdyn_processnotes_Annotations = "msdyn_processnotes_Annotations";
 			public const string Opportunity_Annotation = "Opportunity_Annotation";
 			public const string OpportunityClose_Annotation = "OpportunityClose_Annotation";
 			public const string OrderClose_Annotation = "OrderClose_Annotation";
 			public const string PhoneCall_Annotation = "PhoneCall_Annotation";
 			public const string Product_Annotation = "Product_Annotation";
-			public const string profilerule_Annotations = "profilerule_Annotations";
-			public const string profileruleitem_Annotations = "profileruleitem_Annotations";
-			public const string Quote_Annotation = "Quote_Annotation";
-			public const string QuoteClose_Annotation = "QuoteClose_Annotation";
-			public const string RecurringAppointmentMaster_Annotation = "RecurringAppointmentMaster_Annotation";
-			public const string ResourceSpec_Annotation = "ResourceSpec_Annotation";
-			public const string routingrule_Annotation = "routingrule_Annotation";
-			public const string routingruleitem_Annotation = "routingruleitem_Annotation";
 			public const string SalesOrder_Annotation = "SalesOrder_Annotation";
-			public const string Service_Annotation = "Service_Annotation";
-			public const string ServiceAppointment_Annotation = "ServiceAppointment_Annotation";
-			public const string SharePointDocument_Annotation = "SharePointDocument_Annotation";
-			public const string sla_Annotation = "sla_Annotation";
-			public const string SocialActivity_Annotation = "SocialActivity_Annotation";
 			public const string Task_Annotation = "Task_Annotation";
 			public const string team_annotations = "team_annotations";
 			public const string Workflow_Annotation = "Workflow_Annotation";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -121,7 +85,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "annotation";
 		
-		public const int EntityTypeCode = 5;
+		public const string EntitySchemaName = "Annotation";
+		
+		public const string PrimaryIdAttribute = "annotationid";
+		
+		public const string PrimaryNameAttribute = "subject";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -199,13 +167,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
@@ -218,13 +179,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -392,13 +346,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
@@ -411,13 +358,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -552,13 +492,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
@@ -571,13 +504,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningTeam");
-				this.SetAttributeValue("owningteam", value);
-				this.OnPropertyChanged("OwningTeam");
 			}
 		}
 		
@@ -592,12 +518,18 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
 			}
+		}
+		
+		/// <summary>
+		/// Prefix of the file pointer in blob storage.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prefix")]
+		public string Prefix
+		{
 			[System.Diagnostics.DebuggerNonUserCode()]
-			set
+			get
 			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
+				return this.GetAttributeValue<string>("prefix");
 			}
 		}
 		
@@ -675,26 +607,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Annotation_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Annotation_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> Annotation_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Annotation_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Annotation_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Annotation_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("Annotation_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N Annotation_ProcessSessions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Annotation_ProcessSessions")]
@@ -711,26 +623,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Annotation_ProcessSessions");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.ProcessSession>("Annotation_ProcessSessions", null, value);
 				this.OnPropertyChanged("Annotation_ProcessSessions");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_annotation")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_annotation");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_annotation", null, value);
-				this.OnPropertyChanged("userentityinstancedata_annotation");
 			}
 		}
 		
@@ -767,13 +659,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("annotation_owning_user", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("annotation_owning_user");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("annotation_owning_user", null, value);
-				this.OnPropertyChanged("annotation_owning_user");
-			}
 		}
 		
 		/// <summary>
@@ -808,118 +693,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_annotations", null, value);
-				this.OnPropertyChanged("business_unit_annotations");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Calendar_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Calendar_Annotation")]
-		public Xyz.Xrm.Entities.Calendar Calendar_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Calendar>("Calendar_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Calendar_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Calendar>("Calendar_Annotation", null, value);
-				this.OnPropertyChanged("Calendar_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Campaign_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Campaign_Annotation")]
-		public Xyz.Xrm.Entities.Campaign Campaign_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Campaign>("Campaign_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Campaign_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Campaign>("Campaign_Annotation", null, value);
-				this.OnPropertyChanged("Campaign_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 CampaignActivity_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("CampaignActivity_Annotation")]
-		public Xyz.Xrm.Entities.CampaignActivity CampaignActivity_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.CampaignActivity>("CampaignActivity_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CampaignActivity_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.CampaignActivity>("CampaignActivity_Annotation", null, value);
-				this.OnPropertyChanged("CampaignActivity_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 CampaignResponse_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("CampaignResponse_Annotation")]
-		public Xyz.Xrm.Entities.CampaignResponse CampaignResponse_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.CampaignResponse>("CampaignResponse_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CampaignResponse_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.CampaignResponse>("CampaignResponse_Annotation", null, value);
-				this.OnPropertyChanged("CampaignResponse_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 channelaccessprofile_Annotations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("channelaccessprofile_Annotations")]
-		public Xyz.Xrm.Entities.ChannelAccessProfile channelaccessprofile_Annotations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ChannelAccessProfile>("channelaccessprofile_Annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("channelaccessprofile_Annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ChannelAccessProfile>("channelaccessprofile_Annotations", null, value);
-				this.OnPropertyChanged("channelaccessprofile_Annotations");
 			}
 		}
 		
@@ -966,90 +739,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 Contract_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Contract_Annotation")]
-		public Xyz.Xrm.Entities.Contract Contract_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Contract>("Contract_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Contract_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Contract>("Contract_Annotation", null, value);
-				this.OnPropertyChanged("Contract_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ContractDetail_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ContractDetail_Annotation")]
-		public Xyz.Xrm.Entities.ContractDetail ContractDetail_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ContractDetail>("ContractDetail_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ContractDetail_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ContractDetail>("ContractDetail_Annotation", null, value);
-				this.OnPropertyChanged("ContractDetail_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ConvertRule_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ConvertRule_Annotation")]
-		public Xyz.Xrm.Entities.ConvertRule ConvertRule_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ConvertRule>("ConvertRule_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ConvertRule_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ConvertRule>("ConvertRule_Annotation", null, value);
-				this.OnPropertyChanged("ConvertRule_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 DuplicateRule_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("DuplicateRule_Annotation")]
-		public Xyz.Xrm.Entities.DuplicateRule DuplicateRule_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.DuplicateRule>("DuplicateRule_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("DuplicateRule_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.DuplicateRule>("DuplicateRule_Annotation", null, value);
-				this.OnPropertyChanged("DuplicateRule_Annotation");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 Email_Annotation
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
@@ -1067,153 +756,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Email_Annotation");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.Email>("Email_Annotation", null, value);
 				this.OnPropertyChanged("Email_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 EmailServerProfile_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("EmailServerProfile_Annotation")]
-		public Xyz.Xrm.Entities.EmailServerProfile EmailServerProfile_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.EmailServerProfile>("EmailServerProfile_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("EmailServerProfile_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.EmailServerProfile>("EmailServerProfile_Annotation", null, value);
-				this.OnPropertyChanged("EmailServerProfile_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 entitlement_Annotations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("entitlement_Annotations")]
-		public Xyz.Xrm.Entities.Entitlement entitlement_Annotations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Entitlement>("entitlement_Annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("entitlement_Annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Entitlement>("entitlement_Annotations", null, value);
-				this.OnPropertyChanged("entitlement_Annotations");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 entitlementchannel_Annotations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("entitlementchannel_Annotations")]
-		public Xyz.Xrm.Entities.EntitlementChannel entitlementchannel_Annotations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.EntitlementChannel>("entitlementchannel_Annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("entitlementchannel_Annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.EntitlementChannel>("entitlementchannel_Annotations", null, value);
-				this.OnPropertyChanged("entitlementchannel_Annotations");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 entitlementtemplate_Annotations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("entitlementtemplate_Annotations")]
-		public Xyz.Xrm.Entities.EntitlementTemplate entitlementtemplate_Annotations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.EntitlementTemplate>("entitlementtemplate_Annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("entitlementtemplate_Annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.EntitlementTemplate>("entitlementtemplate_Annotations", null, value);
-				this.OnPropertyChanged("entitlementtemplate_Annotations");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Equipment_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Equipment_Annotation")]
-		public Xyz.Xrm.Entities.Equipment Equipment_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Equipment>("Equipment_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Equipment_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Equipment>("Equipment_Annotation", null, value);
-				this.OnPropertyChanged("Equipment_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Fax_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Fax_Annotation")]
-		public Xyz.Xrm.Entities.Fax Fax_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Fax>("Fax_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Fax_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Fax>("Fax_Annotation", null, value);
-				this.OnPropertyChanged("Fax_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Goal_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Goal_Annotation")]
-		public Xyz.Xrm.Entities.Goal Goal_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Goal>("Goal_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Goal_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Goal>("Goal_Annotation", null, value);
-				this.OnPropertyChanged("Goal_Annotation");
 			}
 		}
 		
@@ -1239,111 +781,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 IncidentResolution_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("IncidentResolution_Annotation")]
-		public Xyz.Xrm.Entities.IncidentResolution IncidentResolution_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.IncidentResolution>("IncidentResolution_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("IncidentResolution_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.IncidentResolution>("IncidentResolution_Annotation", null, value);
-				this.OnPropertyChanged("IncidentResolution_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Invoice_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Invoice_Annotation")]
-		public Xyz.Xrm.Entities.Invoice Invoice_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Invoice>("Invoice_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Invoice_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Invoice>("Invoice_Annotation", null, value);
-				this.OnPropertyChanged("Invoice_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 KbArticle_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KbArticle_Annotation")]
-		public Xyz.Xrm.Entities.KbArticle KbArticle_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.KbArticle>("KbArticle_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("KbArticle_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.KbArticle>("KbArticle_Annotation", null, value);
-				this.OnPropertyChanged("KbArticle_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 knowledgearticle_Annotations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgearticle_Annotations")]
-		public Xyz.Xrm.Entities.KnowledgeArticle knowledgearticle_Annotations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.KnowledgeArticle>("knowledgearticle_Annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("knowledgearticle_Annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.KnowledgeArticle>("knowledgearticle_Annotations", null, value);
-				this.OnPropertyChanged("knowledgearticle_Annotations");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 KnowledgeBaseRecord_Annotations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Annotations")]
-		public Xyz.Xrm.Entities.KnowledgeBaseRecord KnowledgeBaseRecord_Annotations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.KnowledgeBaseRecord>("KnowledgeBaseRecord_Annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("KnowledgeBaseRecord_Annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.KnowledgeBaseRecord>("KnowledgeBaseRecord_Annotations", null, value);
-				this.OnPropertyChanged("KnowledgeBaseRecord_Annotations");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 Lead_Annotation
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
@@ -1365,48 +802,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 Letter_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Letter_Annotation")]
-		public Xyz.Xrm.Entities.Letter Letter_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Letter>("Letter_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Letter_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Letter>("Letter_Annotation", null, value);
-				this.OnPropertyChanged("Letter_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 List_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("List_Annotation")]
-		public Xyz.Xrm.Entities.List List_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.List>("List_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("List_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.List>("List_Annotation", null, value);
-				this.OnPropertyChanged("List_Annotation");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 lk_annotationbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -1417,13 +812,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_annotationbase_createdby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_annotationbase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_annotationbase_createdby", null, value);
-				this.OnPropertyChanged("lk_annotationbase_createdby");
 			}
 		}
 		
@@ -1460,13 +848,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_annotationbase_modifiedby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_annotationbase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_annotationbase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_annotationbase_modifiedby");
-			}
 		}
 		
 		/// <summary>
@@ -1491,44 +872,23 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 Mailbox_Annotation
+		/// N:1 msdyn_processnotes_Annotations
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Mailbox_Annotation")]
-		public Xyz.Xrm.Entities.Mailbox Mailbox_Annotation
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_processnotes_Annotations")]
+		public Xyz.Xrm.Entities.msdyn_processnotes msdyn_processnotes_Annotations
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Mailbox>("Mailbox_Annotation", null);
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.msdyn_processnotes>("msdyn_processnotes_Annotations", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("Mailbox_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Mailbox>("Mailbox_Annotation", null, value);
-				this.OnPropertyChanged("Mailbox_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 msdyn_postalbum_Annotations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_postalbum_Annotations")]
-		public Xyz.Xrm.Entities.msdyn_PostAlbum msdyn_postalbum_Annotations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.msdyn_PostAlbum>("msdyn_postalbum_Annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("msdyn_postalbum_Annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.msdyn_PostAlbum>("msdyn_postalbum_Annotations", null, value);
-				this.OnPropertyChanged("msdyn_postalbum_Annotations");
+				this.OnPropertyChanging("msdyn_processnotes_Annotations");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.msdyn_processnotes>("msdyn_processnotes_Annotations", null, value);
+				this.OnPropertyChanged("msdyn_processnotes_Annotations");
 			}
 		}
 		
@@ -1638,174 +998,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 profilerule_Annotations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("profilerule_Annotations")]
-		public Xyz.Xrm.Entities.ChannelAccessProfileRule profilerule_Annotations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ChannelAccessProfileRule>("profilerule_Annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("profilerule_Annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ChannelAccessProfileRule>("profilerule_Annotations", null, value);
-				this.OnPropertyChanged("profilerule_Annotations");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 profileruleitem_Annotations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("profileruleitem_Annotations")]
-		public Xyz.Xrm.Entities.ChannelAccessProfileRuleItem profileruleitem_Annotations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ChannelAccessProfileRuleItem>("profileruleitem_Annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("profileruleitem_Annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ChannelAccessProfileRuleItem>("profileruleitem_Annotations", null, value);
-				this.OnPropertyChanged("profileruleitem_Annotations");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Quote_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Quote_Annotation")]
-		public Xyz.Xrm.Entities.Quote Quote_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Quote>("Quote_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Quote_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Quote>("Quote_Annotation", null, value);
-				this.OnPropertyChanged("Quote_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 QuoteClose_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("QuoteClose_Annotation")]
-		public Xyz.Xrm.Entities.QuoteClose QuoteClose_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.QuoteClose>("QuoteClose_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("QuoteClose_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.QuoteClose>("QuoteClose_Annotation", null, value);
-				this.OnPropertyChanged("QuoteClose_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 RecurringAppointmentMaster_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("RecurringAppointmentMaster_Annotation")]
-		public Xyz.Xrm.Entities.RecurringAppointmentMaster RecurringAppointmentMaster_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.RecurringAppointmentMaster>("RecurringAppointmentMaster_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("RecurringAppointmentMaster_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.RecurringAppointmentMaster>("RecurringAppointmentMaster_Annotation", null, value);
-				this.OnPropertyChanged("RecurringAppointmentMaster_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ResourceSpec_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ResourceSpec_Annotation")]
-		public Xyz.Xrm.Entities.ResourceSpec ResourceSpec_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ResourceSpec>("ResourceSpec_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ResourceSpec_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ResourceSpec>("ResourceSpec_Annotation", null, value);
-				this.OnPropertyChanged("ResourceSpec_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 routingrule_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("routingrule_Annotation")]
-		public Xyz.Xrm.Entities.RoutingRule routingrule_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.RoutingRule>("routingrule_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("routingrule_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.RoutingRule>("routingrule_Annotation", null, value);
-				this.OnPropertyChanged("routingrule_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 routingruleitem_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("routingruleitem_Annotation")]
-		public Xyz.Xrm.Entities.RoutingRuleItem routingruleitem_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.RoutingRuleItem>("routingruleitem_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("routingruleitem_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.RoutingRuleItem>("routingruleitem_Annotation", null, value);
-				this.OnPropertyChanged("routingruleitem_Annotation");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 SalesOrder_Annotation
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
@@ -1823,111 +1015,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("SalesOrder_Annotation");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.SalesOrder>("SalesOrder_Annotation", null, value);
 				this.OnPropertyChanged("SalesOrder_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 Service_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Service_Annotation")]
-		public Xyz.Xrm.Entities.Service Service_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Service>("Service_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Service_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Service>("Service_Annotation", null, value);
-				this.OnPropertyChanged("Service_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ServiceAppointment_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ServiceAppointment_Annotation")]
-		public Xyz.Xrm.Entities.ServiceAppointment ServiceAppointment_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ServiceAppointment>("ServiceAppointment_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ServiceAppointment_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ServiceAppointment>("ServiceAppointment_Annotation", null, value);
-				this.OnPropertyChanged("ServiceAppointment_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 SharePointDocument_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SharePointDocument_Annotation")]
-		public Xyz.Xrm.Entities.SharePointDocument SharePointDocument_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.SharePointDocument>("SharePointDocument_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("SharePointDocument_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SharePointDocument>("SharePointDocument_Annotation", null, value);
-				this.OnPropertyChanged("SharePointDocument_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 sla_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sla_Annotation")]
-		public Xyz.Xrm.Entities.SLA sla_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.SLA>("sla_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("sla_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SLA>("sla_Annotation", null, value);
-				this.OnPropertyChanged("sla_Annotation");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 SocialActivity_Annotation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("objectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("SocialActivity_Annotation")]
-		public Xyz.Xrm.Entities.SocialActivity SocialActivity_Annotation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.SocialActivity>("SocialActivity_Annotation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("SocialActivity_Annotation");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SocialActivity>("SocialActivity_Annotation", null, value);
-				this.OnPropertyChanged("SocialActivity_Annotation");
 			}
 		}
 		
@@ -1963,13 +1050,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.Team>("team_annotations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_annotations");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Team>("team_annotations", null, value);
-				this.OnPropertyChanged("team_annotations");
 			}
 		}
 		

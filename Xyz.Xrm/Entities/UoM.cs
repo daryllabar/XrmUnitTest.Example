@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("uom")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class UoM : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string BaseUoM = "baseuom";
 			public const string CreatedBy = "createdby";
@@ -36,20 +37,18 @@ namespace Xyz.Xrm.Entities
 			public const string OrganizationId = "organizationid";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
 			public const string Quantity = "quantity";
+			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
 			public const string UoMId = "uomid";
 			public const string Id = "uomid";
 			public const string UoMScheduleId = "uomscheduleid";
+			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
-			public const string lk_externalparty_uom_createdby = "lk_externalparty_uom_createdby";
-			public const string lk_externalparty_uom_modifiedby = "lk_externalparty_uom_modifiedby";
 			public const string lk_uom_createdonbehalfby = "lk_uom_createdonbehalfby";
 			public const string lk_uom_modifiedonbehalfby = "lk_uom_modifiedonbehalfby";
 			public const string lk_uombase_createdby = "lk_uombase_createdby";
 			public const string lk_uombase_modifiedby = "lk_uombase_modifiedby";
-			public const string unit_of_measure_schedule_conversions = "unit_of_measure_schedule_conversions";
 			public const string Referencingunit_of_measurement_base_unit = "unit_of_measurement_base_unit";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -62,7 +61,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "uom";
 		
-		public const int EntityTypeCode = 1055;
+		public const string EntitySchemaName = "UoM";
+		
+		public const string PrimaryIdAttribute = "uomid";
+		
+		public const string PrimaryNameAttribute = "name";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -87,7 +90,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the base or primary unit on which the unit is based.
+		/// unit_of_measurement_base_unit
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("baseuom")]
 		public Microsoft.Xrm.Sdk.EntityReference BaseUoM
@@ -107,7 +110,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the unit.
+		/// lk_uombase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -116,13 +119,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
 			}
 		}
 		
@@ -150,17 +146,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the uom.
+		/// lk_uombase_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -213,7 +202,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the unit.
+		/// lk_uombase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -222,13 +211,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
 			}
 		}
 		
@@ -256,17 +238,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the uom.
+		/// lk_uombase_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -359,6 +334,26 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
+		public System.Nullable<int> TimeZoneRuleVersionNumber
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TimeZoneRuleVersionNumber");
+				this.SetAttributeValue("timezoneruleversionnumber", value);
+				this.OnPropertyChanged("TimeZoneRuleVersionNumber");
+			}
+		}
+		
+		/// <summary>
 		/// Unique identifier of the unit.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uomid")]
@@ -402,7 +397,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the ID of the unit group that the unit is associated with.
+		/// unit_of_measure_schedule_conversions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uomscheduleid")]
 		public Microsoft.Xrm.Sdk.EntityReference UoMScheduleId
@@ -422,6 +417,26 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Time zone code that was in use when the record was created.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
+		public System.Nullable<int> UTCConversionTimeZoneCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("utcconversiontimezonecode");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("UTCConversionTimeZoneCode");
+				this.SetAttributeValue("utcconversiontimezonecode", value);
+				this.OnPropertyChanged("UTCConversionTimeZoneCode");
+			}
+		}
+		
+		/// <summary>
 		/// Version number of the unit.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
@@ -431,6 +446,26 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<long>>("versionnumber");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N msdyn_uom_pricelevel_TimeUnit
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_uom_pricelevel_TimeUnit")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PriceLevel> msdyn_uom_pricelevel_TimeUnit
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.PriceLevel>("msdyn_uom_pricelevel_TimeUnit", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_uom_pricelevel_TimeUnit");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.PriceLevel>("msdyn_uom_pricelevel_TimeUnit", null, value);
+				this.OnPropertyChanged("msdyn_uom_pricelevel_TimeUnit");
 			}
 		}
 		
@@ -451,46 +486,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Referencedunit_of_measurement_base_unit");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.UoM>("unit_of_measurement_base_unit", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 				this.OnPropertyChanged("Referencedunit_of_measurement_base_unit");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N unit_of_measurement_contract_line_items
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measurement_contract_line_items")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ContractDetail> unit_of_measurement_contract_line_items
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ContractDetail>("unit_of_measurement_contract_line_items", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("unit_of_measurement_contract_line_items");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ContractDetail>("unit_of_measurement_contract_line_items", null, value);
-				this.OnPropertyChanged("unit_of_measurement_contract_line_items");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N unit_of_measurement_invoice_details
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measurement_invoice_details")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.InvoiceDetail> unit_of_measurement_invoice_details
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.InvoiceDetail>("unit_of_measurement_invoice_details", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("unit_of_measurement_invoice_details");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.InvoiceDetail>("unit_of_measurement_invoice_details", null, value);
-				this.OnPropertyChanged("unit_of_measurement_invoice_details");
 			}
 		}
 		
@@ -555,26 +550,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N unit_of_measurement_productassociation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measurement_productassociation")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ProductAssociation> unit_of_measurement_productassociation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ProductAssociation>("unit_of_measurement_productassociation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("unit_of_measurement_productassociation");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ProductAssociation>("unit_of_measurement_productassociation", null, value);
-				this.OnPropertyChanged("unit_of_measurement_productassociation");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N unit_of_measurement_products
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measurement_products")]
@@ -595,26 +570,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N unit_of_measurement_quote_details
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measurement_quote_details")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.QuoteDetail> unit_of_measurement_quote_details
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.QuoteDetail>("unit_of_measurement_quote_details", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("unit_of_measurement_quote_details");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.QuoteDetail>("unit_of_measurement_quote_details", null, value);
-				this.OnPropertyChanged("unit_of_measurement_quote_details");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N UoM_AsyncOperations
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("UoM_AsyncOperations")]
@@ -631,74 +586,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("UoM_AsyncOperations");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.AsyncOperation>("UoM_AsyncOperations", null, value);
 				this.OnPropertyChanged("UoM_AsyncOperations");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N UoM_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("UoM_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> UoM_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("UoM_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("UoM_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("UoM_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("UoM_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_uom
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_uom")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_uom
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_uom", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_uom");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_uom", null, value);
-				this.OnPropertyChanged("userentityinstancedata_uom");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_externalparty_uom_createdby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_externalparty_uom_createdby")]
-		public Xyz.Xrm.Entities.ExternalParty lk_externalparty_uom_createdby
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ExternalParty>("lk_externalparty_uom_createdby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_externalparty_uom_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_externalparty_uom_modifiedby")]
-		public Xyz.Xrm.Entities.ExternalParty lk_externalparty_uom_modifiedby
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ExternalParty>("lk_externalparty_uom_modifiedby", null);
 			}
 		}
 		
@@ -756,13 +643,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_uombase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_uombase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_uombase_createdby", null, value);
-				this.OnPropertyChanged("lk_uombase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -776,34 +656,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_uombase_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_uombase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_uombase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_uombase_modifiedby");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 unit_of_measure_schedule_conversions
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uomscheduleid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measure_schedule_conversions")]
-		public Xyz.Xrm.Entities.UoMSchedule unit_of_measure_schedule_conversions
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.UoMSchedule>("unit_of_measure_schedule_conversions", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("unit_of_measure_schedule_conversions");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.UoMSchedule>("unit_of_measure_schedule_conversions", null, value);
-				this.OnPropertyChanged("unit_of_measure_schedule_conversions");
 			}
 		}
 		

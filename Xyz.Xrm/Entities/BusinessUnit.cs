@@ -5,21 +5,22 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	/// <summary>
-	/// Business, division, or department in the Microsoft Dynamics CRM database.
+	/// Business, division, or department in the Microsoft Dynamics 365 database.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("businessunit")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class BusinessUnit : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string Address1_AddressId = "address1_addressid";
 			public const string Address1_AddressTypeCode = "address1_addresstypecode";
@@ -84,6 +85,7 @@ namespace Xyz.Xrm.Entities
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
+			public const string msdyn_Warehouse = "msdyn_warehouse";
 			public const string Name = "name";
 			public const string OrganizationId = "organizationid";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
@@ -97,7 +99,6 @@ namespace Xyz.Xrm.Entities
 			public const string WebSiteUrl = "websiteurl";
 			public const string WorkflowSuspended = "workflowsuspended";
 			public const string Referencingbusiness_unit_parent_business_unit = "business_unit_parent_business_unit";
-			public const string BusinessUnit_Calendar = "BusinessUnit_Calendar";
 			public const string lk_businessunit_createdonbehalfby = "lk_businessunit_createdonbehalfby";
 			public const string lk_businessunit_modifiedonbehalfby = "lk_businessunit_modifiedonbehalfby";
 			public const string lk_businessunitbase_createdby = "lk_businessunitbase_createdby";
@@ -105,7 +106,6 @@ namespace Xyz.Xrm.Entities
 			public const string organization_business_units = "organization_business_units";
 			public const string TransactionCurrency_BusinessUnit = "TransactionCurrency_BusinessUnit";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -118,7 +118,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "businessunit";
 		
-		public const int EntityTypeCode = 10;
+		public const string EntitySchemaName = "BusinessUnit";
+		
+		public const string PrimaryIdAttribute = "businessunitid";
+		
+		public const string PrimaryNameAttribute = "name";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -166,18 +170,18 @@ namespace Xyz.Xrm.Entities
 		/// Type of address for address 1, such as billing, shipping, or primary address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Address1_AddressTypeCode
+		public virtual BusinessUnit_Address1_AddressTypeCode? Address1_AddressTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address1_addresstypecode");
+				return ((BusinessUnit_Address1_AddressTypeCode?)(EntityOptionSetEnum.GetEnum(this, "address1_addresstypecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("Address1_AddressTypeCode");
-				this.SetAttributeValue("address1_addresstypecode", value);
+				this.SetAttributeValue("address1_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("Address1_AddressTypeCode");
 			}
 		}
@@ -426,18 +430,18 @@ namespace Xyz.Xrm.Entities
 		/// Method of shipment for address 1.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Address1_ShippingMethodCode
+		public virtual BusinessUnit_Address1_ShippingMethodCode? Address1_ShippingMethodCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address1_shippingmethodcode");
+				return ((BusinessUnit_Address1_ShippingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "address1_shippingmethodcode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("Address1_ShippingMethodCode");
-				this.SetAttributeValue("address1_shippingmethodcode", value);
+				this.SetAttributeValue("address1_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("Address1_ShippingMethodCode");
 			}
 		}
@@ -586,18 +590,18 @@ namespace Xyz.Xrm.Entities
 		/// Type of address for address 2, such as billing, shipping, or primary address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Address2_AddressTypeCode
+		public virtual BusinessUnit_Address2_AddressTypeCode? Address2_AddressTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address2_addresstypecode");
+				return ((BusinessUnit_Address2_AddressTypeCode?)(EntityOptionSetEnum.GetEnum(this, "address2_addresstypecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("Address2_AddressTypeCode");
-				this.SetAttributeValue("address2_addresstypecode", value);
+				this.SetAttributeValue("address2_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("Address2_AddressTypeCode");
 			}
 		}
@@ -846,18 +850,18 @@ namespace Xyz.Xrm.Entities
 		/// Method of shipment for address 2.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Address2_ShippingMethodCode
+		public virtual BusinessUnit_Address2_ShippingMethodCode? Address2_ShippingMethodCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address2_shippingmethodcode");
+				return ((BusinessUnit_Address2_ShippingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "address2_shippingmethodcode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("Address2_ShippingMethodCode");
-				this.SetAttributeValue("address2_shippingmethodcode", value);
+				this.SetAttributeValue("address2_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("Address2_ShippingMethodCode");
 			}
 		}
@@ -1076,13 +1080,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
@@ -1095,13 +1092,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -1322,6 +1312,13 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("isdisabled");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IsDisabled");
+				this.SetAttributeValue("isdisabled", value);
+				this.OnPropertyChanged("IsDisabled");
+			}
 		}
 		
 		/// <summary>
@@ -1335,13 +1332,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
@@ -1354,13 +1344,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -1381,6 +1364,26 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ModifiedOnBehalfBy");
 				this.SetAttributeValue("modifiedonbehalfby", value);
 				this.OnPropertyChanged("ModifiedOnBehalfBy");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Warehouse associated with Business Unit.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_warehouse")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_Warehouse
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_warehouse");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_Warehouse");
+				this.SetAttributeValue("msdyn_warehouse", value);
+				this.OnPropertyChanged("msdyn_Warehouse");
 			}
 		}
 		
@@ -1611,26 +1614,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N BulkDeleteOperation_BusinessUnit
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BulkDeleteOperation_BusinessUnit")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteOperation> BulkDeleteOperation_BusinessUnit
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteOperation>("BulkDeleteOperation_BusinessUnit", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("BulkDeleteOperation_BusinessUnit");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteOperation>("BulkDeleteOperation_BusinessUnit", null, value);
-				this.OnPropertyChanged("BulkDeleteOperation_BusinessUnit");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N business_customer_opportunity_roles
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_customer_opportunity_roles")]
@@ -1751,146 +1734,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_BulkOperation_activities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_BulkOperation_activities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkOperation> business_unit_BulkOperation_activities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkOperation>("business_unit_BulkOperation_activities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_BulkOperation_activities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkOperation>("business_unit_BulkOperation_activities", null, value);
-				this.OnPropertyChanged("business_unit_BulkOperation_activities");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_calendars
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_calendars")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Calendar> business_unit_calendars
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Calendar>("business_unit_calendars", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_calendars");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Calendar>("business_unit_calendars", null, value);
-				this.OnPropertyChanged("business_unit_calendars");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_campaignactivity_activities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_campaignactivity_activities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.CampaignActivity> business_unit_campaignactivity_activities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.CampaignActivity>("business_unit_campaignactivity_activities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_campaignactivity_activities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.CampaignActivity>("business_unit_campaignactivity_activities", null, value);
-				this.OnPropertyChanged("business_unit_campaignactivity_activities");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_campaignresponse_activities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_campaignresponse_activities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.CampaignResponse> business_unit_campaignresponse_activities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.CampaignResponse>("business_unit_campaignresponse_activities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_campaignresponse_activities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.CampaignResponse>("business_unit_campaignresponse_activities", null, value);
-				this.OnPropertyChanged("business_unit_campaignresponse_activities");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_channelaccessprofile
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_channelaccessprofile")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ChannelAccessProfile> business_unit_channelaccessprofile
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ChannelAccessProfile>("business_unit_channelaccessprofile", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_channelaccessprofile");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ChannelAccessProfile>("business_unit_channelaccessprofile", null, value);
-				this.OnPropertyChanged("business_unit_channelaccessprofile");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_connections
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_connections")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> business_unit_connections
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("business_unit_connections", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_connections");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("business_unit_connections", null, value);
-				this.OnPropertyChanged("business_unit_connections");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_constraint_based_groups
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_constraint_based_groups")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ConstraintBasedGroup> business_unit_constraint_based_groups
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ConstraintBasedGroup>("business_unit_constraint_based_groups", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_constraint_based_groups");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ConstraintBasedGroup>("business_unit_constraint_based_groups", null, value);
-				this.OnPropertyChanged("business_unit_constraint_based_groups");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N business_unit_contacts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_contacts")]
@@ -1907,66 +1750,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("business_unit_contacts");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Contact>("business_unit_contacts", null, value);
 				this.OnPropertyChanged("business_unit_contacts");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_convertrule
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_convertrule")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ConvertRule> business_unit_convertrule
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ConvertRule>("business_unit_convertrule", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_convertrule");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ConvertRule>("business_unit_convertrule", null, value);
-				this.OnPropertyChanged("business_unit_convertrule");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_customer_relationship
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_customer_relationship")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.CustomerRelationship> business_unit_customer_relationship
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.CustomerRelationship>("business_unit_customer_relationship", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_customer_relationship");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.CustomerRelationship>("business_unit_customer_relationship", null, value);
-				this.OnPropertyChanged("business_unit_customer_relationship");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_dynamicproperyinstance
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_dynamicproperyinstance")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DynamicPropertyInstance> business_unit_dynamicproperyinstance
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DynamicPropertyInstance>("business_unit_dynamicproperyinstance", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_dynamicproperyinstance");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DynamicPropertyInstance>("business_unit_dynamicproperyinstance", null, value);
-				this.OnPropertyChanged("business_unit_dynamicproperyinstance");
 			}
 		}
 		
@@ -1991,186 +1774,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_emailserverprofile
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_emailserverprofile")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.EmailServerProfile> business_unit_emailserverprofile
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.EmailServerProfile>("business_unit_emailserverprofile", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_emailserverprofile");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.EmailServerProfile>("business_unit_emailserverprofile", null, value);
-				this.OnPropertyChanged("business_unit_emailserverprofile");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_entitlement
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_entitlement")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Entitlement> business_unit_entitlement
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Entitlement>("business_unit_entitlement", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_entitlement");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Entitlement>("business_unit_entitlement", null, value);
-				this.OnPropertyChanged("business_unit_entitlement");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_equipment
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_equipment")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Equipment> business_unit_equipment
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Equipment>("business_unit_equipment", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_equipment");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Equipment>("business_unit_equipment", null, value);
-				this.OnPropertyChanged("business_unit_equipment");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_exchangesyncidmapping
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_exchangesyncidmapping")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ExchangeSyncIdMapping> business_unit_exchangesyncidmapping
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ExchangeSyncIdMapping>("business_unit_exchangesyncidmapping", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_exchangesyncidmapping");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ExchangeSyncIdMapping>("business_unit_exchangesyncidmapping", null, value);
-				this.OnPropertyChanged("business_unit_exchangesyncidmapping");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_externalparty
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_externalparty")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ExternalParty> business_unit_externalparty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ExternalParty>("business_unit_externalparty", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_externalparty");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ExternalParty>("business_unit_externalparty", null, value);
-				this.OnPropertyChanged("business_unit_externalparty");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_fax_activities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_fax_activities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Fax> business_unit_fax_activities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Fax>("business_unit_fax_activities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_fax_activities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Fax>("business_unit_fax_activities", null, value);
-				this.OnPropertyChanged("business_unit_fax_activities");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_goal
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_goal")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Goal> business_unit_goal
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Goal>("business_unit_goal", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_goal");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Goal>("business_unit_goal", null, value);
-				this.OnPropertyChanged("business_unit_goal");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_goalrollupquery
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_goalrollupquery")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.GoalRollupQuery> business_unit_goalrollupquery
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.GoalRollupQuery>("business_unit_goalrollupquery", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_goalrollupquery");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.GoalRollupQuery>("business_unit_goalrollupquery", null, value);
-				this.OnPropertyChanged("business_unit_goalrollupquery");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_incident_resolution_activities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_incident_resolution_activities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.IncidentResolution> business_unit_incident_resolution_activities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.IncidentResolution>("business_unit_incident_resolution_activities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_incident_resolution_activities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.IncidentResolution>("business_unit_incident_resolution_activities", null, value);
-				this.OnPropertyChanged("business_unit_incident_resolution_activities");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N business_unit_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_incidents")]
@@ -2191,46 +1794,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_invoices
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_invoices")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Invoice> business_unit_invoices
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Invoice>("business_unit_invoices", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_invoices");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Invoice>("business_unit_invoices", null, value);
-				this.OnPropertyChanged("business_unit_invoices");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_knowledgearticle
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_knowledgearticle")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.KnowledgeArticle> business_unit_knowledgearticle
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.KnowledgeArticle>("business_unit_knowledgearticle", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_knowledgearticle");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.KnowledgeArticle>("business_unit_knowledgearticle", null, value);
-				this.OnPropertyChanged("business_unit_knowledgearticle");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N business_unit_leads
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_leads")]
@@ -2247,126 +1810,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("business_unit_leads");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Lead>("business_unit_leads", null, value);
 				this.OnPropertyChanged("business_unit_leads");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_letter_activities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_letter_activities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Letter> business_unit_letter_activities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Letter>("business_unit_letter_activities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_letter_activities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Letter>("business_unit_letter_activities", null, value);
-				this.OnPropertyChanged("business_unit_letter_activities");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_list
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_list")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.List> business_unit_list
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.List>("business_unit_list", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_list");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.List>("business_unit_list", null, value);
-				this.OnPropertyChanged("business_unit_list");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_mailbox
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_mailbox")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Mailbox> business_unit_mailbox
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Mailbox>("business_unit_mailbox", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_mailbox");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Mailbox>("business_unit_mailbox", null, value);
-				this.OnPropertyChanged("business_unit_mailbox");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_mailmergetemplates
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_mailmergetemplates")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.MailMergeTemplate> business_unit_mailmergetemplates
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.MailMergeTemplate>("business_unit_mailmergetemplates", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_mailmergetemplates");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.MailMergeTemplate>("business_unit_mailmergetemplates", null, value);
-				this.OnPropertyChanged("business_unit_mailmergetemplates");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_msdyn_postalbum
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_msdyn_postalbum")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.msdyn_PostAlbum> business_unit_msdyn_postalbum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.msdyn_PostAlbum>("business_unit_msdyn_postalbum", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_msdyn_postalbum");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.msdyn_PostAlbum>("business_unit_msdyn_postalbum", null, value);
-				this.OnPropertyChanged("business_unit_msdyn_postalbum");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_msdyn_wallsavedqueryusersettings
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_msdyn_wallsavedqueryusersettings")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.msdyn_wallsavedqueryusersettings> business_unit_msdyn_wallsavedqueryusersettings
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.msdyn_wallsavedqueryusersettings>("business_unit_msdyn_wallsavedqueryusersettings", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_msdyn_wallsavedqueryusersettings");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.msdyn_wallsavedqueryusersettings>("business_unit_msdyn_wallsavedqueryusersettings", null, value);
-				this.OnPropertyChanged("business_unit_msdyn_wallsavedqueryusersettings");
 			}
 		}
 		
@@ -2471,26 +1914,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_personaldocumenttemplates
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_personaldocumenttemplates")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PersonalDocumentTemplate> business_unit_personaldocumenttemplates
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PersonalDocumentTemplate>("business_unit_personaldocumenttemplates", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_personaldocumenttemplates");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PersonalDocumentTemplate>("business_unit_personaldocumenttemplates", null, value);
-				this.OnPropertyChanged("business_unit_personaldocumenttemplates");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N business_unit_phone_call_activities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_phone_call_activities")]
@@ -2511,42 +1934,22 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_postfollows
+		/// 1:N business_unit_processstageparameter
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_postfollows")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PostFollow> business_unit_postfollows
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_processstageparameter")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.processstageparameter> business_unit_processstageparameter
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("business_unit_postfollows", null);
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.processstageparameter>("business_unit_processstageparameter", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("business_unit_postfollows");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("business_unit_postfollows", null, value);
-				this.OnPropertyChanged("business_unit_postfollows");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_profilerule
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_profilerule")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ChannelAccessProfileRule> business_unit_profilerule
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ChannelAccessProfileRule>("business_unit_profilerule", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_profilerule");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ChannelAccessProfileRule>("business_unit_profilerule", null, value);
-				this.OnPropertyChanged("business_unit_profilerule");
+				this.OnPropertyChanging("business_unit_processstageparameter");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.processstageparameter>("business_unit_processstageparameter", null, value);
+				this.OnPropertyChanged("business_unit_processstageparameter");
 			}
 		}
 		
@@ -2591,166 +1994,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_quote_close_activities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_quote_close_activities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.QuoteClose> business_unit_quote_close_activities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.QuoteClose>("business_unit_quote_close_activities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_quote_close_activities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.QuoteClose>("business_unit_quote_close_activities", null, value);
-				this.OnPropertyChanged("business_unit_quote_close_activities");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_quotes
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_quotes")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Quote> business_unit_quotes
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Quote>("business_unit_quotes", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_quotes");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Quote>("business_unit_quotes", null, value);
-				this.OnPropertyChanged("business_unit_quotes");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_recurrencerule
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_recurrencerule")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RecurrenceRule> business_unit_recurrencerule
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RecurrenceRule>("business_unit_recurrencerule", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_recurrencerule");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RecurrenceRule>("business_unit_recurrencerule", null, value);
-				this.OnPropertyChanged("business_unit_recurrencerule");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_recurringappointmentmaster_activities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_recurringappointmentmaster_activities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RecurringAppointmentMaster> business_unit_recurringappointmentmaster_activities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RecurringAppointmentMaster>("business_unit_recurringappointmentmaster_activities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_recurringappointmentmaster_activities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RecurringAppointmentMaster>("business_unit_recurringappointmentmaster_activities", null, value);
-				this.OnPropertyChanged("business_unit_recurringappointmentmaster_activities");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_reports
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_reports")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Report> business_unit_reports
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Report>("business_unit_reports", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_reports");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Report>("business_unit_reports", null, value);
-				this.OnPropertyChanged("business_unit_reports");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_resource_groups
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_resource_groups")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ResourceGroup> business_unit_resource_groups
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ResourceGroup>("business_unit_resource_groups", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_resource_groups");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ResourceGroup>("business_unit_resource_groups", null, value);
-				this.OnPropertyChanged("business_unit_resource_groups");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_resource_specs
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_resource_specs")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ResourceSpec> business_unit_resource_specs
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ResourceSpec>("business_unit_resource_specs", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_resource_specs");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ResourceSpec>("business_unit_resource_specs", null, value);
-				this.OnPropertyChanged("business_unit_resource_specs");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_resources
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_resources")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Resource> business_unit_resources
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Resource>("business_unit_resources", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_resources");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Resource>("business_unit_resources", null, value);
-				this.OnPropertyChanged("business_unit_resources");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N business_unit_roles
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_roles")]
@@ -2767,226 +2010,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("business_unit_roles");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Role>("business_unit_roles", null, value);
 				this.OnPropertyChanged("business_unit_roles");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_routingrule
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_routingrule")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RoutingRule> business_unit_routingrule
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RoutingRule>("business_unit_routingrule", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_routingrule");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RoutingRule>("business_unit_routingrule", null, value);
-				this.OnPropertyChanged("business_unit_routingrule");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_service_appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_service_appointments")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ServiceAppointment> business_unit_service_appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ServiceAppointment>("business_unit_service_appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_service_appointments");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ServiceAppointment>("business_unit_service_appointments", null, value);
-				this.OnPropertyChanged("business_unit_service_appointments");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_service_contracts
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_service_contracts")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Contract> business_unit_service_contracts
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Contract>("business_unit_service_contracts", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_service_contracts");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Contract>("business_unit_service_contracts", null, value);
-				this.OnPropertyChanged("business_unit_service_contracts");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_sharepointdocument
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_sharepointdocument")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SharePointDocument> business_unit_sharepointdocument
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SharePointDocument>("business_unit_sharepointdocument", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_sharepointdocument");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SharePointDocument>("business_unit_sharepointdocument", null, value);
-				this.OnPropertyChanged("business_unit_sharepointdocument");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_sharepointdocument2
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_sharepointdocument2")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SharePointDocument> business_unit_sharepointdocument2
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SharePointDocument>("business_unit_sharepointdocument2", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_sharepointdocument2");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SharePointDocument>("business_unit_sharepointdocument2", null, value);
-				this.OnPropertyChanged("business_unit_sharepointdocument2");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_sharepointdocumentlocation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_sharepointdocumentlocation")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SharePointDocumentLocation> business_unit_sharepointdocumentlocation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SharePointDocumentLocation>("business_unit_sharepointdocumentlocation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_sharepointdocumentlocation");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SharePointDocumentLocation>("business_unit_sharepointdocumentlocation", null, value);
-				this.OnPropertyChanged("business_unit_sharepointdocumentlocation");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_sharepointsites
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_sharepointsites")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SharePointSite> business_unit_sharepointsites
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SharePointSite>("business_unit_sharepointsites", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_sharepointsites");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SharePointSite>("business_unit_sharepointsites", null, value);
-				this.OnPropertyChanged("business_unit_sharepointsites");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_slabase
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_slabase")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SLA> business_unit_slabase
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SLA>("business_unit_slabase", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_slabase");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SLA>("business_unit_slabase", null, value);
-				this.OnPropertyChanged("business_unit_slabase");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_slakpiinstance
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_slakpiinstance")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SLAKPIInstance> business_unit_slakpiinstance
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SLAKPIInstance>("business_unit_slakpiinstance", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_slakpiinstance");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SLAKPIInstance>("business_unit_slakpiinstance", null, value);
-				this.OnPropertyChanged("business_unit_slakpiinstance");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_socialactivity
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_socialactivity")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SocialActivity> business_unit_socialactivity
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SocialActivity>("business_unit_socialactivity", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_socialactivity");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SocialActivity>("business_unit_socialactivity", null, value);
-				this.OnPropertyChanged("business_unit_socialactivity");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_socialprofiles
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_socialprofiles")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SocialProfile> business_unit_socialprofiles
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SocialProfile>("business_unit_socialprofiles", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_socialprofiles");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SocialProfile>("business_unit_socialprofiles", null, value);
-				this.OnPropertyChanged("business_unit_socialprofiles");
 			}
 		}
 		
@@ -3051,106 +2074,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N business_unit_templates
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_templates")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Template> business_unit_templates
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Template>("business_unit_templates", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_templates");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Template>("business_unit_templates", null, value);
-				this.OnPropertyChanged("business_unit_templates");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_user_settings
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_user_settings")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserSettings> business_unit_user_settings
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserSettings>("business_unit_user_settings", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_user_settings");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserSettings>("business_unit_user_settings", null, value);
-				this.OnPropertyChanged("business_unit_user_settings");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_userform
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_userform")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserForm> business_unit_userform
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserForm>("business_unit_userform", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_userform");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserForm>("business_unit_userform", null, value);
-				this.OnPropertyChanged("business_unit_userform");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_userquery
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_userquery")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserQuery> business_unit_userquery
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserQuery>("business_unit_userquery", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_userquery");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserQuery>("business_unit_userquery", null, value);
-				this.OnPropertyChanged("business_unit_userquery");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N business_unit_userqueryvisualizations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_userqueryvisualizations")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserQueryVisualization> business_unit_userqueryvisualizations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserQueryVisualization>("business_unit_userqueryvisualizations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_userqueryvisualizations");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserQueryVisualization>("business_unit_userqueryvisualizations", null, value);
-				this.OnPropertyChanged("business_unit_userqueryvisualizations");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N business_unit_workflow
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("business_unit_workflow")]
@@ -3211,182 +2134,22 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N BusinessUnit_BulkDeleteFailures
+		/// 1:N businessunit_canvasapp
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BusinessUnit_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> BusinessUnit_BulkDeleteFailures
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("businessunit_canvasapp")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.CanvasApp> businessunit_canvasapp
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("BusinessUnit_BulkDeleteFailures", null);
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.CanvasApp>("businessunit_canvasapp", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("BusinessUnit_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("BusinessUnit_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("BusinessUnit_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N BusinessUnit_Campaigns
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BusinessUnit_Campaigns")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Campaign> BusinessUnit_Campaigns
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Campaign>("BusinessUnit_Campaigns", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("BusinessUnit_Campaigns");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Campaign>("BusinessUnit_Campaigns", null, value);
-				this.OnPropertyChanged("BusinessUnit_Campaigns");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N BusinessUnit_DuplicateRules
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BusinessUnit_DuplicateRules")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRule> BusinessUnit_DuplicateRules
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRule>("BusinessUnit_DuplicateRules", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("BusinessUnit_DuplicateRules");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRule>("BusinessUnit_DuplicateRules", null, value);
-				this.OnPropertyChanged("BusinessUnit_DuplicateRules");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N BusinessUnit_ImportFiles
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BusinessUnit_ImportFiles")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ImportFile> BusinessUnit_ImportFiles
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ImportFile>("BusinessUnit_ImportFiles", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("BusinessUnit_ImportFiles");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ImportFile>("BusinessUnit_ImportFiles", null, value);
-				this.OnPropertyChanged("BusinessUnit_ImportFiles");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N BusinessUnit_ImportLogs
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BusinessUnit_ImportLogs")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ImportLog> BusinessUnit_ImportLogs
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ImportLog>("BusinessUnit_ImportLogs", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("BusinessUnit_ImportLogs");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ImportLog>("BusinessUnit_ImportLogs", null, value);
-				this.OnPropertyChanged("BusinessUnit_ImportLogs");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N BusinessUnit_ImportMaps
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BusinessUnit_ImportMaps")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ImportMap> BusinessUnit_ImportMaps
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ImportMap>("BusinessUnit_ImportMaps", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("BusinessUnit_ImportMaps");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ImportMap>("BusinessUnit_ImportMaps", null, value);
-				this.OnPropertyChanged("BusinessUnit_ImportMaps");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N BusinessUnit_Imports
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BusinessUnit_Imports")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Import> BusinessUnit_Imports
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Import>("BusinessUnit_Imports", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("BusinessUnit_Imports");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Import>("BusinessUnit_Imports", null, value);
-				this.OnPropertyChanged("BusinessUnit_Imports");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N businessunit_mailboxtrackingfolder
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("businessunit_mailboxtrackingfolder")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.MailboxTrackingFolder> businessunit_mailboxtrackingfolder
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.MailboxTrackingFolder>("businessunit_mailboxtrackingfolder", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("businessunit_mailboxtrackingfolder");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.MailboxTrackingFolder>("businessunit_mailboxtrackingfolder", null, value);
-				this.OnPropertyChanged("businessunit_mailboxtrackingfolder");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N businessunit_principalobjectattributeaccess
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("businessunit_principalobjectattributeaccess")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess> businessunit_principalobjectattributeaccess
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("businessunit_principalobjectattributeaccess", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("businessunit_principalobjectattributeaccess");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("businessunit_principalobjectattributeaccess", null, value);
-				this.OnPropertyChanged("businessunit_principalobjectattributeaccess");
+				this.OnPropertyChanging("businessunit_canvasapp");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.CanvasApp>("businessunit_canvasapp", null, value);
+				this.OnPropertyChanged("businessunit_canvasapp");
 			}
 		}
 		
@@ -3411,26 +2174,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N BusinessUnit_SyncError
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BusinessUnit_SyncError")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SyncError> BusinessUnit_SyncError
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SyncError>("BusinessUnit_SyncError", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("BusinessUnit_SyncError");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SyncError>("BusinessUnit_SyncError", null, value);
-				this.OnPropertyChanged("BusinessUnit_SyncError");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N Owning_businessunit_processsessions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Owning_businessunit_processsessions")]
@@ -3447,46 +2190,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Owning_businessunit_processsessions");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.ProcessSession>("Owning_businessunit_processsessions", null, value);
 				this.OnPropertyChanged("Owning_businessunit_processsessions");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_businessunit
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_businessunit")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_businessunit
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_businessunit", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_businessunit");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_businessunit", null, value);
-				this.OnPropertyChanged("userentityinstancedata_businessunit");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityuisettings_businessunit
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityuisettings_businessunit")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityUISettings> userentityuisettings_businessunit
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityUISettings>("userentityuisettings_businessunit", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityuisettings_businessunit");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityUISettings>("userentityuisettings_businessunit", null, value);
-				this.OnPropertyChanged("userentityuisettings_businessunit");
 			}
 		}
 		
@@ -3508,27 +2211,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Referencingbusiness_unit_parent_business_unit");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_parent_business_unit", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
 				this.OnPropertyChanged("Referencingbusiness_unit_parent_business_unit");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 BusinessUnit_Calendar
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("calendarid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("BusinessUnit_Calendar")]
-		public Xyz.Xrm.Entities.Calendar BusinessUnit_Calendar
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Calendar>("BusinessUnit_Calendar", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("BusinessUnit_Calendar");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Calendar>("BusinessUnit_Calendar", null, value);
-				this.OnPropertyChanged("BusinessUnit_Calendar");
 			}
 		}
 		
@@ -3586,13 +2268,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_businessunitbase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_businessunitbase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_businessunitbase_createdby", null, value);
-				this.OnPropertyChanged("lk_businessunitbase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -3606,13 +2281,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_businessunitbase_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_businessunitbase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_businessunitbase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_businessunitbase_modifiedby");
 			}
 		}
 		
@@ -3691,66 +2359,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecode")]
-		public virtual BusinessUnit_Address1_AddressTypeCode? Address1_AddressTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((BusinessUnit_Address1_AddressTypeCode?)(EntityOptionSetEnum.GetEnum(this, "address1_addresstypecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				Address1_AddressTypeCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcode")]
-		public virtual BusinessUnit_Address1_ShippingMethodCode? Address1_ShippingMethodCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((BusinessUnit_Address1_ShippingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "address1_shippingmethodcode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				Address1_ShippingMethodCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecode")]
-		public virtual BusinessUnit_Address2_AddressTypeCode? Address2_AddressTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((BusinessUnit_Address2_AddressTypeCode?)(EntityOptionSetEnum.GetEnum(this, "address2_addresstypecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				Address2_AddressTypeCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcode")]
-		public virtual BusinessUnit_Address2_ShippingMethodCode? Address2_ShippingMethodCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((BusinessUnit_Address2_ShippingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "address2_shippingmethodcode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				Address2_ShippingMethodCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

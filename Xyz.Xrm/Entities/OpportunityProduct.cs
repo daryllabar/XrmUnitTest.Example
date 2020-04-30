@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("opportunityproduct")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class OpportunityProduct : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string BaseAmount = "baseamount";
 			public const string BaseAmount_Base = "baseamount_base";
@@ -43,25 +44,44 @@ namespace Xyz.Xrm.Entities
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
+			public const string msdyn_BillingMethod = "msdyn_billingmethod";
+			public const string msdyn_BudgetAmount = "msdyn_budgetamount";
+			public const string msdyn_budgetamount_Base = "msdyn_budgetamount_base";
+			public const string msdyn_CostAmount = "msdyn_costamount";
+			public const string msdyn_costamount_Base = "msdyn_costamount_base";
+			public const string msdyn_CostPricePerUnit = "msdyn_costpriceperunit";
+			public const string msdyn_costpriceperunit_Base = "msdyn_costpriceperunit_base";
+			public const string msdyn_Duration = "msdyn_duration";
+			public const string msdyn_enddate = "msdyn_enddate";
+			public const string msdyn_LineType = "msdyn_linetype";
+			public const string msdyn_pricelist = "msdyn_pricelist";
+			public const string msdyn_Project = "msdyn_project";
+			public const string msdyn_serviceaccount = "msdyn_serviceaccount";
+			public const string msdyn_startdate = "msdyn_startdate";
 			public const string OpportunityId = "opportunityid";
 			public const string OpportunityProductId = "opportunityproductid";
 			public const string Id = "opportunityproductid";
+			public const string OpportunityProductName = "opportunityproductname";
 			public const string OpportunityStateCode = "opportunitystatecode";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
 			public const string OwnerId = "ownerid";
 			public const string OwningBusinessUnit = "owningbusinessunit";
+			public const string OwningTeam = "owningteam";
 			public const string OwningUser = "owninguser";
 			public const string ParentBundleId = "parentbundleid";
+			public const string ParentBundleIdRef = "parentbundleidref";
 			public const string PricePerUnit = "priceperunit";
 			public const string PricePerUnit_Base = "priceperunit_base";
 			public const string PricingErrorCode = "pricingerrorcode";
 			public const string ProductAssociationId = "productassociationid";
 			public const string ProductDescription = "productdescription";
 			public const string ProductId = "productid";
+			public const string ProductName = "productname";
 			public const string ProductTypeCode = "producttypecode";
 			public const string PropertyConfigurationStatus = "propertyconfigurationstatus";
 			public const string Quantity = "quantity";
 			public const string SequenceNumber = "sequencenumber";
+			public const string SkipPriceCalculation = "skippricecalculation";
 			public const string Tax = "tax";
 			public const string Tax_Base = "tax_base";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
@@ -75,14 +95,17 @@ namespace Xyz.Xrm.Entities
 			public const string lk_opportunityproduct_modifiedonbehalfby = "lk_opportunityproduct_modifiedonbehalfby";
 			public const string lk_opportunityproductbase_createdby = "lk_opportunityproductbase_createdby";
 			public const string lk_opportunityproductbase_modifiedby = "lk_opportunityproductbase_modifiedby";
+			public const string msdyn_account_opportunityproduct_ServiceAccount = "msdyn_account_opportunityproduct_ServiceAccount";
+			public const string msdyn_pricelevel_opportunityproduct_PriceList = "msdyn_pricelevel_opportunityproduct_PriceList";
 			public const string opportunity_products = "opportunity_products";
 			public const string Referencingopportunityproduct_parent_opportunityproduct = "opportunityproduct_parent_opportunityproduct";
+			public const string Referencingopportunityproduct_parentref_opportunityproduct = "opportunityproduct_parentref_opportunityproduct";
 			public const string product_opportunities = "product_opportunities";
-			public const string productAssociation_opportunity_product = "productAssociation_opportunity_product";
+			public const string team_opportunityproduct = "team_opportunityproduct";
 			public const string transactioncurrency_opportunityproduct = "transactioncurrency_opportunityproduct";
 			public const string unit_of_measurement_opportunity_products = "unit_of_measurement_opportunity_products";
+			public const string user_opportunityproduct = "user_opportunityproduct";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -95,7 +118,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "opportunityproduct";
 		
-		public const int EntityTypeCode = 1083;
+		public const string EntitySchemaName = "OpportunityProduct";
+		
+		public const string PrimaryIdAttribute = "opportunityproductid";
+		
+		public const string PrimaryNameAttribute = "opportunityproductname";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -153,7 +180,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows who created the record.
+		/// lk_opportunityproductbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -163,17 +190,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -183,17 +203,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
+		/// lk_opportunityproduct_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -451,7 +464,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record.
+		/// lk_opportunityproductbase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -461,17 +474,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -481,17 +487,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the opportunityproduct.
+		/// lk_opportunityproduct_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -507,6 +506,265 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ModifiedOnBehalfBy");
 				this.SetAttributeValue("modifiedonbehalfby", value);
 				this.OnPropertyChanged("ModifiedOnBehalfBy");
+			}
+		}
+		
+		/// <summary>
+		/// Billing method for the project opportunity line. Valid values are Time and Material and Fixed Price
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_billingmethod")]
+		public virtual msdyn_BillingMethod? msdyn_BillingMethod
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((msdyn_BillingMethod?)(EntityOptionSetEnum.GetEnum(this, "msdyn_billingmethod")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_BillingMethod");
+				this.SetAttributeValue("msdyn_billingmethod", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_BillingMethod");
+			}
+		}
+		
+		/// <summary>
+		/// Enter the customer budget amount for this opportunity line.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_budgetamount")]
+		public Microsoft.Xrm.Sdk.Money msdyn_BudgetAmount
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("msdyn_budgetamount");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_BudgetAmount");
+				this.SetAttributeValue("msdyn_budgetamount", value);
+				this.OnPropertyChanged("msdyn_BudgetAmount");
+			}
+		}
+		
+		/// <summary>
+		/// Value of the Budget Amount in base currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_budgetamount_base")]
+		public Microsoft.Xrm.Sdk.Money msdyn_budgetamount_Base
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("msdyn_budgetamount_base");
+			}
+		}
+		
+		/// <summary>
+		/// Shows the total cost price of the product based on the cost price per unit and quantity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_costamount")]
+		public Microsoft.Xrm.Sdk.Money msdyn_CostAmount
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("msdyn_costamount");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_CostAmount");
+				this.SetAttributeValue("msdyn_costamount", value);
+				this.OnPropertyChanged("msdyn_CostAmount");
+			}
+		}
+		
+		/// <summary>
+		/// Value of the Cost Amount in base currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_costamount_base")]
+		public Microsoft.Xrm.Sdk.Money msdyn_costamount_Base
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("msdyn_costamount_base");
+			}
+		}
+		
+		/// <summary>
+		/// Cost price per unit of the product. The default is the cost price of the product.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_costpriceperunit")]
+		public Microsoft.Xrm.Sdk.Money msdyn_CostPricePerUnit
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("msdyn_costpriceperunit");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_CostPricePerUnit");
+				this.SetAttributeValue("msdyn_costpriceperunit", value);
+				this.OnPropertyChanged("msdyn_CostPricePerUnit");
+			}
+		}
+		
+		/// <summary>
+		/// Value of the Cost Price Per Unit in base currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_costpriceperunit_base")]
+		public Microsoft.Xrm.Sdk.Money msdyn_costpriceperunit_Base
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("msdyn_costpriceperunit_base");
+			}
+		}
+		
+		/// <summary>
+		/// Enter the duration of the agreement
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_duration")]
+		public System.Nullable<int> msdyn_Duration
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("msdyn_duration");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_Duration");
+				this.SetAttributeValue("msdyn_duration", value);
+				this.OnPropertyChanged("msdyn_Duration");
+			}
+		}
+		
+		/// <summary>
+		/// Enter the end date of the agreement
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_enddate")]
+		public System.Nullable<System.DateTime> msdyn_enddate
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("msdyn_enddate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_enddate");
+				this.SetAttributeValue("msdyn_enddate", value);
+				this.OnPropertyChanged("msdyn_enddate");
+			}
+		}
+		
+		/// <summary>
+		/// The field to distinguish the order lines to be of project service or field service
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_linetype")]
+		public virtual msdyn_LineType? msdyn_LineType
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((msdyn_LineType?)(EntityOptionSetEnum.GetEnum(this, "msdyn_linetype")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_LineType");
+				this.SetAttributeValue("msdyn_linetype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_LineType");
+			}
+		}
+		
+		/// <summary>
+		/// Select a price list for the opportunity line
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_pricelist")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_pricelist
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_pricelist");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_pricelist");
+				this.SetAttributeValue("msdyn_pricelist", value);
+				this.OnPropertyChanged("msdyn_pricelist");
+			}
+		}
+		
+		/// <summary>
+		/// Select the project for this opportunity line.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_project")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_Project
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_project");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_Project");
+				this.SetAttributeValue("msdyn_project", value);
+				this.OnPropertyChanged("msdyn_Project");
+			}
+		}
+		
+		/// <summary>
+		/// Select the service account for the opportunity line
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_serviceaccount")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_serviceaccount
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_serviceaccount");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_serviceaccount");
+				this.SetAttributeValue("msdyn_serviceaccount", value);
+				this.OnPropertyChanged("msdyn_serviceaccount");
+			}
+		}
+		
+		/// <summary>
+		/// Start date of the Agreement
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_startdate")]
+		public System.Nullable<System.DateTime> msdyn_startdate
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("msdyn_startdate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_startdate");
+				this.SetAttributeValue("msdyn_startdate", value);
+				this.OnPropertyChanged("msdyn_startdate");
 			}
 		}
 		
@@ -574,15 +832,35 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Select the status of the opportunity product.
+		/// Opportunity Product Name. Added for 1:n referential relationship (internal purposes only)
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opportunitystatecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue OpportunityStateCode
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opportunityproductname")]
+		public string OpportunityProductName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("opportunitystatecode");
+				return this.GetAttributeValue<string>("opportunityproductname");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OpportunityProductName");
+				this.SetAttributeValue("opportunityproductname", value);
+				this.OnPropertyChanged("OpportunityProductName");
+			}
+		}
+		
+		/// <summary>
+		/// Select the status of the opportunity product.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opportunitystatecode")]
+		public virtual OpportunityProduct_OpportunityStateCode? OpportunityStateCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((OpportunityProduct_OpportunityStateCode?)(EntityOptionSetEnum.GetEnum(this, "opportunitystatecode")));
 			}
 		}
 		
@@ -623,19 +901,25 @@ namespace Xyz.Xrm.Entities
 		/// Unique identifier of the business unit that owns the opportunity product.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
-		public System.Nullable<System.Guid> OwningBusinessUnit
+		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("owningbusinessunit");
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for the team that owns the record.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
+		{
 			[System.Diagnostics.DebuggerNonUserCode()]
-			set
+			get
 			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
 		}
 		
@@ -650,17 +934,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("owninguser");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
-			}
 		}
 		
 		/// <summary>
-		/// Choose the parent bundle associated with this product
+		/// opportunityproduct_parent_opportunityproduct
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentbundleid")]
 		public System.Nullable<System.Guid> ParentBundleId
@@ -676,6 +953,26 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ParentBundleId");
 				this.SetAttributeValue("parentbundleid", value);
 				this.OnPropertyChanged("ParentBundleId");
+			}
+		}
+		
+		/// <summary>
+		/// Choose the parent bundle associated with this product
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentbundleidref")]
+		public Microsoft.Xrm.Sdk.EntityReference ParentBundleIdRef
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("parentbundleidref");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ParentBundleIdRef");
+				this.SetAttributeValue("parentbundleidref", value);
+				this.OnPropertyChanged("ParentBundleIdRef");
 			}
 		}
 		
@@ -716,24 +1013,24 @@ namespace Xyz.Xrm.Entities
 		/// Select the pricing error for the opportunity product.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pricingerrorcode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue PricingErrorCode
+		public virtual Qooi_PricingErrorCode? PricingErrorCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("pricingerrorcode");
+				return ((Qooi_PricingErrorCode?)(EntityOptionSetEnum.GetEnum(this, "pricingerrorcode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("PricingErrorCode");
-				this.SetAttributeValue("pricingerrorcode", value);
+				this.SetAttributeValue("pricingerrorcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("PricingErrorCode");
 			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the product line item association with bundle in the opportunity
+		/// productAssociation_opportunity_product
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("productassociationid")]
 		public System.Nullable<System.Guid> ProductAssociationId
@@ -773,7 +1070,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the product to include on the opportunity to link the product's pricing and other information to the opportunity.
+		/// opportunity_products
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("productid")]
 		public Microsoft.Xrm.Sdk.EntityReference ProductId
@@ -793,21 +1090,41 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Product Type
+		/// Calculated field that will be populated by name and description of the product.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("producttypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ProductTypeCode
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("productname")]
+		public string ProductName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("producttypecode");
+				return this.GetAttributeValue<string>("productname");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ProductName");
+				this.SetAttributeValue("productname", value);
+				this.OnPropertyChanged("ProductName");
+			}
+		}
+		
+		/// <summary>
+		/// Product Type
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("producttypecode")]
+		public virtual QooiProduct_ProductType? ProductTypeCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((QooiProduct_ProductType?)(EntityOptionSetEnum.GetEnum(this, "producttypecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("ProductTypeCode");
-				this.SetAttributeValue("producttypecode", value);
+				this.SetAttributeValue("producttypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("ProductTypeCode");
 			}
 		}
@@ -816,18 +1133,18 @@ namespace Xyz.Xrm.Entities
 		/// Status of the property configuration.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("propertyconfigurationstatus")]
-		public Microsoft.Xrm.Sdk.OptionSetValue PropertyConfigurationStatus
+		public virtual QooiProduct_PropertiesConfigurationStatus? PropertyConfigurationStatus
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("propertyconfigurationstatus");
+				return ((QooiProduct_PropertiesConfigurationStatus?)(EntityOptionSetEnum.GetEnum(this, "propertyconfigurationstatus")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("PropertyConfigurationStatus");
-				this.SetAttributeValue("propertyconfigurationstatus", value);
+				this.SetAttributeValue("propertyconfigurationstatus", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("PropertyConfigurationStatus");
 			}
 		}
@@ -869,6 +1186,26 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("SequenceNumber");
 				this.SetAttributeValue("sequencenumber", value);
 				this.OnPropertyChanged("SequenceNumber");
+			}
+		}
+		
+		/// <summary>
+		/// Skip price calculation
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("skippricecalculation")]
+		public virtual qooidetail_skippricecalculation? SkipPriceCalculation
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((qooidetail_skippricecalculation?)(EntityOptionSetEnum.GetEnum(this, "skippricecalculation")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SkipPriceCalculation");
+				this.SetAttributeValue("skippricecalculation", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("SkipPriceCalculation");
 			}
 		}
 		
@@ -926,7 +1263,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the local currency for the record to make sure budgets are reported in the correct currency.
+		/// transactioncurrency_opportunityproduct
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
@@ -936,10 +1273,17 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("transactioncurrencyid");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TransactionCurrencyId");
+				this.SetAttributeValue("transactioncurrencyid", value);
+				this.OnPropertyChanged("TransactionCurrencyId");
+			}
 		}
 		
 		/// <summary>
-		/// Choose the unit of measurement for the base unit quantity for this purchase, such as each or dozen.
+		/// unit_of_measurement_opportunity_products
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uomid")]
 		public Microsoft.Xrm.Sdk.EntityReference UoMId
@@ -1038,46 +1382,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N OpportunityProduct_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("OpportunityProduct_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> OpportunityProduct_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("OpportunityProduct_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OpportunityProduct_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("OpportunityProduct_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("OpportunityProduct_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N OpportunityProduct_Dynamicpropertyinstance
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("OpportunityProduct_Dynamicpropertyinstance")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DynamicPropertyInstance> OpportunityProduct_Dynamicpropertyinstance
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DynamicPropertyInstance>("OpportunityProduct_Dynamicpropertyinstance", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OpportunityProduct_Dynamicpropertyinstance");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DynamicPropertyInstance>("OpportunityProduct_Dynamicpropertyinstance", null, value);
-				this.OnPropertyChanged("OpportunityProduct_Dynamicpropertyinstance");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N opportunityproduct_parent_opportunityproduct
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("opportunityproduct_parent_opportunityproduct", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
@@ -1098,22 +1402,22 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N opportunityproduct_principalobjectattributeaccess
+		/// 1:N opportunityproduct_parentref_opportunityproduct
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("opportunityproduct_principalobjectattributeaccess")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess> opportunityproduct_principalobjectattributeaccess
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("opportunityproduct_parentref_opportunityproduct", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.OpportunityProduct> Referencedopportunityproduct_parentref_opportunityproduct
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("opportunityproduct_principalobjectattributeaccess", null);
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.OpportunityProduct>("opportunityproduct_parentref_opportunityproduct", Microsoft.Xrm.Sdk.EntityRole.Referenced);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("opportunityproduct_principalobjectattributeaccess");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("opportunityproduct_principalobjectattributeaccess", null, value);
-				this.OnPropertyChanged("opportunityproduct_principalobjectattributeaccess");
+				this.OnPropertyChanging("Referencedopportunityproduct_parentref_opportunityproduct");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.OpportunityProduct>("opportunityproduct_parentref_opportunityproduct", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.OnPropertyChanged("Referencedopportunityproduct_parentref_opportunityproduct");
 			}
 		}
 		
@@ -1134,26 +1438,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("OpportunityProduct_ProcessSessions");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.ProcessSession>("OpportunityProduct_ProcessSessions", null, value);
 				this.OnPropertyChanged("OpportunityProduct_ProcessSessions");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_opportunityproduct
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_opportunityproduct")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_opportunityproduct
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_opportunityproduct", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_opportunityproduct");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_opportunityproduct", null, value);
-				this.OnPropertyChanged("userentityinstancedata_opportunityproduct");
 			}
 		}
 		
@@ -1211,13 +1495,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_opportunityproductbase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_opportunityproductbase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_opportunityproductbase_createdby", null, value);
-				this.OnPropertyChanged("lk_opportunityproductbase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -1232,12 +1509,47 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_opportunityproductbase_modifiedby", null);
 			}
+		}
+		
+		/// <summary>
+		/// N:1 msdyn_account_opportunityproduct_ServiceAccount
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_serviceaccount")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_account_opportunityproduct_ServiceAccount")]
+		public Xyz.Xrm.Entities.Account msdyn_account_opportunityproduct_ServiceAccount
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Account>("msdyn_account_opportunityproduct_ServiceAccount", null);
+			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("lk_opportunityproductbase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_opportunityproductbase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_opportunityproductbase_modifiedby");
+				this.OnPropertyChanging("msdyn_account_opportunityproduct_ServiceAccount");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.Account>("msdyn_account_opportunityproduct_ServiceAccount", null, value);
+				this.OnPropertyChanged("msdyn_account_opportunityproduct_ServiceAccount");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 msdyn_pricelevel_opportunityproduct_PriceList
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_pricelist")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_pricelevel_opportunityproduct_PriceList")]
+		public Xyz.Xrm.Entities.PriceLevel msdyn_pricelevel_opportunityproduct_PriceList
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.PriceLevel>("msdyn_pricelevel_opportunityproduct_PriceList", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_pricelevel_opportunityproduct_PriceList");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.PriceLevel>("msdyn_pricelevel_opportunityproduct_PriceList", null, value);
+				this.OnPropertyChanged("msdyn_pricelevel_opportunityproduct_PriceList");
 			}
 		}
 		
@@ -1284,6 +1596,27 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// N:1 opportunityproduct_parentref_opportunityproduct
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentbundleidref")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("opportunityproduct_parentref_opportunityproduct", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
+		public Xyz.Xrm.Entities.OpportunityProduct Referencingopportunityproduct_parentref_opportunityproduct
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.OpportunityProduct>("opportunityproduct_parentref_opportunityproduct", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Referencingopportunityproduct_parentref_opportunityproduct");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.OpportunityProduct>("opportunityproduct_parentref_opportunityproduct", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				this.OnPropertyChanged("Referencingopportunityproduct_parentref_opportunityproduct");
+			}
+		}
+		
+		/// <summary>
 		/// N:1 product_opportunities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opportunityid")]
@@ -1305,23 +1638,16 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 productAssociation_opportunity_product
+		/// N:1 team_opportunityproduct
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("productassociationid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("productAssociation_opportunity_product")]
-		public Xyz.Xrm.Entities.ProductAssociation productAssociation_opportunity_product
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_opportunityproduct")]
+		public Xyz.Xrm.Entities.Team team_opportunityproduct
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ProductAssociation>("productAssociation_opportunity_product", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("productAssociation_opportunity_product");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ProductAssociation>("productAssociation_opportunity_product", null, value);
-				this.OnPropertyChanged("productAssociation_opportunity_product");
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Team>("team_opportunityproduct", null);
 			}
 		}
 		
@@ -1336,6 +1662,13 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.TransactionCurrency>("transactioncurrency_opportunityproduct", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("transactioncurrency_opportunityproduct");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.TransactionCurrency>("transactioncurrency_opportunityproduct", null, value);
+				this.OnPropertyChanged("transactioncurrency_opportunityproduct");
 			}
 		}
 		
@@ -1357,6 +1690,20 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("unit_of_measurement_opportunity_products");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.UoM>("unit_of_measurement_opportunity_products", null, value);
 				this.OnPropertyChanged("unit_of_measurement_opportunity_products");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 user_opportunityproduct
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("user_opportunityproduct")]
+		public Xyz.Xrm.Entities.SystemUser user_opportunityproduct
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("user_opportunityproduct", null);
 			}
 		}
 		
@@ -1400,61 +1747,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("opportunitystatecode")]
-		public virtual OpportunityProduct_OpportunityStateCode? OpportunityStateCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((OpportunityProduct_OpportunityStateCode?)(EntityOptionSetEnum.GetEnum(this, "opportunitystatecode")));
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pricingerrorcode")]
-		public virtual Qooi_PricingErrorCode? PricingErrorCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Qooi_PricingErrorCode?)(EntityOptionSetEnum.GetEnum(this, "pricingerrorcode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				PricingErrorCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("producttypecode")]
-		public virtual QooiProduct_ProductType? ProductTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((QooiProduct_ProductType?)(EntityOptionSetEnum.GetEnum(this, "producttypecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				ProductTypeCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("propertyconfigurationstatus")]
-		public virtual QooiProduct_PropertiesConfigurationStatus? PropertyConfigurationStatusEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((QooiProduct_PropertiesConfigurationStatus?)(EntityOptionSetEnum.GetEnum(this, "propertyconfigurationstatus")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				PropertyConfigurationStatus = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

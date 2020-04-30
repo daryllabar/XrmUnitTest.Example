@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Gen
 	ProjectSection(SolutionItems) = preProject
 		Code Generation\crmassumption.snippet = Code Generation\crmassumption.snippet
 		Code Generation\crmentitybuilder.snippet = Code Generation\crmentitybuilder.snippet
+		Code Generation\crmmstestclass.snippet = Code Generation\crmmstestclass.snippet
 		Code Generation\crmplugin.snippet = Code Generation\crmplugin.snippet
 		Code Generation\crmplugintest.snippet = Code Generation\crmplugintest.snippet
 		Code Generation\crmtestmethodclass.snippet = Code Generation\crmtestmethodclass.snippet

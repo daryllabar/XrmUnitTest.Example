@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("activityparty")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class ActivityParty : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string ActivityId = "activityid";
 			public const string ActivityPartyId = "activitypartyid";
@@ -35,8 +36,6 @@ namespace Xyz.Xrm.Entities
 			public const string InstanceTypeCode = "instancetypecode";
 			public const string IsPartyDeleted = "ispartydeleted";
 			public const string OwnerId = "ownerid";
-			public const string OwningBusinessUnit = "owningbusinessunit";
-			public const string OwningUser = "owninguser";
 			public const string ParticipationTypeMask = "participationtypemask";
 			public const string PartyId = "partyid";
 			public const string ResourceSpecId = "resourcespecid";
@@ -44,40 +43,21 @@ namespace Xyz.Xrm.Entities
 			public const string ScheduledStart = "scheduledstart";
 			public const string VersionNumber = "versionnumber";
 			public const string account_activity_parties = "account_activity_parties";
-			public const string ActivityPartyResourceSpec = "ActivityPartyResourceSpec";
 			public const string activitypointer_activity_parties = "activitypointer_activity_parties";
 			public const string appointment_activity_parties = "appointment_activity_parties";
-			public const string bulkoperation_activity_parties = "bulkoperation_activity_parties";
-			public const string campaign_activity_parties = "campaign_activity_parties";
-			public const string campaignactivity_activity_parties = "campaignactivity_activity_parties";
-			public const string campaignactivity_activityparties = "campaignactivity_activityparties";
-			public const string campaignresponse_activity_parties = "campaignresponse_activity_parties";
 			public const string contact_activity_parties = "contact_activity_parties";
-			public const string contract_activity_parties = "contract_activity_parties";
 			public const string email_activity_parties = "email_activity_parties";
-			public const string equipment_activity_parties = "equipment_activity_parties";
-			public const string fax_activity_parties = "fax_activity_parties";
 			public const string incident_activity_parties = "incident_activity_parties";
-			public const string incidentresolution_activity_parties = "incidentresolution_activity_parties";
-			public const string invoice_activity_parties = "invoice_activity_parties";
-			public const string knowledgearticle_activity_parties = "knowledgearticle_activity_parties";
 			public const string lead_activity_parties = "lead_activity_parties";
-			public const string letter_activity_parties = "letter_activity_parties";
 			public const string opportunity_activity_parties = "opportunity_activity_parties";
 			public const string opportunityclose_activity_parties = "opportunityclose_activity_parties";
 			public const string orderclose_activity_parties = "orderclose_activity_parties";
 			public const string phonecall_activity_parties = "phonecall_activity_parties";
 			public const string queue_activity_parties = "queue_activity_parties";
-			public const string quote_activity_parties = "quote_activity_parties";
-			public const string quoteclose_activity_parties = "quoteclose_activity_parties";
-			public const string recurringappointmentmaster_activity_parties = "recurringappointmentmaster_activity_parties";
 			public const string salesorder_activity_parties = "salesorder_activity_parties";
-			public const string serviceappointment_activity_parties = "serviceappointment_activity_parties";
-			public const string socialactivity_activity_parties = "socialactivity_activity_parties";
 			public const string system_user_activity_parties = "system_user_activity_parties";
 			public const string task_activity_parties = "task_activity_parties";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -90,7 +70,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "activityparty";
 		
-		public const int EntityTypeCode = 135;
+		public const string EntitySchemaName = "ActivityParty";
+		
+		public const string PrimaryIdAttribute = "activitypartyid";
+		
+		public const string PrimaryNameAttribute = "partyidname";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -115,7 +99,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the activity associated with the activity party. (A "party" is any person who is associated with an activity.)
+		/// quoteclose_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
 		public Microsoft.Xrm.Sdk.EntityReference ActivityId
@@ -306,12 +290,12 @@ namespace Xyz.Xrm.Entities
 		/// Type of instance of a recurring series.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("instancetypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue InstanceTypeCode
+		public virtual ActivityParty_InstanceTypeCode? InstanceTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("instancetypecode");
+				return ((ActivityParty_InstanceTypeCode?)(EntityOptionSetEnum.GetEnum(this, "instancetypecode")));
 			}
 		}
 		
@@ -342,67 +326,27 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
-		public System.Nullable<System.Guid> OwningBusinessUnit
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("owningbusinessunit");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
-		}
-		
-		/// <summary>
-		/// 
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
-		public System.Nullable<System.Guid> OwningUser
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("owninguser");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
-			}
-		}
-		
-		/// <summary>
 		/// Role of the person in the activity, such as sender, to, cc, bcc, required, optional, organizer, regarding, or owner.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("participationtypemask")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ParticipationTypeMask
+		public virtual ActivityParty_ParticipationTypeMask? ParticipationTypeMask
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("participationtypemask");
+				return ((ActivityParty_ParticipationTypeMask?)(EntityOptionSetEnum.GetEnum(this, "participationtypemask")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("ParticipationTypeMask");
-				this.SetAttributeValue("participationtypemask", value);
+				this.SetAttributeValue("participationtypemask", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("ParticipationTypeMask");
 			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the party associated with the activity.
+		/// salesorder_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
 		public Microsoft.Xrm.Sdk.EntityReference PartyId
@@ -422,7 +366,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the resource specification for the activity party.
+		/// ActivityPartyResourceSpec
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resourcespecid")]
 		public Microsoft.Xrm.Sdk.EntityReference ResourceSpecId
@@ -481,26 +425,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N userentityinstancedata_activityparty
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_activityparty")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_activityparty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_activityparty", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_activityparty");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_activityparty", null, value);
-				this.OnPropertyChanged("userentityinstancedata_activityparty");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 account_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
@@ -518,27 +442,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("account_activity_parties");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.Account>("account_activity_parties", null, value);
 				this.OnPropertyChanged("account_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 ActivityPartyResourceSpec
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resourcespecid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ActivityPartyResourceSpec")]
-		public Xyz.Xrm.Entities.ResourceSpec ActivityPartyResourceSpec
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ResourceSpec>("ActivityPartyResourceSpec", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ActivityPartyResourceSpec");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ResourceSpec>("ActivityPartyResourceSpec", null, value);
-				this.OnPropertyChanged("ActivityPartyResourceSpec");
 			}
 		}
 		
@@ -585,111 +488,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 bulkoperation_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("bulkoperation_activity_parties")]
-		public Xyz.Xrm.Entities.BulkOperation bulkoperation_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.BulkOperation>("bulkoperation_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("bulkoperation_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BulkOperation>("bulkoperation_activity_parties", null, value);
-				this.OnPropertyChanged("bulkoperation_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 campaign_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("campaign_activity_parties")]
-		public Xyz.Xrm.Entities.Campaign campaign_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Campaign>("campaign_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("campaign_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Campaign>("campaign_activity_parties", null, value);
-				this.OnPropertyChanged("campaign_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 campaignactivity_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("campaignactivity_activity_parties")]
-		public Xyz.Xrm.Entities.CampaignActivity campaignactivity_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.CampaignActivity>("campaignactivity_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("campaignactivity_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.CampaignActivity>("campaignactivity_activity_parties", null, value);
-				this.OnPropertyChanged("campaignactivity_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 campaignactivity_activityparties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("campaignactivity_activityparties")]
-		public Xyz.Xrm.Entities.CampaignActivity campaignactivity_activityparties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.CampaignActivity>("campaignactivity_activityparties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("campaignactivity_activityparties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.CampaignActivity>("campaignactivity_activityparties", null, value);
-				this.OnPropertyChanged("campaignactivity_activityparties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 campaignresponse_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("campaignresponse_activity_parties")]
-		public Xyz.Xrm.Entities.CampaignResponse campaignresponse_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.CampaignResponse>("campaignresponse_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("campaignresponse_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.CampaignResponse>("campaignresponse_activity_parties", null, value);
-				this.OnPropertyChanged("campaignresponse_activity_parties");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 contact_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
@@ -707,27 +505,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("contact_activity_parties");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.Contact>("contact_activity_parties", null, value);
 				this.OnPropertyChanged("contact_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 contract_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contract_activity_parties")]
-		public Xyz.Xrm.Entities.Contract contract_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Contract>("contract_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("contract_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Contract>("contract_activity_parties", null, value);
-				this.OnPropertyChanged("contract_activity_parties");
 			}
 		}
 		
@@ -753,48 +530,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 equipment_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("equipment_activity_parties")]
-		public Xyz.Xrm.Entities.Equipment equipment_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Equipment>("equipment_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("equipment_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Equipment>("equipment_activity_parties", null, value);
-				this.OnPropertyChanged("equipment_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 fax_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("fax_activity_parties")]
-		public Xyz.Xrm.Entities.Fax fax_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Fax>("fax_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("fax_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Fax>("fax_activity_parties", null, value);
-				this.OnPropertyChanged("fax_activity_parties");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 incident_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
@@ -816,69 +551,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 incidentresolution_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incidentresolution_activity_parties")]
-		public Xyz.Xrm.Entities.IncidentResolution incidentresolution_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.IncidentResolution>("incidentresolution_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("incidentresolution_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.IncidentResolution>("incidentresolution_activity_parties", null, value);
-				this.OnPropertyChanged("incidentresolution_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 invoice_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("invoice_activity_parties")]
-		public Xyz.Xrm.Entities.Invoice invoice_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Invoice>("invoice_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("invoice_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Invoice>("invoice_activity_parties", null, value);
-				this.OnPropertyChanged("invoice_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 knowledgearticle_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgearticle_activity_parties")]
-		public Xyz.Xrm.Entities.KnowledgeArticle knowledgearticle_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.KnowledgeArticle>("knowledgearticle_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("knowledgearticle_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.KnowledgeArticle>("knowledgearticle_activity_parties", null, value);
-				this.OnPropertyChanged("knowledgearticle_activity_parties");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 lead_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
@@ -896,27 +568,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("lead_activity_parties");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.Lead>("lead_activity_parties", null, value);
 				this.OnPropertyChanged("lead_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 letter_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("letter_activity_parties")]
-		public Xyz.Xrm.Entities.Letter letter_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Letter>("letter_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("letter_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Letter>("letter_activity_parties", null, value);
-				this.OnPropertyChanged("letter_activity_parties");
 			}
 		}
 		
@@ -1026,69 +677,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 quote_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("quote_activity_parties")]
-		public Xyz.Xrm.Entities.Quote quote_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Quote>("quote_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("quote_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Quote>("quote_activity_parties", null, value);
-				this.OnPropertyChanged("quote_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 quoteclose_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("quoteclose_activity_parties")]
-		public Xyz.Xrm.Entities.QuoteClose quoteclose_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.QuoteClose>("quoteclose_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("quoteclose_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.QuoteClose>("quoteclose_activity_parties", null, value);
-				this.OnPropertyChanged("quoteclose_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 recurringappointmentmaster_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("recurringappointmentmaster_activity_parties")]
-		public Xyz.Xrm.Entities.RecurringAppointmentMaster recurringappointmentmaster_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.RecurringAppointmentMaster>("recurringappointmentmaster_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("recurringappointmentmaster_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.RecurringAppointmentMaster>("recurringappointmentmaster_activity_parties", null, value);
-				this.OnPropertyChanged("recurringappointmentmaster_activity_parties");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 salesorder_activity_parties
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partyid")]
@@ -1106,48 +694,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("salesorder_activity_parties");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.SalesOrder>("salesorder_activity_parties", null, value);
 				this.OnPropertyChanged("salesorder_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 serviceappointment_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("serviceappointment_activity_parties")]
-		public Xyz.Xrm.Entities.ServiceAppointment serviceappointment_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ServiceAppointment>("serviceappointment_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("serviceappointment_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ServiceAppointment>("serviceappointment_activity_parties", null, value);
-				this.OnPropertyChanged("serviceappointment_activity_parties");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 socialactivity_activity_parties
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("socialactivity_activity_parties")]
-		public Xyz.Xrm.Entities.SocialActivity socialactivity_activity_parties
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.SocialActivity>("socialactivity_activity_parties", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("socialactivity_activity_parties");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SocialActivity>("socialactivity_activity_parties", null, value);
-				this.OnPropertyChanged("socialactivity_activity_parties");
 			}
 		}
 		
@@ -1233,31 +779,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("instancetypecode")]
-		public virtual ActivityParty_InstanceTypeCode? InstanceTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ActivityParty_InstanceTypeCode?)(EntityOptionSetEnum.GetEnum(this, "instancetypecode")));
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("participationtypemask")]
-		public virtual ActivityParty_ParticipationTypeMask? ParticipationTypeMaskEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ActivityParty_ParticipationTypeMask?)(EntityOptionSetEnum.GetEnum(this, "participationtypemask")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				ParticipationTypeMask = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

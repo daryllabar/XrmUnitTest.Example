@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,12 +16,18 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("processstage")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class ProcessStage : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
+			public const string ClientData = "clientdata";
+			public const string Connector = "connector";
+			public const string IsTrigger = "istrigger";
+			public const string OperationId = "operationid";
+			public const string OperationKind = "operationkind";
+			public const string OperationType = "operationtype";
 			public const string OwnerId = "ownerid";
 			public const string OwningBusinessUnit = "owningbusinessunit";
 			public const string PrimaryEntityTypeCode = "primaryentitytypecode";
@@ -32,7 +39,6 @@ namespace Xyz.Xrm.Entities
 			public const string VersionNumber = "versionnumber";
 			public const string process_processstage = "process_processstage";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -45,7 +51,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "processstage";
 		
-		public const int EntityTypeCode = 4724;
+		public const string EntitySchemaName = "ProcessStage";
+		
+		public const string PrimaryIdAttribute = "processstageid";
+		
+		public const string PrimaryNameAttribute = "stagename";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -66,6 +76,119 @@ namespace Xyz.Xrm.Entities
 			if ((this.PropertyChanging != null))
 			{
 				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
+		/// <summary>
+		/// Step metadata for process stage
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("clientdata")]
+		public string ClientData
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("clientdata");
+			}
+		}
+		
+		/// <summary>
+		/// The connector associated with the stage.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("connector")]
+		public string Connector
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("connector");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Connector");
+				this.SetAttributeValue("connector", value);
+				this.OnPropertyChanged("Connector");
+			}
+		}
+		
+		/// <summary>
+		/// Whether the stage is a trigger
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("istrigger")]
+		public System.Nullable<bool> IsTrigger
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("istrigger");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IsTrigger");
+				this.SetAttributeValue("istrigger", value);
+				this.OnPropertyChanged("IsTrigger");
+			}
+		}
+		
+		/// <summary>
+		/// The operation id of the stage
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("operationid")]
+		public string OperationId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("operationid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OperationId");
+				this.SetAttributeValue("operationid", value);
+				this.OnPropertyChanged("OperationId");
+			}
+		}
+		
+		/// <summary>
+		/// The operation kind
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("operationkind")]
+		public virtual ProcessStage_OperationKind? OperationKind
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((ProcessStage_OperationKind?)(EntityOptionSetEnum.GetEnum(this, "operationkind")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OperationKind");
+				this.SetAttributeValue("operationkind", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("OperationKind");
+			}
+		}
+		
+		/// <summary>
+		/// The type of the operation
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("operationtype")]
+		public virtual ProcessStage_OperationType? OperationType
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((ProcessStage_OperationType?)(EntityOptionSetEnum.GetEnum(this, "operationtype")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OperationType");
+				this.SetAttributeValue("operationtype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("OperationType");
 			}
 		}
 		
@@ -92,13 +215,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("owningbusinessunit");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
 			}
 		}
 		
@@ -189,18 +305,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the category of the sales process.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stagecategory")]
-		public Microsoft.Xrm.Sdk.OptionSetValue StageCategory
+		public virtual Processstage_Category? StageCategory
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("stagecategory");
+				return ((Processstage_Category?)(EntityOptionSetEnum.GetEnum(this, "stagecategory")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("StageCategory");
-				this.SetAttributeValue("stagecategory", value);
+				this.SetAttributeValue("stagecategory", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("StageCategory");
 			}
 		}
@@ -235,6 +351,26 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<long>>("versionnumber");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N lk_opportunitysalesprocess_activestageid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_opportunitysalesprocess_activestageid")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.OpportunitySalesProcess> lk_opportunitysalesprocess_activestageid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.OpportunitySalesProcess>("lk_opportunitysalesprocess_activestageid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("lk_opportunitysalesprocess_activestageid");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.OpportunitySalesProcess>("lk_opportunitysalesprocess_activestageid", null, value);
+				this.OnPropertyChanged("lk_opportunitysalesprocess_activestageid");
 			}
 		}
 		
@@ -275,66 +411,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("processstage_appointments");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Appointment>("processstage_appointments", null, value);
 				this.OnPropertyChanged("processstage_appointments");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N processstage_campaignactivities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_campaignactivities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.CampaignActivity> processstage_campaignactivities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.CampaignActivity>("processstage_campaignactivities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_campaignactivities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.CampaignActivity>("processstage_campaignactivities", null, value);
-				this.OnPropertyChanged("processstage_campaignactivities");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N processstage_campaignresponses
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_campaignresponses")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.CampaignResponse> processstage_campaignresponses
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.CampaignResponse>("processstage_campaignresponses", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_campaignresponses");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.CampaignResponse>("processstage_campaignresponses", null, value);
-				this.OnPropertyChanged("processstage_campaignresponses");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N processstage_campaigns
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_campaigns")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Campaign> processstage_campaigns
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Campaign>("processstage_campaigns", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_campaigns");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Campaign>("processstage_campaigns", null, value);
-				this.OnPropertyChanged("processstage_campaigns");
 			}
 		}
 		
@@ -399,26 +475,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N processstage_faxes
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_faxes")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Fax> processstage_faxes
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Fax>("processstage_faxes", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_faxes");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Fax>("processstage_faxes", null, value);
-				this.OnPropertyChanged("processstage_faxes");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N processstage_incident
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_incident")]
@@ -439,46 +495,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N processstage_invoices
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_invoices")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Invoice> processstage_invoices
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Invoice>("processstage_invoices", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_invoices");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Invoice>("processstage_invoices", null, value);
-				this.OnPropertyChanged("processstage_invoices");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N processstage_knowledgearticle
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_knowledgearticle")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.KnowledgeArticle> processstage_knowledgearticle
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.KnowledgeArticle>("processstage_knowledgearticle", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_knowledgearticle");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.KnowledgeArticle>("processstage_knowledgearticle", null, value);
-				this.OnPropertyChanged("processstage_knowledgearticle");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N processstage_lead
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_lead")]
@@ -495,46 +511,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("processstage_lead");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Lead>("processstage_lead", null, value);
 				this.OnPropertyChanged("processstage_lead");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N processstage_letters
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_letters")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Letter> processstage_letters
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Letter>("processstage_letters", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_letters");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Letter>("processstage_letters", null, value);
-				this.OnPropertyChanged("processstage_letters");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N processstage_lists
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_lists")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.List> processstage_lists
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.List>("processstage_lists", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_lists");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.List>("processstage_lists", null, value);
-				this.OnPropertyChanged("processstage_lists");
 			}
 		}
 		
@@ -579,6 +555,26 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// 1:N processstage_processstageparameter
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_processstageparameter")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.processstageparameter> processstage_processstageparameter
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.processstageparameter>("processstage_processstageparameter", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("processstage_processstageparameter");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.processstageparameter>("processstage_processstageparameter", null, value);
+				this.OnPropertyChanged("processstage_processstageparameter");
+			}
+		}
+		
+		/// <summary>
 		/// 1:N processstage_productpricelevels
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_productpricelevels")]
@@ -615,66 +611,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("processstage_products");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Product>("processstage_products", null, value);
 				this.OnPropertyChanged("processstage_products");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N processstage_quotes
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_quotes")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Quote> processstage_quotes
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Quote>("processstage_quotes", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_quotes");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Quote>("processstage_quotes", null, value);
-				this.OnPropertyChanged("processstage_quotes");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N processstage_recurringappointmentmasters
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_recurringappointmentmasters")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RecurringAppointmentMaster> processstage_recurringappointmentmasters
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RecurringAppointmentMaster>("processstage_recurringappointmentmasters", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_recurringappointmentmasters");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RecurringAppointmentMaster>("processstage_recurringappointmentmasters", null, value);
-				this.OnPropertyChanged("processstage_recurringappointmentmasters");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N processstage_salesliteratures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("processstage_salesliteratures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SalesLiterature> processstage_salesliteratures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SalesLiterature>("processstage_salesliteratures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("processstage_salesliteratures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SalesLiterature>("processstage_salesliteratures", null, value);
-				this.OnPropertyChanged("processstage_salesliteratures");
 			}
 		}
 		
@@ -819,21 +755,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stagecategory")]
-		public virtual Processstage_Category? StageCategoryEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Processstage_Category?)(EntityOptionSetEnum.GetEnum(this, "stagecategory")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				StageCategory = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

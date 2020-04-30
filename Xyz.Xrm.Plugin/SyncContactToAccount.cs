@@ -36,7 +36,7 @@ namespace Xyz.Xrm.Plugin
                 return;
             }
 
-            using (var crm = new CrmContext(context.OrganizationService))
+            using (var crm = new XrmContext(context.OrganizationService))
             {
                 var accounts = crm.AccountSet.Where(a => a.PrimaryContactId.Id == contact.Id);
                 foreach (var account in accounts)
@@ -53,7 +53,7 @@ namespace Xyz.Xrm.Plugin
                 Address1_Line1 = contact.Address1_Line1,
                 Address1_Line2 = contact.Address1_Line2,
                 Address1_Line3 = contact.Address1_Line3,
-                Address1_AddressTypeCode = contact.Address1_AddressTypeCode,
+                Address1_AddressTypeCode = (Account_Address1_AddressTypeCode?)contact.Address1_AddressTypeCode,
                 Address1_City = contact.Address1_City,
                 Address1_Country = contact.Address1_Country,
                 Address1_County = contact.Address1_County,

@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("privilege")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class Privilege : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string AccessRight = "accessright";
 			public const string CanBeBasic = "canbebasic";
@@ -28,12 +29,17 @@ namespace Xyz.Xrm.Entities
 			public const string CanBeGlobal = "canbeglobal";
 			public const string CanBeLocal = "canbelocal";
 			public const string CanBeParentEntityReference = "canbeparententityreference";
+			public const string ComponentState = "componentstate";
+			public const string IntroducedVersion = "introducedversion";
+			public const string IsManaged = "ismanaged";
 			public const string Name = "name";
+			public const string OverwriteTime = "overwritetime";
 			public const string PrivilegeId = "privilegeid";
 			public const string Id = "privilegeid";
+			public const string PrivilegeRowId = "privilegerowid";
+			public const string SolutionId = "solutionid";
 			public const string VersionNumber = "versionnumber";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -46,7 +52,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "privilege";
 		
-		public const int EntityTypeCode = 1023;
+		public const string EntitySchemaName = "Privilege";
+		
+		public const string PrimaryIdAttribute = "privilegeid";
+		
+		public const string PrimaryNameAttribute = "name";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -211,6 +221,52 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
+		public virtual ComponentState? ComponentState
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
+			}
+		}
+		
+		/// <summary>
+		/// Version in which the component is introduced.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("introducedversion")]
+		public string IntroducedVersion
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("introducedversion");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IntroducedVersion");
+				this.SetAttributeValue("introducedversion", value);
+				this.OnPropertyChanged("IntroducedVersion");
+			}
+		}
+		
+		/// <summary>
+		/// Information that specifies whether this component is managed.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismanaged")]
+		public System.Nullable<bool> IsManaged
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("ismanaged");
+			}
+		}
+		
+		/// <summary>
 		/// Name of the privilege.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("name")]
@@ -227,6 +283,19 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Name");
 				this.SetAttributeValue("name", value);
 				this.OnPropertyChanged("Name");
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("overwritetime")]
+		public System.Nullable<System.DateTime> OverwriteTime
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("overwritetime");
 			}
 		}
 		
@@ -274,6 +343,39 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Unique identifier of the Privilege used when synchronizing customizations for the Microsoft Dynamics CRM client for Outlook
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("privilegerowid")]
+		public System.Nullable<System.Guid> PrivilegeRowId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("privilegerowid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PrivilegeRowId");
+				this.SetAttributeValue("privilegerowid", value);
+				this.OnPropertyChanged("PrivilegeRowId");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier of the associated solution.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("solutionid")]
+		public System.Nullable<System.Guid> SolutionId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("solutionid");
+			}
+		}
+		
+		/// <summary>
 		/// 
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
@@ -303,66 +405,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Privilege_AsyncOperations");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.AsyncOperation>("Privilege_AsyncOperations", null, value);
 				this.OnPropertyChanged("Privilege_AsyncOperations");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Privilege_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Privilege_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> Privilege_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Privilege_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Privilege_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Privilege_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("Privilege_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_privilege
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_privilege")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_privilege
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_privilege", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_privilege");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_privilege", null, value);
-				this.OnPropertyChanged("userentityinstancedata_privilege");
-			}
-		}
-		
-		/// <summary>
-		/// N:N ChannelAccessProfile_Privilege
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ChannelAccessProfile_Privilege")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ChannelAccessProfile> ChannelAccessProfile_Privilege
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ChannelAccessProfile>("ChannelAccessProfile_Privilege", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ChannelAccessProfile_Privilege");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ChannelAccessProfile>("ChannelAccessProfile_Privilege", null, value);
-				this.OnPropertyChanged("ChannelAccessProfile_Privilege");
 			}
 		}
 		

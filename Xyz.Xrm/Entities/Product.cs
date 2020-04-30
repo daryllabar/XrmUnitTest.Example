@@ -5,13 +5,14 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum ProductState
 	{
 		
@@ -33,11 +34,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("product")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class Product : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string CreatedBy = "createdby";
 			public const string CreatedByExternalParty = "createdbyexternalparty";
@@ -57,11 +58,19 @@ namespace Xyz.Xrm.Entities
 			public const string HierarchyPath = "hierarchypath";
 			public const string ImportSequenceNumber = "importsequencenumber";
 			public const string IsKit = "iskit";
+			public const string IsReparented = "isreparented";
 			public const string IsStockItem = "isstockitem";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedByExternalParty = "modifiedbyexternalparty";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
+			public const string msdyn_ConvertToCustomerAsset = "msdyn_converttocustomerasset";
+			public const string msdyn_DefaultVendor = "msdyn_defaultvendor";
+			public const string msdyn_FieldServiceProductType = "msdyn_fieldserviceproducttype";
+			public const string msdyn_PurchaseName = "msdyn_purchasename";
+			public const string msdyn_Taxable = "msdyn_taxable";
+			public const string msdyn_TransactionCategory = "msdyn_transactioncategory";
+			public const string msdyn_UPCCode = "msdyn_upccode";
 			public const string Name = "name";
 			public const string OrganizationId = "organizationid";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
@@ -98,22 +107,18 @@ namespace Xyz.Xrm.Entities
 			public const string VendorName = "vendorname";
 			public const string VendorPartNumber = "vendorpartnumber";
 			public const string VersionNumber = "versionnumber";
-			public const string lk_externalparty_product_createdby = "lk_externalparty_product_createdby";
-			public const string lk_externalparty_product_modifiedby = "lk_externalparty_product_modifiedby";
 			public const string lk_product_createdonbehalfby = "lk_product_createdonbehalfby";
 			public const string lk_product_modifiedonbehalfby = "lk_product_modifiedonbehalfby";
 			public const string lk_productbase_createdby = "lk_productbase_createdby";
 			public const string lk_productbase_modifiedby = "lk_productbase_modifiedby";
+			public const string msdyn_account_product_DefaultVendor = "msdyn_account_product_DefaultVendor";
 			public const string organization_products = "organization_products";
 			public const string price_level_products = "price_level_products";
 			public const string processstage_products = "processstage_products";
 			public const string Referencingproduct_parent_product = "product_parent_product";
-			public const string subject_products = "subject_products";
 			public const string transactioncurrency_product = "transactioncurrency_product";
 			public const string unit_of_measurement_products = "unit_of_measurement_products";
-			public const string unit_of_measurement_schedule_products = "unit_of_measurement_schedule_products";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -126,7 +131,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "product";
 		
-		public const int EntityTypeCode = 1024;
+		public const string EntitySchemaName = "Product";
+		
+		public const string PrimaryIdAttribute = "productid";
+		
+		public const string PrimaryNameAttribute = "name";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -161,13 +170,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
@@ -194,17 +196,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the product.
+		/// lk_productbase_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -257,7 +252,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Default unit for the product.
+		/// unit_of_measurement_products
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultuomid")]
 		public Microsoft.Xrm.Sdk.EntityReference DefaultUoMId
@@ -277,7 +272,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Default unit group for the product.
+		/// unit_of_measurement_schedule_products
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultuomscheduleid")]
 		public Microsoft.Xrm.Sdk.EntityReference DefaultUoMScheduleId
@@ -462,6 +457,26 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isreparented")]
+		public System.Nullable<bool> IsReparented
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("isreparented");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IsReparented");
+				this.SetAttributeValue("isreparented", value);
+				this.OnPropertyChanged("IsReparented");
+			}
+		}
+		
+		/// <summary>
 		/// Information about whether the product is a stock item.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isstockitem")]
@@ -492,13 +507,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
@@ -525,17 +533,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the product.
+		/// lk_uomschedulebase_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -551,6 +552,146 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ModifiedOnBehalfBy");
 				this.SetAttributeValue("modifiedonbehalfby", value);
 				this.OnPropertyChanged("ModifiedOnBehalfBy");
+			}
+		}
+		
+		/// <summary>
+		/// Specify whether a product is to be converted to a customer asset. When a product is used on a work order, the system will automatically convert it into a customer asset when the work order is closed.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_converttocustomerasset")]
+		public System.Nullable<bool> msdyn_ConvertToCustomerAsset
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_converttocustomerasset");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_ConvertToCustomerAsset");
+				this.SetAttributeValue("msdyn_converttocustomerasset", value);
+				this.OnPropertyChanged("msdyn_ConvertToCustomerAsset");
+			}
+		}
+		
+		/// <summary>
+		/// Default vendor that supplies this product
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_defaultvendor")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_DefaultVendor
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_defaultvendor");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_DefaultVendor");
+				this.SetAttributeValue("msdyn_defaultvendor", value);
+				this.OnPropertyChanged("msdyn_DefaultVendor");
+			}
+		}
+		
+		/// <summary>
+		/// 
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_fieldserviceproducttype")]
+		public virtual msdyn_FieldServiceProductType? msdyn_FieldServiceProductType
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((msdyn_FieldServiceProductType?)(EntityOptionSetEnum.GetEnum(this, "msdyn_fieldserviceproducttype")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_FieldServiceProductType");
+				this.SetAttributeValue("msdyn_fieldserviceproducttype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_FieldServiceProductType");
+			}
+		}
+		
+		/// <summary>
+		/// Type the name for the product when used on a purchase order.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_purchasename")]
+		public string msdyn_PurchaseName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("msdyn_purchasename");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_PurchaseName");
+				this.SetAttributeValue("msdyn_purchasename", value);
+				this.OnPropertyChanged("msdyn_PurchaseName");
+			}
+		}
+		
+		/// <summary>
+		/// Select whether the item is taxable. If an item is set as not taxable, it won't be taxable even on a taxable work order.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_taxable")]
+		public System.Nullable<bool> msdyn_Taxable
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("msdyn_taxable");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_Taxable");
+				this.SetAttributeValue("msdyn_taxable", value);
+				this.OnPropertyChanged("msdyn_Taxable");
+			}
+		}
+		
+		/// <summary>
+		/// Select the transaction category for this product.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_transactioncategory")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_TransactionCategory
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_transactioncategory");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_TransactionCategory");
+				this.SetAttributeValue("msdyn_transactioncategory", value);
+				this.OnPropertyChanged("msdyn_TransactionCategory");
+			}
+		}
+		
+		/// <summary>
+		/// Shows the UPC Code for product. Used for bar code scanning.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_upccode")]
+		public string msdyn_UPCCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("msdyn_upccode");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_UPCCode");
+				this.SetAttributeValue("msdyn_upccode", value);
+				this.OnPropertyChanged("msdyn_UPCCode");
 			}
 		}
 		
@@ -575,7 +716,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the organization associated with the product.
+		/// organization_products
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
 		public Microsoft.Xrm.Sdk.EntityReference OrganizationId
@@ -628,7 +769,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// List price of the product.
+		/// List price for the product item. Used in price calculations.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("price")]
 		public Microsoft.Xrm.Sdk.Money Price
@@ -661,7 +802,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Select the default price list for the product.
+		/// price_level_products
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pricelevelid")]
 		public Microsoft.Xrm.Sdk.EntityReference PriceLevelId
@@ -767,18 +908,18 @@ namespace Xyz.Xrm.Entities
 		/// Product Structure.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("productstructure")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ProductStructure
+		public virtual Product_ProductStructure? ProductStructure
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("productstructure");
+				return ((Product_ProductStructure?)(EntityOptionSetEnum.GetEnum(this, "productstructure")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("ProductStructure");
-				this.SetAttributeValue("productstructure", value);
+				this.SetAttributeValue("productstructure", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("ProductStructure");
 			}
 		}
@@ -787,18 +928,18 @@ namespace Xyz.Xrm.Entities
 		/// Type of product.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("producttypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ProductTypeCode
+		public virtual Product_ProductTypeCode? ProductTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("producttypecode");
+				return ((Product_ProductTypeCode?)(EntityOptionSetEnum.GetEnum(this, "producttypecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("ProductTypeCode");
-				this.SetAttributeValue("producttypecode", value);
+				this.SetAttributeValue("producttypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("ProductTypeCode");
 			}
 		}
@@ -884,7 +1025,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows the ID of the stage.
+		/// processstage_products
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
@@ -904,7 +1045,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Standard cost of the product.
+		/// Standard cost for the product item. Used in price calculations.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("standardcost")]
 		public Microsoft.Xrm.Sdk.Money StandardCost
@@ -975,18 +1116,18 @@ namespace Xyz.Xrm.Entities
 		/// Reason for the status of the product.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue StatusCode
+		public virtual Product_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statuscode");
+				return ((Product_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("StatusCode");
-				this.SetAttributeValue("statuscode", value);
+				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("StatusCode");
 			}
 		}
@@ -1032,7 +1173,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Select a category for the product.
+		/// subject_products
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subjectid")]
 		public Microsoft.Xrm.Sdk.EntityReference SubjectId
@@ -1092,7 +1233,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the currency associated with the product.
+		/// transactioncurrency_product
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
@@ -1325,126 +1466,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Product_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> Product_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Product_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Product_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Product_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("Product_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N product_connections1
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_connections1")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> product_connections1
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("product_connections1", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_connections1");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("product_connections1", null, value);
-				this.OnPropertyChanged("product_connections1");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N product_connections2
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_connections2")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> product_connections2
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("product_connections2", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_connections2");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("product_connections2", null, value);
-				this.OnPropertyChanged("product_connections2");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N product_contract_line_items
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_contract_line_items")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ContractDetail> product_contract_line_items
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ContractDetail>("product_contract_line_items", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_contract_line_items");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ContractDetail>("product_contract_line_items", null, value);
-				this.OnPropertyChanged("product_contract_line_items");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Product_DynamicProperty
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_DynamicProperty")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DynamicProperty> Product_DynamicProperty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DynamicProperty>("Product_DynamicProperty", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Product_DynamicProperty");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DynamicProperty>("Product_DynamicProperty", null, value);
-				this.OnPropertyChanged("Product_DynamicProperty");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Product_DynamicPropertyAssociation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_DynamicPropertyAssociation")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DynamicPropertyAssociation> Product_DynamicPropertyAssociation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DynamicPropertyAssociation>("Product_DynamicPropertyAssociation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Product_DynamicPropertyAssociation");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DynamicPropertyAssociation>("Product_DynamicPropertyAssociation", null, value);
-				this.OnPropertyChanged("Product_DynamicPropertyAssociation");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N product_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_incidents")]
@@ -1461,26 +1482,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("product_incidents");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Incident>("product_incidents", null, value);
 				this.OnPropertyChanged("product_incidents");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N product_invoice_details
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_invoice_details")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.InvoiceDetail> product_invoice_details
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.InvoiceDetail>("product_invoice_details", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_invoice_details");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.InvoiceDetail>("product_invoice_details", null, value);
-				this.OnPropertyChanged("product_invoice_details");
 			}
 		}
 		
@@ -1545,26 +1546,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N product_principalobjectattributeaccess
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_principalobjectattributeaccess")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess> product_principalobjectattributeaccess
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("product_principalobjectattributeaccess", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_principalobjectattributeaccess");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("product_principalobjectattributeaccess", null, value);
-				this.OnPropertyChanged("product_principalobjectattributeaccess");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N Product_ProcessSessions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_ProcessSessions")]
@@ -1581,226 +1562,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Product_ProcessSessions");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.ProcessSession>("Product_ProcessSessions", null, value);
 				this.OnPropertyChanged("Product_ProcessSessions");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Product_ProductAssociation_AssocProd
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_ProductAssociation_AssocProd")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ProductAssociation> Product_ProductAssociation_AssocProd
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ProductAssociation>("Product_ProductAssociation_AssocProd", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Product_ProductAssociation_AssocProd");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ProductAssociation>("Product_ProductAssociation_AssocProd", null, value);
-				this.OnPropertyChanged("Product_ProductAssociation_AssocProd");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Product_ProductAssociation_Prod
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_ProductAssociation_Prod")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ProductAssociation> Product_ProductAssociation_Prod
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ProductAssociation>("Product_ProductAssociation_Prod", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Product_ProductAssociation_Prod");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ProductAssociation>("Product_ProductAssociation_Prod", null, value);
-				this.OnPropertyChanged("Product_ProductAssociation_Prod");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N product_ProductSubstitute_productid
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_ProductSubstitute_productid")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ProductSubstitute> product_ProductSubstitute_productid
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ProductSubstitute>("product_ProductSubstitute_productid", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_ProductSubstitute_productid");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ProductSubstitute>("product_ProductSubstitute_productid", null, value);
-				this.OnPropertyChanged("product_ProductSubstitute_productid");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N product_ProductSubstitute_substitutedproductid
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_ProductSubstitute_substitutedproductid")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ProductSubstitute> product_ProductSubstitute_substitutedproductid
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ProductSubstitute>("product_ProductSubstitute_substitutedproductid", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_ProductSubstitute_substitutedproductid");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ProductSubstitute>("product_ProductSubstitute_substitutedproductid", null, value);
-				this.OnPropertyChanged("product_ProductSubstitute_substitutedproductid");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N product_quote_details
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_quote_details")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.QuoteDetail> product_quote_details
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.QuoteDetail>("product_quote_details", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_quote_details");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.QuoteDetail>("product_quote_details", null, value);
-				this.OnPropertyChanged("product_quote_details");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Product_RecommendationCache_ItemId
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_RecommendationCache_ItemId")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RecommendationCache> Product_RecommendationCache_ItemId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RecommendationCache>("Product_RecommendationCache_ItemId", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Product_RecommendationCache_ItemId");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RecommendationCache>("Product_RecommendationCache_ItemId", null, value);
-				this.OnPropertyChanged("Product_RecommendationCache_ItemId");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Product_RecommendationCache_RecommendedItemId
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_RecommendationCache_RecommendedItemId")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RecommendationCache> Product_RecommendationCache_RecommendedItemId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RecommendationCache>("Product_RecommendationCache_RecommendedItemId", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Product_RecommendationCache_RecommendedItemId");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RecommendationCache>("Product_RecommendationCache_RecommendedItemId", null, value);
-				this.OnPropertyChanged("Product_RecommendationCache_RecommendedItemId");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Product_SharepointDocument
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_SharepointDocument")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SharePointDocument> Product_SharepointDocument
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SharePointDocument>("Product_SharepointDocument", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Product_SharepointDocument");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SharePointDocument>("Product_SharepointDocument", null, value);
-				this.OnPropertyChanged("Product_SharepointDocument");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Product_SharepointDocumentLocation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Product_SharepointDocumentLocation")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SharePointDocumentLocation> Product_SharepointDocumentLocation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SharePointDocumentLocation>("Product_SharepointDocumentLocation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Product_SharepointDocumentLocation");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SharePointDocumentLocation>("Product_SharepointDocumentLocation", null, value);
-				this.OnPropertyChanged("Product_SharepointDocumentLocation");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_product
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_product")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_product
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_product", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_product");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_product", null, value);
-				this.OnPropertyChanged("userentityinstancedata_product");
-			}
-		}
-		
-		/// <summary>
-		/// N:N campaignproduct_association
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("campaignproduct_association")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Campaign> campaignproduct_association
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Campaign>("campaignproduct_association", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("campaignproduct_association");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Campaign>("campaignproduct_association", null, value);
-				this.OnPropertyChanged("campaignproduct_association");
 			}
 		}
 		
@@ -1841,94 +1602,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("leadproduct_association");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Lead>("leadproduct_association", null, value);
 				this.OnPropertyChanged("leadproduct_association");
-			}
-		}
-		
-		/// <summary>
-		/// N:N product_entitlement_association
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_entitlement_association")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Entitlement> product_entitlement_association
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Entitlement>("product_entitlement_association", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_entitlement_association");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Entitlement>("product_entitlement_association", null, value);
-				this.OnPropertyChanged("product_entitlement_association");
-			}
-		}
-		
-		/// <summary>
-		/// N:N product_entitlementtemplate_association
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("product_entitlementtemplate_association")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.EntitlementTemplate> product_entitlementtemplate_association
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.EntitlementTemplate>("product_entitlementtemplate_association", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("product_entitlementtemplate_association");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.EntitlementTemplate>("product_entitlementtemplate_association", null, value);
-				this.OnPropertyChanged("product_entitlementtemplate_association");
-			}
-		}
-		
-		/// <summary>
-		/// N:N productsalesliterature_association
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("productsalesliterature_association")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SalesLiterature> productsalesliterature_association
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SalesLiterature>("productsalesliterature_association", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("productsalesliterature_association");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SalesLiterature>("productsalesliterature_association", null, value);
-				this.OnPropertyChanged("productsalesliterature_association");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_externalparty_product_createdby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_externalparty_product_createdby")]
-		public Xyz.Xrm.Entities.ExternalParty lk_externalparty_product_createdby
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ExternalParty>("lk_externalparty_product_createdby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_externalparty_product_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_externalparty_product_modifiedby")]
-		public Xyz.Xrm.Entities.ExternalParty lk_externalparty_product_modifiedby
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ExternalParty>("lk_externalparty_product_modifiedby", null);
 			}
 		}
 		
@@ -1986,13 +1659,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_productbase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_productbase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_productbase_createdby", null, value);
-				this.OnPropertyChanged("lk_productbase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -2007,12 +1673,26 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_productbase_modifiedby", null);
 			}
+		}
+		
+		/// <summary>
+		/// N:1 msdyn_account_product_DefaultVendor
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_defaultvendor")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msdyn_account_product_DefaultVendor")]
+		public Xyz.Xrm.Entities.Account msdyn_account_product_DefaultVendor
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Account>("msdyn_account_product_DefaultVendor", null);
+			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("lk_productbase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_productbase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_productbase_modifiedby");
+				this.OnPropertyChanging("msdyn_account_product_DefaultVendor");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.Account>("msdyn_account_product_DefaultVendor", null, value);
+				this.OnPropertyChanged("msdyn_account_product_DefaultVendor");
 			}
 		}
 		
@@ -2094,27 +1774,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 subject_products
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("subject_products")]
-		public Xyz.Xrm.Entities.Subject subject_products
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Subject>("subject_products", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("subject_products");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Subject>("subject_products", null, value);
-				this.OnPropertyChanged("subject_products");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 transactioncurrency_product
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
@@ -2153,27 +1812,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("unit_of_measurement_products");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.UoM>("unit_of_measurement_products", null, value);
 				this.OnPropertyChanged("unit_of_measurement_products");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 unit_of_measurement_schedule_products
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultuomscheduleid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measurement_schedule_products")]
-		public Xyz.Xrm.Entities.UoMSchedule unit_of_measurement_schedule_products
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.UoMSchedule>("unit_of_measurement_schedule_products", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("unit_of_measurement_schedule_products");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.UoMSchedule>("unit_of_measurement_schedule_products", null, value);
-				this.OnPropertyChanged("unit_of_measurement_schedule_products");
 			}
 		}
 		
@@ -2217,51 +1855,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("productstructure")]
-		public virtual Product_ProductStructure? ProductStructureEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Product_ProductStructure?)(EntityOptionSetEnum.GetEnum(this, "productstructure")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				ProductStructure = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("producttypecode")]
-		public virtual Product_ProductTypeCode? ProductTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Product_ProductTypeCode?)(EntityOptionSetEnum.GetEnum(this, "producttypecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				ProductTypeCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual Product_StatusCode? StatusCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Product_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				StatusCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

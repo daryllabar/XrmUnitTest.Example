@@ -1,35 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
-	<CodeSnippet Format="1.0.0">
-		<Header>
-			<Title>CrmPlugin</Title>
-			<Shortcut>crmplugin</Shortcut>
-			<Description>Code snippet for Creating a new CRM Plugin</Description>
-			<Author>Daryl LaBar</Author>
-			<SnippetTypes>
-				<SnippetType>Expansion</SnippetType>
-			</SnippetTypes>
-		</Header>
-		<Snippet>
-			<Declarations>
-				<Literal>
-					<ID>pluginName</ID>
-					<ToolTip>Plugin Name</ToolTip>
-					<Default>MyPlugin</Default>
-				</Literal>
-			  <Literal>
-			    <ID>stage</ID>
-			    <ToolTip>Plugin Stage</ToolTip>
-			    <Default>PreOperation</Default>
-			  </Literal>
-			  <Literal>
-			    <ID>message</ID>
-			    <ToolTip>Message to Execute Against</ToolTip>
-			    <Default>Create</Default>
-			  </Literal>
-			</Declarations>
-			<Code Language="csharp">
-  <![CDATA[
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>CrmPlugin</Title>
+      <Shortcut>crmplugin</Shortcut>
+      <Description>Code snippet for Creating a new CRM Plugin</Description>
+      <Author>Daryl LaBar</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>pluginName</ID>
+          <ToolTip>Plugin Name</ToolTip>
+          <Default>MyPlugin</Default>
+        </Literal>
+        <Literal>
+          <ID>stage</ID>
+          <ToolTip>Plugin Stage</ToolTip>
+          <Default>PreOperation</Default>
+        </Literal>
+        <Literal>
+          <ID>message</ID>
+          <ToolTip>Message to Execute Against</ToolTip>
+          <Default>Create</Default>
+        </Literal>
+      </Declarations>
+      <Imports>
+        <Import>
+          <Namespace>System</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Source.DLaB.Xrm.Plugin</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Microsoft.Xrm.Sdk</Namespace>
+        </Import>
+      </Imports>
+      <Code Language="CSharp">
+        <![CDATA[
   public class $pluginName$ : PluginBase, IPlugin
   {
     #region Constructors
@@ -50,18 +61,7 @@
     }
   }
 ]]>
-			</Code>
-      <Imports>
-        <Import>
-          <Namespace>System</Namespace>
-        </Import>
-        <Import>
-          <Namespace>Source.DLaB.Xrm.Plugin</Namespace>
-        </Import>
-        <Import>
-          <Namespace>Microsoft.Xrm.Sdk</Namespace>
-        </Import>
-      </Imports>
-		</Snippet>
-	</CodeSnippet>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
 </CodeSnippets>

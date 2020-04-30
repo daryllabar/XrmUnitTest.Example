@@ -1,7 +1,5 @@
-﻿using DLaB.Xrm.Client;
-using DLaB.Xrm.Test;
+﻿using DLaB.Xrm.Test;
 using Xyz.Xrm.Test.Builders;
-using Microsoft.Xrm.Sdk;
 using Xyz.Xrm.Entities;
 
 namespace Xyz.Xrm.Test
@@ -26,11 +24,11 @@ namespace Xyz.Xrm.Test
             }
             if (!TestSettings.EntityBuilder.IsConfigured)
             {
-                TestSettings.EntityBuilder.ConfigureDerivedAssembly<EntityBuilder<Entity>>();
+                TestSettings.EntityBuilder.ConfigureDerivedAssembly<AccountBuilder>();
             }
             if (!TestSettings.EarlyBound.IsConfigured)
             {
-                TestSettings.EarlyBound.ConfigureDerivedAssembly<CrmContext>();
+                TestSettings.EarlyBound.ConfigureDerivedAssembly<XrmContext>();
             }
             if (!TestSettings.TestFrameworkProvider.IsConfigured)
             {

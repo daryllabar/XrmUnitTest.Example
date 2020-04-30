@@ -44,7 +44,7 @@ namespace Xyz.Xrm.Plugin.Tests
                 // 
                 new AccountBuilder(Ids.Account)
                     .WithAddress1()
-                    .Create(service);
+                    .Create(service, true);
             }
 
             /// <summary>

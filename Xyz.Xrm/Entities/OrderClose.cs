@@ -5,15 +5,19 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum OrderCloseState
 	{
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		Scheduled = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
 		Open = 0,
@@ -30,65 +34,102 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("orderclose")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class OrderClose : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
+			public const string ActivityAdditionalParams = "activityadditionalparams";
 			public const string ActivityId = "activityid";
 			public const string Id = "activityid";
 			public const string ActivityTypeCode = "activitytypecode";
 			public const string ActualDurationMinutes = "actualdurationminutes";
 			public const string ActualEnd = "actualend";
 			public const string ActualStart = "actualstart";
+			public const string Bcc = "bcc";
 			public const string Category = "category";
+			public const string Cc = "cc";
+			public const string Community = "community";
 			public const string CreatedBy = "createdby";
 			public const string CreatedByExternalParty = "createdbyexternalparty";
 			public const string CreatedOn = "createdon";
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
+			public const string Customers = "customers";
+			public const string DeliveryLastAttemptedOn = "deliverylastattemptedon";
+			public const string DeliveryPriorityCode = "deliveryprioritycode";
 			public const string Description = "description";
+			public const string ExchangeItemId = "exchangeitemid";
+			public const string ExchangeRate = "exchangerate";
+			public const string ExchangeWebLink = "exchangeweblink";
+			public const string From = "from";
 			public const string ImportSequenceNumber = "importsequencenumber";
+			public const string InstanceTypeCode = "instancetypecode";
 			public const string IsBilled = "isbilled";
+			public const string IsMapiPrivate = "ismapiprivate";
 			public const string IsRegularActivity = "isregularactivity";
 			public const string IsWorkflowCreated = "isworkflowcreated";
+			public const string LastOnHoldTime = "lastonholdtime";
+			public const string LeftVoiceMail = "leftvoicemail";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedByExternalParty = "modifiedbyexternalparty";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
+			public const string OnHoldTime = "onholdtime";
+			public const string OptionalAttendees = "optionalattendees";
 			public const string OrderNumber = "ordernumber";
+			public const string Organizer = "organizer";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
 			public const string OwnerId = "ownerid";
 			public const string OwningBusinessUnit = "owningbusinessunit";
 			public const string OwningTeam = "owningteam";
 			public const string OwningUser = "owninguser";
+			public const string Partners = "partners";
+			public const string PostponeActivityProcessingUntil = "postponeactivityprocessinguntil";
+			public const string PriorityCode = "prioritycode";
+			public const string ProcessId = "processid";
+			public const string RegardingObjectId = "regardingobjectid";
+			public const string RequiredAttendees = "requiredattendees";
+			public const string Resources = "resources";
 			public const string Revision = "revision";
 			public const string SalesOrderId = "salesorderid";
 			public const string ScheduledDurationMinutes = "scheduleddurationminutes";
 			public const string ScheduledEnd = "scheduledend";
 			public const string ScheduledStart = "scheduledstart";
+			public const string SenderMailboxId = "sendermailboxid";
+			public const string SentOn = "senton";
+			public const string SeriesId = "seriesid";
 			public const string ServiceId = "serviceid";
+			public const string SLAId = "slaid";
+			public const string SLAInvokedId = "slainvokedid";
+			public const string SortDate = "sortdate";
+			public const string StageId = "stageid";
 			public const string StateCode = "statecode";
 			public const string StatusCode = "statuscode";
 			public const string Subcategory = "subcategory";
 			public const string Subject = "subject";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
+			public const string To = "to";
+			public const string TransactionCurrencyId = "transactioncurrencyid";
+			public const string TraversedPath = "traversedpath";
 			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
+			public const string account_OrderCloses = "account_OrderCloses";
 			public const string activity_pointer_order_close = "activity_pointer_order_close";
 			public const string business_unit_order_close_activities = "business_unit_order_close_activities";
-			public const string lk_externalparty_orderclose_createdby = "lk_externalparty_orderclose_createdby";
-			public const string lk_externalparty_orderclose_modifiedby = "lk_externalparty_orderclose_modifiedby";
+			public const string incident_OrderCloses = "incident_OrderCloses";
+			public const string lead_OrderCloses = "lead_OrderCloses";
 			public const string lk_orderclose_createdby = "lk_orderclose_createdby";
 			public const string lk_orderclose_createdonbehalfby = "lk_orderclose_createdonbehalfby";
 			public const string lk_orderclose_modifiedby = "lk_orderclose_modifiedby";
 			public const string lk_orderclose_modifiedonbehalfby = "lk_orderclose_modifiedonbehalfby";
+			public const string opportunity_OrderCloses = "opportunity_OrderCloses";
+			public const string orderclose_transactioncurrency_transactioncurrencyid = "orderclose_transactioncurrency_transactioncurrencyid";
 			public const string SalesOrder_OrderClose = "SalesOrder_OrderClose";
-			public const string service_orderclose = "service_orderclose";
+			public const string site_OrderCloses = "site_OrderCloses";
 			public const string team_orderclose = "team_orderclose";
 			public const string user_orderclose = "user_orderclose";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -101,7 +142,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "orderclose";
 		
-		public const int EntityTypeCode = 4209;
+		public const string EntitySchemaName = "OrderClose";
+		
+		public const string PrimaryIdAttribute = "activityid";
+		
+		public const string PrimaryNameAttribute = "subject";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -126,7 +171,27 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the order close activity.
+		/// Additional information provided by the external application as JSON. For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityadditionalparams")]
+		public string ActivityAdditionalParams
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("activityadditionalparams");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ActivityAdditionalParams");
+				this.SetAttributeValue("activityadditionalparams", value);
+				this.OnPropertyChanged("ActivityAdditionalParams");
+			}
+		}
+		
+		/// <summary>
+		/// activity_pointer_order_close
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("activityid")]
 		public System.Nullable<System.Guid> ActivityId
@@ -242,6 +307,42 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Blind Carbon-copy (bcc) recipients of the activity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("bcc")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityParty> Bcc
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("bcc");
+				if (((collection != null) 
+							&& (collection.Entities != null)))
+				{
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
+				}
+				else
+				{
+					return null;
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Bcc");
+				if ((value == null))
+				{
+					this.SetAttributeValue("bcc", value);
+				}
+				else
+				{
+					this.SetAttributeValue("bcc", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
+				}
+				this.OnPropertyChanged("Bcc");
+			}
+		}
+		
+		/// <summary>
 		/// Category of the order close activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("category")]
@@ -262,7 +363,63 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the order close activity.
+		/// Carbon-copy (cc) recipients of the activity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("cc")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityParty> Cc
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("cc");
+				if (((collection != null) 
+							&& (collection.Entities != null)))
+				{
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
+				}
+				else
+				{
+					return null;
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Cc");
+				if ((value == null))
+				{
+					this.SetAttributeValue("cc", value);
+				}
+				else
+				{
+					this.SetAttributeValue("cc", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
+				}
+				this.OnPropertyChanged("Cc");
+			}
+		}
+		
+		/// <summary>
+		/// Shows how contact about the social activity originated, such as from Twitter or Facebook. This field is read-only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("community")]
+		public virtual SocialProfile_Community? Community
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((SocialProfile_Community?)(EntityOptionSetEnum.GetEnum(this, "community")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Community");
+				this.SetAttributeValue("community", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("Community");
+			}
+		}
+		
+		/// <summary>
+		/// lk_orderclose_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -272,17 +429,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the external party who created the record.
+		/// lk_externalparty_orderclose_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedByExternalParty
@@ -305,17 +455,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the orderclose.
+		/// lk_orderclose_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -331,6 +474,75 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("CreatedOnBehalfBy");
 				this.SetAttributeValue("createdonbehalfby", value);
 				this.OnPropertyChanged("CreatedOnBehalfBy");
+			}
+		}
+		
+		/// <summary>
+		/// Customer with which the activity is associated.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customers")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityParty> Customers
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("customers");
+				if (((collection != null) 
+							&& (collection.Entities != null)))
+				{
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
+				}
+				else
+				{
+					return null;
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Customers");
+				if ((value == null))
+				{
+					this.SetAttributeValue("customers", value);
+				}
+				else
+				{
+					this.SetAttributeValue("customers", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
+				}
+				this.OnPropertyChanged("Customers");
+			}
+		}
+		
+		/// <summary>
+		/// Date and time when the delivery of the activity was last attempted.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("deliverylastattemptedon")]
+		public System.Nullable<System.DateTime> DeliveryLastAttemptedOn
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("deliverylastattemptedon");
+			}
+		}
+		
+		/// <summary>
+		/// Priority of delivery of the activity to the email server.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("deliveryprioritycode")]
+		public virtual activitypointer_DeliveryPriorityCode? DeliveryPriorityCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((activitypointer_DeliveryPriorityCode?)(EntityOptionSetEnum.GetEnum(this, "deliveryprioritycode")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("DeliveryPriorityCode");
+				this.SetAttributeValue("deliveryprioritycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("DeliveryPriorityCode");
 			}
 		}
 		
@@ -355,6 +567,95 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// The message id of activity which is returned from Exchange Server.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangeitemid")]
+		public string ExchangeItemId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("exchangeitemid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ExchangeItemId");
+				this.SetAttributeValue("exchangeitemid", value);
+				this.OnPropertyChanged("ExchangeItemId");
+			}
+		}
+		
+		/// <summary>
+		/// Exchange rate for the currency associated with the activitypointer with respect to the base currency.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
+		public System.Nullable<decimal> ExchangeRate
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<decimal>>("exchangerate");
+			}
+		}
+		
+		/// <summary>
+		/// Shows the web link of Activity of type email.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangeweblink")]
+		public string ExchangeWebLink
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("exchangeweblink");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ExchangeWebLink");
+				this.SetAttributeValue("exchangeweblink", value);
+				this.OnPropertyChanged("ExchangeWebLink");
+			}
+		}
+		
+		/// <summary>
+		/// Person who the activity is from.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("from")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityParty> From
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("from");
+				if (((collection != null) 
+							&& (collection.Entities != null)))
+				{
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
+				}
+				else
+				{
+					return null;
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("From");
+				if ((value == null))
+				{
+					this.SetAttributeValue("from", value);
+				}
+				else
+				{
+					this.SetAttributeValue("from", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
+				}
+				this.OnPropertyChanged("From");
+			}
+		}
+		
+		/// <summary>
 		/// Unique identifier of the data import or data migration that created this record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
@@ -375,6 +676,19 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Type of instance of a recurring series.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("instancetypecode")]
+		public virtual OrderClose_InstanceTypeCode? InstanceTypeCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((OrderClose_InstanceTypeCode?)(EntityOptionSetEnum.GetEnum(this, "instancetypecode")));
+			}
+		}
+		
+		/// <summary>
 		/// Information about whether the order close activity was billed as part of resolving a case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isbilled")]
@@ -391,6 +705,26 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("IsBilled");
 				this.SetAttributeValue("isbilled", value);
 				this.OnPropertyChanged("IsBilled");
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ismapiprivate")]
+		public System.Nullable<bool> IsMapiPrivate
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("ismapiprivate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IsMapiPrivate");
+				this.SetAttributeValue("ismapiprivate", value);
+				this.OnPropertyChanged("IsMapiPrivate");
 			}
 		}
 		
@@ -428,7 +762,47 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the order close activity.
+		/// Contains the date and time stamp of the last on hold time.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("lastonholdtime")]
+		public System.Nullable<System.DateTime> LastOnHoldTime
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("lastonholdtime");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("LastOnHoldTime");
+				this.SetAttributeValue("lastonholdtime", value);
+				this.OnPropertyChanged("LastOnHoldTime");
+			}
+		}
+		
+		/// <summary>
+		/// Left the voice mail
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("leftvoicemail")]
+		public System.Nullable<bool> LeftVoiceMail
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("leftvoicemail");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("LeftVoiceMail");
+				this.SetAttributeValue("leftvoicemail", value);
+				this.OnPropertyChanged("LeftVoiceMail");
+			}
+		}
+		
+		/// <summary>
+		/// lk_orderclose_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -438,17 +812,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the external party who modified the record.
+		/// lk_externalparty_orderclose_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedByExternalParty
@@ -471,17 +838,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the orderclose.
+		/// lk_orderclose_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -497,6 +857,55 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ModifiedOnBehalfBy");
 				this.SetAttributeValue("modifiedonbehalfby", value);
 				this.OnPropertyChanged("ModifiedOnBehalfBy");
+			}
+		}
+		
+		/// <summary>
+		/// Shows how long, in minutes, that the record was on hold.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("onholdtime")]
+		public System.Nullable<int> OnHoldTime
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("onholdtime");
+			}
+		}
+		
+		/// <summary>
+		/// List of optional attendees for the activity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("optionalattendees")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityParty> OptionalAttendees
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("optionalattendees");
+				if (((collection != null) 
+							&& (collection.Entities != null)))
+				{
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
+				}
+				else
+				{
+					return null;
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OptionalAttendees");
+				if ((value == null))
+				{
+					this.SetAttributeValue("optionalattendees", value);
+				}
+				else
+				{
+					this.SetAttributeValue("optionalattendees", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
+				}
+				this.OnPropertyChanged("OptionalAttendees");
 			}
 		}
 		
@@ -517,6 +926,42 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("OrderNumber");
 				this.SetAttributeValue("ordernumber", value);
 				this.OnPropertyChanged("OrderNumber");
+			}
+		}
+		
+		/// <summary>
+		/// Person who organized the activity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizer")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityParty> Organizer
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("organizer");
+				if (((collection != null) 
+							&& (collection.Entities != null)))
+				{
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
+				}
+				else
+				{
+					return null;
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Organizer");
+				if ((value == null))
+				{
+					this.SetAttributeValue("organizer", value);
+				}
+				else
+				{
+					this.SetAttributeValue("organizer", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
+				}
+				this.OnPropertyChanged("Organizer");
 			}
 		}
 		
@@ -561,7 +1006,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business unit that owns the order close activity.
+		/// business_unit_order_close_activities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
@@ -571,17 +1016,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team who owns the order close activity.
+		/// team_orderclose
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
@@ -591,17 +1029,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningTeam");
-				this.SetAttributeValue("owningteam", value);
-				this.OnPropertyChanged("OwningTeam");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who owns the order close activity.
+		/// user_orderclose
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningUser
@@ -611,12 +1042,186 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
 			}
+		}
+		
+		/// <summary>
+		/// Outsource vendor with which activity is associated.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("partners")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityParty> Partners
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("partners");
+				if (((collection != null) 
+							&& (collection.Entities != null)))
+				{
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
+				}
+				else
+				{
+					return null;
+				}
+			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
+				this.OnPropertyChanging("Partners");
+				if ((value == null))
+				{
+					this.SetAttributeValue("partners", value);
+				}
+				else
+				{
+					this.SetAttributeValue("partners", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
+				}
+				this.OnPropertyChanged("Partners");
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("postponeactivityprocessinguntil")]
+		public System.Nullable<System.DateTime> PostponeActivityProcessingUntil
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("postponeactivityprocessinguntil");
+			}
+		}
+		
+		/// <summary>
+		/// Priority of the activity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
+		public virtual OrderClose_PriorityCode? PriorityCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((OrderClose_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PriorityCode");
+				this.SetAttributeValue("prioritycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("PriorityCode");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier of the Process.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("processid")]
+		public System.Nullable<System.Guid> ProcessId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("processid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ProcessId");
+				this.SetAttributeValue("processid", value);
+				this.OnPropertyChanged("ProcessId");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier of the object with which the activity is associated.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		public Microsoft.Xrm.Sdk.EntityReference RegardingObjectId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("regardingobjectid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("RegardingObjectId");
+				this.SetAttributeValue("regardingobjectid", value);
+				this.OnPropertyChanged("RegardingObjectId");
+			}
+		}
+		
+		/// <summary>
+		/// List of required attendees for the activity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("requiredattendees")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityParty> RequiredAttendees
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("requiredattendees");
+				if (((collection != null) 
+							&& (collection.Entities != null)))
+				{
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
+				}
+				else
+				{
+					return null;
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("RequiredAttendees");
+				if ((value == null))
+				{
+					this.SetAttributeValue("requiredattendees", value);
+				}
+				else
+				{
+					this.SetAttributeValue("requiredattendees", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
+				}
+				this.OnPropertyChanged("RequiredAttendees");
+			}
+		}
+		
+		/// <summary>
+		/// Users or facility/equipment that are required for the activity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resources")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityParty> Resources
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("resources");
+				if (((collection != null) 
+							&& (collection.Entities != null)))
+				{
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
+				}
+				else
+				{
+					return null;
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Resources");
+				if ((value == null))
+				{
+					this.SetAttributeValue("resources", value);
+				}
+				else
+				{
+					this.SetAttributeValue("resources", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
+				}
+				this.OnPropertyChanged("Resources");
 			}
 		}
 		
@@ -641,7 +1246,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the order with which the order close activity is associated.
+		/// SalesOrder_OrderClose
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("salesorderid")]
 		public Microsoft.Xrm.Sdk.EntityReference SalesOrderId
@@ -714,7 +1319,46 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the service with which the order close activity is associated.
+		/// Unique identifier of the mailbox associated with the sender of the email message.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sendermailboxid")]
+		public Microsoft.Xrm.Sdk.EntityReference SenderMailboxId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("sendermailboxid");
+			}
+		}
+		
+		/// <summary>
+		/// Date and time when the activity was sent.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("senton")]
+		public System.Nullable<System.DateTime> SentOn
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("senton");
+			}
+		}
+		
+		/// <summary>
+		/// Uniqueidentifier specifying the id of recurring series of an instance.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("seriesid")]
+		public System.Nullable<System.Guid> SeriesId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("seriesid");
+			}
+		}
+		
+		/// <summary>
+		/// service_orderclose
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("serviceid")]
 		public Microsoft.Xrm.Sdk.EntityReference ServiceId
@@ -734,7 +1378,80 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows whether the order close activity is open, completed, or canceled. By default, order close activities are completed.
+		/// Choose the service level agreement (SLA) that you want to apply to the case record.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
+		public Microsoft.Xrm.Sdk.EntityReference SLAId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slaid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SLAId");
+				this.SetAttributeValue("slaid", value);
+				this.OnPropertyChanged("SLAId");
+			}
+		}
+		
+		/// <summary>
+		/// Last SLA that was applied to this case. This field is for internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
+		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slainvokedid");
+			}
+		}
+		
+		/// <summary>
+		/// Shows the date and time by which the activities are sorted.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("sortdate")]
+		public System.Nullable<System.DateTime> SortDate
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("sortdate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SortDate");
+				this.SetAttributeValue("sortdate", value);
+				this.OnPropertyChanged("SortDate");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier of the Stage.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
+		public System.Nullable<System.Guid> StageId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("stageid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("StageId");
+				this.SetAttributeValue("stageid", value);
+				this.OnPropertyChanged("StageId");
+			}
+		}
+		
+		/// <summary>
+		/// Shows whether the order close activity is open, completed, or canceled.  By default, order close activities are completed.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
 		public System.Nullable<Xyz.Xrm.Entities.OrderCloseState> StateCode
@@ -772,18 +1489,18 @@ namespace Xyz.Xrm.Entities
 		/// Reason for the status of the order close activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue StatusCode
+		public virtual OrderClose_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statuscode");
+				return ((OrderClose_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("StatusCode");
-				this.SetAttributeValue("statuscode", value);
+				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("StatusCode");
 			}
 		}
@@ -845,6 +1562,82 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("TimeZoneRuleVersionNumber");
 				this.SetAttributeValue("timezoneruleversionnumber", value);
 				this.OnPropertyChanged("TimeZoneRuleVersionNumber");
+			}
+		}
+		
+		/// <summary>
+		/// Person who is the receiver of the activity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("to")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityParty> To
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				Microsoft.Xrm.Sdk.EntityCollection collection = this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityCollection>("to");
+				if (((collection != null) 
+							&& (collection.Entities != null)))
+				{
+					return System.Linq.Enumerable.Select<Microsoft.Xrm.Sdk.Entity, Xyz.Xrm.Entities.ActivityParty>(collection.Entities, e => e.ToEntity<Xyz.Xrm.Entities.ActivityParty>());
+				}
+				else
+				{
+					return null;
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("To");
+				if ((value == null))
+				{
+					this.SetAttributeValue("to", value);
+				}
+				else
+				{
+					this.SetAttributeValue("to", new Microsoft.Xrm.Sdk.EntityCollection(new System.Collections.Generic.List<Microsoft.Xrm.Sdk.Entity>(value)));
+				}
+				this.OnPropertyChanged("To");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier of the currency associated with the activitypointer.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("transactioncurrencyid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TransactionCurrencyId");
+				this.SetAttributeValue("transactioncurrencyid", value);
+				this.OnPropertyChanged("TransactionCurrencyId");
+			}
+		}
+		
+		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("traversedpath")]
+		public string TraversedPath
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("traversedpath");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TraversedPath");
+				this.SetAttributeValue("traversedpath", value);
+				this.OnPropertyChanged("TraversedPath");
 			}
 		}
 		
@@ -942,42 +1735,23 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N OrderClose_BulkDeleteFailures
+		/// N:1 account_OrderCloses
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("OrderClose_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> OrderClose_BulkDeleteFailures
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_OrderCloses")]
+		public Xyz.Xrm.Entities.Account account_OrderCloses
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("OrderClose_BulkDeleteFailures", null);
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Account>("account_OrderCloses", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("OrderClose_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("OrderClose_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("OrderClose_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_orderclose
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_orderclose")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_orderclose
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_orderclose", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_orderclose");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_orderclose", null, value);
-				this.OnPropertyChanged("userentityinstancedata_orderclose");
+				this.OnPropertyChanging("account_OrderCloses");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.Account>("account_OrderCloses", null, value);
+				this.OnPropertyChanged("account_OrderCloses");
 			}
 		}
 		
@@ -1014,40 +1788,47 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_order_close_activities", null);
 			}
+		}
+		
+		/// <summary>
+		/// N:1 incident_OrderCloses
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_OrderCloses")]
+		public Xyz.Xrm.Entities.Incident incident_OrderCloses
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Incident>("incident_OrderCloses", null);
+			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("business_unit_order_close_activities");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_order_close_activities", null, value);
-				this.OnPropertyChanged("business_unit_order_close_activities");
+				this.OnPropertyChanging("incident_OrderCloses");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.Incident>("incident_OrderCloses", null, value);
+				this.OnPropertyChanged("incident_OrderCloses");
 			}
 		}
 		
 		/// <summary>
-		/// N:1 lk_externalparty_orderclose_createdby
+		/// N:1 lead_OrderCloses
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_externalparty_orderclose_createdby")]
-		public Xyz.Xrm.Entities.ExternalParty lk_externalparty_orderclose_createdby
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_OrderCloses")]
+		public Xyz.Xrm.Entities.Lead lead_OrderCloses
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ExternalParty>("lk_externalparty_orderclose_createdby", null);
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Lead>("lead_OrderCloses", null);
 			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_externalparty_orderclose_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_externalparty_orderclose_modifiedby")]
-		public Xyz.Xrm.Entities.ExternalParty lk_externalparty_orderclose_modifiedby
-		{
 			[System.Diagnostics.DebuggerNonUserCode()]
-			get
+			set
 			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ExternalParty>("lk_externalparty_orderclose_modifiedby", null);
+				this.OnPropertyChanging("lead_OrderCloses");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.Lead>("lead_OrderCloses", null, value);
+				this.OnPropertyChanged("lead_OrderCloses");
 			}
 		}
 		
@@ -1062,13 +1843,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_orderclose_createdby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_orderclose_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_orderclose_createdby", null, value);
-				this.OnPropertyChanged("lk_orderclose_createdby");
 			}
 		}
 		
@@ -1105,13 +1879,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_orderclose_modifiedby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_orderclose_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_orderclose_modifiedby", null, value);
-				this.OnPropertyChanged("lk_orderclose_modifiedby");
-			}
 		}
 		
 		/// <summary>
@@ -1132,6 +1899,48 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("lk_orderclose_modifiedonbehalfby");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_orderclose_modifiedonbehalfby", null, value);
 				this.OnPropertyChanged("lk_orderclose_modifiedonbehalfby");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 opportunity_OrderCloses
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("opportunity_OrderCloses")]
+		public Xyz.Xrm.Entities.Opportunity opportunity_OrderCloses
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Opportunity>("opportunity_OrderCloses", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("opportunity_OrderCloses");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.Opportunity>("opportunity_OrderCloses", null, value);
+				this.OnPropertyChanged("opportunity_OrderCloses");
+			}
+		}
+		
+		/// <summary>
+		/// N:1 orderclose_transactioncurrency_transactioncurrencyid
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("orderclose_transactioncurrency_transactioncurrencyid")]
+		public Xyz.Xrm.Entities.TransactionCurrency orderclose_transactioncurrency_transactioncurrencyid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.TransactionCurrency>("orderclose_transactioncurrency_transactioncurrencyid", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("orderclose_transactioncurrency_transactioncurrencyid");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.TransactionCurrency>("orderclose_transactioncurrency_transactioncurrencyid", null, value);
+				this.OnPropertyChanged("orderclose_transactioncurrency_transactioncurrencyid");
 			}
 		}
 		
@@ -1157,23 +1966,23 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 service_orderclose
+		/// N:1 site_OrderCloses
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("serviceid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("service_orderclose")]
-		public Xyz.Xrm.Entities.Service service_orderclose
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_OrderCloses")]
+		public Xyz.Xrm.Entities.Site site_OrderCloses
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Service>("service_orderclose", null);
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.Site>("site_OrderCloses", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("service_orderclose");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Service>("service_orderclose", null, value);
-				this.OnPropertyChanged("service_orderclose");
+				this.OnPropertyChanging("site_OrderCloses");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.Site>("site_OrderCloses", null, value);
+				this.OnPropertyChanged("site_OrderCloses");
 			}
 		}
 		
@@ -1189,13 +1998,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.Team>("team_orderclose", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_orderclose");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Team>("team_orderclose", null, value);
-				this.OnPropertyChanged("team_orderclose");
-			}
 		}
 		
 		/// <summary>
@@ -1209,13 +2011,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("user_orderclose", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("user_orderclose");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("user_orderclose", null, value);
-				this.OnPropertyChanged("user_orderclose");
 			}
 		}
 		
@@ -1259,21 +2054,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual OrderClose_StatusCode? StatusCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((OrderClose_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				StatusCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

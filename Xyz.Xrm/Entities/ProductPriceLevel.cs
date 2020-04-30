@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("productpricelevel")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class ProductPriceLevel : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string Amount = "amount";
 			public const string Amount_Base = "amount_base";
@@ -48,12 +49,13 @@ namespace Xyz.Xrm.Entities
 			public const string RoundingOptionCode = "roundingoptioncode";
 			public const string RoundingPolicyCode = "roundingpolicycode";
 			public const string StageId = "stageid";
+			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
 			public const string TransactionCurrencyId = "transactioncurrencyid";
 			public const string TraversedPath = "traversedpath";
 			public const string UoMId = "uomid";
 			public const string UoMScheduleId = "uomscheduleid";
+			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
-			public const string discount_type_product_price_levels = "discount_type_product_price_levels";
 			public const string lk_productpricelevel_createdonbehalfby = "lk_productpricelevel_createdonbehalfby";
 			public const string lk_productpricelevel_modifiedonbehalfby = "lk_productpricelevel_modifiedonbehalfby";
 			public const string lk_productpricelevelbase_createdby = "lk_productpricelevelbase_createdby";
@@ -62,10 +64,8 @@ namespace Xyz.Xrm.Entities
 			public const string processstage_productpricelevels = "processstage_productpricelevels";
 			public const string product_price_levels = "product_price_levels";
 			public const string transactioncurrency_productpricelevel = "transactioncurrency_productpricelevel";
-			public const string unit_of_measure_schedule_product_price_level = "unit_of_measure_schedule_product_price_level";
 			public const string unit_of_measurement_product_price_levels = "unit_of_measurement_product_price_levels";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -78,7 +78,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "productpricelevel";
 		
-		public const int EntityTypeCode = 1026;
+		public const string EntitySchemaName = "ProductPriceLevel";
+		
+		public const string PrimaryIdAttribute = "productpricelevelid";
+		
+		public const string PrimaryNameAttribute = "productidname";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -136,7 +140,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the price list.
+		/// lk_productpricelevelbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -145,13 +149,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
 			}
 		}
 		
@@ -166,17 +163,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
+		/// lk_productpricelevelbase_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -196,7 +186,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the discount list associated with the price list.
+		/// discount_type_product_price_levels
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("discounttypeid")]
 		public Microsoft.Xrm.Sdk.EntityReference DiscountTypeId
@@ -249,7 +239,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the price list.
+		/// lk_productpricelevelbase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -258,13 +248,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
 			}
 		}
 		
@@ -279,17 +262,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record on behalf of another user.
+		/// lk_productpricelevelbase_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -362,7 +338,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the price level associated with this price list.
+		/// price_level_product_price_levels
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pricelevelid")]
 		public Microsoft.Xrm.Sdk.EntityReference PriceLevelId
@@ -385,18 +361,18 @@ namespace Xyz.Xrm.Entities
 		/// Pricing method applied to the price list.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pricingmethodcode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue PricingMethodCode
+		public virtual ProductPriceLevel_PricingMethodCode? PricingMethodCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("pricingmethodcode");
+				return ((ProductPriceLevel_PricingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "pricingmethodcode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("PricingMethodCode");
-				this.SetAttributeValue("pricingmethodcode", value);
+				this.SetAttributeValue("pricingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("PricingMethodCode");
 			}
 		}
@@ -422,7 +398,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Product associated with the price list.
+		/// product_price_levels
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("productid")]
 		public Microsoft.Xrm.Sdk.EntityReference ProductId
@@ -501,18 +477,18 @@ namespace Xyz.Xrm.Entities
 		/// Quantity of the product that must be sold for a given price level.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("quantitysellingcode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue QuantitySellingCode
+		public virtual ProductPriceLevel_QuantitySellingCode? QuantitySellingCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("quantitysellingcode");
+				return ((ProductPriceLevel_QuantitySellingCode?)(EntityOptionSetEnum.GetEnum(this, "quantitysellingcode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("QuantitySellingCode");
-				this.SetAttributeValue("quantitysellingcode", value);
+				this.SetAttributeValue("quantitysellingcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("QuantitySellingCode");
 			}
 		}
@@ -554,18 +530,18 @@ namespace Xyz.Xrm.Entities
 		/// Option for rounding the price list.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("roundingoptioncode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue RoundingOptionCode
+		public virtual ProductPriceLevel_RoundingOptionCode? RoundingOptionCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("roundingoptioncode");
+				return ((ProductPriceLevel_RoundingOptionCode?)(EntityOptionSetEnum.GetEnum(this, "roundingoptioncode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("RoundingOptionCode");
-				this.SetAttributeValue("roundingoptioncode", value);
+				this.SetAttributeValue("roundingoptioncode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("RoundingOptionCode");
 			}
 		}
@@ -574,24 +550,24 @@ namespace Xyz.Xrm.Entities
 		/// Policy for rounding the price list.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("roundingpolicycode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue RoundingPolicyCode
+		public virtual ProductPriceLevel_RoundingPolicyCode? RoundingPolicyCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("roundingpolicycode");
+				return ((ProductPriceLevel_RoundingPolicyCode?)(EntityOptionSetEnum.GetEnum(this, "roundingpolicycode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("RoundingPolicyCode");
-				this.SetAttributeValue("roundingpolicycode", value);
+				this.SetAttributeValue("roundingpolicycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("RoundingPolicyCode");
 			}
 		}
 		
 		/// <summary>
-		/// Shows the ID of the stage.
+		/// processstage_productpricelevels
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
@@ -611,7 +587,27 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the local currency for the record to make sure budgets are reported in the correct currency.
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
+		public System.Nullable<int> TimeZoneRuleVersionNumber
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TimeZoneRuleVersionNumber");
+				this.SetAttributeValue("timezoneruleversionnumber", value);
+				this.OnPropertyChanged("TimeZoneRuleVersionNumber");
+			}
+		}
+		
+		/// <summary>
+		/// transactioncurrency_productpricelevel
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
@@ -651,7 +647,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the unit for the price list.
+		/// unit_of_measurement_product_price_levels
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uomid")]
 		public Microsoft.Xrm.Sdk.EntityReference UoMId
@@ -671,7 +667,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the unit schedule for the price list.
+		/// unit_of_measure_schedule_product_price_level
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uomscheduleid")]
 		public Microsoft.Xrm.Sdk.EntityReference UoMScheduleId
@@ -687,6 +683,26 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("UoMScheduleId");
 				this.SetAttributeValue("uomscheduleid", value);
 				this.OnPropertyChanged("UoMScheduleId");
+			}
+		}
+		
+		/// <summary>
+		/// Time zone code that was in use when the record was created.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
+		public System.Nullable<int> UTCConversionTimeZoneCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("utcconversiontimezonecode");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("UTCConversionTimeZoneCode");
+				this.SetAttributeValue("utcconversiontimezonecode", value);
+				this.OnPropertyChanged("UTCConversionTimeZoneCode");
 			}
 		}
 		
@@ -724,26 +740,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N ProductPriceLevel_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ProductPriceLevel_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> ProductPriceLevel_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("ProductPriceLevel_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ProductPriceLevel_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("ProductPriceLevel_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("ProductPriceLevel_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N ProductPriceLevel_ProcessSessions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ProductPriceLevel_ProcessSessions")]
@@ -760,67 +756,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ProductPriceLevel_ProcessSessions");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.ProcessSession>("ProductPriceLevel_ProcessSessions", null, value);
 				this.OnPropertyChanged("ProductPriceLevel_ProcessSessions");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N ProductPriceLevel_RecommendationCache_AdditionalDataRecordId
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ProductPriceLevel_RecommendationCache_AdditionalDataRecordId")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RecommendationCache> ProductPriceLevel_RecommendationCache_AdditionalDataRecordId
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RecommendationCache>("ProductPriceLevel_RecommendationCache_AdditionalDataRecordId", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ProductPriceLevel_RecommendationCache_AdditionalDataRecordId");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RecommendationCache>("ProductPriceLevel_RecommendationCache_AdditionalDataRecordId", null, value);
-				this.OnPropertyChanged("ProductPriceLevel_RecommendationCache_AdditionalDataRecordId");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_productpricelevel
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_productpricelevel")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_productpricelevel
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_productpricelevel", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_productpricelevel");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_productpricelevel", null, value);
-				this.OnPropertyChanged("userentityinstancedata_productpricelevel");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 discount_type_product_price_levels
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("discounttypeid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("discount_type_product_price_levels")]
-		public Xyz.Xrm.Entities.DiscountType discount_type_product_price_levels
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.DiscountType>("discount_type_product_price_levels", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("discount_type_product_price_levels");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.DiscountType>("discount_type_product_price_levels", null, value);
-				this.OnPropertyChanged("discount_type_product_price_levels");
 			}
 		}
 		
@@ -878,13 +813,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_productpricelevelbase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_productpricelevelbase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_productpricelevelbase_createdby", null, value);
-				this.OnPropertyChanged("lk_productpricelevelbase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -898,13 +826,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_productpricelevelbase_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_productpricelevelbase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_productpricelevelbase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_productpricelevelbase_modifiedby");
 			}
 		}
 		
@@ -993,27 +914,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 unit_of_measure_schedule_product_price_level
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uomscheduleid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("unit_of_measure_schedule_product_price_level")]
-		public Xyz.Xrm.Entities.UoMSchedule unit_of_measure_schedule_product_price_level
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.UoMSchedule>("unit_of_measure_schedule_product_price_level", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("unit_of_measure_schedule_product_price_level");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.UoMSchedule>("unit_of_measure_schedule_product_price_level", null, value);
-				this.OnPropertyChanged("unit_of_measure_schedule_product_price_level");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 unit_of_measurement_product_price_levels
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("uomid")]
@@ -1074,66 +974,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("pricingmethodcode")]
-		public virtual ProductPriceLevel_PricingMethodCode? PricingMethodCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ProductPriceLevel_PricingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "pricingmethodcode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				PricingMethodCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("quantitysellingcode")]
-		public virtual ProductPriceLevel_QuantitySellingCode? QuantitySellingCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ProductPriceLevel_QuantitySellingCode?)(EntityOptionSetEnum.GetEnum(this, "quantitysellingcode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				QuantitySellingCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("roundingoptioncode")]
-		public virtual ProductPriceLevel_RoundingOptionCode? RoundingOptionCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ProductPriceLevel_RoundingOptionCode?)(EntityOptionSetEnum.GetEnum(this, "roundingoptioncode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				RoundingOptionCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("roundingpolicycode")]
-		public virtual ProductPriceLevel_RoundingPolicyCode? RoundingPolicyCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ProductPriceLevel_RoundingPolicyCode?)(EntityOptionSetEnum.GetEnum(this, "roundingpolicycode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				RoundingPolicyCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

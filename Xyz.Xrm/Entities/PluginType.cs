@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("plugintype")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class PluginType : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string AssemblyName = "assemblyname";
 			public const string ComponentState = "componentstate";
@@ -58,7 +59,6 @@ namespace Xyz.Xrm.Entities
 			public const string organization_plugintype = "organization_plugintype";
 			public const string pluginassembly_plugintype = "pluginassembly_plugintype";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -71,7 +71,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "plugintype";
 		
-		public const int EntityTypeCode = 4602;
+		public const string EntitySchemaName = "PluginType";
+		
+		public const string PrimaryIdAttribute = "plugintypeid";
+		
+		public const string PrimaryNameAttribute = "name";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -112,12 +116,12 @@ namespace Xyz.Xrm.Entities
 		/// For internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ComponentState
+		public virtual ComponentState? ComponentState
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("componentstate");
+				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
 			}
 		}
 		
@@ -132,13 +136,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
@@ -151,13 +148,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -323,13 +313,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
@@ -342,13 +325,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -587,26 +563,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N plugin_type_service
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugin_type_service")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Service> plugin_type_service
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Service>("plugin_type_service", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("plugin_type_service");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Service>("plugin_type_service", null, value);
-				this.OnPropertyChanged("plugin_type_service");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N plugintype_plugintypestatistic
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintype_plugintypestatistic")]
@@ -627,66 +583,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N plugintype_sdkmessageprocessingstep
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintype_sdkmessageprocessingstep")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SdkMessageProcessingStep> plugintype_sdkmessageprocessingstep
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SdkMessageProcessingStep>("plugintype_sdkmessageprocessingstep", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("plugintype_sdkmessageprocessingstep");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SdkMessageProcessingStep>("plugintype_sdkmessageprocessingstep", null, value);
-				this.OnPropertyChanged("plugintype_sdkmessageprocessingstep");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N plugintypeid_sdkmessageprocessingstep
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("plugintypeid_sdkmessageprocessingstep")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SdkMessageProcessingStep> plugintypeid_sdkmessageprocessingstep
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SdkMessageProcessingStep>("plugintypeid_sdkmessageprocessingstep", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("plugintypeid_sdkmessageprocessingstep");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SdkMessageProcessingStep>("plugintypeid_sdkmessageprocessingstep", null, value);
-				this.OnPropertyChanged("plugintypeid_sdkmessageprocessingstep");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_plugintype
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_plugintype")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_plugintype
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_plugintype", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_plugintype");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_plugintype", null, value);
-				this.OnPropertyChanged("userentityinstancedata_plugintype");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 createdby_plugintype
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -697,13 +593,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("createdby_plugintype", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("createdby_plugintype");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("createdby_plugintype", null, value);
-				this.OnPropertyChanged("createdby_plugintype");
 			}
 		}
 		
@@ -760,13 +649,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("modifiedby_plugintype", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("modifiedby_plugintype");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("modifiedby_plugintype", null, value);
-				this.OnPropertyChanged("modifiedby_plugintype");
 			}
 		}
 		
@@ -845,16 +727,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("componentstate")]
-		public virtual ComponentState? ComponentStateEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ComponentState?)(EntityOptionSetEnum.GetEnum(this, "componentstate")));
-			}
 		}
 	}
 }

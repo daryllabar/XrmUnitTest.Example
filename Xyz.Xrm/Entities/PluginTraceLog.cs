@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("plugintracelog")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class PluginTraceLog : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string Configuration = "configuration";
 			public const string CorrelationId = "correlationid";
@@ -50,7 +51,6 @@ namespace Xyz.Xrm.Entities
 			public const string createdby_plugintracelog = "createdby_plugintracelog";
 			public const string lk_plugintracelogbase_createdonbehalfby = "lk_plugintracelogbase_createdonbehalfby";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -63,7 +63,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "plugintracelog";
 		
-		public const int EntityTypeCode = 4619;
+		public const string EntitySchemaName = "PluginTraceLog";
+		
+		public const string PrimaryIdAttribute = "plugintracelogid";
+		
+		public const string PrimaryNameAttribute = "typename";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -124,13 +128,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
@@ -143,13 +140,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -242,12 +232,12 @@ namespace Xyz.Xrm.Entities
 		/// Type of execution.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Mode
+		public virtual PluginTraceLog_Mode? Mode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("mode");
+				return ((PluginTraceLog_Mode?)(EntityOptionSetEnum.GetEnum(this, "mode")));
 			}
 		}
 		
@@ -255,12 +245,12 @@ namespace Xyz.Xrm.Entities
 		/// Type of custom code.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("operationtype")]
-		public Microsoft.Xrm.Sdk.OptionSetValue OperationType
+		public virtual PluginTraceLog_OperationType? OperationType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("operationtype");
+				return ((PluginTraceLog_OperationType?)(EntityOptionSetEnum.GetEnum(this, "operationtype")));
 			}
 		}
 		
@@ -460,13 +450,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("createdby_plugintracelog", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("createdby_plugintracelog");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("createdby_plugintracelog", null, value);
-				this.OnPropertyChanged("createdby_plugintracelog");
-			}
 		}
 		
 		/// <summary>
@@ -530,26 +513,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mode")]
-		public virtual PluginTraceLog_Mode? ModeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((PluginTraceLog_Mode?)(EntityOptionSetEnum.GetEnum(this, "mode")));
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("operationtype")]
-		public virtual PluginTraceLog_OperationType? OperationTypeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((PluginTraceLog_OperationType?)(EntityOptionSetEnum.GetEnum(this, "operationtype")));
-			}
 		}
 	}
 }

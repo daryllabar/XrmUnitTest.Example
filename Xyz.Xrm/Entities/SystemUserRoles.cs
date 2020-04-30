@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("systemuserroles")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class SystemUserRoles : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string RoleId = "roleid";
 			public const string SystemUserId = "systemuserid";
@@ -27,7 +28,6 @@ namespace Xyz.Xrm.Entities
 			public const string Id = "systemuserroleid";
 			public const string VersionNumber = "versionnumber";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -40,7 +40,9 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "systemuserroles";
 		
-		public const int EntityTypeCode = 15;
+		public const string EntitySchemaName = "SystemUserRoles";
+		
+		public const string PrimaryIdAttribute = "systemuserroleid";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		

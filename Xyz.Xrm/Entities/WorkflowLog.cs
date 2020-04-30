@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("workflowlog")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class WorkflowLog : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string ActivityName = "activityname";
 			public const string AsyncOperationId = "asyncoperationid";
@@ -29,8 +30,11 @@ namespace Xyz.Xrm.Entities
 			public const string CreatedOn = "createdon";
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
 			public const string Description = "description";
+			public const string Duration = "duration";
 			public const string ErrorCode = "errorcode";
+			public const string ErrorText = "errortext";
 			public const string InteractionActivityResult = "interactionactivityresult";
+			public const string IterationCount = "iterationcount";
 			public const string Message = "message";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedOn = "modifiedon";
@@ -40,12 +44,16 @@ namespace Xyz.Xrm.Entities
 			public const string OwningTeam = "owningteam";
 			public const string OwningUser = "owninguser";
 			public const string RegardingObjectId = "regardingobjectid";
+			public const string RepetitionCount = "repetitioncount";
+			public const string RepetitionId = "repetitionid";
 			public const string StageName = "stagename";
+			public const string StartedOn = "startedon";
 			public const string Status = "status";
 			public const string StepName = "stepname";
 			public const string WorkflowLogId = "workflowlogid";
 			public const string Id = "workflowlogid";
 			public const string business_unit_workflowlogs = "business_unit_workflowlogs";
+			public const string lk_opportunitysalesprocess_workflowlogs = "lk_opportunitysalesprocess_workflowlogs";
 			public const string lk_workflowlog_asyncoperation_childworkflow = "lk_workflowlog_asyncoperation_childworkflow";
 			public const string lk_workflowlog_asyncoperations = "lk_workflowlog_asyncoperations";
 			public const string lk_workflowlog_createdby = "lk_workflowlog_createdby";
@@ -56,7 +64,6 @@ namespace Xyz.Xrm.Entities
 			public const string lk_workflowlog_processsession_childworkflow = "lk_workflowlog_processsession_childworkflow";
 			public const string team_workflowlog = "team_workflowlog";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -69,7 +76,9 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "workflowlog";
 		
-		public const int EntityTypeCode = 4706;
+		public const string EntitySchemaName = "WorkflowLog";
+		
+		public const string PrimaryIdAttribute = "workflowlogid";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -114,7 +123,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the parent record.
+		/// lk_opportunitysalesprocess_workflowlogs
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("asyncoperationid")]
 		public Microsoft.Xrm.Sdk.EntityReference AsyncOperationId
@@ -184,13 +193,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
@@ -203,13 +205,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -254,6 +249,19 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Duration between completed on and started on, used by business process flow.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("duration")]
+		public System.Nullable<int> Duration
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("duration");
+			}
+		}
+		
+		/// <summary>
 		/// Error code related to process.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("errorcode")]
@@ -274,6 +282,26 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// The string representation of the error.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("errortext")]
+		public string ErrorText
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("errortext");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ErrorText");
+				this.SetAttributeValue("errortext", value);
+				this.OnPropertyChanged("ErrorText");
+			}
+		}
+		
+		/// <summary>
 		/// String specifying the result of an interaction activity.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("interactionactivityresult")]
@@ -290,6 +318,26 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("InteractionActivityResult");
 				this.SetAttributeValue("interactionactivityresult", value);
 				this.OnPropertyChanged("InteractionActivityResult");
+			}
+		}
+		
+		/// <summary>
+		/// The iteration count for the action when in a do until loop.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iterationcount")]
+		public System.Nullable<int> IterationCount
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("iterationcount");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IterationCount");
+				this.SetAttributeValue("iterationcount", value);
+				this.OnPropertyChanged("IterationCount");
 			}
 		}
 		
@@ -324,13 +372,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
@@ -343,13 +384,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -397,13 +431,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
@@ -417,13 +444,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningTeam");
-				this.SetAttributeValue("owningteam", value);
-				this.OnPropertyChanged("OwningTeam");
-			}
 		}
 		
 		/// <summary>
@@ -436,13 +456,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
 			}
 		}
 		
@@ -467,6 +480,46 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// The count of repetitions of the action when in a loop.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("repetitioncount")]
+		public System.Nullable<int> RepetitionCount
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("repetitioncount");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("RepetitionCount");
+				this.SetAttributeValue("repetitioncount", value);
+				this.OnPropertyChanged("RepetitionCount");
+			}
+		}
+		
+		/// <summary>
+		/// The string representation of the repetition and iteration / level of the action.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("repetitionid")]
+		public string RepetitionId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("repetitionid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("RepetitionId");
+				this.SetAttributeValue("repetitionid", value);
+				this.OnPropertyChanged("RepetitionId");
+			}
+		}
+		
+		/// <summary>
 		/// Name of the process stage.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stagename")]
@@ -487,21 +540,41 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Status of the process step for which process log record has been created: In Progress, Successfully Completed, or Failed.
+		/// Date and time when the operation was started.
 		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("status")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Status
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("startedon")]
+		public System.Nullable<System.DateTime> StartedOn
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("status");
+				return this.GetAttributeValue<System.Nullable<System.DateTime>>("startedon");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("StartedOn");
+				this.SetAttributeValue("startedon", value);
+				this.OnPropertyChanged("StartedOn");
+			}
+		}
+		
+		/// <summary>
+		/// Status of the process step for which process log record has been created: In Progress, Successfully Completed, or Failed.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("status")]
+		public virtual WorkflowLog_Status? Status
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((WorkflowLog_Status?)(EntityOptionSetEnum.GetEnum(this, "status")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("Status");
-				this.SetAttributeValue("status", value);
+				this.SetAttributeValue("status", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("Status");
 			}
 		}
@@ -570,26 +643,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N userentityinstancedata_workflowlog
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_workflowlog")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_workflowlog
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_workflowlog", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_workflowlog");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_workflowlog", null, value);
-				this.OnPropertyChanged("userentityinstancedata_workflowlog");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 business_unit_workflowlogs
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
@@ -601,12 +654,26 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_workflowlogs", null);
 			}
+		}
+		
+		/// <summary>
+		/// N:1 lk_opportunitysalesprocess_workflowlogs
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("asyncoperationid")]
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_opportunitysalesprocess_workflowlogs")]
+		public Xyz.Xrm.Entities.OpportunitySalesProcess lk_opportunitysalesprocess_workflowlogs
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntity<Xyz.Xrm.Entities.OpportunitySalesProcess>("lk_opportunitysalesprocess_workflowlogs", null);
+			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("business_unit_workflowlogs");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_workflowlogs", null, value);
-				this.OnPropertyChanged("business_unit_workflowlogs");
+				this.OnPropertyChanging("lk_opportunitysalesprocess_workflowlogs");
+				this.SetRelatedEntity<Xyz.Xrm.Entities.OpportunitySalesProcess>("lk_opportunitysalesprocess_workflowlogs", null, value);
+				this.OnPropertyChanged("lk_opportunitysalesprocess_workflowlogs");
 			}
 		}
 		
@@ -664,13 +731,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_workflowlog_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_workflowlog_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_workflowlog_createdby", null, value);
-				this.OnPropertyChanged("lk_workflowlog_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -705,13 +765,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_workflowlog_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_workflowlog_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_workflowlog_modifiedby", null, value);
-				this.OnPropertyChanged("lk_workflowlog_modifiedby");
 			}
 		}
 		
@@ -790,13 +843,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.Team>("team_workflowlog", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_workflowlog");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Team>("team_workflowlog", null, value);
-				this.OnPropertyChanged("team_workflowlog");
-			}
 		}
 		
 		/// <summary>
@@ -839,21 +885,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("status")]
-		public virtual WorkflowLog_Status? StatusEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((WorkflowLog_Status?)(EntityOptionSetEnum.GetEnum(this, "status")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				Status = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

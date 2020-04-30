@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,13 +16,14 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("team")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class Team : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string AdministratorId = "administratorid";
+			public const string AzureActiveDirectoryObjectId = "azureactivedirectoryobjectid";
 			public const string BusinessUnitId = "businessunitid";
 			public const string CreatedBy = "createdby";
 			public const string CreatedOn = "createdon";
@@ -51,7 +53,6 @@ namespace Xyz.Xrm.Entities
 			public const string VersionNumber = "versionnumber";
 			public const string YomiName = "yominame";
 			public const string business_unit_teams = "business_unit_teams";
-			public const string knowledgearticle_Teams = "knowledgearticle_Teams";
 			public const string lk_team_createdonbehalfby = "lk_team_createdonbehalfby";
 			public const string lk_team_modifiedonbehalfby = "lk_team_modifiedonbehalfby";
 			public const string lk_teambase_administratorid = "lk_teambase_administratorid";
@@ -61,10 +62,8 @@ namespace Xyz.Xrm.Entities
 			public const string organization_teams = "organization_teams";
 			public const string processstage_teams = "processstage_teams";
 			public const string queue_team = "queue_team";
-			public const string teamtemplate_Teams = "teamtemplate_Teams";
 			public const string TransactionCurrency_Team = "TransactionCurrency_Team";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -77,7 +76,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "team";
 		
-		public const int EntityTypeCode = 9;
+		public const string EntitySchemaName = "Team";
+		
+		public const string PrimaryIdAttribute = "teamid";
+		
+		public const string PrimaryNameAttribute = "name";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -122,6 +125,26 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// The Azure active directory object Id for a group.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("azureactivedirectoryobjectid")]
+		public System.Nullable<System.Guid> AzureActiveDirectoryObjectId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("azureactivedirectoryobjectid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("AzureActiveDirectoryObjectId");
+				this.SetAttributeValue("azureactivedirectoryobjectid", value);
+				this.OnPropertyChanged("AzureActiveDirectoryObjectId");
+			}
+		}
+		
+		/// <summary>
 		/// Unique identifier of the business unit with which the team is associated.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("businessunitid")]
@@ -152,13 +175,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
@@ -171,13 +187,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -298,13 +307,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
@@ -317,13 +319,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -441,7 +436,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the record that the team relates to.
+		/// opportunity_Teams
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
 		public Microsoft.Xrm.Sdk.EntityReference RegardingObjectId
@@ -560,18 +555,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the team type.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("teamtype")]
-		public Microsoft.Xrm.Sdk.OptionSetValue TeamType
+		public virtual Team_TeamType? TeamType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("teamtype");
+				return ((Team_TeamType?)(EntityOptionSetEnum.GetEnum(this, "teamtype")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("TeamType");
-				this.SetAttributeValue("teamtype", value);
+				this.SetAttributeValue("teamtype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("TeamType");
 			}
 		}
@@ -650,26 +645,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N ImportFile_Team
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("ImportFile_Team")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ImportFile> ImportFile_Team
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ImportFile>("ImportFile_Team", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ImportFile_Team");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ImportFile>("ImportFile_Team", null, value);
-				this.OnPropertyChanged("ImportFile_Team");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N lead_owning_team
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lead_owning_team")]
@@ -686,26 +661,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("lead_owning_team");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Lead>("lead_owning_team", null, value);
 				this.OnPropertyChanged("lead_owning_team");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N OwningTeam_postfollows
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("OwningTeam_postfollows")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PostFollow> OwningTeam_postfollows
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("OwningTeam_postfollows", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningTeam_postfollows");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("OwningTeam_postfollows", null, value);
-				this.OnPropertyChanged("OwningTeam_postfollows");
 			}
 		}
 		
@@ -830,166 +785,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Team_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Team_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> Team_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Team_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Team_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Team_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("Team_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_BulkOperation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_BulkOperation")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkOperation> team_BulkOperation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkOperation>("team_BulkOperation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_BulkOperation");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkOperation>("team_BulkOperation", null, value);
-				this.OnPropertyChanged("team_BulkOperation");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_campaignactivity
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_campaignactivity")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.CampaignActivity> team_campaignactivity
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.CampaignActivity>("team_campaignactivity", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_campaignactivity");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.CampaignActivity>("team_campaignactivity", null, value);
-				this.OnPropertyChanged("team_campaignactivity");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_campaignresponse
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_campaignresponse")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.CampaignResponse> team_campaignresponse
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.CampaignResponse>("team_campaignresponse", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_campaignresponse");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.CampaignResponse>("team_campaignresponse", null, value);
-				this.OnPropertyChanged("team_campaignresponse");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_Campaigns
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_Campaigns")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Campaign> team_Campaigns
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Campaign>("team_Campaigns", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_Campaigns");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Campaign>("team_Campaigns", null, value);
-				this.OnPropertyChanged("team_Campaigns");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_channelaccessprofile
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_channelaccessprofile")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ChannelAccessProfile> team_channelaccessprofile
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ChannelAccessProfile>("team_channelaccessprofile", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_channelaccessprofile");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ChannelAccessProfile>("team_channelaccessprofile", null, value);
-				this.OnPropertyChanged("team_channelaccessprofile");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_connections1
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_connections1")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> team_connections1
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("team_connections1", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_connections1");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("team_connections1", null, value);
-				this.OnPropertyChanged("team_connections1");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_connections2
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_connections2")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> team_connections2
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("team_connections2", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_connections2");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("team_connections2", null, value);
-				this.OnPropertyChanged("team_connections2");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N team_contacts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_contacts")]
@@ -1006,26 +801,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("team_contacts");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Contact>("team_contacts", null, value);
 				this.OnPropertyChanged("team_contacts");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_convertrule
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_convertrule")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ConvertRule> team_convertrule
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ConvertRule>("team_convertrule", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_convertrule");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ConvertRule>("team_convertrule", null, value);
-				this.OnPropertyChanged("team_convertrule");
 			}
 		}
 		
@@ -1050,106 +825,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N team_customer_relationship
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_customer_relationship")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.CustomerRelationship> team_customer_relationship
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.CustomerRelationship>("team_customer_relationship", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_customer_relationship");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.CustomerRelationship>("team_customer_relationship", null, value);
-				this.OnPropertyChanged("team_customer_relationship");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Team_DuplicateBaseRecord
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Team_DuplicateBaseRecord")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRecord> Team_DuplicateBaseRecord
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Team_DuplicateBaseRecord", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Team_DuplicateBaseRecord");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Team_DuplicateBaseRecord", null, value);
-				this.OnPropertyChanged("Team_DuplicateBaseRecord");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Team_DuplicateMatchingRecord
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Team_DuplicateMatchingRecord")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRecord> Team_DuplicateMatchingRecord
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Team_DuplicateMatchingRecord", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Team_DuplicateMatchingRecord");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Team_DuplicateMatchingRecord", null, value);
-				this.OnPropertyChanged("Team_DuplicateMatchingRecord");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_DuplicateRules
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_DuplicateRules")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRule> team_DuplicateRules
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRule>("team_DuplicateRules", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_DuplicateRules");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRule>("team_DuplicateRules", null, value);
-				this.OnPropertyChanged("team_DuplicateRules");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_DynamicPropertyInstance
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_DynamicPropertyInstance")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DynamicPropertyInstance> team_DynamicPropertyInstance
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DynamicPropertyInstance>("team_DynamicPropertyInstance", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_DynamicPropertyInstance");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DynamicPropertyInstance>("team_DynamicPropertyInstance", null, value);
-				this.OnPropertyChanged("team_DynamicPropertyInstance");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N team_email
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_email")]
@@ -1170,286 +845,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N team_email_templates
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_email_templates")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Template> team_email_templates
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Template>("team_email_templates", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_email_templates");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Template>("team_email_templates", null, value);
-				this.OnPropertyChanged("team_email_templates");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_emailserverprofile
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_emailserverprofile")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.EmailServerProfile> team_emailserverprofile
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.EmailServerProfile>("team_emailserverprofile", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_emailserverprofile");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.EmailServerProfile>("team_emailserverprofile", null, value);
-				this.OnPropertyChanged("team_emailserverprofile");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_entitlement
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_entitlement")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Entitlement> team_entitlement
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Entitlement>("team_entitlement", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_entitlement");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Entitlement>("team_entitlement", null, value);
-				this.OnPropertyChanged("team_entitlement");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_exchangesyncidmapping
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_exchangesyncidmapping")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ExchangeSyncIdMapping> team_exchangesyncidmapping
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ExchangeSyncIdMapping>("team_exchangesyncidmapping", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_exchangesyncidmapping");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ExchangeSyncIdMapping>("team_exchangesyncidmapping", null, value);
-				this.OnPropertyChanged("team_exchangesyncidmapping");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_externalparty
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_externalparty")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ExternalParty> team_externalparty
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ExternalParty>("team_externalparty", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_externalparty");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ExternalParty>("team_externalparty", null, value);
-				this.OnPropertyChanged("team_externalparty");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_fax
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_fax")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Fax> team_fax
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Fax>("team_fax", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_fax");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Fax>("team_fax", null, value);
-				this.OnPropertyChanged("team_fax");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_goal
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_goal")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Goal> team_goal
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Goal>("team_goal", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_goal");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Goal>("team_goal", null, value);
-				this.OnPropertyChanged("team_goal");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_goal_goalowner
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_goal_goalowner")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Goal> team_goal_goalowner
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Goal>("team_goal_goalowner", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_goal_goalowner");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Goal>("team_goal_goalowner", null, value);
-				this.OnPropertyChanged("team_goal_goalowner");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_goalrollupquery
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_goalrollupquery")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.GoalRollupQuery> team_goalrollupquery
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.GoalRollupQuery>("team_goalrollupquery", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_goalrollupquery");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.GoalRollupQuery>("team_goalrollupquery", null, value);
-				this.OnPropertyChanged("team_goalrollupquery");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_ImportFiles
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_ImportFiles")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ImportFile> team_ImportFiles
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ImportFile>("team_ImportFiles", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_ImportFiles");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ImportFile>("team_ImportFiles", null, value);
-				this.OnPropertyChanged("team_ImportFiles");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_ImportLogs
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_ImportLogs")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ImportLog> team_ImportLogs
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ImportLog>("team_ImportLogs", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_ImportLogs");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ImportLog>("team_ImportLogs", null, value);
-				this.OnPropertyChanged("team_ImportLogs");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_ImportMaps
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_ImportMaps")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ImportMap> team_ImportMaps
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ImportMap>("team_ImportMaps", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_ImportMaps");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ImportMap>("team_ImportMaps", null, value);
-				this.OnPropertyChanged("team_ImportMaps");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_Imports
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_Imports")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Import> team_Imports
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Import>("team_Imports", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_Imports");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Import>("team_Imports", null, value);
-				this.OnPropertyChanged("team_Imports");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_incidentresolution
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_incidentresolution")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.IncidentResolution> team_incidentresolution
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.IncidentResolution>("team_incidentresolution", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_incidentresolution");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.IncidentResolution>("team_incidentresolution", null, value);
-				this.OnPropertyChanged("team_incidentresolution");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N team_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_incidents")]
@@ -1466,166 +861,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("team_incidents");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Incident>("team_incidents", null, value);
 				this.OnPropertyChanged("team_incidents");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_invoices
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_invoices")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Invoice> team_invoices
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Invoice>("team_invoices", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_invoices");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Invoice>("team_invoices", null, value);
-				this.OnPropertyChanged("team_invoices");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_knowledgearticle
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_knowledgearticle")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.KnowledgeArticle> team_knowledgearticle
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.KnowledgeArticle>("team_knowledgearticle", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_knowledgearticle");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.KnowledgeArticle>("team_knowledgearticle", null, value);
-				this.OnPropertyChanged("team_knowledgearticle");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_letter
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_letter")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Letter> team_letter
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Letter>("team_letter", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_letter");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Letter>("team_letter", null, value);
-				this.OnPropertyChanged("team_letter");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_list
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_list")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.List> team_list
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.List>("team_list", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_list");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.List>("team_list", null, value);
-				this.OnPropertyChanged("team_list");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_mailbox
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_mailbox")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Mailbox> team_mailbox
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Mailbox>("team_mailbox", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_mailbox");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Mailbox>("team_mailbox", null, value);
-				this.OnPropertyChanged("team_mailbox");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_mailboxtrackingfolder
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_mailboxtrackingfolder")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.MailboxTrackingFolder> team_mailboxtrackingfolder
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.MailboxTrackingFolder>("team_mailboxtrackingfolder", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_mailboxtrackingfolder");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.MailboxTrackingFolder>("team_mailboxtrackingfolder", null, value);
-				this.OnPropertyChanged("team_mailboxtrackingfolder");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_msdyn_postalbum
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_msdyn_postalbum")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.msdyn_PostAlbum> team_msdyn_postalbum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.msdyn_PostAlbum>("team_msdyn_postalbum", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_msdyn_postalbum");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.msdyn_PostAlbum>("team_msdyn_postalbum", null, value);
-				this.OnPropertyChanged("team_msdyn_postalbum");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_msdyn_wallsavedqueryusersettings
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_msdyn_wallsavedqueryusersettings")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.msdyn_wallsavedqueryusersettings> team_msdyn_wallsavedqueryusersettings
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.msdyn_wallsavedqueryusersettings>("team_msdyn_wallsavedqueryusersettings", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_msdyn_wallsavedqueryusersettings");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.msdyn_wallsavedqueryusersettings>("team_msdyn_wallsavedqueryusersettings", null, value);
-				this.OnPropertyChanged("team_msdyn_wallsavedqueryusersettings");
 			}
 		}
 		
@@ -1666,6 +901,26 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("team_opportunityclose");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.OpportunityClose>("team_opportunityclose", null, value);
 				this.OnPropertyChanged("team_opportunityclose");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N team_opportunityproduct
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_opportunityproduct")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.OpportunityProduct> team_opportunityproduct
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.OpportunityProduct>("team_opportunityproduct", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("team_opportunityproduct");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.OpportunityProduct>("team_opportunityproduct", null, value);
+				this.OnPropertyChanged("team_opportunityproduct");
 			}
 		}
 		
@@ -1730,46 +985,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N team_principalobjectattributeaccess
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_principalobjectattributeaccess")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess> team_principalobjectattributeaccess
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("team_principalobjectattributeaccess", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_principalobjectattributeaccess");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("team_principalobjectattributeaccess", null, value);
-				this.OnPropertyChanged("team_principalobjectattributeaccess");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_principalobjectattributeaccess_principalid
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_principalobjectattributeaccess_principalid")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess> team_principalobjectattributeaccess_principalid
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("team_principalobjectattributeaccess_principalid", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_principalobjectattributeaccess_principalid");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("team_principalobjectattributeaccess_principalid", null, value);
-				this.OnPropertyChanged("team_principalobjectattributeaccess_principalid");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N team_processsession
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_processsession")]
@@ -1810,22 +1025,22 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N team_profilerule
+		/// 1:N team_processstageparameter
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_profilerule")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ChannelAccessProfileRule> team_profilerule
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_processstageparameter")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.processstageparameter> team_processstageparameter
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ChannelAccessProfileRule>("team_profilerule", null);
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.processstageparameter>("team_processstageparameter", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("team_profilerule");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ChannelAccessProfileRule>("team_profilerule", null, value);
-				this.OnPropertyChanged("team_profilerule");
+				this.OnPropertyChanging("team_processstageparameter");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.processstageparameter>("team_processstageparameter", null, value);
+				this.OnPropertyChanged("team_processstageparameter");
 			}
 		}
 		
@@ -1850,282 +1065,22 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N team_quoteclose
+		/// 1:N team_salesorderdetail
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_quoteclose")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.QuoteClose> team_quoteclose
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_salesorderdetail")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SalesOrderDetail> team_salesorderdetail
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.QuoteClose>("team_quoteclose", null);
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.SalesOrderDetail>("team_salesorderdetail", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("team_quoteclose");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.QuoteClose>("team_quoteclose", null, value);
-				this.OnPropertyChanged("team_quoteclose");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_quotes
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_quotes")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Quote> team_quotes
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Quote>("team_quotes", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_quotes");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Quote>("team_quotes", null, value);
-				this.OnPropertyChanged("team_quotes");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_recurringappointmentmaster
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_recurringappointmentmaster")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RecurringAppointmentMaster> team_recurringappointmentmaster
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RecurringAppointmentMaster>("team_recurringappointmentmaster", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_recurringappointmentmaster");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RecurringAppointmentMaster>("team_recurringappointmentmaster", null, value);
-				this.OnPropertyChanged("team_recurringappointmentmaster");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_resource_groups
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_resource_groups")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ResourceGroup> team_resource_groups
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ResourceGroup>("team_resource_groups", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_resource_groups");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ResourceGroup>("team_resource_groups", null, value);
-				this.OnPropertyChanged("team_resource_groups");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_resource_specs
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_resource_specs")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ResourceSpec> team_resource_specs
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ResourceSpec>("team_resource_specs", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_resource_specs");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ResourceSpec>("team_resource_specs", null, value);
-				this.OnPropertyChanged("team_resource_specs");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_routingrule
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_routingrule")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RoutingRule> team_routingrule
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RoutingRule>("team_routingrule", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_routingrule");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RoutingRule>("team_routingrule", null, value);
-				this.OnPropertyChanged("team_routingrule");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_routingruleitem
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_routingruleitem")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RoutingRuleItem> team_routingruleitem
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RoutingRuleItem>("team_routingruleitem", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_routingruleitem");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RoutingRuleItem>("team_routingruleitem", null, value);
-				this.OnPropertyChanged("team_routingruleitem");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_service_appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_service_appointments")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ServiceAppointment> team_service_appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ServiceAppointment>("team_service_appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_service_appointments");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ServiceAppointment>("team_service_appointments", null, value);
-				this.OnPropertyChanged("team_service_appointments");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_service_contracts
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_service_contracts")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Contract> team_service_contracts
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Contract>("team_service_contracts", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_service_contracts");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Contract>("team_service_contracts", null, value);
-				this.OnPropertyChanged("team_service_contracts");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_sharepointdocumentlocation
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_sharepointdocumentlocation")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SharePointDocumentLocation> team_sharepointdocumentlocation
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SharePointDocumentLocation>("team_sharepointdocumentlocation", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_sharepointdocumentlocation");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SharePointDocumentLocation>("team_sharepointdocumentlocation", null, value);
-				this.OnPropertyChanged("team_sharepointdocumentlocation");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_sharepointsite
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_sharepointsite")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SharePointSite> team_sharepointsite
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SharePointSite>("team_sharepointsite", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_sharepointsite");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SharePointSite>("team_sharepointsite", null, value);
-				this.OnPropertyChanged("team_sharepointsite");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_slaBase
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_slaBase")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SLA> team_slaBase
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SLA>("team_slaBase", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_slaBase");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SLA>("team_slaBase", null, value);
-				this.OnPropertyChanged("team_slaBase");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_socialactivity
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_socialactivity")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SocialActivity> team_socialactivity
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SocialActivity>("team_socialactivity", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_socialactivity");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SocialActivity>("team_socialactivity", null, value);
-				this.OnPropertyChanged("team_socialactivity");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_SyncError
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_SyncError")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SyncError> team_SyncError
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SyncError>("team_SyncError", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_SyncError");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SyncError>("team_SyncError", null, value);
-				this.OnPropertyChanged("team_SyncError");
+				this.OnPropertyChanging("team_salesorderdetail");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.SalesOrderDetail>("team_salesorderdetail", null, value);
+				this.OnPropertyChanged("team_salesorderdetail");
 			}
 		}
 		
@@ -2146,106 +1101,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("team_task");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Task>("team_task", null, value);
 				this.OnPropertyChanged("team_task");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_userentityinstancedata
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_userentityinstancedata")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> team_userentityinstancedata
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("team_userentityinstancedata", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_userentityinstancedata");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("team_userentityinstancedata", null, value);
-				this.OnPropertyChanged("team_userentityinstancedata");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_userentityuisettings
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_userentityuisettings")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityUISettings> team_userentityuisettings
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityUISettings>("team_userentityuisettings", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_userentityuisettings");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityUISettings>("team_userentityuisettings", null, value);
-				this.OnPropertyChanged("team_userentityuisettings");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_userform
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_userform")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserForm> team_userform
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserForm>("team_userform", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_userform");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserForm>("team_userform", null, value);
-				this.OnPropertyChanged("team_userform");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_userquery
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_userquery")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserQuery> team_userquery
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserQuery>("team_userquery", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_userquery");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserQuery>("team_userquery", null, value);
-				this.OnPropertyChanged("team_userquery");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N team_userqueryvisualizations
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("team_userqueryvisualizations")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserQueryVisualization> team_userqueryvisualizations
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserQueryVisualization>("team_userqueryvisualizations", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_userqueryvisualizations");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserQueryVisualization>("team_userqueryvisualizations", null, value);
-				this.OnPropertyChanged("team_userqueryvisualizations");
 			}
 		}
 		
@@ -2290,26 +1145,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N userentityinstancedata_team
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_team")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_team
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_team", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_team");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_team", null, value);
-				this.OnPropertyChanged("userentityinstancedata_team");
-			}
-		}
-		
-		/// <summary>
 		/// N:N teammembership_association
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("teammembership_association")]
@@ -2326,26 +1161,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("teammembership_association");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.SystemUser>("teammembership_association", null, value);
 				this.OnPropertyChanged("teammembership_association");
-			}
-		}
-		
-		/// <summary>
-		/// N:N teamprofiles_association
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("teamprofiles_association")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.FieldSecurityProfile> teamprofiles_association
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.FieldSecurityProfile>("teamprofiles_association", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("teamprofiles_association");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.FieldSecurityProfile>("teamprofiles_association", null, value);
-				this.OnPropertyChanged("teamprofiles_association");
 			}
 		}
 		
@@ -2387,27 +1202,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("business_unit_teams");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_teams", null, value);
 				this.OnPropertyChanged("business_unit_teams");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 knowledgearticle_Teams
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("regardingobjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgearticle_Teams")]
-		public Xyz.Xrm.Entities.KnowledgeArticle knowledgearticle_Teams
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.KnowledgeArticle>("knowledgearticle_Teams", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("knowledgearticle_Teams");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.KnowledgeArticle>("knowledgearticle_Teams", null, value);
-				this.OnPropertyChanged("knowledgearticle_Teams");
 			}
 		}
 		
@@ -2486,13 +1280,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_teambase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_teambase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_teambase_createdby", null, value);
-				this.OnPropertyChanged("lk_teambase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -2506,13 +1293,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_teambase_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_teambase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_teambase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_teambase_modifiedby");
 			}
 		}
 		
@@ -2594,27 +1374,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 teamtemplate_Teams
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("teamtemplateid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("teamtemplate_Teams")]
-		public Xyz.Xrm.Entities.TeamTemplate teamtemplate_Teams
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.TeamTemplate>("teamtemplate_Teams", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("teamtemplate_Teams");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.TeamTemplate>("teamtemplate_Teams", null, value);
-				this.OnPropertyChanged("teamtemplate_Teams");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 TransactionCurrency_Team
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
@@ -2675,21 +1434,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("teamtype")]
-		public virtual Team_TeamType? TeamTypeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Team_TeamType?)(EntityOptionSetEnum.GetEnum(this, "teamtype")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				TeamType = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

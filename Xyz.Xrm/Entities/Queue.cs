@@ -5,13 +5,14 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum QueueState
 	{
 		
@@ -27,11 +28,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("queue")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class Queue : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string AllowEmailCredentials = "allowemailcredentials";
 			public const string BusinessUnitId = "businessunitid";
@@ -84,11 +85,9 @@ namespace Xyz.Xrm.Entities
 			public const string lk_queuebase_createdby = "lk_queuebase_createdby";
 			public const string lk_queuebase_modifiedby = "lk_queuebase_modifiedby";
 			public const string organization_queues = "organization_queues";
-			public const string queue_defaultmailbox_mailbox = "queue_defaultmailbox_mailbox";
 			public const string queue_primary_user = "queue_primary_user";
 			public const string TransactionCurrency_Queue = "TransactionCurrency_Queue";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -101,7 +100,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "queue";
 		
-		public const int EntityTypeCode = 2020;
+		public const string EntitySchemaName = "Queue";
+		
+		public const string PrimaryIdAttribute = "queueid";
+		
+		public const string PrimaryNameAttribute = "name";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -171,13 +174,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
@@ -190,13 +186,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -291,18 +280,18 @@ namespace Xyz.Xrm.Entities
 		/// Shows the status of the primary email address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailrouteraccessapproval")]
-		public Microsoft.Xrm.Sdk.OptionSetValue EmailRouterAccessApproval
+		public virtual Queue_EmailRouterAccessApproval? EmailRouterAccessApproval
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("emailrouteraccessapproval");
+				return ((Queue_EmailRouterAccessApproval?)(EntityOptionSetEnum.GetEnum(this, "emailrouteraccessapproval")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("EmailRouterAccessApproval");
-				this.SetAttributeValue("emailrouteraccessapproval", value);
+				this.SetAttributeValue("emailrouteraccessapproval", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("EmailRouterAccessApproval");
 			}
 		}
@@ -437,18 +426,18 @@ namespace Xyz.Xrm.Entities
 		/// Incoming email delivery method for the queue.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incomingemaildeliverymethod")]
-		public Microsoft.Xrm.Sdk.OptionSetValue IncomingEmailDeliveryMethod
+		public virtual Queue_IncomingEmailDeliveryMethod? IncomingEmailDeliveryMethod
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("incomingemaildeliverymethod");
+				return ((Queue_IncomingEmailDeliveryMethod?)(EntityOptionSetEnum.GetEnum(this, "incomingemaildeliverymethod")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("IncomingEmailDeliveryMethod");
-				this.SetAttributeValue("incomingemaildeliverymethod", value);
+				this.SetAttributeValue("incomingemaildeliverymethod", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("IncomingEmailDeliveryMethod");
 			}
 		}
@@ -457,18 +446,18 @@ namespace Xyz.Xrm.Entities
 		/// Convert Incoming Email To Activities
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incomingemailfilteringmethod")]
-		public Microsoft.Xrm.Sdk.OptionSetValue IncomingEmailFilteringMethod
+		public virtual Queue_IncomingEmailFilteringMethod? IncomingEmailFilteringMethod
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("incomingemailfilteringmethod");
+				return ((Queue_IncomingEmailFilteringMethod?)(EntityOptionSetEnum.GetEnum(this, "incomingemailfilteringmethod")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("IncomingEmailFilteringMethod");
-				this.SetAttributeValue("incomingemailfilteringmethod", value);
+				this.SetAttributeValue("incomingemailfilteringmethod", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("IncomingEmailFilteringMethod");
 			}
 		}
@@ -511,13 +500,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
@@ -530,13 +512,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -623,18 +598,18 @@ namespace Xyz.Xrm.Entities
 		/// Outgoing email delivery method for the queue.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("outgoingemaildeliverymethod")]
-		public Microsoft.Xrm.Sdk.OptionSetValue OutgoingEmailDeliveryMethod
+		public virtual Queue_OutgoingEmailDeliveryMethod? OutgoingEmailDeliveryMethod
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("outgoingemaildeliverymethod");
+				return ((Queue_OutgoingEmailDeliveryMethod?)(EntityOptionSetEnum.GetEnum(this, "outgoingemaildeliverymethod")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("OutgoingEmailDeliveryMethod");
-				this.SetAttributeValue("outgoingemaildeliverymethod", value);
+				this.SetAttributeValue("outgoingemaildeliverymethod", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("OutgoingEmailDeliveryMethod");
 			}
 		}
@@ -690,13 +665,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
@@ -710,13 +678,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningTeam");
-				this.SetAttributeValue("owningteam", value);
-				this.OnPropertyChanged("OwningTeam");
-			}
 		}
 		
 		/// <summary>
@@ -729,13 +690,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
 			}
 		}
 		
@@ -807,12 +761,12 @@ namespace Xyz.Xrm.Entities
 		/// Type of queue that is automatically assigned when a user or queue is created. The type can be public, private, or work in process.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("queuetypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue QueueTypeCode
+		public virtual Queue_QueueTypeCode? QueueTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("queuetypecode");
+				return ((Queue_QueueTypeCode?)(EntityOptionSetEnum.GetEnum(this, "queuetypecode")));
 			}
 		}
 		
@@ -820,18 +774,18 @@ namespace Xyz.Xrm.Entities
 		/// Select whether the queue is public or private. A public queue can be viewed by all. A private queue can be viewed only by the members added to the queue.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("queueviewtype")]
-		public Microsoft.Xrm.Sdk.OptionSetValue QueueViewType
+		public virtual Queue_QueueViewType? QueueViewType
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("queueviewtype");
+				return ((Queue_QueueViewType?)(EntityOptionSetEnum.GetEnum(this, "queueviewtype")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("QueueViewType");
-				this.SetAttributeValue("queueviewtype", value);
+				this.SetAttributeValue("queueviewtype", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("QueueViewType");
 			}
 		}
@@ -875,18 +829,18 @@ namespace Xyz.Xrm.Entities
 		/// Reason for the status of the queue.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue StatusCode
+		public virtual Queue_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statuscode");
+				return ((Queue_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("StatusCode");
-				this.SetAttributeValue("statuscode", value);
+				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("StatusCode");
 			}
 		}
@@ -921,46 +875,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<long>>("versionnumber");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N convertrule_queue
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("convertrule_queue")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ConvertRule> convertrule_queue
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ConvertRule>("convertrule_queue", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("convertrule_queue");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ConvertRule>("convertrule_queue", null, value);
-				this.OnPropertyChanged("convertrule_queue");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N mailbox_regarding_queue
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("mailbox_regarding_queue")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Mailbox> mailbox_regarding_queue
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Mailbox>("mailbox_regarding_queue", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("mailbox_regarding_queue");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Mailbox>("mailbox_regarding_queue", null, value);
-				this.OnPropertyChanged("mailbox_regarding_queue");
 			}
 		}
 		
@@ -1005,86 +919,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Queue_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Queue_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> Queue_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Queue_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Queue_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Queue_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("Queue_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N queue_convertruleitem
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("queue_convertruleitem")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ConvertRuleItem> queue_convertruleitem
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ConvertRuleItem>("queue_convertruleitem", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("queue_convertruleitem");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ConvertRuleItem>("queue_convertruleitem", null, value);
-				this.OnPropertyChanged("queue_convertruleitem");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Queue_DuplicateBaseRecord
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Queue_DuplicateBaseRecord")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRecord> Queue_DuplicateBaseRecord
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Queue_DuplicateBaseRecord", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Queue_DuplicateBaseRecord");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Queue_DuplicateBaseRecord", null, value);
-				this.OnPropertyChanged("Queue_DuplicateBaseRecord");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Queue_DuplicateMatchingRecord
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Queue_DuplicateMatchingRecord")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRecord> Queue_DuplicateMatchingRecord
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Queue_DuplicateMatchingRecord", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Queue_DuplicateMatchingRecord");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Queue_DuplicateMatchingRecord", null, value);
-				this.OnPropertyChanged("Queue_DuplicateMatchingRecord");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N Queue_Email_EmailSender
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Queue_Email_EmailSender")]
@@ -1125,46 +959,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N queue_PostFollows
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("queue_PostFollows")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PostFollow> queue_PostFollows
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("queue_PostFollows", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("queue_PostFollows");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("queue_PostFollows", null, value);
-				this.OnPropertyChanged("queue_PostFollows");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N queue_principalobjectattributeaccess
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("queue_principalobjectattributeaccess")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess> queue_principalobjectattributeaccess
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("queue_principalobjectattributeaccess", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("queue_principalobjectattributeaccess");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("queue_principalobjectattributeaccess", null, value);
-				this.OnPropertyChanged("queue_principalobjectattributeaccess");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N Queue_ProcessSessions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Queue_ProcessSessions")]
@@ -1181,26 +975,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Queue_ProcessSessions");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.ProcessSession>("Queue_ProcessSessions", null, value);
 				this.OnPropertyChanged("Queue_ProcessSessions");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N queue_routingruleitem
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("queue_routingruleitem")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RoutingRuleItem> queue_routingruleitem
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RoutingRuleItem>("queue_routingruleitem", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("queue_routingruleitem");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RoutingRuleItem>("queue_routingruleitem", null, value);
-				this.OnPropertyChanged("queue_routingruleitem");
 			}
 		}
 		
@@ -1241,26 +1015,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("queue_team");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Team>("queue_team", null, value);
 				this.OnPropertyChanged("queue_team");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_queue
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_queue")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_queue
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_queue", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_queue");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_queue", null, value);
-				this.OnPropertyChanged("userentityinstancedata_queue");
 			}
 		}
 		
@@ -1316,13 +1070,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_queues2", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_queues2");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_queues2", null, value);
-				this.OnPropertyChanged("business_unit_queues2");
 			}
 		}
 		
@@ -1380,13 +1127,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_queuebase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_queuebase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_queuebase_createdby", null, value);
-				this.OnPropertyChanged("lk_queuebase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -1401,13 +1141,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_queuebase_modifiedby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_queuebase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_queuebase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_queuebase_modifiedby");
-			}
 		}
 		
 		/// <summary>
@@ -1421,20 +1154,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.Organization>("organization_queues", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 queue_defaultmailbox_mailbox
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("defaultmailbox")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("queue_defaultmailbox_mailbox")]
-		public Xyz.Xrm.Entities.Mailbox queue_defaultmailbox_mailbox
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Mailbox>("queue_defaultmailbox_mailbox", null);
 			}
 		}
 		
@@ -1520,106 +1239,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailrouteraccessapproval")]
-		public virtual Queue_EmailRouterAccessApproval? EmailRouterAccessApprovalEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Queue_EmailRouterAccessApproval?)(EntityOptionSetEnum.GetEnum(this, "emailrouteraccessapproval")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				EmailRouterAccessApproval = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incomingemaildeliverymethod")]
-		public virtual Queue_IncomingEmailDeliveryMethod? IncomingEmailDeliveryMethodEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Queue_IncomingEmailDeliveryMethod?)(EntityOptionSetEnum.GetEnum(this, "incomingemaildeliverymethod")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				IncomingEmailDeliveryMethod = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incomingemailfilteringmethod")]
-		public virtual Queue_IncomingEmailFilteringMethod? IncomingEmailFilteringMethodEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Queue_IncomingEmailFilteringMethod?)(EntityOptionSetEnum.GetEnum(this, "incomingemailfilteringmethod")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				IncomingEmailFilteringMethod = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("outgoingemaildeliverymethod")]
-		public virtual Queue_OutgoingEmailDeliveryMethod? OutgoingEmailDeliveryMethodEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Queue_OutgoingEmailDeliveryMethod?)(EntityOptionSetEnum.GetEnum(this, "outgoingemaildeliverymethod")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				OutgoingEmailDeliveryMethod = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("queuetypecode")]
-		public virtual Queue_QueueTypeCode? QueueTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Queue_QueueTypeCode?)(EntityOptionSetEnum.GetEnum(this, "queuetypecode")));
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("queueviewtype")]
-		public virtual Queue_QueueViewType? QueueViewTypeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Queue_QueueViewType?)(EntityOptionSetEnum.GetEnum(this, "queueviewtype")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				QueueViewType = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual Queue_StatusCode? StatusCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Queue_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				StatusCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

@@ -5,26 +5,35 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum Queue_IncomingEmailFilteringMethod
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("All email messages", 0)]
 		Allemailmessages = 0,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		EmailmessagesfromCRMLeadsContactsandAccounts = 2,
+		[OptionSetMetadataAttribute("Email messages from Dynamics 365 Leads, Contacts and Accounts", 2)]
+		EmailmessagesfromDynamics365LeadsContactsandAccounts = 2,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		EmailmessagesfromCRMrecordsthatareemailenabled = 3,
+		[OptionSetMetadataAttribute("Email messages from Dynamics 365 records that are email enabled", 3)]
+		EmailmessagesfromDynamics365recordsthatareemailenabled = 3,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		EmailmessagesinresponsetoCRMemail = 1,
+		[OptionSetMetadataAttribute("Email messages in response to Dynamics 365 email", 1)]
+		EmailmessagesinresponsetoDynamics365email = 1,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("No email messages", 4)]
+		Noemailmessages = 4,
 	}
 }

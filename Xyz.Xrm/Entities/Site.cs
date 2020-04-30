@@ -5,6 +5,7 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
@@ -15,11 +16,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("site")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class Site : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string Address1_AddressId = "address1_addressid";
 			public const string Address1_AddressTypeCode = "address1_addresstypecode";
@@ -77,6 +78,8 @@ namespace Xyz.Xrm.Entities
 			public const string SiteId = "siteid";
 			public const string Id = "siteid";
 			public const string TimeZoneCode = "timezonecode";
+			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
+			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
 			public const string lk_site_createdonbehalfby = "lk_site_createdonbehalfby";
 			public const string lk_site_modifiedonbehalfby = "lk_site_modifiedonbehalfby";
@@ -84,7 +87,6 @@ namespace Xyz.Xrm.Entities
 			public const string lk_sitebase_modifiedby = "lk_sitebase_modifiedby";
 			public const string organization_sites = "organization_sites";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -97,7 +99,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "site";
 		
-		public const int EntityTypeCode = 4009;
+		public const string EntitySchemaName = "Site";
+		
+		public const string PrimaryIdAttribute = "siteid";
+		
+		public const string PrimaryNameAttribute = "name";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -145,18 +151,18 @@ namespace Xyz.Xrm.Entities
 		/// Type of address for address 1, such as billing, shipping, or primary address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Address1_AddressTypeCode
+		public virtual Site_Address1_AddressTypeCode? Address1_AddressTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address1_addresstypecode");
+				return ((Site_Address1_AddressTypeCode?)(EntityOptionSetEnum.GetEnum(this, "address1_addresstypecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("Address1_AddressTypeCode");
-				this.SetAttributeValue("address1_addresstypecode", value);
+				this.SetAttributeValue("address1_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("Address1_AddressTypeCode");
 			}
 		}
@@ -405,18 +411,18 @@ namespace Xyz.Xrm.Entities
 		/// Method of shipment for address 1.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Address1_ShippingMethodCode
+		public virtual Site_Address1_ShippingMethodCode? Address1_ShippingMethodCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address1_shippingmethodcode");
+				return ((Site_Address1_ShippingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "address1_shippingmethodcode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("Address1_ShippingMethodCode");
-				this.SetAttributeValue("address1_shippingmethodcode", value);
+				this.SetAttributeValue("address1_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("Address1_ShippingMethodCode");
 			}
 		}
@@ -565,18 +571,18 @@ namespace Xyz.Xrm.Entities
 		/// Type of address for address 2, such as billing, shipping, or primary address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Address2_AddressTypeCode
+		public virtual Site_Address2_AddressTypeCode? Address2_AddressTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address2_addresstypecode");
+				return ((Site_Address2_AddressTypeCode?)(EntityOptionSetEnum.GetEnum(this, "address2_addresstypecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("Address2_AddressTypeCode");
-				this.SetAttributeValue("address2_addresstypecode", value);
+				this.SetAttributeValue("address2_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("Address2_AddressTypeCode");
 			}
 		}
@@ -825,18 +831,18 @@ namespace Xyz.Xrm.Entities
 		/// Method of shipment for address 2.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue Address2_ShippingMethodCode
+		public virtual Site_Address2_ShippingMethodCode? Address2_ShippingMethodCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("address2_shippingmethodcode");
+				return ((Site_Address2_ShippingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "address2_shippingmethodcode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("Address2_ShippingMethodCode");
-				this.SetAttributeValue("address2_shippingmethodcode", value);
+				this.SetAttributeValue("address2_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("Address2_ShippingMethodCode");
 			}
 		}
@@ -962,7 +968,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who created the site.
+		/// lk_sitebase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -971,13 +977,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
 			}
 		}
 		
@@ -992,17 +991,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who created the site.
+		/// lk_site_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -1062,7 +1054,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who last modified the site.
+		/// lk_sitebase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -1071,13 +1063,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
 			}
 		}
 		
@@ -1092,17 +1077,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the delegate user who last modified the site.
+		/// lk_site_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -1142,7 +1120,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the organization with which the site is associated.
+		/// organization_sites
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("organizationid")]
 		public System.Nullable<System.Guid> OrganizationId
@@ -1238,6 +1216,46 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// For internal use only.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("timezoneruleversionnumber")]
+		public System.Nullable<int> TimeZoneRuleVersionNumber
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("timezoneruleversionnumber");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TimeZoneRuleVersionNumber");
+				this.SetAttributeValue("timezoneruleversionnumber", value);
+				this.OnPropertyChanged("TimeZoneRuleVersionNumber");
+			}
+		}
+		
+		/// <summary>
+		/// Time zone code that was in use when the record was created.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
+		public System.Nullable<int> UTCConversionTimeZoneCode
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<int>>("utcconversiontimezonecode");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("UTCConversionTimeZoneCode");
+				this.SetAttributeValue("utcconversiontimezonecode", value);
+				this.OnPropertyChanged("UTCConversionTimeZoneCode");
+			}
+		}
+		
+		/// <summary>
 		/// Version number of the site.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("versionnumber")]
@@ -1247,6 +1265,46 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<long>>("versionnumber");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N site_ActivityPointers
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_ActivityPointers")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ActivityPointer> site_ActivityPointers
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.ActivityPointer>("site_ActivityPointers", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("site_ActivityPointers");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.ActivityPointer>("site_ActivityPointers", null, value);
+				this.OnPropertyChanged("site_ActivityPointers");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N site_Appointments
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_Appointments")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Appointment> site_Appointments
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.Appointment>("site_Appointments", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("site_Appointments");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.Appointment>("site_Appointments", null, value);
+				this.OnPropertyChanged("site_Appointments");
 			}
 		}
 		
@@ -1271,42 +1329,82 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Site_BulkDeleteFailures
+		/// 1:N site_Emails
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Site_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> Site_BulkDeleteFailures
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_Emails")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Email> site_Emails
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Site_BulkDeleteFailures", null);
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.Email>("site_Emails", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("Site_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Site_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("Site_BulkDeleteFailures");
+				this.OnPropertyChanging("site_Emails");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.Email>("site_Emails", null, value);
+				this.OnPropertyChanged("site_Emails");
 			}
 		}
 		
 		/// <summary>
-		/// 1:N site_equipment
+		/// 1:N site_OpportunityCloses
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_equipment")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Equipment> site_equipment
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_OpportunityCloses")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.OpportunityClose> site_OpportunityCloses
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Equipment>("site_equipment", null);
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.OpportunityClose>("site_OpportunityCloses", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("site_equipment");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Equipment>("site_equipment", null, value);
-				this.OnPropertyChanged("site_equipment");
+				this.OnPropertyChanging("site_OpportunityCloses");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.OpportunityClose>("site_OpportunityCloses", null, value);
+				this.OnPropertyChanged("site_OpportunityCloses");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N site_OrderCloses
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_OrderCloses")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.OrderClose> site_OrderCloses
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.OrderClose>("site_OrderCloses", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("site_OrderCloses");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.OrderClose>("site_OrderCloses", null, value);
+				this.OnPropertyChanged("site_OrderCloses");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N site_PhoneCalls
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_PhoneCalls")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PhoneCall> site_PhoneCalls
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.PhoneCall>("site_PhoneCalls", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("site_PhoneCalls");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.PhoneCall>("site_PhoneCalls", null, value);
+				this.OnPropertyChanged("site_PhoneCalls");
 			}
 		}
 		
@@ -1331,46 +1429,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N site_resources
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_resources")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Resource> site_resources
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Resource>("site_resources", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("site_resources");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Resource>("site_resources", null, value);
-				this.OnPropertyChanged("site_resources");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N site_service_appointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_service_appointments")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ServiceAppointment> site_service_appointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ServiceAppointment>("site_service_appointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("site_service_appointments");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ServiceAppointment>("site_service_appointments", null, value);
-				this.OnPropertyChanged("site_service_appointments");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N site_system_users
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_system_users")]
@@ -1391,22 +1449,22 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N userentityinstancedata_site
+		/// 1:N site_Tasks
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_site")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_site
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("site_Tasks")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Task> site_Tasks
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_site", null);
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.Task>("site_Tasks", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.OnPropertyChanging("userentityinstancedata_site");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_site", null, value);
-				this.OnPropertyChanged("userentityinstancedata_site");
+				this.OnPropertyChanging("site_Tasks");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.Task>("site_Tasks", null, value);
+				this.OnPropertyChanged("site_Tasks");
 			}
 		}
 		
@@ -1464,13 +1522,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_sitebase_createdby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_sitebase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_sitebase_createdby", null, value);
-				this.OnPropertyChanged("lk_sitebase_createdby");
-			}
 		}
 		
 		/// <summary>
@@ -1484,13 +1535,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_sitebase_modifiedby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_sitebase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_sitebase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_sitebase_modifiedby");
 			}
 		}
 		
@@ -1548,66 +1592,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecode")]
-		public virtual Site_Address1_AddressTypeCode? Address1_AddressTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Site_Address1_AddressTypeCode?)(EntityOptionSetEnum.GetEnum(this, "address1_addresstypecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				Address1_AddressTypeCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcode")]
-		public virtual Site_Address1_ShippingMethodCode? Address1_ShippingMethodCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Site_Address1_ShippingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "address1_shippingmethodcode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				Address1_ShippingMethodCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecode")]
-		public virtual Site_Address2_AddressTypeCode? Address2_AddressTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Site_Address2_AddressTypeCode?)(EntityOptionSetEnum.GetEnum(this, "address2_addresstypecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				Address2_AddressTypeCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcode")]
-		public virtual Site_Address2_ShippingMethodCode? Address2_ShippingMethodCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Site_Address2_ShippingMethodCode?)(EntityOptionSetEnum.GetEnum(this, "address2_shippingmethodcode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				Address2_ShippingMethodCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }

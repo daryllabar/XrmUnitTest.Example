@@ -5,13 +5,14 @@
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
 // </auto-generated>
+
 //------------------------------------------------------------------------------
 
 namespace Xyz.Xrm.Entities
 {
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public enum IncidentState
 	{
 		
@@ -22,7 +23,7 @@ namespace Xyz.Xrm.Entities
 		Resolved = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		Canceled = 2,
+		Cancelled = 2,
 	}
 	
 	/// <summary>
@@ -30,11 +31,11 @@ namespace Xyz.Xrm.Entities
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("incident")]
-	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "8.0.1.7297")]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
 	public partial class Incident : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
-		public struct Fields
+		public static class Fields
 		{
 			public const string AccountId = "accountid";
 			public const string ActivitiesComplete = "activitiescomplete";
@@ -57,6 +58,7 @@ namespace Xyz.Xrm.Entities
 			public const string CustomerSatisfactionCode = "customersatisfactioncode";
 			public const string DecrementEntitlementTerm = "decremententitlementterm";
 			public const string Description = "description";
+			public const string EmailAddress = "emailaddress";
 			public const string EntitlementId = "entitlementid";
 			public const string EntityImage = "entityimage";
 			public const string EntityImage_Timestamp = "entityimage_timestamp";
@@ -86,6 +88,7 @@ namespace Xyz.Xrm.Entities
 			public const string ModifiedByExternalParty = "modifiedbyexternalparty";
 			public const string ModifiedOn = "modifiedon";
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
+			public const string msdyn_IncidentType = "msdyn_incidenttype";
 			public const string NumberOfChildIncidents = "numberofchildincidents";
 			public const string OnHoldTime = "onholdtime";
 			public const string OverriddenCreatedOn = "overriddencreatedon";
@@ -125,34 +128,21 @@ namespace Xyz.Xrm.Entities
 			public const string business_unit_incidents = "business_unit_incidents";
 			public const string contact_as_primary_contact = "contact_as_primary_contact";
 			public const string contact_as_responsible_contact = "contact_as_responsible_contact";
-			public const string contract_cases = "contract_cases";
-			public const string contract_detail_cases = "contract_detail_cases";
-			public const string entitlement_cases = "entitlement_cases";
 			public const string incident_customer_accounts = "incident_customer_accounts";
 			public const string incident_customer_contacts = "incident_customer_contacts";
 			public const string Referencingincident_existingcase = "incident_existingcase";
 			public const string Referencingincident_master_incident = "incident_master_incident";
 			public const string Referencingincident_parent_incident = "incident_parent_incident";
-			public const string kbarticle_incidents = "kbarticle_incidents";
-			public const string lk_externalparty_incident_createdby = "lk_externalparty_incident_createdby";
-			public const string lk_externalparty_incident_modifiedby = "lk_externalparty_incident_modifiedby";
 			public const string lk_incidentbase_createdby = "lk_incidentbase_createdby";
 			public const string lk_incidentbase_createdonbehalfby = "lk_incidentbase_createdonbehalfby";
 			public const string lk_incidentbase_modifiedby = "lk_incidentbase_modifiedby";
 			public const string lk_incidentbase_modifiedonbehalfby = "lk_incidentbase_modifiedonbehalfby";
-			public const string manualsla_cases = "manualsla_cases";
 			public const string processstage_incident = "processstage_incident";
 			public const string product_incidents = "product_incidents";
-			public const string sla_cases = "sla_cases";
-			public const string slakpiinstance_incident_firstresponsebykpi = "slakpiinstance_incident_firstresponsebykpi";
-			public const string slakpiinstance_incident_resolvebykpi = "slakpiinstance_incident_resolvebykpi";
-			public const string socialprofile_cases = "socialprofile_cases";
-			public const string subject_incidents = "subject_incidents";
 			public const string system_user_incidents = "system_user_incidents";
 			public const string team_incidents = "team_incidents";
 			public const string TransactionCurrency_Incident = "TransactionCurrency_Incident";
 		}
-
 		
 		/// <summary>
 		/// Default Constructor.
@@ -165,7 +155,11 @@ namespace Xyz.Xrm.Entities
 		
 		public const string EntityLogicalName = "incident";
 		
-		public const int EntityTypeCode = 112;
+		public const string EntitySchemaName = "Incident";
+		
+		public const string PrimaryIdAttribute = "incidentid";
+		
+		public const string PrimaryNameAttribute = "title";
 		
 		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
 		
@@ -286,18 +280,18 @@ namespace Xyz.Xrm.Entities
 		/// Select how contact about the case was originated, such as email, phone, or web, for use in reporting and analysis.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("caseorigincode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue CaseOriginCode
+		public virtual Incident_CaseOriginCode? CaseOriginCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("caseorigincode");
+				return ((Incident_CaseOriginCode?)(EntityOptionSetEnum.GetEnum(this, "caseorigincode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("CaseOriginCode");
-				this.SetAttributeValue("caseorigincode", value);
+				this.SetAttributeValue("caseorigincode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("CaseOriginCode");
 			}
 		}
@@ -306,18 +300,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the type of case to identify the incident for use in case routing and analysis.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("casetypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue CaseTypeCode
+		public virtual Incident_CaseTypeCode? CaseTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("casetypecode");
+				return ((Incident_CaseTypeCode?)(EntityOptionSetEnum.GetEnum(this, "casetypecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("CaseTypeCode");
-				this.SetAttributeValue("casetypecode", value);
+				this.SetAttributeValue("casetypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("CaseTypeCode");
 			}
 		}
@@ -356,7 +350,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the contract line that the case should be logged under to make sure the customer is charged correctly.
+		/// contract_detail_cases
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contractdetailid")]
 		public Microsoft.Xrm.Sdk.EntityReference ContractDetailId
@@ -376,7 +370,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the service contract that the case should be logged under to make sure the customer is eligible for support services.
+		/// contract_cases
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contractid")]
 		public Microsoft.Xrm.Sdk.EntityReference ContractId
@@ -399,24 +393,24 @@ namespace Xyz.Xrm.Entities
 		/// Select the service level for the case to make sure the case is handled correctly.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contractservicelevelcode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ContractServiceLevelCode
+		public virtual Incident_ContractServiceLevelCode? ContractServiceLevelCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("contractservicelevelcode");
+				return ((Incident_ContractServiceLevelCode?)(EntityOptionSetEnum.GetEnum(this, "contractservicelevelcode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("ContractServiceLevelCode");
-				this.SetAttributeValue("contractservicelevelcode", value);
+				this.SetAttributeValue("contractservicelevelcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("ContractServiceLevelCode");
 			}
 		}
 		
 		/// <summary>
-		/// Shows who created the record.
+		/// lk_incidentbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedBy
@@ -426,17 +420,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedBy");
-				this.SetAttributeValue("createdby", value);
-				this.OnPropertyChanged("CreatedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the external party who created the record.
+		/// lk_externalparty_incident_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedByExternalParty
@@ -449,7 +436,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdon")]
 		public System.Nullable<System.DateTime> CreatedOn
@@ -459,17 +446,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("CreatedOn");
-				this.SetAttributeValue("createdon", value);
-				this.OnPropertyChanged("CreatedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Shows who created the record on behalf of another user.
+		/// lk_incidentbase_createdonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference CreatedOnBehalfBy
@@ -509,7 +489,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Select the customer account or contact to provide a quick link to additional customer details, such as account information, activities, and opportunities.
+		/// incident_customer_contacts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customerid")]
 		public Microsoft.Xrm.Sdk.EntityReference CustomerId
@@ -532,18 +512,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the customer's level of satisfaction with the handling and resolution of the case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customersatisfactioncode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue CustomerSatisfactionCode
+		public virtual Incident_CustomerSatisfactionCode? CustomerSatisfactionCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("customersatisfactioncode");
+				return ((Incident_CustomerSatisfactionCode?)(EntityOptionSetEnum.GetEnum(this, "customersatisfactioncode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("CustomerSatisfactionCode");
-				this.SetAttributeValue("customersatisfactioncode", value);
+				this.SetAttributeValue("customersatisfactioncode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("CustomerSatisfactionCode");
 			}
 		}
@@ -589,7 +569,27 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the entitlement that is applicable for the case.
+		/// The primary email address for the entity.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress")]
+		public string EmailAddress
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("emailaddress");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("EmailAddress");
+				this.SetAttributeValue("emailaddress", value);
+				this.OnPropertyChanged("EmailAddress");
+			}
+		}
+		
+		/// <summary>
+		/// entitlement_cases
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entitlementid")]
 		public Microsoft.Xrm.Sdk.EntityReference EntitlementId
@@ -694,7 +694,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Select an existing case for the customer that has been populated. For internal use only.
+		/// incident_existingcase
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("existingcase")]
 		public Microsoft.Xrm.Sdk.EntityReference ExistingCase
@@ -714,7 +714,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// For internal use only.
+		/// slakpiinstance_incident_firstresponsebykpi
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("firstresponsebykpiid")]
 		public Microsoft.Xrm.Sdk.EntityReference FirstResponseByKPIId
@@ -757,18 +757,18 @@ namespace Xyz.Xrm.Entities
 		/// Shows the status of the initial response time for the case according to the terms of the SLA.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("firstresponseslastatus")]
-		public Microsoft.Xrm.Sdk.OptionSetValue FirstResponseSLAStatus
+		public virtual Incident_FirstResponseSLAStatus? FirstResponseSLAStatus
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("firstresponseslastatus");
+				return ((Incident_FirstResponseSLAStatus?)(EntityOptionSetEnum.GetEnum(this, "firstresponseslastatus")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("FirstResponseSLAStatus");
-				this.SetAttributeValue("firstresponseslastatus", value);
+				this.SetAttributeValue("firstresponseslastatus", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("FirstResponseSLAStatus");
 			}
 		}
@@ -834,7 +834,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the case.
+		/// lk_incident_ChildIncidentCount
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incidentid")]
 		public System.Nullable<System.Guid> IncidentId
@@ -880,18 +880,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the current stage of the service process for the case to assist service team members when they review or transfer a case.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incidentstagecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue IncidentStageCode
+		public virtual Incident_IncidentStageCode? IncidentStageCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("incidentstagecode");
+				return ((Incident_IncidentStageCode?)(EntityOptionSetEnum.GetEnum(this, "incidentstagecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("IncidentStageCode");
-				this.SetAttributeValue("incidentstagecode", value);
+				this.SetAttributeValue("incidentstagecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("IncidentStageCode");
 			}
 		}
@@ -957,7 +957,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the article that contains additional information or a resolution for the case, for reference during research or follow up with the customer.
+		/// kbarticle_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kbarticleid")]
 		public Microsoft.Xrm.Sdk.EntityReference KbArticleId
@@ -997,7 +997,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the primary case the current case was merged into.
+		/// incident_master_incident
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("masterid")]
 		public Microsoft.Xrm.Sdk.EntityReference MasterId
@@ -1033,24 +1033,24 @@ namespace Xyz.Xrm.Entities
 		/// Shows whether the post originated as a public or private message.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("messagetypecode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue MessageTypeCode
+		public virtual SocialActivity_PostMessageType? MessageTypeCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("messagetypecode");
+				return ((SocialActivity_PostMessageType?)(EntityOptionSetEnum.GetEnum(this, "messagetypecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("MessageTypeCode");
-				this.SetAttributeValue("messagetypecode", value);
+				this.SetAttributeValue("messagetypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("MessageTypeCode");
 			}
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record.
+		/// lk_incidentbase_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedBy
@@ -1060,17 +1060,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedBy");
-				this.SetAttributeValue("modifiedby", value);
-				this.OnPropertyChanged("ModifiedBy");
-			}
 		}
 		
 		/// <summary>
-		/// Shows the external party who modified the record.
+		/// lk_externalparty_incident_modifiedby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedByExternalParty
@@ -1083,7 +1076,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics CRM options.
+		/// Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedon")]
 		public System.Nullable<System.DateTime> ModifiedOn
@@ -1093,17 +1086,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("ModifiedOn");
-				this.SetAttributeValue("modifiedon", value);
-				this.OnPropertyChanged("ModifiedOn");
-			}
 		}
 		
 		/// <summary>
-		/// Shows who last updated the record on behalf of another user.
+		/// lk_incidentbase_modifiedonbehalfby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfby")]
 		public Microsoft.Xrm.Sdk.EntityReference ModifiedOnBehalfBy
@@ -1119,6 +1105,26 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("ModifiedOnBehalfBy");
 				this.SetAttributeValue("modifiedonbehalfby", value);
 				this.OnPropertyChanged("ModifiedOnBehalfBy");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Incident Type associated with Case.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_incidenttype")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_IncidentType
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_incidenttype");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_IncidentType");
+				this.SetAttributeValue("msdyn_incidenttype", value);
+				this.OnPropertyChanged("msdyn_IncidentType");
 			}
 		}
 		
@@ -1169,7 +1175,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user.
+		/// owner_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("ownerid")]
 		public Microsoft.Xrm.Sdk.EntityReference OwnerId
@@ -1189,7 +1195,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the business unit that owns the case.
+		/// business_unit_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningBusinessUnit
@@ -1199,17 +1205,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningBusinessUnit");
-				this.SetAttributeValue("owningbusinessunit", value);
-				this.OnPropertyChanged("OwningBusinessUnit");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the team who owns the case.
+		/// team_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningteam")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningTeam
@@ -1219,17 +1218,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningTeam");
-				this.SetAttributeValue("owningteam", value);
-				this.OnPropertyChanged("OwningTeam");
-			}
 		}
 		
 		/// <summary>
-		/// Unique identifier of the user who owns the case.
+		/// system_user_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
 		public Microsoft.Xrm.Sdk.EntityReference OwningUser
@@ -1239,17 +1231,10 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("OwningUser");
-				this.SetAttributeValue("owninguser", value);
-				this.OnPropertyChanged("OwningUser");
-			}
 		}
 		
 		/// <summary>
-		/// Choose the parent case for a case.
+		/// incident_parent_incident
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentcaseid")]
 		public Microsoft.Xrm.Sdk.EntityReference ParentCaseId
@@ -1269,7 +1254,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Select a primary contact for this case.
+		/// contact_as_primary_contact
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("primarycontactid")]
 		public Microsoft.Xrm.Sdk.EntityReference PrimaryContactId
@@ -1292,18 +1277,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the priority so that preferred customers or critical issues are handled quickly.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue PriorityCode
+		public virtual Incident_PriorityCode? PriorityCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("prioritycode");
+				return ((Incident_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("PriorityCode");
-				this.SetAttributeValue("prioritycode", value);
+				this.SetAttributeValue("prioritycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("PriorityCode");
 			}
 		}
@@ -1329,7 +1314,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the product associated with the case to identify warranty, service, or other product issues and be able to report the number of incidents for each product.
+		/// product_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("productid")]
 		public Microsoft.Xrm.Sdk.EntityReference ProductId
@@ -1389,7 +1374,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// For internal use only.
+		/// slakpiinstance_incident_resolvebykpi
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resolvebykpiid")]
 		public Microsoft.Xrm.Sdk.EntityReference ResolveByKPIId
@@ -1412,18 +1397,18 @@ namespace Xyz.Xrm.Entities
 		/// Shows the status of the resolution time for the case according to the terms of the SLA.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resolvebyslastatus")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ResolveBySLAStatus
+		public virtual Incident_ResolveBySLAStatus? ResolveBySLAStatus
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("resolvebyslastatus");
+				return ((Incident_ResolveBySLAStatus?)(EntityOptionSetEnum.GetEnum(this, "resolvebyslastatus")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("ResolveBySLAStatus");
-				this.SetAttributeValue("resolvebyslastatus", value);
+				this.SetAttributeValue("resolvebyslastatus", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("ResolveBySLAStatus");
 			}
 		}
@@ -1449,7 +1434,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose an additional customer contact who can also help resolve the case.
+		/// contact_as_responsible_contact
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("responsiblecontactid")]
 		[System.ObsoleteAttribute()]
@@ -1513,18 +1498,18 @@ namespace Xyz.Xrm.Entities
 		/// Select the stage, in the case resolution process, that the case is in.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("servicestage")]
-		public Microsoft.Xrm.Sdk.OptionSetValue ServiceStage
+		public virtual ServiceStage? ServiceStage
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("servicestage");
+				return ((ServiceStage?)(EntityOptionSetEnum.GetEnum(this, "servicestage")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("ServiceStage");
-				this.SetAttributeValue("servicestage", value);
+				this.SetAttributeValue("servicestage", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("ServiceStage");
 			}
 		}
@@ -1533,24 +1518,24 @@ namespace Xyz.Xrm.Entities
 		/// Select the severity of this case to indicate the incident's impact on the customer's business.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("severitycode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue SeverityCode
+		public virtual Incident_SeverityCode? SeverityCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("severitycode");
+				return ((Incident_SeverityCode?)(EntityOptionSetEnum.GetEnum(this, "severitycode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("SeverityCode");
-				this.SetAttributeValue("severitycode", value);
+				this.SetAttributeValue("severitycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("SeverityCode");
 			}
 		}
 		
 		/// <summary>
-		/// Choose the service level agreement (SLA) that you want to apply to the case record.
+		/// manualsla_cases
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
 		public Microsoft.Xrm.Sdk.EntityReference SLAId
@@ -1583,7 +1568,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Unique identifier of the social profile with which the case is associated.
+		/// socialprofile_cases
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("socialprofileid")]
 		public Microsoft.Xrm.Sdk.EntityReference SocialProfileId
@@ -1603,7 +1588,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Shows the ID of the stage.
+		/// processstage_incident
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("stageid")]
 		public System.Nullable<System.Guid> StageId
@@ -1661,24 +1646,24 @@ namespace Xyz.Xrm.Entities
 		/// Select the case's status.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public Microsoft.Xrm.Sdk.OptionSetValue StatusCode
+		public virtual Incident_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.OptionSetValue>("statuscode");
+				return ((Incident_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
 				this.OnPropertyChanging("StatusCode");
-				this.SetAttributeValue("statuscode", value);
+				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
 				this.OnPropertyChanged("StatusCode");
 			}
 		}
 		
 		/// <summary>
-		/// Choose the subject for the case, such as catalog request or product complaint, so customer service managers can identify frequent requests or problem areas. Administrators can configure subjects under Business Management in the Settings area.
+		/// subject_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subjectid")]
 		public Microsoft.Xrm.Sdk.EntityReference SubjectId
@@ -1738,7 +1723,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Type a subject or descriptive name, such as the request, issue, or company name, to identify the case in Microsoft Dynamics CRM views.
+		/// Type a subject or descriptive name, such as the request, issue, or company name, to identify the case in Microsoft Dynamics 365 views.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("title")]
 		public string Title
@@ -1758,7 +1743,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Choose the local currency for the record to make sure budgets are reported in the correct currency.
+		/// TransactionCurrency_Incident
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("transactioncurrencyid")]
 		public Microsoft.Xrm.Sdk.EntityReference TransactionCurrencyId
@@ -1931,106 +1916,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Incident_BulkDeleteFailures
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_BulkDeleteFailures")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.BulkDeleteFailure> Incident_BulkDeleteFailures
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Incident_BulkDeleteFailures", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Incident_BulkDeleteFailures");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.BulkDeleteFailure>("Incident_BulkDeleteFailures", null, value);
-				this.OnPropertyChanged("Incident_BulkDeleteFailures");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N incident_connections1
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_connections1")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> incident_connections1
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("incident_connections1", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("incident_connections1");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("incident_connections1", null, value);
-				this.OnPropertyChanged("incident_connections1");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N incident_connections2
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_connections2")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Connection> incident_connections2
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Connection>("incident_connections2", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("incident_connections2");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Connection>("incident_connections2", null, value);
-				this.OnPropertyChanged("incident_connections2");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Incident_DuplicateBaseRecord
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_DuplicateBaseRecord")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRecord> Incident_DuplicateBaseRecord
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Incident_DuplicateBaseRecord", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Incident_DuplicateBaseRecord");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Incident_DuplicateBaseRecord", null, value);
-				this.OnPropertyChanged("Incident_DuplicateBaseRecord");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Incident_DuplicateMatchingRecord
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_DuplicateMatchingRecord")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.DuplicateRecord> Incident_DuplicateMatchingRecord
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Incident_DuplicateMatchingRecord", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Incident_DuplicateMatchingRecord");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.DuplicateRecord>("Incident_DuplicateMatchingRecord", null, value);
-				this.OnPropertyChanged("Incident_DuplicateMatchingRecord");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N Incident_Emails
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_Emails")]
@@ -2071,86 +1956,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Incident_Faxes
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_Faxes")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Fax> Incident_Faxes
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Fax>("Incident_Faxes", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Incident_Faxes");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Fax>("Incident_Faxes", null, value);
-				this.OnPropertyChanged("Incident_Faxes");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Incident_IncidentResolutions
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_IncidentResolutions")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.IncidentResolution> Incident_IncidentResolutions
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.IncidentResolution>("Incident_IncidentResolutions", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Incident_IncidentResolutions");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.IncidentResolution>("Incident_IncidentResolutions", null, value);
-				this.OnPropertyChanged("Incident_IncidentResolutions");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Incident_Letters
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_Letters")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Letter> Incident_Letters
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Letter>("Incident_Letters", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Incident_Letters");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Letter>("Incident_Letters", null, value);
-				this.OnPropertyChanged("Incident_Letters");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Incident_MailboxTrackingFolder
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_MailboxTrackingFolder")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.MailboxTrackingFolder> Incident_MailboxTrackingFolder
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.MailboxTrackingFolder>("Incident_MailboxTrackingFolder", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Incident_MailboxTrackingFolder");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.MailboxTrackingFolder>("Incident_MailboxTrackingFolder", null, value);
-				this.OnPropertyChanged("Incident_MailboxTrackingFolder");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N incident_master_incident
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
@@ -2167,6 +1972,46 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Referencedincident_master_incident");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Incident>("incident_master_incident", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
 				this.OnPropertyChanged("Referencedincident_master_incident");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N incident_OpportunityCloses
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_OpportunityCloses")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.OpportunityClose> incident_OpportunityCloses
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.OpportunityClose>("incident_OpportunityCloses", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("incident_OpportunityCloses");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.OpportunityClose>("incident_OpportunityCloses", null, value);
+				this.OnPropertyChanged("incident_OpportunityCloses");
+			}
+		}
+		
+		/// <summary>
+		/// 1:N incident_OrderCloses
+		/// </summary>
+		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_OrderCloses")]
+		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.OrderClose> incident_OrderCloses
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetRelatedEntities<Xyz.Xrm.Entities.OrderClose>("incident_OrderCloses", null);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("incident_OrderCloses");
+				this.SetRelatedEntities<Xyz.Xrm.Entities.OrderClose>("incident_OrderCloses", null, value);
+				this.OnPropertyChanged("incident_OrderCloses");
 			}
 		}
 		
@@ -2211,46 +2056,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N incident_PostFollows
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_PostFollows")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PostFollow> incident_PostFollows
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("incident_PostFollows", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("incident_PostFollows");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PostFollow>("incident_PostFollows", null, value);
-				this.OnPropertyChanged("incident_PostFollows");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N incident_principalobjectattributeaccess
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_principalobjectattributeaccess")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess> incident_principalobjectattributeaccess
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("incident_principalobjectattributeaccess", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("incident_principalobjectattributeaccess");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.PrincipalObjectAttributeAccess>("incident_principalobjectattributeaccess", null, value);
-				this.OnPropertyChanged("incident_principalobjectattributeaccess");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N Incident_ProcessSessions
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_ProcessSessions")]
@@ -2291,66 +2096,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N Incident_RecurringAppointmentMasters
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_RecurringAppointmentMasters")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.RecurringAppointmentMaster> Incident_RecurringAppointmentMasters
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.RecurringAppointmentMaster>("Incident_RecurringAppointmentMasters", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Incident_RecurringAppointmentMasters");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.RecurringAppointmentMaster>("Incident_RecurringAppointmentMasters", null, value);
-				this.OnPropertyChanged("Incident_RecurringAppointmentMasters");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Incident_ServiceAppointments
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_ServiceAppointments")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.ServiceAppointment> Incident_ServiceAppointments
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.ServiceAppointment>("Incident_ServiceAppointments", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Incident_ServiceAppointments");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.ServiceAppointment>("Incident_ServiceAppointments", null, value);
-				this.OnPropertyChanged("Incident_ServiceAppointments");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N Incident_SocialActivities
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_SocialActivities")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SocialActivity> Incident_SocialActivities
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SocialActivity>("Incident_SocialActivities", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("Incident_SocialActivities");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SocialActivity>("Incident_SocialActivities", null, value);
-				this.OnPropertyChanged("Incident_SocialActivities");
-			}
-		}
-		
-		/// <summary>
 		/// 1:N Incident_Tasks
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("Incident_Tasks")]
@@ -2367,46 +2112,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("Incident_Tasks");
 				this.SetRelatedEntities<Xyz.Xrm.Entities.Task>("Incident_Tasks", null, value);
 				this.OnPropertyChanged("Incident_Tasks");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N incident_topic
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("incident_topic")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.Topic> incident_topic
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.Topic>("incident_topic", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("incident_topic");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.Topic>("incident_topic", null, value);
-				this.OnPropertyChanged("incident_topic");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N knowledgearticle_incidents
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("knowledgearticle_incidents")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.KnowledgeArticleIncident> knowledgearticle_incidents
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.KnowledgeArticleIncident>("knowledgearticle_incidents", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("knowledgearticle_incidents");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.KnowledgeArticleIncident>("knowledgearticle_incidents", null, value);
-				this.OnPropertyChanged("knowledgearticle_incidents");
 			}
 		}
 		
@@ -2431,66 +2136,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// 1:N slakpiinstance_incident
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slakpiinstance_incident")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.SLAKPIInstance> slakpiinstance_incident
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.SLAKPIInstance>("slakpiinstance_incident", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("slakpiinstance_incident");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.SLAKPIInstance>("slakpiinstance_incident", null, value);
-				this.OnPropertyChanged("slakpiinstance_incident");
-			}
-		}
-		
-		/// <summary>
-		/// 1:N userentityinstancedata_incident
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("userentityinstancedata_incident")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.UserEntityInstanceData> userentityinstancedata_incident
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_incident", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("userentityinstancedata_incident");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.UserEntityInstanceData>("userentityinstancedata_incident", null, value);
-				this.OnPropertyChanged("userentityinstancedata_incident");
-			}
-		}
-		
-		/// <summary>
-		/// N:N KnowledgeBaseRecord_Incident
-		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("KnowledgeBaseRecord_Incident")]
-		public System.Collections.Generic.IEnumerable<Xyz.Xrm.Entities.KnowledgeBaseRecord> KnowledgeBaseRecord_Incident
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<Xyz.Xrm.Entities.KnowledgeBaseRecord>("KnowledgeBaseRecord_Incident", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("KnowledgeBaseRecord_Incident");
-				this.SetRelatedEntities<Xyz.Xrm.Entities.KnowledgeBaseRecord>("KnowledgeBaseRecord_Incident", null, value);
-				this.OnPropertyChanged("KnowledgeBaseRecord_Incident");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 business_unit_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owningbusinessunit")]
@@ -2501,13 +2146,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_incidents", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("business_unit_incidents");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.BusinessUnit>("business_unit_incidents", null, value);
-				this.OnPropertyChanged("business_unit_incidents");
 			}
 		}
 		
@@ -2550,69 +2188,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("contact_as_responsible_contact");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.Contact>("contact_as_responsible_contact", null, value);
 				this.OnPropertyChanged("contact_as_responsible_contact");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 contract_cases
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contractid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contract_cases")]
-		public Xyz.Xrm.Entities.Contract contract_cases
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Contract>("contract_cases", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("contract_cases");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Contract>("contract_cases", null, value);
-				this.OnPropertyChanged("contract_cases");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 contract_detail_cases
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contractdetailid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contract_detail_cases")]
-		public Xyz.Xrm.Entities.ContractDetail contract_detail_cases
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ContractDetail>("contract_detail_cases", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("contract_detail_cases");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.ContractDetail>("contract_detail_cases", null, value);
-				this.OnPropertyChanged("contract_detail_cases");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 entitlement_cases
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entitlementid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("entitlement_cases")]
-		public Xyz.Xrm.Entities.Entitlement entitlement_cases
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Entitlement>("entitlement_cases", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("entitlement_cases");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Entitlement>("entitlement_cases", null, value);
-				this.OnPropertyChanged("entitlement_cases");
 			}
 		}
 		
@@ -2722,55 +2297,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 kbarticle_incidents
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("kbarticleid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("kbarticle_incidents")]
-		public Xyz.Xrm.Entities.KbArticle kbarticle_incidents
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.KbArticle>("kbarticle_incidents", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("kbarticle_incidents");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.KbArticle>("kbarticle_incidents", null, value);
-				this.OnPropertyChanged("kbarticle_incidents");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_externalparty_incident_createdby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalparty")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_externalparty_incident_createdby")]
-		public Xyz.Xrm.Entities.ExternalParty lk_externalparty_incident_createdby
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ExternalParty>("lk_externalparty_incident_createdby", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 lk_externalparty_incident_modifiedby
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalparty")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("lk_externalparty_incident_modifiedby")]
-		public Xyz.Xrm.Entities.ExternalParty lk_externalparty_incident_modifiedby
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.ExternalParty>("lk_externalparty_incident_modifiedby", null);
-			}
-		}
-		
-		/// <summary>
 		/// N:1 lk_incidentbase_createdby
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdby")]
@@ -2781,13 +2307,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_incidentbase_createdby", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_incidentbase_createdby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_incidentbase_createdby", null, value);
-				this.OnPropertyChanged("lk_incidentbase_createdby");
 			}
 		}
 		
@@ -2824,13 +2343,6 @@ namespace Xyz.Xrm.Entities
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_incidentbase_modifiedby", null);
 			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("lk_incidentbase_modifiedby");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_incidentbase_modifiedby", null, value);
-				this.OnPropertyChanged("lk_incidentbase_modifiedby");
-			}
 		}
 		
 		/// <summary>
@@ -2851,27 +2363,6 @@ namespace Xyz.Xrm.Entities
 				this.OnPropertyChanging("lk_incidentbase_modifiedonbehalfby");
 				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("lk_incidentbase_modifiedonbehalfby", null, value);
 				this.OnPropertyChanged("lk_incidentbase_modifiedonbehalfby");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 manualsla_cases
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("manualsla_cases")]
-		public Xyz.Xrm.Entities.SLA manualsla_cases
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.SLA>("manualsla_cases", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("manualsla_cases");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SLA>("manualsla_cases", null, value);
-				this.OnPropertyChanged("manualsla_cases");
 			}
 		}
 		
@@ -2918,104 +2409,6 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// N:1 sla_cases
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("sla_cases")]
-		public Xyz.Xrm.Entities.SLA sla_cases
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.SLA>("sla_cases", null);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 slakpiinstance_incident_firstresponsebykpi
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("firstresponsebykpiid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slakpiinstance_incident_firstresponsebykpi")]
-		public Xyz.Xrm.Entities.SLAKPIInstance slakpiinstance_incident_firstresponsebykpi
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.SLAKPIInstance>("slakpiinstance_incident_firstresponsebykpi", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("slakpiinstance_incident_firstresponsebykpi");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SLAKPIInstance>("slakpiinstance_incident_firstresponsebykpi", null, value);
-				this.OnPropertyChanged("slakpiinstance_incident_firstresponsebykpi");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 slakpiinstance_incident_resolvebykpi
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resolvebykpiid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("slakpiinstance_incident_resolvebykpi")]
-		public Xyz.Xrm.Entities.SLAKPIInstance slakpiinstance_incident_resolvebykpi
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.SLAKPIInstance>("slakpiinstance_incident_resolvebykpi", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("slakpiinstance_incident_resolvebykpi");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SLAKPIInstance>("slakpiinstance_incident_resolvebykpi", null, value);
-				this.OnPropertyChanged("slakpiinstance_incident_resolvebykpi");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 socialprofile_cases
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("socialprofileid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("socialprofile_cases")]
-		public Xyz.Xrm.Entities.SocialProfile socialprofile_cases
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.SocialProfile>("socialprofile_cases", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("socialprofile_cases");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SocialProfile>("socialprofile_cases", null, value);
-				this.OnPropertyChanged("socialprofile_cases");
-			}
-		}
-		
-		/// <summary>
-		/// N:1 subject_incidents
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("subjectid")]
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("subject_incidents")]
-		public Xyz.Xrm.Entities.Subject subject_incidents
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntity<Xyz.Xrm.Entities.Subject>("subject_incidents", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("subject_incidents");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Subject>("subject_incidents", null, value);
-				this.OnPropertyChanged("subject_incidents");
-			}
-		}
-		
-		/// <summary>
 		/// N:1 system_user_incidents
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owninguser")]
@@ -3026,13 +2419,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("system_user_incidents", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("system_user_incidents");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.SystemUser>("system_user_incidents", null, value);
-				this.OnPropertyChanged("system_user_incidents");
 			}
 		}
 		
@@ -3047,13 +2433,6 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetRelatedEntity<Xyz.Xrm.Entities.Team>("team_incidents", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.OnPropertyChanging("team_incidents");
-				this.SetRelatedEntity<Xyz.Xrm.Entities.Team>("team_incidents", null, value);
-				this.OnPropertyChanged("team_incidents");
 			}
 		}
 		
@@ -3118,186 +2497,6 @@ namespace Xyz.Xrm.Entities
                         break;
                 }
             }
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("caseorigincode")]
-		public virtual Incident_CaseOriginCode? CaseOriginCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_CaseOriginCode?)(EntityOptionSetEnum.GetEnum(this, "caseorigincode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				CaseOriginCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("casetypecode")]
-		public virtual Incident_CaseTypeCode? CaseTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_CaseTypeCode?)(EntityOptionSetEnum.GetEnum(this, "casetypecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				CaseTypeCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("contractservicelevelcode")]
-		public virtual Incident_ContractServiceLevelCode? ContractServiceLevelCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_ContractServiceLevelCode?)(EntityOptionSetEnum.GetEnum(this, "contractservicelevelcode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				ContractServiceLevelCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customersatisfactioncode")]
-		public virtual Incident_CustomerSatisfactionCode? CustomerSatisfactionCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_CustomerSatisfactionCode?)(EntityOptionSetEnum.GetEnum(this, "customersatisfactioncode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				CustomerSatisfactionCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("firstresponseslastatus")]
-		public virtual Incident_FirstResponseSLAStatus? FirstResponseSLAStatusEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_FirstResponseSLAStatus?)(EntityOptionSetEnum.GetEnum(this, "firstresponseslastatus")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				FirstResponseSLAStatus = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("incidentstagecode")]
-		public virtual Incident_IncidentStageCode? IncidentStageCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_IncidentStageCode?)(EntityOptionSetEnum.GetEnum(this, "incidentstagecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				IncidentStageCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("messagetypecode")]
-		public virtual SocialActivity_PostMessageType? MessageTypeCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((SocialActivity_PostMessageType?)(EntityOptionSetEnum.GetEnum(this, "messagetypecode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				MessageTypeCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("prioritycode")]
-		public virtual Incident_PriorityCode? PriorityCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_PriorityCode?)(EntityOptionSetEnum.GetEnum(this, "prioritycode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				PriorityCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("resolvebyslastatus")]
-		public virtual Incident_ResolveBySLAStatus? ResolveBySLAStatusEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_ResolveBySLAStatus?)(EntityOptionSetEnum.GetEnum(this, "resolvebyslastatus")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				ResolveBySLAStatus = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("servicestage")]
-		public virtual ServiceStage? ServiceStageEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((ServiceStage?)(EntityOptionSetEnum.GetEnum(this, "servicestage")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				ServiceStage = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("severitycode")]
-		public virtual Incident_SeverityCode? SeverityCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_SeverityCode?)(EntityOptionSetEnum.GetEnum(this, "severitycode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				SeverityCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual Incident_StatusCode? StatusCodeEnum
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((Incident_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				StatusCode = value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null;
-			}
 		}
 	}
 }
