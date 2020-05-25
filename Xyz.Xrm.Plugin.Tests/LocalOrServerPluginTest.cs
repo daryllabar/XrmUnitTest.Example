@@ -108,9 +108,11 @@ namespace Xyz.Xrm.Plugin.Tests
                 };
 
                 var plugin = new SyncContactToAccount();
-                var context = new PluginExecutionContextBuilder().
-                              WithFirstRegisteredEvent(plugin).
-                              WithTarget(contact).Build();
+                var context = new PluginExecutionContextBuilder()
+                              .WithPreOperation("Create", Contact.EntityLogicalName)
+                              // Method to register with an IRegisteredEvents Plugin
+                              .WithFirstRegisteredEvent(plugin)
+                              .WithTarget(contact).Build();
                 var provider = new ServiceProviderBuilder(service, context, Logger).Build();
 
                 //

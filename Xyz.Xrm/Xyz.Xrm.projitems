@@ -27,7 +27,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\AttributeMap.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\BusinessUnit.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\CanvasApp.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\XrmContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Competitor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Contact.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\CustomerOpportunityRole.cs" />
@@ -327,6 +326,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\UoM.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Workflow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\WorkflowLog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\XrmContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugin\ActionContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugin\ActionPluginBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugin\ExtendedPluginContext.cs" />
