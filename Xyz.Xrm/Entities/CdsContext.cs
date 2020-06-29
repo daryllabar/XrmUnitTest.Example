@@ -18,14 +18,14 @@ namespace Xyz.Xrm.Entities
 	/// Represents a source of entities bound to a CRM service. It tracks and manages changes made to the retrieved entities.
 	/// </summary>
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("CrmSvcUtil", "9.1.0.42")]
-	public partial class XrmContext : Microsoft.Xrm.Sdk.Client.OrganizationServiceContext
+	public partial class CdsContext : Microsoft.Xrm.Sdk.Client.OrganizationServiceContext
 	{
 		
 		/// <summary>
 		/// Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public XrmContext(Microsoft.Xrm.Sdk.IOrganizationService service) : 
+		public CdsContext(Microsoft.Xrm.Sdk.IOrganizationService service) : 
 				base(service)
 		{
 		}

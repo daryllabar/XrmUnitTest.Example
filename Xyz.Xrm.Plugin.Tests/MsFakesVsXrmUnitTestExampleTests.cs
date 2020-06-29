@@ -83,7 +83,7 @@ namespace Xyz.Xrm.Plugin.Tests
             //
             // Arrange
             //
-            var service = LocalCrmDatabaseOrganizationService.CreateOrganizationService<XrmContext>();
+            var service = LocalCrmDatabaseOrganizationService.CreateOrganizationService<CdsContext>();
             var id = service.Create(new Contact { LastName = "Mcdonald" });
 
             // 

@@ -326,7 +326,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Entities\UoM.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\Workflow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entities\WorkflowLog.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entities\XrmContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\CdsContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugin\ActionContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugin\ActionPluginBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Plugin\ExtendedPluginContext.cs" />

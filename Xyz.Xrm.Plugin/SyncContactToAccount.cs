@@ -36,7 +36,7 @@ namespace Xyz.Xrm.Plugin
                 return;
             }
 
-            using (var crm = new XrmContext(context.OrganizationService))
+            using (var crm = new CdsContext(context.OrganizationService))
             {
                 var accounts = crm.AccountSet.Where(a => a.PrimaryContactId.Id == contact.Id);
                 foreach (var account in accounts)

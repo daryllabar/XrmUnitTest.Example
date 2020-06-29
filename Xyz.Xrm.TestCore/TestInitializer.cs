@@ -28,7 +28,7 @@ namespace Xyz.Xrm.Test
             }
             if (!TestSettings.EarlyBound.IsConfigured)
             {
-                TestSettings.EarlyBound.ConfigureDerivedAssembly<XrmContext>();
+                TestSettings.EarlyBound.ConfigureDerivedAssembly<CdsContext>();
             }
             if (!TestSettings.TestFrameworkProvider.IsConfigured)
             {

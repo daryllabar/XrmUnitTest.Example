@@ -14,7 +14,7 @@ namespace Xyz.Xrm.Plugin
         /// <param name="name">The name.</param>
         public static void MakeNameMatchCase(IOrganizationService service, string name)
         {
-            using (var context = new XrmContext(service))
+            using (var context = new CdsContext(service))
             {
                 var contacts = (from c in context.ContactSet
                                 where c.FirstName == name || c.LastName == name
