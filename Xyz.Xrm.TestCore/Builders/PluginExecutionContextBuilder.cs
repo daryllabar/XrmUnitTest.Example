@@ -59,6 +59,7 @@ namespace Xyz.Xrm.Test.Builders
             return WithRegisteredEvent(first);
         }
 
+        // ReSharper disable once ParameterOnlyUsedForPreconditionCheck.Local
         private void AssertEventFound(IRegisteredEventsPlugin plugin, RegisteredEvent @event, string message)
         {
             if (@event == null)
