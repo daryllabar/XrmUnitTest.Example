@@ -77,7 +77,7 @@ namespace Xyz.Walkthrough
         }
 
         /// <summary>
-        /// Demonstrates a plugin that utlizes the TestMethodClassBase to connect to, setup, and cleanup unit tests
+        /// Demonstrates a plugin that utilizes the TestMethodClassBase to connect to, setup, and cleanup unit tests
         /// </summary>
         private void TestingAPluginLocallyOrAgainstCrmAgnosticly()
         {
