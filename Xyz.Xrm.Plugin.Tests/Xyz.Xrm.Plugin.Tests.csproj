@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssumptionExampleTests.cs" />
+    <Compile Include="ServicesExamplePluginTests.cs" />
     <Compile Include="TestMethodClassExampleTests.cs" />
     <Compile Include="EntityBuilderExampleTests.cs" />
     <Compile Include="RemovePhoneNumberFormattingTests.cs" />

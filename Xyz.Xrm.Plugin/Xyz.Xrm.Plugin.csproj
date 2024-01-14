@@ -246,6 +246,7 @@
     <Compile Include="RaceConditionPlugin.cs" />
     <Compile Include="RemovePhoneNumberFormatting.cs" />
     <Compile Include="RenameLogic.cs" />
+    <Compile Include="ServicesExamplePlugin.cs" />
     <Compile Include="SyncContactToAccount.cs" />
   </ItemGroup>
   <ItemGroup>
