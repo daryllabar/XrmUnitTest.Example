@@ -26,18 +26,18 @@ namespace Xyz.Xrm.Plugin
 
         #endregion Constructors
 
+        protected override IIocContainer RegisterServices(IIocContainer container)
+        {
+            return base.RegisterServices(container)
+                .AddScoped<IServicesExampleData, DataLogicImplementation>();
+        }
+
         protected override void ExecuteInternal(ExtendedPluginContext context)
         {
             var data = context.ServiceProvider.GetService<IServicesExampleData>();
             var contact = context.CoalesceTargetWithPreEntity<Contact>();
             var dependents = data.GetDependents(contact.LastName);
             data.SyncAndUpdateAddresses(contact, dependents);
-        }
-
-        protected override IIocContainer RegisterServices(IIocContainer container)
-        {
-            return base.RegisterServices(container)
-                .AddScoped<IServicesExampleData, DataLogicImplementation>();
         }
     }
 
