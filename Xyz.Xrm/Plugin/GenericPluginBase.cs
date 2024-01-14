@@ -1,4 +1,5 @@
-﻿using Source.DLaB.Xrm.Plugin;
+﻿using Source.DLaB.Xrm.Ioc;
+using Source.DLaB.Xrm.Plugin;
 
 namespace Xyz.Xrm.Plugin
 {
@@ -9,6 +10,12 @@ namespace Xyz.Xrm.Plugin
     public abstract class GenericPluginBase<T> : DLaBGenericPluginBase<T> where T: ExtendedPluginContext
     {
         /// <inheritdoc />
-        protected GenericPluginBase(string unsecureConfig, string secureConfig) : base(unsecureConfig, secureConfig) { }
+        protected GenericPluginBase(string unsecureConfig, string secureConfig, IIocContainer container = null) : base(unsecureConfig, secureConfig, container) { }
+
+        protected override IIocContainer RegisterServices(IIocContainer container)
+        {
+            return base.RegisterServices(container)
+                .RegisterDefaultServices();
+        }
     }
 }

@@ -1,24 +1,20 @@
-﻿using System.Activities;
+﻿using Source.DLaB.Xrm.Ioc;
 using Source.DLaB.Xrm.Workflow;
 
 namespace Xyz.Xrm.Workflow
 {
-    public abstract class CodeActivityBase : DLaBCodeActivityBase
+    public abstract class CodeActivityBase : DLaBCodeActivityBase<ExtendedWorkflowContext>
     {
+        protected CodeActivityBase(IIocContainer container) : base(container) { }
+
         #region Overrides of DLaBCodeActivityBase
 
-        protected override IExtendedWorkflowContext CreateWorkflowContext(CodeActivityContext context)
+        protected override IIocContainer RegisterServices(IIocContainer container)
         {
-            return new ExtendedWorkflowContext(context, this);
-        }
-
-        protected sealed override void Execute(IExtendedWorkflowContext context)
-        {
-            Execute((ExtendedWorkflowContext)context);
+            return base.RegisterServices(container)
+                .RegisterWorkflowDefaults();
         }
 
         #endregion
-
-        protected abstract void Execute(ExtendedWorkflowContext context);
     }
 }

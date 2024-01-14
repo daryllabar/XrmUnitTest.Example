@@ -4,6 +4,7 @@ using System.Linq;
 using Xyz.Xrm.Entities;
 using Source.DLaB.Xrm.Plugin;
 using Microsoft.Xrm.Sdk;
+using Source.DLaB.Xrm.Ioc;
 
 namespace Xyz.Xrm.Plugin
 {
@@ -17,6 +18,7 @@ namespace Xyz.Xrm.Plugin
         #region Constructors
 
         public SyncContactToAccount(string unsecureConfig = null, string secureConfig = null) : base(unsecureConfig, secureConfig) { }
+        public SyncContactToAccount(IIocContainer container, string unsecureConfig = null, string secureConfig = null) : base(unsecureConfig, secureConfig, container) { }
 
         #endregion Constructors
 

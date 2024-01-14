@@ -1,8 +1,11 @@
-﻿using System;
-using System.Linq;
+﻿using DLaB.Xrm.Test;
 using DLaB.Xrm.Test.Builders;
-using Xyz.Xrm.Test;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Xrm.Sdk;
+using Source.DLaB.Xrm.Ioc;
+using System;
+using System.Linq;
+using Xyz.Xrm.Test;
 
 namespace Xyz.Xrm.Workflow.Tests
 {
@@ -19,7 +22,14 @@ namespace Xyz.Xrm.Workflow.Tests
             // Arrange
             //
             TestInitializer.InitializeTestSettings();
-            var workflow = new CreateGuidActivity();
+
+            var overrides = new IocContainer();
+            overrides.AddScoped<ITracingService>(s => new FakeTraceService(new DebugLogger()));
+
+            var workflow = new CreateGuidActivity(new IocContainer
+            {
+                PreBuildServiceProviderOverrideRegistrations = overrides
+            });
 
             //
             // Act

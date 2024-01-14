@@ -11,5 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CodeActivityBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExtendedWorkflowContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IocExtensions.cs" />
   </ItemGroup>
 </Project>

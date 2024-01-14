@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Source.DLaB.Xrm.Ioc;
 
 namespace Xyz.Xrm.Plugin
 {
@@ -7,12 +7,6 @@ namespace Xyz.Xrm.Plugin
         where TResponse : Microsoft.Xrm.Sdk.OrganizationResponse, new()
     {
         /// <inheritdoc />
-        protected ActionPluginBase(string unsecureConfig, string secureConfig) : base(unsecureConfig,secureConfig) { }
-
-        /// <inheritdoc />
-        protected override ActionContext<TRequest, TResponse> CreatePluginContext(IServiceProvider serviceProvider)
-        {
-            return new ActionContext<TRequest, TResponse>(serviceProvider, this);
-        }
+        protected ActionPluginBase(string unsecureConfig, string secureConfig, IIocContainer container = null) : base(unsecureConfig, secureConfig, container) { }
     }
 }

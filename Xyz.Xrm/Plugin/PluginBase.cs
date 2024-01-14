@@ -1,16 +1,11 @@
 ﻿using System;
+using Source.DLaB.Xrm.Ioc;
 
 namespace Xyz.Xrm.Plugin
 {
     public abstract class PluginBase : GenericPluginBase<ExtendedPluginContext>
     {
         /// <inheritdoc />
-        protected PluginBase(string unsecureConfig, string secureConfig) : base(unsecureConfig,secureConfig) { }
-
-        /// <inheritdoc />
-        protected override ExtendedPluginContext CreatePluginContext(IServiceProvider serviceProvider)
-        {
-            return new ExtendedPluginContext(serviceProvider, this);
-        }
+        protected PluginBase(string unsecureConfig, string secureConfig, IIocContainer container = null) : base(unsecureConfig,secureConfig, container) { }
     }
 }

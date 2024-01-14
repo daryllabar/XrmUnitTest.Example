@@ -1,5 +1,7 @@
-﻿using System.Activities;
-using Microsoft.Xrm.Sdk.Workflow;
+﻿using Microsoft.Xrm.Sdk.Workflow;
+using Source.DLaB.Xrm.Ioc;
+using System;
+using System.Activities;
 
 namespace Xyz.Xrm.Workflow
 {
@@ -8,9 +10,12 @@ namespace Xyz.Xrm.Workflow
         [Output("Guid")]
         public OutArgument<string> Guid { get; set; }
 
-        protected override void Execute(ExtendedWorkflowContext activityContext)
+        public CreateGuidActivity() : this(null) { }
+        public CreateGuidActivity(IIocContainer container) : base(container) { }
+
+        protected override void Execute(ExtendedWorkflowContext context, IServiceProvider serviceProvider)
         {
-            Guid.Set(activityContext, System.Guid.NewGuid().ToString());
+            Guid.Set(context, System.Guid.NewGuid().ToString());
         }
     }
 }
