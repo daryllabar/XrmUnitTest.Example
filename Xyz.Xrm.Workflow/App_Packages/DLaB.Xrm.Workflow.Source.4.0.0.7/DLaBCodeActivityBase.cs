@@ -16,20 +16,27 @@ namespace DLaB.Xrm.Workflow
 namespace Source.DLaB.Xrm.Workflow
 #endif
 {
+    /// <summary>
+    /// Non-Generic Base Class for Custom Workflow Activities
+    /// </summary>
     public abstract class DLaBCodeActivityBase : DLaBCodeActivityBase<DLaBExtendedWorkflowContext>
     {
-        protected DLaBCodeActivityBase(IIocContainer container = null) : base(container)
+        protected DLaBCodeActivityBase(IIocContainer container = null): base(container)
         {
         }
     }
 
-    public abstract class DLaBCodeActivityBase<TContext> : CodeActivity where TContext : IExtendedWorkflowContext
+    /// <summary>
+    /// Generic Base Class for Custom Workflow Activities
+    /// </summary>
+    /// <typeparam name="TContext"></typeparam>
+    public abstract class DLaBCodeActivityBase<TContext> : CodeActivity, IContainerWrapper where TContext : IExtendedWorkflowContext
     {
         private readonly Lazy<IIocContainer> _container;
         /// <summary>
         /// Container to use for Dependency Injection
         /// </summary>
-        private IIocContainer Container => _container.Value;
+        public IIocContainer Container => _container.Value;
 
         protected DLaBCodeActivityBase(IIocContainer container = null)
         {

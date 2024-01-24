@@ -44,16 +44,20 @@ namespace Source.DLaB.Xrm.Plugin
         /// <returns>The IoC container.</returns>
         public static IIocContainer RegisterDataversePluginDefaults(this IIocContainer container, ConfigWrapper configWrapper, IRegisteredEventsPlugin plugin = null)
         {
-            // Conditionally register the Extended Plugin Context, as long as the IRegistered Events Plugin is not null
+            // Conditionally register the IRegistered Events Plugin
             if (plugin != null)
             {
-                container.AddScoped<IExtendedPluginContext>(s => new DLaBExtendedPluginContextBase(s, plugin));
+                // IRegisteredEventsPlugin
+                container.AddSingleton(plugin);
             }
 
             // Order of registrations does not matter. 
             container.RegisterDLaBDefaults()
                 // ConfigWrapper
                 .AddSingleton(configWrapper)
+
+                // IExtendedPluginContext
+                .AddScoped<IExtendedPluginContext, DLaBExtendedPluginContextBase>()
 
                 // IOrganizationService
                 .AddScoped<IOrganizationService>(s =>
@@ -65,12 +69,12 @@ namespace Source.DLaB.Xrm.Plugin
                 // ITracingService
                 .AddScoped<ITracingService>(s =>
                 {
-                    var defaultProvider = s.Get<IServiceProvider>();
-                    if(ReferenceEquals(s, defaultProvider))
+                    var defaultTracingService = s.Get<WrappedServiceProvider>()?.ServiceProvider?.Get<ITracingService>();
+                    if(defaultTracingService == null)
                     {
-                        throw new Exception("When RegisterDataversePluginDefaults is used, either ITracingService registration must be overriden or a default service provider must be provider when building the service provider!");
+                        throw new Exception("When RegisterDataversePluginDefaults is used, the wrapped Service Provider must provide an ITracingService!");
                     }
-                    return new ExtendedTracingService(defaultProvider.Get<ITracingService>());
+                    return new ExtendedTracingService(defaultTracingService);
                 })
 
                 // OrganizationServicesWrapper

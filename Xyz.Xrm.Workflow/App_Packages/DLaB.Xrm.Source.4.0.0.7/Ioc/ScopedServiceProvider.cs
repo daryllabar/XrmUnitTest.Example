@@ -42,6 +42,7 @@ namespace Source.DLaB.Xrm.Ioc
         public ScopedServiceProvider(IServiceProvider scopedProvider, Dictionary<Type, Registration> registrations, ConcurrentDictionary<Type, object> instances)
         {
             _scopedInstances[typeof(IServiceProvider)] = this;
+            _registrations[typeof(IServiceProvider)] = new Registration(typeof(IServiceProvider), Lifetime.Scoped, s => this);
             registrations = registrations ?? throw new ArgumentNullException(nameof(registrations));
             _instances = instances ?? throw new ArgumentNullException(nameof(instances));
             foreach (var kvp in registrations)
@@ -51,7 +52,7 @@ namespace Source.DLaB.Xrm.Ioc
             _scopedProvider = scopedProvider;
             if (_scopedProvider != null)
             {
-                _registrations[typeof(IServiceProvider)] = new Registration(typeof(IServiceProvider), Lifetime.Scoped, s => _scopedProvider);
+                _registrations[typeof(WrappedServiceProvider)] = new Registration(typeof(WrappedServiceProvider), Lifetime.Scoped, s => new WrappedServiceProvider(_scopedProvider));
             }
         }
 

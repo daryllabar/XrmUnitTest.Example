@@ -1,7 +1,6 @@
-﻿using System;
-using DLaB.Xrm.Test.Builders;
+﻿using DLaB.Xrm.Test.Builders;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Source.DLaB.Xrm.Ioc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xyz.Xrm.Entities;
@@ -17,15 +16,9 @@ namespace Xyz.Xrm.Plugin.Tests
         [TestInitialize]
         public void Initialize()
         {
-            var container = new IocContainer
-            {
-                PreBuildServiceProviderOverrideRegistrations = new IocContainer()
-            };
-            container.PreBuildServiceProviderOverrideRegistrations
-                .AddScoped<IServicesExampleData>(s => _data);
-
             _data = new MockServicesExampleData();
-            _sut = new ServicesExamplePlugin(container);
+            _sut = new ServicesExamplePlugin();
+            _sut.Container.AddScoped<IServicesExampleData>(s => _data);
         }
 
         [TestMethod]

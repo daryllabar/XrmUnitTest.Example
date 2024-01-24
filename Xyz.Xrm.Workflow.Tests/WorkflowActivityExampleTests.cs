@@ -24,12 +24,8 @@ namespace Xyz.Xrm.Workflow.Tests
             TestInitializer.InitializeTestSettings();
 
             var overrides = new IocContainer();
-            overrides.AddScoped<ITracingService>(s => new FakeTraceService(new DebugLogger()));
-
-            var workflow = new CreateGuidActivity(new IocContainer
-            {
-                PreBuildServiceProviderOverrideRegistrations = overrides
-            });
+            var workflow = new CreateGuidActivity();
+            workflow.Container.AddScoped<ITracingService>(s => new FakeTraceService(new DebugLogger()));
 
             //
             // Act
