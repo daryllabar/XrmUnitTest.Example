@@ -24,19 +24,31 @@ namespace Xyz.Xrm.Plugin
 
         protected override IEnumerable<RegisteredEvent> CreateEvents()
         {
-            return new RegisteredEventBuilder(PipelineStage.PostOperation, MessageType.Create, MessageType.Update).
-                ForEntities(Contact.EntityLogicalName).Build();
+            return new RegisteredEventBuilder(PipelineStage.PreOperation, MessageType.Create, MessageType.Update)
+                .ForEntities<Contact>()
+                .WithExecuteAction(OnUserEmailRouterAccessApproved)
+                .WithValidator(new RequirementValidator()
+                    .Updated(new SystemUser { EmailRouterAccessApproval = SystemUser_EmailRouterAccessApproval.Approved }))
+
+                .WithAssertValidator(new RequirementValidator()
+                        .Contains<Contact>(ContextEntity.CoalesceTargetPreImage, c => new { c.FullName, c.EMailAddress1 }),
+                    "Name and Email address are required to notify admin of email router access approval!")
+                .Build();
         }
+
+        protected void OnUserEmailRouterAccessApproved(ExtendedPluginContext context) { }
 
         protected override void ExecuteInternal(ExtendedPluginContext context)
         {
             // Get the Target
             var contact = context.GetTarget<Contact>();
-            if (string.IsNullOrWhiteSpace(contact.Address1_Line1))
-            {
-                context.Trace(AddressNotUpdatedMessage);
-                return;
-            }
+
+            // No Need to check for the address line 1 being updated since the Requirement Validator does that
+            // if (string.IsNullOrWhiteSpace(contact.Address1_Line1))
+            // {
+            //     context.Trace(AddressNotUpdatedMessage);
+            //     return;
+            // }
 
             using (var crm = new CdsContext(context.OrganizationService))
             {
