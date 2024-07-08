@@ -11,6 +11,8 @@ namespace Xyz.Xrm.Plugin
     /// </summary>
     public class ValidateEmailRouterApproval : PluginBase, IPlugin
     {
+        public const string MobileRequired = "Name and Mobile Phone are required to notify admin of email router access approval!";
+
         #region Constructors
 
         public ValidateEmailRouterApproval(string unsecureConfig = null, string secureConfig = null) : base(unsecureConfig, secureConfig) { }
@@ -26,8 +28,7 @@ namespace Xyz.Xrm.Plugin
                     .Updated(new SystemUser { EmailRouterAccessApproval = SystemUser_EmailRouterAccessApproval.Approved }))
 
                 .WithAssertValidator(new RequirementValidator()
-                        .Contains<SystemUser>(ContextEntity.CoalesceTargetPreImage, u => new { u.FullName, u.MobilePhone }),
-                    "Name and Mobile Phone are required to notify admin of email router access approval!")
+                    .Contains<SystemUser>(ContextEntity.CoalesceTargetPreImage, u => new { u.FullName, u.MobilePhone }), MobileRequired)
                 .Build();
         }
 
