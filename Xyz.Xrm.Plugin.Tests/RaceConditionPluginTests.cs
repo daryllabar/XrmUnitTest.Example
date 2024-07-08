@@ -92,7 +92,7 @@ namespace Xyz.Xrm.Plugin.Tests
                 {
                     var context = builder.WithTarget(new Contact
                         {
-                            EMailAddress1 = contact.EntityId + "@test.com",
+                            EmailAddress1 = contact.EntityId + "@test.com",
                             [Contact.Fields.AccountId] = contact.Entity.ParentCustomerId
                         })
                         .WithPrimaryEntityId(contact)
@@ -114,7 +114,7 @@ namespace Xyz.Xrm.Plugin.Tests
                 foreach (var account in service.GetEntitiesById<Account>(EntityIdsByLogicalName[Account.EntityLogicalName].Select(a => a.EntityId)))
                 {
 
-                    if (account.EMailAddress1 == null)
+                    if (account.EmailAddress1 == null)
                     {
                         raceConditionFailures.Add($"Account {account.Id} should have had it's email set to it's contact's email but didn't.");
                     }

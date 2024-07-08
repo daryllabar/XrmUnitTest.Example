@@ -48,7 +48,7 @@ namespace Xyz.Xrm.Entities
             // Now GetAddress is a function that exists on all IAddressable Entities
             var address = new Account().GetAddress();
             address = new Contact().GetAddress();
-            address = new Lead().GetAddress();
+            address = new SystemUser().GetAddress();
         }
     }
 
@@ -56,9 +56,6 @@ namespace Xyz.Xrm.Entities
 
     partial class Account : IAddressable { }
     partial class Contact : IAddressable { }
-    partial class Lead : IAddressable { }
     partial class BusinessUnit : IAddressable { }
-    partial class Competitor : IAddressable { }
-    partial class Site : IAddressable { }
     partial class SystemUser : IAddressable { }
 }

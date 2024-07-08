@@ -91,11 +91,11 @@ namespace Xyz.Walkthrough
         /// </summary>
         private void UsingAssumptionsToDecreaseRequiredTestingData()
         {
-            // Defines the assumption that an Install Product Exists
-            new Product_Install();
+            // Defines the assumption that a specific application user exists
+            new User_PowerAppsChecker();
 
             // Testing Method that utilizes the Assumption
-            new AssumptionExampleTests().AssumptionExample_InstallProduct_Should_ContainDescription();
+            new AssumptionExampleTests().AssumptionExample_PowerAppsChecker_Should_Exist();
         }
 
         /// <summary>

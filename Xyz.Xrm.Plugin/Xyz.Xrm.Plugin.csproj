@@ -251,6 +251,7 @@
     <Compile Include="RenameLogic.cs" />
     <Compile Include="ServicesExamplePlugin.cs" />
     <Compile Include="SyncContactToAccount.cs" />
+    <Compile Include="ValidateEmailRouterApproval.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

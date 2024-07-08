@@ -10,33 +10,33 @@ namespace Xyz.Xrm.Plugin.Tests
     [TestClass]
     public class AssumptionExampleTests
     {
-        #region InstallProduct_Should_ContainDescription
+        #region PowerAppsChecker_Should_Exist
 
         [TestMethod]
-        public void AssumptionExample_InstallProduct_Should_ContainDescription()
+        public void AssumptionExample_PowerAppsChecker_Should_Exist()
         {
-            new InstallProduct_Should_ContainDescription().Test();
+            new PowerAppsChecker_Should_Exist().Test();
         }
 
-        [Product_Install] // Assumption Attribute
-        private class InstallProduct_Should_ContainDescription : TestMethodClassBase
+        [User_PowerAppsChecker] // Assumption Attribute
+        private class PowerAppsChecker_Should_Exist : TestMethodClassBase
         {
             protected override void Test(IOrganizationService service)
             {
                 //
                 // Act
                 //
-                var product = AssumedEntities.Get(new Product_Install());
-                var description = service.GetEntity<Product>(product.Id).Description;
+                var user = AssumedEntities.Get(new User_PowerAppsChecker());
+                var userName = service.GetEntity<SystemUser>(user.Id).DomainName;
 
                 //
                 // Assert
                 //
-                Assert.IsNotNull(product.Description);
-                Assert.AreEqual(product.Description, description);
+                Assert.IsNotNull(user.DomainName);
+                Assert.AreEqual(user.DomainName, userName);
             }
         }
 
-        #endregion InstallProduct_Should_ContainDescription
+        #endregion PowerAppsChecker_Should_Exist
     }
 }

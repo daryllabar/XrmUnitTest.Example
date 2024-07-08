@@ -13,8 +13,6 @@ namespace Xyz.Xrm.Plugin
     /// </summary>
     public class SyncContactToAccount : PluginBase, IPlugin
     {
-        public const string AddressNotUpdatedMessage = "Address not updated, no need to update Account.";
-
         #region Constructors
 
         public SyncContactToAccount(string unsecureConfig = null, string secureConfig = null) : base(unsecureConfig, secureConfig) { }
@@ -26,31 +24,34 @@ namespace Xyz.Xrm.Plugin
         {
             return new RegisteredEventBuilder(PipelineStage.PreOperation, MessageType.Create, MessageType.Update)
                 .ForEntities<Contact>()
-                .WithExecuteAction(OnUserEmailRouterAccessApproved)
                 .WithValidator(new RequirementValidator()
-                    .Updated(new SystemUser { EmailRouterAccessApproval = SystemUser_EmailRouterAccessApproval.Approved }))
-
-                .WithAssertValidator(new RequirementValidator()
-                        .Contains<Contact>(ContextEntity.CoalesceTargetPreImage, c => new { c.FullName, c.EMailAddress1 }),
-                    "Name and Email address are required to notify admin of email router access approval!")
+                    .UpdatedAny(
+                        Contact.Fields.Address1_Line1,
+                        Contact.Fields.Address1_Line2,
+                        Contact.Fields.Address1_Line3,
+                        Contact.Fields.Address1_AddressTypeCode,
+                        Contact.Fields.Address1_City,
+                        Contact.Fields.Address1_Country,
+                        Contact.Fields.Address1_County,
+                        Contact.Fields.Address1_StateOrProvince,
+                        Contact.Fields.Address1_Name,
+                        Contact.Fields.Address1_PostalCode))
                 .Build();
         }
-
-        protected void OnUserEmailRouterAccessApproved(ExtendedPluginContext context) { }
 
         protected override void ExecuteInternal(ExtendedPluginContext context)
         {
             // Get the Target
             var contact = context.GetTarget<Contact>();
 
-            // No Need to check for the address line 1 being updated since the Requirement Validator does that
+            // No Need to check that any of the address fields are being updated since the Requirement Validator does that
             // if (string.IsNullOrWhiteSpace(contact.Address1_Line1))
             // {
             //     context.Trace(AddressNotUpdatedMessage);
             //     return;
             // }
 
-            using (var crm = new CdsContext(context.OrganizationService))
+            using (var crm = new DataverseContext(context.OrganizationService))
             {
                 var accounts = crm.AccountSet.Where(a => a.PrimaryContactId.Id == contact.Id);
                 foreach (var account in accounts)

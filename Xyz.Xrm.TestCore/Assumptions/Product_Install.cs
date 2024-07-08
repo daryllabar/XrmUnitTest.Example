@@ -6,17 +6,17 @@ using Microsoft.Xrm.Sdk;
 namespace Xyz.Xrm.Test.Assumptions
 {
     // ReSharper disable once InconsistentNaming
-    public class Product_Install : EntityDataAssumptionBaseAttribute, IAssumptionEntityType<Product_Install, Product>
+    public class User_PowerAppsChecker : EntityDataAssumptionBaseAttribute, IAssumptionEntityType<User_PowerAppsChecker, SystemUser>
     {
         protected override Entity RetrieveEntity(IOrganizationService service)
         {
-            return service.GetFirstOrDefault<Product>(p => new
+            return service.GetFirstOrDefault<SystemUser>(u => new
             {
-                p.ProductNumber,
-                p.ProductId,
-                p.Description
+                u.FullName,
+                u.DomainName,
+                u.ApplicationId,
             },
-            Product.Fields.ProductNumber, "Install");
+            SystemUser.Fields.ApplicationId, "c9299480-c13a-49db-a7ae-cdfe54fe0313");
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Xyz.Xrm.Plugin
         {
             var preImage = context.GetPreEntity<Contact>();
             var target = context.CoalesceTargetWithPreEntity<Contact>();
-            if (preImage.EMailAddress1 == target.EMailAddress1)
+            if (preImage.EmailAddress1 == target.EmailAddress1)
             {
                 context.Trace("Email Address 1 didn't change.  Exiting.");
                 return;
@@ -83,7 +83,7 @@ namespace Xyz.Xrm.Plugin
             context.OrganizationService.Update(new Account
             {
                 Id = Account.Id, // Account could have been changed by a new thread.
-                EMailAddress1 = target.EMailAddress1
+                EmailAddress1 = target.EmailAddress1
             });
         }
     }

@@ -1,0 +1,27 @@
+<Entity xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="1" z:Type="Microsoft.Xrm.Sdk.Entity" z:Assembly="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns="http://schemas.microsoft.com/xrm/2011/Contracts">
+  <Attributes z:Id="2" xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+    <KeyValuePairOfstringanyType>
+      <d2p1:key z:Id="3">fullname</d2p1:key>
+      <d2p1:value z:Id="4" z:Type="System.String" z:Assembly="0">Power Apps Checker Application</d2p1:value>
+    </KeyValuePairOfstringanyType>
+    <KeyValuePairOfstringanyType>
+      <d2p1:key z:Id="5">domainname</d2p1:key>
+      <d2p1:value z:Id="6" z:Type="System.String" z:Assembly="0">pacheckerapp@microsoft.com</d2p1:value>
+    </KeyValuePairOfstringanyType>
+    <KeyValuePairOfstringanyType>
+      <d2p1:key z:Id="7">applicationid</d2p1:key>
+      <d2p1:value z:Id="8" z:Type="System.Guid" z:Assembly="0">c9299480-c13a-49db-a7ae-cdfe54fe0313</d2p1:value>
+    </KeyValuePairOfstringanyType>
+    <KeyValuePairOfstringanyType>
+      <d2p1:key z:Id="9">systemuserid</d2p1:key>
+      <d2p1:value z:Id="10" z:Type="System.Guid" z:Assembly="0">6780306f-65b2-ec11-9840-0022482e8ee3</d2p1:value>
+    </KeyValuePairOfstringanyType>
+  </Attributes>
+  <EntityState i:nil="true" />
+  <FormattedValues z:Id="11" xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <Id>6780306f-65b2-ec11-9840-0022482e8ee3</Id>
+  <KeyAttributes xmlns:d2p1="http://schemas.microsoft.com/xrm/7.1/Contracts" z:Id="12" xmlns:d2p2="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <LogicalName z:Id="13">systemuser</LogicalName>
+  <RelatedEntities z:Id="14" xmlns:d2p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <RowVersion z:Id="15">954872</RowVersion>
+</Entity>

@@ -21,10 +21,10 @@ namespace Xyz.Xrm.Plugin
         protected override IEnumerable<RegisteredEvent> CreateEvents()
         {
             return new RegisteredEventBuilder(PipelineStage.PreOperation, MessageType.Create, MessageType.Update)
-                .ForEntities<Account, Contact, Lead>()
+                .ForEntities<Account, Contact>()
                 .WithExecuteAction(ExecuteCrmPhoneNumber)
                 .And(PipelineStage.PreOperation, MessageType.Create, MessageType.Update)
-                .ForEntities<BusinessUnit, Competitor, Site, SystemUser>()
+                .ForEntities<BusinessUnit, SystemUser>()
                 .WithExecuteAction(ExecuteCrmAddresses).Build();
         }
 
@@ -68,7 +68,6 @@ namespace Xyz.Xrm.Plugin
                     RemoveFormatting(target, Contact.Fields.Address3_Telephone3);
                     RemoveFormatting(target, Contact.Fields.MobilePhone);
                     break;
-                case Lead.EntityLogicalName:
                 case SystemUser.EntityLogicalName:
                     RemoveFormatting(target, Contact.Fields.MobilePhone);
                     break;
