@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29201.188
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35201.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Walkthrough", "Xyz.Walkthrough\Xyz.Walkthrough.csproj", "{3E728B41-02E5-42FD-B8D3-CF2C664E2226}"
 EndProject
@@ -34,16 +34,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Workflow.Tests", "Xyz.Xrm.Workflow.Tests\Xyz.Xrm.Workflow.Tests.csproj", "{7056423A-373E-463D-B552-D2F305F5C041}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Xyz.Xrm\Xyz.Xrm.projitems*{2b294dbf-8730-436e-b401-8745fea632fe}*SharedItemsImports = 4
-		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{3016d729-1a3b-43c0-ac2f-d4ef6a305fa6}*SharedItemsImports = 4
-		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{5bd39ac9-97f3-47c8-8e1f-6a58a24afb9e}*SharedItemsImports = 4
-		Xyz.Xrm\Xyz.Xrm.projitems*{5bd39ac9-97f3-47c8-8e1f-6a58a24afb9e}*SharedItemsImports = 4
-		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{7056423a-373e-463d-b552-d2f305f5c041}*SharedItemsImports = 4
-		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{8f91efc7-351b-4802-99aa-6c6f16110505}*SharedItemsImports = 13
-		Xyz.Xrm\Xyz.Xrm.projitems*{b22b3bc6-0ac6-4cdd-a118-16e318818ad7}*SharedItemsImports = 13
-		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{dd5aa002-c1ff-4c0e-b9a5-3d63c7809b07}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		LocalNuget|Any CPU = LocalNuget|Any CPU
@@ -92,5 +82,15 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E851C72-3575-426E-814F-F3F7156DBEBA}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Xyz.Xrm\Xyz.Xrm.projitems*{2b294dbf-8730-436e-b401-8745fea632fe}*SharedItemsImports = 4
+		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{3016d729-1a3b-43c0-ac2f-d4ef6a305fa6}*SharedItemsImports = 4
+		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{5bd39ac9-97f3-47c8-8e1f-6a58a24afb9e}*SharedItemsImports = 4
+		Xyz.Xrm\Xyz.Xrm.projitems*{5bd39ac9-97f3-47c8-8e1f-6a58a24afb9e}*SharedItemsImports = 4
+		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{7056423a-373e-463d-b552-d2f305f5c041}*SharedItemsImports = 4
+		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{8f91efc7-351b-4802-99aa-6c6f16110505}*SharedItemsImports = 13
+		Xyz.Xrm\Xyz.Xrm.projitems*{b22b3bc6-0ac6-4cdd-a118-16e318818ad7}*SharedItemsImports = 13
+		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{dd5aa002-c1ff-4c0e-b9a5-3d63c7809b07}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
