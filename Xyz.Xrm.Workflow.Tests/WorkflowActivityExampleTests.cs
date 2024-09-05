@@ -1,8 +1,6 @@
 ﻿using DLaB.Xrm.Test;
-using DLaB.Xrm.Test.Builders;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xrm.Sdk;
-using Source.DLaB.Xrm.Ioc;
 using System;
 using System.Linq;
 using Xyz.Xrm.Test;
@@ -24,7 +22,6 @@ namespace Xyz.Xrm.Workflow.Tests
             //
             TestInitializer.InitializeTestSettings();
 
-            var overrides = new IocContainer();
             var workflow = new CreateGuidActivity();
             workflow.Container.AddScoped<ITracingService>(s => new FakeTraceService(new DebugLogger()));
 

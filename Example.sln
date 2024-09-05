@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Xrm.Plugin.Tests", "Xyz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Xrm.Test", "Xyz.Xrm.Test\Xyz.Xrm.Test.csproj", "{F62103E9-D25D-4F99-AABE-ECF348424366}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Xyz.Xrm.TestCore", "Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.shproj", "{8F91EFC7-351B-4802-99AA-6C6F16110505}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Xrm.Plugin", "Xyz.Xrm.Plugin\Xyz.Xrm.Plugin.csproj", "{2B294DBF-8730-436E-B401-8745FEA632FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Generation", "{94B41B0F-F3D1-4BE0-82F4-F0A5FB996AE3}"
@@ -97,7 +95,6 @@ Global
 		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{3016d729-1a3b-43c0-ac2f-d4ef6a305fa6}*SharedItemsImports = 4
 		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{5bd39ac9-97f3-47c8-8e1f-6a58a24afb9e}*SharedItemsImports = 5
 		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{7056423a-373e-463d-b552-d2f305f5c041}*SharedItemsImports = 4
-		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{8f91efc7-351b-4802-99aa-6c6f16110505}*SharedItemsImports = 13
 		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{dd5aa002-c1ff-4c0e-b9a5-3d63c7809b07}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
