@@ -6,6 +6,7 @@
     <OutputType>Library</OutputType>
 	  <LangVersion>12</LangVersion>
 	  <SignAssembly>false</SignAssembly>
+	  <Configurations>Debug;Release;DevDeploy</Configurations>
   </PropertyGroup>
 	<!--
     NuGet pack and restore as MSBuild targets reference:

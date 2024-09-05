@@ -3,6 +3,7 @@
     <TargetFramework>net462</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xyz.Xrm\Xyz.Xrm.csproj" />

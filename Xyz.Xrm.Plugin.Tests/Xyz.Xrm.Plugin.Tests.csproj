@@ -6,6 +6,7 @@
 	  <SignAssembly>false</SignAssembly>
     <TargetFramework>net462</TargetFramework>
 	  <LangVersion>12</LangVersion>
+	  <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="DLaB.Xrm" Version="5.0.0.7" />
