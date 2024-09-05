@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Xyz.Xrm.Entities;
-using Source.DLaB.Xrm.Plugin;
+using DLaB.Xrm.Plugin;
 using Microsoft.Xrm.Sdk;
-using Source.DLaB.Xrm.Ioc;
+using DLaB.Xrm.Ioc;
 
 namespace Xyz.Xrm.Plugin
 {

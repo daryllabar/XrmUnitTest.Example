@@ -1,5 +1,5 @@
-﻿using Source.DLaB.Xrm.Ioc;
-using Source.DLaB.Xrm.Plugin;
+﻿using DLaB.Xrm.Ioc;
+using DLaB.Xrm.Plugin;
 
 namespace Xyz.Xrm.Plugin
 {

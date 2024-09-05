@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xrm.Sdk;
-using Source.DLaB.Xrm.Ioc;
-using Source.DLaB.Xrm.Plugin;
+using DLaB.Xrm.Ioc;
+using DLaB.Xrm.Plugin;
 using System.Collections.Generic;
 using Xyz.Xrm.Entities;
 

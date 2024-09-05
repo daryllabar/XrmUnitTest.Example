@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using Xyz.Xrm.Entities;
 using Microsoft.Xrm.Sdk;
-using Source.DLaB.Xrm.Plugin;
+using DLaB.Xrm.Plugin;
 // ReSharper disable UnusedVariable, RedundantExtendsListEntry
 
 namespace Xyz.Xrm.Plugin.PluginBaseExamples
 {
 
     /// <summary>
-    /// Shows hows to get Entities from Context including final value from target/pre-image
+    /// Shows how to get Entities from Context including final value from target/pre-image
     /// </summary>
     public class EntityAccess : PluginBase, IPlugin
     {

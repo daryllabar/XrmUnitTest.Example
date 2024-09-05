@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Xyz.Xrm.Entities; // Contains Early Bound Entities
 using DLaB.Xrm.Test;
-using Source.DLaB.Xrm;
+using DLaB.Xrm;
 using Xyz.Xrm.Test; // Test Base Project.  Contains code that is shared amoung all Unit Test Projects
 using Xyz.Xrm.Test.Builders; // Fluent Builder Namespace.  Builders can be used to create anything that's required, from creating an entity, to a OrganizationService, to a Plugin
 using Microsoft.Xrm.Sdk;

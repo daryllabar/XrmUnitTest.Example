@@ -6,6 +6,7 @@ using Source.DLaB.Xrm.Ioc;
 using System;
 using System.Linq;
 using Xyz.Xrm.Test;
+using Xyz.Xrm.Test.Builders;
 
 namespace Xyz.Xrm.Workflow.Tests
 {

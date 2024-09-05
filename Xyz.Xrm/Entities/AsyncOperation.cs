@@ -40,15 +40,15 @@ namespace Xyz.Xrm.Entities
 		AppModuleMetadataOperation = 72,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Archive Execution Async Operation", 95)]
+		[OptionSetMetadataAttribute("Archive Execution Async Operation", 99)]
 		ArchiveExecutionAsyncOperation = 301,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("AsyncArchive Async Operation", 92)]
+		[OptionSetMetadataAttribute("AsyncArchive Async Operation", 96)]
 		AsyncarchiveAsyncOperation = 102,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Async Restore Job", 112)]
+		[OptionSetMetadataAttribute("Async Restore Job", 77)]
 		AsyncRestoreJob = 187,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -56,7 +56,7 @@ namespace Xyz.Xrm.Entities
 		AuditPartitionCreation = 41,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Bulk Archive Operation", 94)]
+		[OptionSetMetadataAttribute("Bulk Archive Operation", 98)]
 		BulkArchiveOperation = 300,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -96,7 +96,7 @@ namespace Xyz.Xrm.Entities
 		CallbackregistrationExpanderOperation = 79,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Cancel Async Operations (System)", 93)]
+		[OptionSetMetadataAttribute("Cancel Async Operations (System)", 97)]
 		CancelAsyncOperationsSystem = 103,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -104,7 +104,7 @@ namespace Xyz.Xrm.Entities
 		Cascadeassign = 90,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Cascade Assign All Async Operation", 109)]
+		[OptionSetMetadataAttribute("Cascade Assign All Async Operation", 74)]
 		CascadeAssignAllAsyncOperation = 105,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -112,31 +112,39 @@ namespace Xyz.Xrm.Entities
 		Cascadedelete = 91,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Cascade FlowSession Permissions Async Operation", 90)]
+		[OptionSetMetadataAttribute("Cascade FlowSession Permissions Async Operation", 94)]
 		CascadeFlowsessionPermissionsAsyncOperation = 100,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Cascade Grant or Revoke Access Version Tracking Async Operation", 110)]
+		[OptionSetMetadataAttribute("Cascade Grant or Revoke Access Version Tracking Async Operation", 75)]
 		CascadeGrantOrRevokeAccessVersionTrackingAsyncOperation = 12801,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Cascade Merge Async Operation", 78)]
+		[OptionSetMetadataAttribute("Cascade Merge Async Operation", 82)]
 		CascadeMergeAsyncOperation = 89,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Cascade Reparent DB Async Operation", 77)]
+		[OptionSetMetadataAttribute("Cascade Reparent DB Async Operation", 81)]
 		CascadeReparentDbAsyncOperation = 88,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Catalog Service Generate Package Async Operation", 103)]
+		[OptionSetMetadataAttribute("Catalog service asyc operation to poll for a solution checker request", 114)]
+		CatalogServiceAsycOperationToPollForASolutionCheckerRequest = 335,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Catalog service asyc operation to submit a solution checker request", 115)]
+		CatalogServiceAsycOperationToSubmitASolutionCheckerRequest = 336,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Catalog Service Generate Package Async Operation", 107)]
 		CatalogServiceGeneratePackageAsyncOperation = 320,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Catalog Service Install Request Async Operation", 105)]
+		[OptionSetMetadataAttribute("Catalog Service Install Request Async Operation", 109)]
 		CatalogServiceInstallRequestAsyncOperation = 322,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Catalog Service Submit Approval Request Async Operation", 104)]
+		[OptionSetMetadataAttribute("Catalog Service Submit Approval Request Async Operation", 108)]
 		CatalogServiceSubmitApprovalRequestAsyncOperation = 321,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -168,7 +176,7 @@ namespace Xyz.Xrm.Entities
 		ConvertDateAndTimeBehavior = 62,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Create Or Refresh Virtual Entity", 79)]
+		[OptionSetMetadataAttribute("Create Or Refresh Virtual Entity", 83)]
 		CreateOrRefreshVirtualEntity = 98,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -188,11 +196,16 @@ namespace Xyz.Xrm.Entities
 		DbccShrinkfileMaintenanceJob = 29,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("DeleteAndPromote Async Operation", 83)]
+		[OptionSetMetadataAttribute("DeleteAndPromote Async Operation", 87)]
 		DeleteandpromoteAsyncOperation = 207,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Deletes related Elastic Table records when a SQL record is deleted", 108)]
+		[OptionSetMetadataAttribute("Deletes related Elastic or SQL Table records when an Elastic Table record is dele" +
+			"ted", 113)]
+		DeletesRelatedElasticOrSqlTableRecordsWhenAnElasticTableRecordIsDeleted = 334,
+		
+		[System.Runtime.Serialization.EnumMemberAttribute()]
+		[OptionSetMetadataAttribute("Deletes related Elastic Table records when a SQL record is deleted", 112)]
 		DeletesRelatedElasticTableRecordsWhenASqlRecordIsDeleted = 333,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -200,7 +213,7 @@ namespace Xyz.Xrm.Entities
 		DeletionService = 14,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Denormalization Async Operation", 88)]
+		[OptionSetMetadataAttribute("Denormalization Async Operation", 92)]
 		DenormalizationAsyncOperation = 239,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -224,27 +237,27 @@ namespace Xyz.Xrm.Entities
 		ExecuteAsyncRequest = 54,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Execute DataProcessing Configuration", 99)]
+		[OptionSetMetadataAttribute("Execute DataProcessing Configuration", 103)]
 		ExecuteDataprocessingConfiguration = 306,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Export Solution Async Operation", 80)]
+		[OptionSetMetadataAttribute("Export Solution Async Operation", 84)]
 		ExportSolutionAsyncOperation = 202,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("FinOps DB Sync Async Operation", 101)]
+		[OptionSetMetadataAttribute("FinOps DB Sync Async Operation", 105)]
 		FinopsDbSyncAsyncOperation = 308,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("FinOps Deploy Custom Package Async Operation", 107)]
+		[OptionSetMetadataAttribute("FinOps Deploy Custom Package Async Operation", 111)]
 		FinopsDeployCustomPackageAsyncOperation = 332,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("FinOps Deployment Async Operation", 96)]
+		[OptionSetMetadataAttribute("FinOps Deployment Async Operation", 100)]
 		FinopsDeploymentAsyncOperation = 302,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("FinOps Unit Test Async Operation", 102)]
+		[OptionSetMetadataAttribute("FinOps Unit Test Async Operation", 106)]
 		FinopsUnitTestAsyncOperation = 309,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -268,7 +281,7 @@ namespace Xyz.Xrm.Entities
 		ImportSampleData = 38,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Import Solution Async Operation", 81)]
+		[OptionSetMetadataAttribute("Import Solution Async Operation", 85)]
 		ImportSolutionAsyncOperation = 203,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -284,7 +297,7 @@ namespace Xyz.Xrm.Entities
 		ImportTranslation = 59,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("ImportTranslation Async Operation", 86)]
+		[OptionSetMetadataAttribute("ImportTranslation Async Operation", 90)]
 		ImporttranslationAsyncOperation = 210,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -308,11 +321,11 @@ namespace Xyz.Xrm.Entities
 		MatchcodeUpdate = 12,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Migrate article content to file storage", 75)]
+		[OptionSetMetadataAttribute("Migrate article content to file storage", 79)]
 		MigrateArticleContentToFileStorage = 86,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Migrate notes to attachments job", 74)]
+		[OptionSetMetadataAttribute("Migrate notes to attachments job", 78)]
 		MigrateNotesToAttachmentsJob = 85,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -332,11 +345,11 @@ namespace Xyz.Xrm.Entities
 		PostToYammer = 49,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Process Table For RecycleBin", 111)]
+		[OptionSetMetadataAttribute("Process Table For RecycleBin", 76)]
 		ProcessTableForRecyclebin = 104,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("ProvisionLanguage Async Operation", 85)]
+		[OptionSetMetadataAttribute("ProvisionLanguage Async Operation", 89)]
 		ProvisionlanguageAsyncOperation = 209,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -348,11 +361,11 @@ namespace Xyz.Xrm.Entities
 		ProvisionLanguagePack = 43,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("PublishAll Async Operation", 82)]
+		[OptionSetMetadataAttribute("PublishAll Async Operation", 86)]
 		PublishallAsyncOperation = 204,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Purge Archived Content Operation", 97)]
+		[OptionSetMetadataAttribute("Purge Archived Content Operation", 101)]
 		PurgeArchivedContentOperation = 304,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -368,7 +381,7 @@ namespace Xyz.Xrm.Entities
 		RefreshBusinessUnitForRecordsOwnedByPrincipal = 95,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Refresh Runtime Integration Components Async Operation", 89)]
+		[OptionSetMetadataAttribute("Refresh Runtime Integration Components Async Operation", 93)]
 		RefreshRuntimeIntegrationComponentsAsyncOperation = 250,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -380,7 +393,7 @@ namespace Xyz.Xrm.Entities
 		RegenerateReadShareSnapshotData = 47,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Register Offering Async Operation", 98)]
+		[OptionSetMetadataAttribute("Register Offering Async Operation", 102)]
 		RegisterOfferingAsyncOperation = 305,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -408,7 +421,7 @@ namespace Xyz.Xrm.Entities
 		SqmDataCollection = 9,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("StageAndUpgrade Async Operation", 87)]
+		[OptionSetMetadataAttribute("StageAndUpgrade Async Operation", 91)]
 		StageandupgradeAsyncOperation = 211,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -416,7 +429,7 @@ namespace Xyz.Xrm.Entities
 		StorageLimitNotification = 31,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Sync Synapse Tables Schema", 100)]
+		[OptionSetMetadataAttribute("Sync Synapse Tables Schema", 104)]
 		SyncSynapseTablesSchema = 307,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -424,7 +437,7 @@ namespace Xyz.Xrm.Entities
 		SystemEvent = 1,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("TDS endpoint provisioning new TVF functions and grant permission Async Operation", 106)]
+		[OptionSetMetadataAttribute("TDS endpoint provisioning new TVF functions and grant permission Async Operation", 110)]
 		TdsEndpointProvisioningNewTvfFunctionsAndGrantPermissionAsyncOperation = 330,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -432,7 +445,7 @@ namespace Xyz.Xrm.Entities
 		TransformParseData = 4,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("UninstallSolution Async Operation", 84)]
+		[OptionSetMetadataAttribute("UninstallSolution Async Operation", 88)]
 		UninstallsolutionAsyncOperation = 208,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -440,7 +453,7 @@ namespace Xyz.Xrm.Entities
 		UpdateContractStates = 27,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Updated Deactived On for Resolved Cases job", 76)]
+		[OptionSetMetadataAttribute("Updated Deactived On for Resolved Cases job", 80)]
 		UpdatedDeactivedOnForResolvedCasesJob = 87,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -452,7 +465,7 @@ namespace Xyz.Xrm.Entities
 		UpdateKnowledgeArticleStates = 65,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Update Modern Flow Async Operation", 91)]
+		[OptionSetMetadataAttribute("Update Modern Flow Async Operation", 95)]
 		UpdateModernFlowAsyncOperation = 101,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]

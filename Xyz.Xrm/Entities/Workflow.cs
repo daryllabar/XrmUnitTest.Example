@@ -296,6 +296,7 @@ namespace Xyz.Xrm.Entities
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
+			public const string ModifyMetadata = "modifymetadata";
 			public const string Name = "name";
 			public const string OnDemand = "ondemand";
 			public const string OnDemandName = "ondemandname";
@@ -1392,6 +1393,24 @@ namespace Xyz.Xrm.Entities
 				{
 					return default(string);
 				}
+			}
+		}
+		
+		/// <summary>
+		/// Flow modify metadata used for telemetry, etc.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifymetadata")]
+		public string ModifyMetadata
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("modifymetadata");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("modifymetadata", value);
 			}
 		}
 		

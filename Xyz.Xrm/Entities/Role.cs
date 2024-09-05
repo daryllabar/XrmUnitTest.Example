@@ -25,6 +25,7 @@ namespace Xyz.Xrm.Entities
 		/// </summary>
 		public partial class Fields
 		{
+			public const string AppliesTo = "appliesto";
 			public const string Business_Unit_Roles = "business_unit_roles";
 			public const string BusinessUnitId = "businessunitid";
 			public const string BusinessUnitIdName = "businessunitidname";
@@ -37,7 +38,10 @@ namespace Xyz.Xrm.Entities
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
 			public const string CreatedOnBehalfByName = "createdonbehalfbyname";
 			public const string CreatedOnBehalfByYomiName = "createdonbehalfbyyominame";
+			public const string Description = "description";
 			public const string ImportSequenceNumber = "importsequencenumber";
+			public const string IsAutoAssigned = "isautoassigned";
+			public const string IsAutoAssignedName = "isautoassignedname";
 			public const string IsCustomizable = "iscustomizable";
 			public const string IsInherited = "isinherited";
 			public const string IsInheritedName = "isinheritedname";
@@ -75,6 +79,7 @@ namespace Xyz.Xrm.Entities
 			public const string RolePrivileges_Association = "roleprivileges_association";
 			public const string RoleTemplateId = "roletemplateid";
 			public const string SolutionId = "solutionid";
+			public const string SummaryOfCoRetablePermissions = "summaryofcoretablepermissions";
 			public const string SystemUserRoles_Association = "systemuserroles_association";
 			public const string TeamRoles_Association = "teamroles_association";
 			public const string VersionNumber = "versionnumber";
@@ -121,6 +126,24 @@ namespace Xyz.Xrm.Entities
 		public const string EntityLogicalCollectionName = "roles";
 		
 		public const string EntitySetName = "roles";
+		
+		/// <summary>
+		/// Personas/Licenses the security role applies to
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("appliesto")]
+		public string AppliesTo
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("appliesto");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("appliesto", value);
+			}
+		}
 		
 		/// <summary>
 		/// Unique identifier of the business unit with which the role is associated.
@@ -301,6 +324,24 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
+		/// Description of the security role
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("description")]
+		public string Description
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("description");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("description", value);
+			}
+		}
+		
+		/// <summary>
 		/// Unique identifier of the data import or data migration that created this record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("importsequencenumber")]
@@ -315,6 +356,41 @@ namespace Xyz.Xrm.Entities
 			set
 			{
 				this.SetAttributeValue("importsequencenumber", value);
+			}
+		}
+		
+		/// <summary>
+		/// Value indicating whether security role is auto-assigned based on user license
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isautoassigned")]
+		public virtual SecurityRole_IsAutoAssigned? IsAutoAssigned
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return ((SecurityRole_IsAutoAssigned?)(EntityOptionSetEnum.GetEnum(this, "isautoassigned")));
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("isautoassigned", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isautoassignedname")]
+		public string IsAutoAssignedName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("isautoassigned"))
+				{
+					return this.FormattedValues["isautoassigned"];
+				}
+				else
+				{
+					return default(string);
+				}
 			}
 		}
 		
@@ -729,6 +805,24 @@ namespace Xyz.Xrm.Entities
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("solutionid");
+			}
+		}
+		
+		/// <summary>
+		/// Summary of Core Table Permissions of the Role
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("summaryofcoretablepermissions")]
+		public string SummaryOfCoRetablePermissions
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("summaryofcoretablepermissions");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("summaryofcoretablepermissions", value);
 			}
 		}
 		

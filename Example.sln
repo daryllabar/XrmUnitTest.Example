@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35201.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Walkthrough", "Xyz.Walkthrough\Xyz.Walkthrough.csproj", "{3E728B41-02E5-42FD-B8D3-CF2C664E2226}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Walkthrough", "Xyz.Walkthrough\Xyz.Walkthrough.csproj", "{3E728B41-02E5-42FD-B8D3-CF2C664E2226}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Xyz.Xrm", "Xyz.Xrm\Xyz.Xrm.shproj", "{B22B3BC6-0AC6-4CDD-A118-16E318818AD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Xrm.Plugin.Tests", "Xyz.Xrm.Plugin.Tests\Xyz.Xrm.Plugin.Tests.csproj", "{3016D729-1A3B-43C0-AC2F-D4EF6A305FA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Plugin.Tests", "Xyz.Xrm.Plugin.Tests\Xyz.Xrm.Plugin.Tests.csproj", "{3016D729-1A3B-43C0-AC2F-D4EF6A305FA6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Test", "Xyz.Xrm.Test\Xyz.Xrm.Test.csproj", "{F62103E9-D25D-4F99-AABE-ECF348424366}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Xrm.Test", "Xyz.Xrm.Test\Xyz.Xrm.Test.csproj", "{F62103E9-D25D-4F99-AABE-ECF348424366}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Xyz.Xrm.TestCore", "Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.shproj", "{8F91EFC7-351B-4802-99AA-6C6F16110505}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Plugin", "Xyz.Xrm.Plugin\Xyz.Xrm.Plugin.csproj", "{2B294DBF-8730-436E-B401-8745FEA632FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Xrm.Plugin", "Xyz.Xrm.Plugin\Xyz.Xrm.Plugin.csproj", "{2B294DBF-8730-436E-B401-8745FEA632FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Generation", "{94B41B0F-F3D1-4BE0-82F4-F0A5FB996AE3}"
 	ProjectSection(SolutionItems) = preProject
@@ -25,6 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Gen
 		Code Generation\crmtestmethodclass.snippet = Code Generation\crmtestmethodclass.snippet
 		Code Generation\LINQPadGuidGenerator.txt = Code Generation\LINQPadGuidGenerator.txt
 		Code Generation\region.snippet = Code Generation\region.snippet
+		Code Generation\VersionUpdater.dll = Code Generation\VersionUpdater.dll
+		Code Generation\VersionUpdater.exe = Code Generation\VersionUpdater.exe
+		Code Generation\VersionUpdater.runtimeconfig.json = Code Generation\VersionUpdater.runtimeconfig.json
 	EndProjectSection
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Xyz.Xrm.WorkflowCore", "Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.shproj", "{DD5AA002-C1FF-4C0E-B9A5-3D63C7809B07}"
@@ -32,6 +33,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Workflow", "Xyz.Xrm.Workflow\Xyz.Xrm.Workflow.csproj", "{5BD39AC9-97F3-47C8-8E1F-6A58A24AFB9E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Workflow.Tests", "Xyz.Xrm.Workflow.Tests\Xyz.Xrm.Workflow.Tests.csproj", "{7056423A-373E-463D-B552-D2F305F5C041}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Xrm", "Xyz.Xrm\Xyz.Xrm.csproj", "{D6E34F20-52B8-43B8-9E06-F6BCD0464E92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -76,6 +79,12 @@ Global
 		{7056423A-373E-463D-B552-D2F305F5C041}.LocalNuget|Any CPU.Build.0 = Release|Any CPU
 		{7056423A-373E-463D-B552-D2F305F5C041}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7056423A-373E-463D-B552-D2F305F5C041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E34F20-52B8-43B8-9E06-F6BCD0464E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E34F20-52B8-43B8-9E06-F6BCD0464E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E34F20-52B8-43B8-9E06-F6BCD0464E92}.LocalNuget|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E34F20-52B8-43B8-9E06-F6BCD0464E92}.LocalNuget|Any CPU.Build.0 = Debug|Any CPU
+		{D6E34F20-52B8-43B8-9E06-F6BCD0464E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E34F20-52B8-43B8-9E06-F6BCD0464E92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,11 +95,9 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Xyz.Xrm\Xyz.Xrm.projitems*{2b294dbf-8730-436e-b401-8745fea632fe}*SharedItemsImports = 4
 		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{3016d729-1a3b-43c0-ac2f-d4ef6a305fa6}*SharedItemsImports = 4
-		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{5bd39ac9-97f3-47c8-8e1f-6a58a24afb9e}*SharedItemsImports = 4
-		Xyz.Xrm\Xyz.Xrm.projitems*{5bd39ac9-97f3-47c8-8e1f-6a58a24afb9e}*SharedItemsImports = 4
+		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{5bd39ac9-97f3-47c8-8e1f-6a58a24afb9e}*SharedItemsImports = 5
 		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{7056423a-373e-463d-b552-d2f305f5c041}*SharedItemsImports = 4
 		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{8f91efc7-351b-4802-99aa-6c6f16110505}*SharedItemsImports = 13
-		Xyz.Xrm\Xyz.Xrm.projitems*{b22b3bc6-0ac6-4cdd-a118-16e318818ad7}*SharedItemsImports = 13
 		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{dd5aa002-c1ff-4c0e-b9a5-3d63c7809b07}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

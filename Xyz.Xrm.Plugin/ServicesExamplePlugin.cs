@@ -1,6 +1,6 @@
-﻿using Source.DLaB.Xrm;
-using Source.DLaB.Xrm.Ioc;
-using Source.DLaB.Xrm.Plugin;
+﻿using DLaB.Xrm;
+using DLaB.Xrm.Ioc;
+using DLaB.Xrm.Plugin;
 using System.Collections.Generic;
 using System.Linq;
 using Xyz.Xrm.Entities;

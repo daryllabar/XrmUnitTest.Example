@@ -23,7 +23,7 @@ namespace Xyz.Xrm.Entities
 		/// Task performed, or to be performed, by a user. An activity is any action for which an entry can be made on a calendar.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Activity", 16, null, "Task performed, or to be performed, by a user. An activity is any action for whic" +
+		[OptionSetMetadataAttribute("Activity", 8, null, "Task performed, or to be performed, by a user. An activity is any action for whic" +
 			"h an entry can be made on a calendar.")]
 		Activity = 4200,
 		
@@ -31,39 +31,39 @@ namespace Xyz.Xrm.Entities
 		/// Commitment representing a time interval with start/end times and duration.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Appointment", 12, null, "Commitment representing a time interval with start/end times and duration.")]
+		[OptionSetMetadataAttribute("Appointment", 5, null, "Commitment representing a time interval with start/end times and duration.")]
 		Appointment = 4201,
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Customer Voice alert", 1)]
+		[OptionSetMetadataAttribute("Customer Voice alert", 10)]
 		CustomerVoiceAlert = 10597,
 		
 		/// <summary>
 		/// Activity that tracks a survey invitation sent to a person.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Customer Voice survey invite", 6, null, "Activity that tracks a survey invitation sent to a person.")]
+		[OptionSetMetadataAttribute("Customer Voice survey invite", 16, null, "Activity that tracks a survey invitation sent to a person.")]
 		CustomerVoiceSurveyInvite = 10598,
 		
 		/// <summary>
 		/// Response to a survey.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Customer Voice survey response", 7, null, "Response to a survey.")]
+		[OptionSetMetadataAttribute("Customer Voice survey response", 9, null, "Response to a survey.")]
 		CustomerVoiceSurveyResponse = 10599,
 		
 		/// <summary>
 		/// Activity that is delivered using email protocols.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Email", 2, null, "Activity that is delivered using email protocols.")]
+		[OptionSetMetadataAttribute("Email", 1, null, "Activity that is delivered using email protocols.")]
 		Email = 4202,
 		
 		/// <summary>
 		/// Activity that tracks call outcome and number of pages for a fax and optionally stores an electronic copy of the document.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Fax", 11, null, "Activity that tracks call outcome and number of pages for a fax and optionally st" +
+		[OptionSetMetadataAttribute("Fax", 15, null, "Activity that tracks call outcome and number of pages for a fax and optionally st" +
 			"ores an electronic copy of the document.")]
 		Fax = 4204,
 		
@@ -71,21 +71,21 @@ namespace Xyz.Xrm.Entities
 		/// Holds information about the redemption of an invite.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Invite Redemption", 4, null, "Holds information about the redemption of an invite.")]
+		[OptionSetMetadataAttribute("Invite Redemption", 12, null, "Holds information about the redemption of an invite.")]
 		InviteRedemption = 10660,
 		
 		/// <summary>
 		/// Organizational knowledge for internal and external use.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Knowledge Article", 10, null, "Organizational knowledge for internal and external use.")]
+		[OptionSetMetadataAttribute("Knowledge Article", 13, null, "Organizational knowledge for internal and external use.")]
 		KnowledgeArticle = 9953,
 		
 		/// <summary>
 		/// Organizational Knowledge Article Template for Internal and external creation of Knowledge Articles.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Knowledge Article Template", 3, null, "Organizational Knowledge Article Template for Internal and external creation of K" +
+		[OptionSetMetadataAttribute("Knowledge Article Template", 14, null, "Organizational Knowledge Article Template for Internal and external creation of K" +
 			"nowledge Articles.")]
 		KnowledgeArticleTemplate = 10100,
 		
@@ -93,7 +93,7 @@ namespace Xyz.Xrm.Entities
 		/// Activity that tracks the delivery of a letter. The activity can contain the electronic copy of the letter.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Letter", 15, null, "Activity that tracks the delivery of a letter. The activity can contain the elect" +
+		[OptionSetMetadataAttribute("Letter", 11, null, "Activity that tracks the delivery of a letter. The activity can contain the elect" +
 			"ronic copy of the letter.")]
 		Letter = 4207,
 		
@@ -101,14 +101,14 @@ namespace Xyz.Xrm.Entities
 		/// Activity to track a telephone call.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Phone Call", 14, null, "Activity to track a telephone call.")]
+		[OptionSetMetadataAttribute("Phone Call", 6, null, "Activity to track a telephone call.")]
 		PhoneCall = 4210,
 		
 		/// <summary>
 		/// An activity which is used to share information between the user and the customer on the portal.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Portal Comment", 5, null, "An activity which is used to share information between the user and the customer " +
+		[OptionSetMetadataAttribute("Portal Comment", 3, null, "An activity which is used to share information between the user and the customer " +
 			"on the portal.")]
 		PortalComment = 10661,
 		
@@ -116,21 +116,21 @@ namespace Xyz.Xrm.Entities
 		/// The Master appointment of a recurring appointment series.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Recurring Appointment", 13, null, "The Master appointment of a recurring appointment series.")]
+		[OptionSetMetadataAttribute("Recurring Appointment", 4, null, "The Master appointment of a recurring appointment series.")]
 		RecurringAppointment = 4251,
 		
 		/// <summary>
 		/// For internal use only.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Social Activity", 9, null, "For internal use only.")]
+		[OptionSetMetadataAttribute("Social Activity", 7, null, "For internal use only.")]
 		SocialActivity = 4216,
 		
 		/// <summary>
 		/// Generic activity representing work needed to be done.
 		/// </summary>
 		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Task", 8, null, "Generic activity representing work needed to be done.")]
+		[OptionSetMetadataAttribute("Task", 2, null, "Generic activity representing work needed to be done.")]
 		Task = 4212,
 		
 		/// <summary>

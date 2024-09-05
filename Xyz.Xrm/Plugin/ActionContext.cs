@@ -1,5 +1,5 @@
 ﻿using System;
-using Source.DLaB.Xrm.Plugin;
+using DLaB.Xrm.Plugin;
 
 namespace Xyz.Xrm.Plugin
 {

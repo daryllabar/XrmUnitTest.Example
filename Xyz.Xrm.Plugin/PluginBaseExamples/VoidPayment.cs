@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Source.DLaB.Xrm.Plugin;
+using DLaB.Xrm.Plugin;
 using Microsoft.Xrm.Sdk;
 using Xyz.Xrm.Entities;
 // ReSharper disable UnusedMember.Global

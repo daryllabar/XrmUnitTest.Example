@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xrm.Sdk;
-using Source.DLaB.Xrm.Plugin;
+using DLaB.Xrm.Plugin;
 // ReSharper disable UnusedVariable
 
 namespace Xyz.Xrm.Plugin.PluginBaseExamples

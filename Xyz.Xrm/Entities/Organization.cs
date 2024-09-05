@@ -603,6 +603,8 @@ namespace Xyz.Xrm.Entities
 			public const string AdvancedLookupEnabled = "advancedlookupenabled";
 			public const string AdvancedLookupEnabledName = "advancedlookupenabledname";
 			public const string AdvancedLookupIneditFilter = "advancedlookupineditfilter";
+			public const string AIPromptsEnabled = "aipromptsenabled";
+			public const string AIPromptsEnabledName = "aipromptsenabledname";
 			public const string AllowAddressBookSyncs = "allowaddressbooksyncs";
 			public const string AllowApplicationUserAccess = "allowapplicationuseraccess";
 			public const string AllowApplicationUserAccessName = "allowapplicationuseraccessname";
@@ -648,6 +650,7 @@ namespace Xyz.Xrm.Entities
 			public const string AppointmentWithTeamsMeetingV2Name = "appointmentwithteamsmeetingv2name";
 			public const string AuditRetentionPeriod = "auditretentionperiod";
 			public const string AuditRetentionPeriodV2 = "auditretentionperiodv2";
+			public const string AuditSettings = "auditsettings";
 			public const string AutoApplyDefaultOnCaseCreate = "autoapplydefaultoncasecreate";
 			public const string AutoApplyDefaultOnCaseCreateName = "autoapplydefaultoncasecreatename";
 			public const string AutoApplyDefaultOnCaseUpdate = "autoapplydefaultoncaseupdate";
@@ -870,6 +873,8 @@ namespace Xyz.Xrm.Entities
 			public const string IsDesktopFlowRuntimeRepairUnattendedEnabledName = "isdesktopflowruntimerepairunattendedenabledname";
 			public const string IsDesktopFlowSchemaV2Enabled = "isdesktopflowschemav2enabled";
 			public const string IsDesktopFlowSchemaV2EnabledName = "isdesktopflowschemav2enabledname";
+			public const string IsDesktopFlowVanillaImageSharingEnabled = "isdesktopflowvanillaimagesharingenabled";
+			public const string IsDesktopFlowVanillaImageSharingEnabledName = "isdesktopflowvanillaimagesharingenabledname";
 			public const string IsDisabled = "isdisabled";
 			public const string IsDisabledName = "isdisabledname";
 			public const string IsDuplicateDetectionEnabled = "isduplicatedetectionenabled";
@@ -1501,6 +1506,41 @@ namespace Xyz.Xrm.Entities
 			set
 			{
 				this.SetAttributeValue("advancedlookupineditfilter", value);
+			}
+		}
+		
+		/// <summary>
+		/// Indicates whether AI Prompts feature is enabled.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aipromptsenabled")]
+		public System.Nullable<bool> AIPromptsEnabled
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("aipromptsenabled");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("aipromptsenabled", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("aipromptsenabledname")]
+		public string AIPromptsEnabledName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("aipromptsenabled"))
+				{
+					return this.FormattedValues["aipromptsenabled"];
+				}
+				else
+				{
+					return default(string);
+				}
 			}
 		}
 		
@@ -2301,6 +2341,24 @@ namespace Xyz.Xrm.Entities
 			set
 			{
 				this.SetAttributeValue("auditretentionperiodv2", value);
+			}
+		}
+		
+		/// <summary>
+		/// Audit Settings of the organization
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("auditsettings")]
+		public string AuditSettings
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("auditsettings");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("auditsettings", value);
 			}
 		}
 		
@@ -5934,7 +5992,7 @@ namespace Xyz.Xrm.Entities
 		}
 		
 		/// <summary>
-		/// Determines whether users can provide feedback for App Copilot.
+		/// Determines whether users can provide feedback Copilot experiences.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("iscopilotfeedbackenabled")]
 		public System.Nullable<bool> IsCopilotFeedbackEnabled
@@ -6172,6 +6230,41 @@ namespace Xyz.Xrm.Entities
 				if (this.FormattedValues.Contains("isdesktopflowschemav2enabled"))
 				{
 					return this.FormattedValues["isdesktopflowschemav2enabled"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Indicates whether Windows Vanilla Image will be readly available for Desktop Flow users in this organization.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdesktopflowvanillaimagesharingenabled")]
+		public System.Nullable<bool> IsDesktopFlowVanillaImageSharingEnabled
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("isdesktopflowvanillaimagesharingenabled");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("isdesktopflowvanillaimagesharingenabled", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isdesktopflowvanillaimagesharingenabledname")]
+		public string IsDesktopFlowVanillaImageSharingEnabledName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("isdesktopflowvanillaimagesharingenabled"))
+				{
+					return this.FormattedValues["isdesktopflowvanillaimagesharingenabled"];
 				}
 				else
 				{

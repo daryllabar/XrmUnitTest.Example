@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xrm.Sdk;
-using Source.DLaB.Xrm;
-using Source.DLaB.Xrm.Plugin;
+using DLaB.Xrm;
+using DLaB.Xrm.Plugin;
 using Xyz.Xrm.Entities;
 
 namespace Xyz.Xrm.Plugin
