@@ -26,13 +26,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Gen
 		Code Generation\VersionUpdater.runtimeconfig.json = Code Generation\VersionUpdater.runtimeconfig.json
 	EndProjectSection
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Xyz.Xrm.WorkflowCore", "Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.shproj", "{DD5AA002-C1FF-4C0E-B9A5-3D63C7809B07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Xrm.Workflow", "Xyz.Xrm.Workflow\Xyz.Xrm.Workflow.csproj", "{5BD39AC9-97F3-47C8-8E1F-6A58A24AFB9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Workflow", "Xyz.Xrm.Workflow\Xyz.Xrm.Workflow.csproj", "{5BD39AC9-97F3-47C8-8E1F-6A58A24AFB9E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyz.Xrm.Workflow.Tests", "Xyz.Xrm.Workflow.Tests\Xyz.Xrm.Workflow.Tests.csproj", "{7056423A-373E-463D-B552-D2F305F5C041}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Xrm.Workflow.Tests", "Xyz.Xrm.Workflow.Tests\Xyz.Xrm.Workflow.Tests.csproj", "{7056423A-373E-463D-B552-D2F305F5C041}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyz.Xrm", "Xyz.Xrm\Xyz.Xrm.csproj", "{D6E34F20-52B8-43B8-9E06-F6BCD0464E92}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Xyz.Xrm.WorkflowCore", "Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.shproj", "{DD5AA002-C1FF-4C0E-B9A5-3D63C7809B07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,10 +91,7 @@ Global
 		SolutionGuid = {6E851C72-3575-426E-814F-F3F7156DBEBA}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Xyz.Xrm\Xyz.Xrm.projitems*{2b294dbf-8730-436e-b401-8745fea632fe}*SharedItemsImports = 4
-		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{3016d729-1a3b-43c0-ac2f-d4ef6a305fa6}*SharedItemsImports = 4
 		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{5bd39ac9-97f3-47c8-8e1f-6a58a24afb9e}*SharedItemsImports = 5
-		Xyz.Xrm.TestCore\Xyz.Xrm.TestCore.projitems*{7056423a-373e-463d-b552-d2f305f5c041}*SharedItemsImports = 4
 		Xyz.Xrm.WorkflowCore\Xyz.Xrm.WorkflowCore.projitems*{dd5aa002-c1ff-4c0e-b9a5-3d63c7809b07}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

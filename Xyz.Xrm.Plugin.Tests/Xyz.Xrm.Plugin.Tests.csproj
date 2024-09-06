@@ -1,19 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	  <DebugType>pdbonly</DebugType>
-	  <DebugSymbols>true</DebugSymbols>
-	  <SignAssembly>false</SignAssembly>
-    <TargetFramework>net462</TargetFramework>
-	  <LangVersion>12</LangVersion>
-	  <Configurations>Debug;Release</Configurations>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="DLaB.Xrm" Version="5.0.0.7" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Xyz.Xrm.Plugin\Xyz.Xrm.Plugin.csproj" />
-    <ProjectReference Include="..\Xyz.Xrm.Test\Xyz.Xrm.Test.csproj" />
-    <ProjectReference Include="..\Xyz.Xrm\Xyz.Xrm.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<DebugType>pdbonly</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<SignAssembly>false</SignAssembly>
+		<TargetFramework>net462</TargetFramework>
+		<LangVersion>12</LangVersion>
+		<Configurations>Debug;Release</Configurations>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="DLaB.Xrm" Version="5.0.0.7" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Xyz.Xrm.Plugin\Xyz.Xrm.Plugin.csproj" />
+		<ProjectReference Include="..\Xyz.Xrm.Test\Xyz.Xrm.Test.csproj" />
+		<ProjectReference Include="..\Xyz.Xrm\Xyz.Xrm.csproj" />
+	</ItemGroup>
 </Project>

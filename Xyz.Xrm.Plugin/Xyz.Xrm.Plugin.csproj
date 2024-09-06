@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-	  <FileVersion>1.0.0.0</FileVersion>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <TargetFramework>net462</TargetFramework>
-    <OutputType>Library</OutputType>
-	  <LangVersion>12</LangVersion>
-	  <SignAssembly>false</SignAssembly>
-	  <Configurations>Debug;Release;DevDeploy</Configurations>
-  </PropertyGroup>
+	<PropertyGroup>
+		<FileVersion>1.0.0.0</FileVersion>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<TargetFramework>net462</TargetFramework>
+		<OutputType>Library</OutputType>
+		<LangVersion>12</LangVersion>
+		<SignAssembly>false</SignAssembly>
+		<Configurations>Debug;Release;DevDeploy</Configurations>
+	</PropertyGroup>
 	<!--
-    NuGet pack and restore as MSBuild targets reference:
-    https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets
-  -->
+		NuGet pack and restore as MSBuild targets reference:
+		https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets
+	-->
 	<PropertyGroup>
 		<PackageId>Xyz.Xrm.Plugin</PackageId>
 		<Version>$(FileVersion)</Version>
@@ -20,9 +20,9 @@
 		<Description>Plugin with Dependent Assemblies</Description>
 		<ProjectTypeGuids>{4C25E9B5-9FA6-436c-8E19-B395D2A65FAF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
 	</PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Xyz.Xrm\Xyz.Xrm.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Xyz.Xrm\Xyz.Xrm.csproj" />
+	</ItemGroup>
 	
 	<!-- Plugin Package Deployment Settings -->
 	<PropertyGroup>
@@ -38,7 +38,7 @@
 			<FileVersionRevisionNext>$([MSBuild]::Add($([System.String]::Copy($(FileVersion)).Split('.')[3]), 1))</FileVersionRevisionNext>
 			<FileVersion>$([System.String]::Copy($(FileVersion)).Split('.')[0]).$([System.String]::Copy($(FileVersion)).Split('.')[1]).$([System.String]::Copy($(FileVersion)).Split('.')[2]).$(FileVersionRevisionNext)</FileVersion>
 		</PropertyGroup>
-		<Message Text="Setting Plugin Assembly FileVersion to: $(FileVersion) " Importance="high" />
+		<Message Text="Setting Plugin Assembly FileVersion to: $(FileVersion)" Importance="high" />
 	</Target>
 	<!-- PreBuild is required to update the csproj file on disk, and then be able to package the nupkg in the post build -->
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
