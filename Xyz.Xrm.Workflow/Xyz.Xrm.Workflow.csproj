@@ -13,7 +13,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="DLaB.Xrm.Source" Version="5.0.0.7" />
-		<PackageReference Include="DLaB.Xrm.Workflow.Source" Version="4.0.0.9" />
+		<PackageReference Include="DLaB.Xrm.Workflow.Source" Version="4.0.0.10" />
 		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" />
 		<PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.56" />
 		<PackageReference Include="Microsoft.CrmSdk.Workflow" Version="9.0.2.56" />
