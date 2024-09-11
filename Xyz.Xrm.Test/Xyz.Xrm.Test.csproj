@@ -12,8 +12,8 @@
 		<Content Include="Assumptions\Entity Xml\User_PowerAppsChecker.xml" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="MSTest.TestAdapter" Version="3.5.2" />
-		<PackageReference Include="MSTest.TestFramework" Version="3.5.2" />
+		<PackageReference Include="MSTest.TestAdapter" Version="3.6.0" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.6.0" />
 		<PackageReference Include="XrmUnitTest.09" Version="3.3.0.66" />
 	</ItemGroup>
 </Project>
