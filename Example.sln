@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Gen
 		Code Generation\crmplugintest.snippet = Code Generation\crmplugintest.snippet
 		Code Generation\crmtestmethodclass.snippet = Code Generation\crmtestmethodclass.snippet
 		Code Generation\LINQPadGuidGenerator.txt = Code Generation\LINQPadGuidGenerator.txt
+		Code Generation\reg.snippet = Code Generation\reg.snippet
 		Code Generation\region.snippet = Code Generation\region.snippet
 		Code Generation\VersionUpdater.dll = Code Generation\VersionUpdater.dll
 		Code Generation\VersionUpdater.exe = Code Generation\VersionUpdater.exe
