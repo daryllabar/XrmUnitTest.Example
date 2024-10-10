@@ -21,7 +21,7 @@ namespace Xyz.Xrm.Plugin
             // Register any custom services here
             container.AddSingleton(_ => new ExtendedOrganizationServiceSettings
             {
-                // If you're using EarlyBound, this would be any type the assembly that contains your early bound entities
+                // If you're using EarlyBound, this would be any type in the assembly that contains your early bound entities
                 ProxyTypesAssembly = typeof(DataverseContext).Assembly
             });
             return container;
