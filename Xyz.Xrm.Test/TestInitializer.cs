@@ -30,10 +30,6 @@ namespace Xyz.Xrm.Test
             {
                 TestSettings.EarlyBound.ConfigureDerivedAssembly<DataverseContext>();
             }
-            if (!TestSettings.SourceControlProvider.IsConfigured)
-            {
-                TestSettings.SourceControlProvider.ConfigureNone();
-            }
             if (!TestSettings.TestFrameworkProvider.IsConfigured)
             {
                 TestSettings.TestFrameworkProvider.Configure(new MsTestProvider());

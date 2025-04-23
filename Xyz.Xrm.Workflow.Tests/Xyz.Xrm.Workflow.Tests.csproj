@@ -4,6 +4,9 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 	</PropertyGroup>
 	<ItemGroup>
+	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+	</ItemGroup>
+	<ItemGroup>
 		<Reference Include="System.Activities" />
 		<Reference Include="System.Activities.Presentation" />
 		<Reference Include="System.Configuration" />
