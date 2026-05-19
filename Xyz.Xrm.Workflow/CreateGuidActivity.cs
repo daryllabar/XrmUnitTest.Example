@@ -2,6 +2,7 @@
 using Source.DLaB.Xrm.Ioc;
 using System;
 using System.Activities;
+using Source.DLaB.Xrm.Workflow;
 
 namespace Xyz.Xrm.Workflow
 {
@@ -13,7 +14,7 @@ namespace Xyz.Xrm.Workflow
         public CreateGuidActivity() : this(null) { }
         public CreateGuidActivity(IIocContainer container) : base(container) { }
 
-        protected override void Execute(ExtendedWorkflowContext context, IServiceProvider serviceProvider)
+        protected override void Execute(IExtendedWorkflowContext context, IServiceProvider serviceProvider)
         {
             Guid.Set(context, System.Guid.NewGuid().ToString());
         }

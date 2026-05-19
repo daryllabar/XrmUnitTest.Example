@@ -3,7 +3,7 @@ using Source.DLaB.Xrm.Workflow;
 
 namespace Xyz.Xrm.Workflow
 {
-    public abstract class CodeActivityBase : DLaBCodeActivityBase<ExtendedWorkflowContext>
+    public abstract class CodeActivityBase : DLaBCodeActivityBase
     {
         protected CodeActivityBase(IIocContainer container) : base(container) { }
 
